@@ -1,0 +1,186 @@
+﻿/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              SalesPersons               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create tables and stored procs   */
+
+/* Insert here the code to create tables */
+
+/* Following procedure is for Add the SalesPerson details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddSalesPerson]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddSalesPerson]
+GO
+
+/* Following procedure is for Update the SalesPerson details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateSalesPerson]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateSalesPerson]
+GO
+
+/* Following procedure is for Fix the SalesPerson details */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_FixSalesPersons]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_FixSalesPersons]
+GO
+
+/* Following procedure is for Delete the SalesPerson details */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteSalesPerson]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteSalesPerson]
+GO
+
+/* Following procedure is for Add none Driver if it "ZXZX" */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddNoDriver]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddNoDriver]
+GO
+
+/* Following procedure is for Get the SalesPerson ID */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetSalesPersonId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetSalesPersonId]
+GO
+
+/* Following procedure is for Get the  SalesPerson Number or ID and JRCIOfficeCode for Unique*/
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetSalesPersonIdUnique]
+GO
+
+
+/* Following procedure is for Get the SalesPerson Details */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetSalesPerson]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetSalesPerson]
+GO
+/* Following procedure is for Get the SalesPerson Module */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetModuleSalesPersons]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetModuleSalesPersons]
+GO
+
+/* Following procedure is for Get the SalesPerson Portal */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetPortalSalesPersons]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetPortalSalesPersons]
+GO
+
+/* Following procedure is for Get the All SalesPerson Details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetAllSalesPersons]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetAllSalesPersons]
+GO
+
+/* Following procedure is for Sort the SalesPerson Details */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_SortSalesPersons]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_SortSalesPersons]
+GO
+
+/* Insert here the code to drop tables  */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}ARD_SalesPersonMasterfile]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}ARD_SalesPersonMasterfile]
+GO
+
+
+
+/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              BoatTypes               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create/drop tables and stored procs   */
+
+/* Insert here the code to drop stored procs if exists  */
+
+
+
+/* Insert here the code to drop tables  */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_SalesPersonIO]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}bhattji_SalesPersonIO]
+GO
+
+/* Following procedure is for Add the SalesPersonIO */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddSalesPersonIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddSalesPersonIO]
+GO
+
+
+/* Following procedure is for Update the SalesPersonIO */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteSalesPersonIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteSalesPersonIO]
+GO
+
+
+/* Following procedure is for Get the SalesPerson By IO */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetSalesPersonsByIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetSalesPersonsByIO]
+GO
+
+/* Following procedure is for Get the SalesPersons Details By IOCode */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetSalesPersonsByIOCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetSalesPersonsByIOCode]
+GO
+
+/* Following procedure is for Get the SalesPerson Details By IOCode whose Status is 'Active' */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetActiveSalesPersonsByIOCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetActiveSalesPersonsByIOCode]
+GO
+
+/* Following procedure is for Get IO By SalesPersonIO */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetIOsBySalesPerson]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetIOsBySalesPerson]
+GO
+
+
+/* Following procedure is for Get All the SalesPerson */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetSalesPersonsAll]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetSalesPersonsAll]
+GO
+
+
+/* Following procedure is for Get the IO (InterOffice) */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetIOsAll]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetIOsAll]
+GO
+
+/* Following procedure is for Assign SalesPersonIO */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AssignSalesPersonIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AssignSalesPersonIO]
+GO

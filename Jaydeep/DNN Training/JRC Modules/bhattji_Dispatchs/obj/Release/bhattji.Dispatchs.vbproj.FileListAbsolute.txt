@@ -1,0 +1,15 @@
+C:\DNN\JRC45\bin\bhattji.Modules.Dispatchs.dll
+C:\DNN\JRC45\bin\bhattji.Modules.Dispatchs.pdb
+C:\DNN\JRC45\bin\bhattji.Dispatchs.xml
+C:\DNN\JRC45\DesktopModules\bhattji_Dispatchs\obj\Release\ResolveAssemblyReference.cache
+C:\DNN\JRC45\DesktopModules\bhattji_Dispatchs\obj\Release\bhattji.Modules.Dispatchs.Details.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Dispatchs\obj\Release\bhattji.Modules.Dispatchs.EditItem.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Dispatchs\obj\Release\bhattji.Modules.Dispatchs.Edits.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Dispatchs\obj\Release\bhattji.Modules.Dispatchs.Thumb.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Dispatchs\obj\Release\bhattji.Modules.Dispatchs.Settings.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Dispatchs\obj\Release\bhattji.Modules.Dispatchs.ViewList.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Dispatchs\obj\Release\bhattji.Modules.Dispatchs.Views.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Dispatchs\obj\Release\bhattji.Dispatchs.vbproj.GenerateResource.Cache
+C:\DNN\JRC45\DesktopModules\bhattji_Dispatchs\obj\Release\bhattji.Modules.Dispatchs.dll
+C:\DNN\JRC45\DesktopModules\bhattji_Dispatchs\obj\Release\bhattji.Dispatchs.xml
+C:\DNN\JRC45\DesktopModules\bhattji_Dispatchs\obj\Release\bhattji.Modules.Dispatchs.pdb

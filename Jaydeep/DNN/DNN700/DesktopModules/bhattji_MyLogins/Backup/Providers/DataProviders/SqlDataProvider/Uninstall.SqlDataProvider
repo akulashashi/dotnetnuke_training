@@ -1,0 +1,197 @@
+﻿/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              MyLogins               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create/drop tables and stored procs   */
+
+/* Insert here the code to drop stored procs if exists  */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddMyLogin]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddMyLogin]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateMyLogin]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateMyLogin]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteMyLogin]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteMyLogin]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_SetViewOrderMyLogins]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_SetViewOrderMyLogins]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_ClaimOrphanMyLogins]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_ClaimOrphanMyLogins]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateMyLoginRating]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateMyLoginRating]
+GO
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetMyLoginId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetMyLoginId]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetMyLogin]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetMyLogin]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetModuleMyLogins]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetModuleMyLogins]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetPortalMyLogins]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetPortalMyLogins]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetAllMyLogins]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetAllMyLogins]
+GO
+
+/* Insert here the code to drop tables  */
+
+/* Insert here the code to remove the Unique Key */
+/****** Object:  Index [UK_{objectQualifier}bhattji_MyLogins_Title] ******/
+IF  EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}bhattji_MyLogins]') AND name = N'UK_{objectQualifier}bhattji_MyLogins_Title')
+    ALTER TABLE {databaseOwner}[{objectQualifier}bhattji_MyLogins] DROP CONSTRAINT [UK_{objectQualifier}bhattji_MyLogins_Title]	
+
+/* Insert here the code to remove the Primary Key */
+/****** Object:  Index [PK_{objectQualifier}bhattji_MyLogins] ******/
+IF  EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}bhattji_MyLogins]') AND name = N'PK_{objectQualifier}bhattji_MyLogins')
+    ALTER TABLE {databaseOwner}[{objectQualifier}bhattji_MyLogins] DROP CONSTRAINT [PK_{objectQualifier}bhattji_MyLogins]	
+
+/* Insert here the code to drop table  */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_MyLogins]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}bhattji_MyLogins]
+GO
+
+
+
+
+/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              MyLoginCategories               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create/drop tables and stored procs   */
+
+
+/* Insert here the code to drop stored procs if exists  */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddMyLoginCategory]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddMyLoginCategory]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateMyLoginCategory]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateMyLoginCategory]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteMyLoginCategory]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteMyLoginCategory]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetMyLoginCategory]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetMyLoginCategory]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetModuleMyLoginCategories]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetModuleMyLoginCategories]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetPortalMyLoginCategories]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetPortalMyLoginCategories]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetAllMyLoginCategories]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetAllMyLoginCategories]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_SetViewOrderMyLoginCategories]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_SetViewOrderMyLoginCategories]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_ClaimOrphanMyLoginCategories]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_ClaimOrphanMyLoginCategories]
+GO
+
+
+/* Insert here the code to drop tables  */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_MyLoginCategories]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}bhattji_MyLoginCategories]
+GO
+
+
+
+
+
+
+/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              MyLoginPQR45s               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create/drop tables and stored procs   */
+
+/* Insert here the code to drop stored procs if exists  */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddMyLoginPQR45]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddMyLoginPQR45]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateMyLoginPQR45]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateMyLoginPQR45]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteMyLoginPQR45]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteMyLoginPQR45]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetMyLoginPQR45]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetMyLoginPQR45]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetMyLoginPQR45s]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetMyLoginPQR45s]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetAllMyLoginPQR45s]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetAllMyLoginPQR45s]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_SetViewOrderMyLoginPQR45s]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_SetViewOrderMyLoginPQR45s]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_ClaimOrphanMyLoginPQR45s]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_ClaimOrphanMyLoginPQR45s]
+GO
+
+/* Insert here the code to drop tables  */
+/* Insert here the code to add the second PQR45 table */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_MyLoginPQR45s]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}bhattji_MyLoginPQR45s]
+GO
+
+
+
+

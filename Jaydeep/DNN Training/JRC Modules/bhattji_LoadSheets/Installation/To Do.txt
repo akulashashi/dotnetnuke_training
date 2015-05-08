@@ -1,0 +1,27 @@
+Addition of Load Date to the Add load form.  If no load date provided (NULL) then make load date today's date when form submitted.  On submission, please populate load date to the date on the first pickup by default also.  (3 hrs)
+
+Run a query to convert all DRIVER NAMES to ALL CAPS that are in the database  (quarter hrs)
+
+Change the outgoing email on IO email function.  Subject line to read:  IO load [LOAD NUMBER ]from [OFFICE NAME], PU [1st pickup city] (1 hr)
+
+When entering an IO load, the office dropdown forces you to choose and office.  Make an option for "NOT ASSIGNED" and make it default  (1 hr)
+
+Lock down all fields in IO recovery section so that none of them can be edited.  Please do so on my design currently uploaded.  I made some changes today and also the javascript menu has been added. (1.5 hrs)
+
+In ADD LOAD and on LOAD EDIT, Make the customer drop down include customer numbers after customer name somehow as similar records can only be identified that way easily.  (2 hrs)
+
+When entering drivers and broker drivers, 4 digit ALPHA code must be unique again or do not allow submit. (1.5 hrs)
+
+The System inquiry report needs ability for user to search "all" load types also.  In this case, you'll be hiding driver, broker and IO office on the left side. (3 hrs)
+
+Add another error message on add load under the operation box. At low resolution they never see the error and don't know what is going on.  (quarter hr)
+
+Driver status report:  Widen driver field so no two lines - shrink notes field if necessary so everything fits ok. (quarter hr)
+
+Add home icon on menubar on edititem.ascx and editacct.ascx.  Please, do not overwrite the designs presently on the server.  Chris added the javascript so they are floating and I made a couple of changes today.  (1 hr)
+
+As per my previous pdf and word doc, add separating lines on the system inquiry report as presented. (3pix black line between each set of 4 records) (1.5 hr)
+
+Deleting a user from the user's module does not also remove the dnn user.  Can this be fixed? 
+
+Accounting does not allow decimals on load miles.  It only allows whole amounts. (.5 hr)

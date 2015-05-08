@@ -1,0 +1,15 @@
+..\..\bin\bhattji.Modules.Brokers.dll
+..\..\bin\bhattji.Modules.Brokers.pdb
+..\..\bin\bhattji.Brokers.xml
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\bhattji.Modules.Brokers.Details.resources
+obj\Debug\bhattji.Modules.Brokers.EditItem.resources
+obj\Debug\bhattji.Modules.Brokers.Edits.resources
+obj\Debug\bhattji.Modules.Brokers.Thumb.resources
+obj\Debug\bhattji.Modules.Brokers.Settings.resources
+obj\Debug\bhattji.Modules.Brokers.ViewList.resources
+obj\Debug\bhattji.Modules.Brokers.Views.resources
+obj\Debug\bhattji.Brokers.vbproj.GenerateResource.Cache
+obj\Debug\bhattji.Modules.Brokers.dll
+obj\Debug\bhattji.Brokers.xml
+obj\Debug\bhattji.Modules.Brokers.pdb

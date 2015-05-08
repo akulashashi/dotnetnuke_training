@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<dotnetnuke version="3.0" type="Module">
+	<folders>
+		<folder>
+			<name>bhattji.Dispatchs</name>
+			<friendlyname>bhattji.Dispatchs</friendlyname>
+			<foldername>bhattji.Dispatchs</foldername>
+			<modulename>bhattji.Dispatchs</modulename>
+			<description>Description</description>
+			<version>01.00.00</version>
+			<businesscontrollerclass>bhattji.Modules.Dispatchs.Business.DispatchsController, bhattji.Modules.Dispatchs</businesscontrollerclass>
+			<resourcefile>install.bhattji</resourcefile>
+			<modules>
+				<module>
+					<friendlyname>bhattji.Dispatchs</friendlyname>
+					<cachetime>0</cachetime>
+					<controls>
+						<control>
+							<title>Dispatchs</title>
+							<src>Views.ascx</src>
+							<type>View</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+						<control>
+							<key>ItemDetails</key>
+							<title>Dispatch Details</title>
+							<src>Details.ascx</src>
+							<type>View</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+						
+						<control>
+							<key>Edit</key>
+							<title>Edit Dispatchs</title>
+							<src>Edits.ascx</src>
+							<type>Edit</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+						<control>
+							<key>Settings</key>
+							<title>Dispatchs Settings</title>
+							<src>Settings.ascx</src>
+							<type>Edit</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+					</controls>
+				</module>
+			</modules>
+			<files>
+				<file>
+					<name>bhattji.Modules.Dispatchs.dll</name>
+				</file>
+				<file>
+					<name>01.00.00.SqlDataProvider</name>
+				</file>
+				<file>
+					<name>Uninstall.SqlDataProvider</name>
+				</file>
+			</files>
+		</folder>
+	</folders>
+</dotnetnuke>

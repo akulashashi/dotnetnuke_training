@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<dotnetnuke version="3.0" type="Module">
+    <folders>
+        <folder>
+            <name>bhattji.MyLogins</name>
+            <friendlyname>bhattji.MyLogins</friendlyname>
+            <foldername>bhattji.MyLogins</foldername>
+            <modulename>bhattji.MyLogins</modulename>
+            <description>Description</description>
+            <version>01.00.00</version>
+            <businesscontrollerclass>bhattji.Modules.MyLogins.MyLoginsController, bhattji.Modules.MyLogins</businesscontrollerclass>
+            <resourcefile>install.bhattji</resourcefile>
+            <modules>
+                <module>
+                    <friendlyname>bhattji.MyLogins</friendlyname>
+                    <cachetime>0</cachetime>
+                    <controls>
+                        <control>
+                            <title>MyLogins</title>
+                            <src>Views.ascx</src>
+                            <type>View</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Views</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>Edit</key>
+                            <title>Edit MyLogins</title>
+                            <src>Edits.ascx</src>
+                            <type>Edit</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Edits</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>Settings</key>
+                            <title>MyLogins Settings</title>
+                            <src>Settings.ascx</src>
+                            <type>Edit</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Settings</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>Reports</key>
+                            <title>MyLogin Reports</title>
+                            <src>Reports.ascx</src>
+                            <type>View</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Reports</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>ItemDetails</key>
+                            <title>MyLogin Details</title>
+                            <src>Details.ascx</src>
+                            <type>View</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Details</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>ItemRatings</key>
+                            <title>MyLogin Ratings</title>
+                            <src>Ratings.ascx</src>
+                            <type>View</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Ratings</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                    </controls>
+                </module>
+            </modules>
+            <files>
+                <file>
+                    <name>bhattji.Modules.MyLogins.dll</name>
+                </file>
+                <file>
+                    <name>01.00.00.SqlDataProvider</name>
+                </file>
+                <file>
+                    <name>Uninstall.SqlDataProvider</name>
+                </file>
+            </files>
+        </folder>
+    </folders>
+</dotnetnuke>

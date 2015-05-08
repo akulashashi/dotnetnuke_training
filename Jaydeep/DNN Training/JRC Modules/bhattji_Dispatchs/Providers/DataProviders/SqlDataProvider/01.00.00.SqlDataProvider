@@ -1,0 +1,918 @@
+﻿/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              Dispatchs               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create tables and stored procs   */
+
+/* Insert here the code to create tables */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}ARD_DispatchMasterfile]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+begin
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_DispatchMasterfile]  ALTER COLUMN [DispatchCode] [nvarchar] (12) NOT NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_DispatchMasterfile]  ADD [OfficeOverride] [nvarchar](9) NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_DispatchMasterfile]  ADD [ManagerOverride] [nvarchar](12) NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_DispatchMasterfile]  ADD [ItemID] [int] IDENTITY (1, 1) NOT NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_DispatchMasterfile]  ADD [ModuleId] [int] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_DispatchMasterfile]  ADD [ViewOrder] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_DispatchMasterfile]  ADD [UpdatedByUserId] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_DispatchMasterfile]  ADD [UpdatedDate] [datetime] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_DispatchMasterfile]  ADD [CreatedByUserId] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_DispatchMasterfile]  ADD [CreatedDate] [datetime] NULL
+
+end
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}ARD_DispatchMasterfile]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+begin
+
+UPDATE {databaseOwner}[{objectQualifier}ARD_DispatchMasterfile]  SET [ModuleId] = 371
+
+UPDATE {databaseOwner}[{objectQualifier}ARD_DispatchMasterfile]  SET [UpdatedByUserId] = 1
+UPDATE {databaseOwner}[{objectQualifier}ARD_DispatchMasterfile]  SET [UpdatedDate] = GetDate()
+UPDATE {databaseOwner}[{objectQualifier}ARD_DispatchMasterfile]  SET [CreatedByUserId] = 1
+UPDATE {databaseOwner}[{objectQualifier}ARD_DispatchMasterfile]  SET [CreatedDate] = GetDate()
+
+end
+
+else
+
+CREATE TABLE {databaseOwner}[{objectQualifier}ARD_DispatchMasterfile] (
+	[ItemID] [int] IDENTITY (1, 1) NOT NULL ,
+	[ModuleID] [int] NULL ,
+
+	[DispatchCode] [nvarchar] (12) NOT NULL ,
+	[DispatchName] [nvarchar] (30) NULL ,
+	[Office] [nvarchar] (20) NULL ,
+	[OfficeOverride] [nvarchar] (9) NULL ,
+	[ManagerOverride] [nvarchar] (12) NULL ,
+	[CommRate] [float] NULL ,
+	[DefDisp] [nvarchar] (1) NULL ,
+	[DispPassw] [nvarchar] (8) NULL ,
+	[Status] [nvarchar] (1) NULL ,
+	[OffLogNo] [nvarchar] (7) NULL ,
+	[DOffLogNo] [nvarchar] (9) NULL ,
+	[AllowXM] [nvarchar] (1) NULL ,
+	[LogonLink] [nvarchar] (16) NULL ,
+	[LogDate] [datetime] NULL ,
+	[LogTime] [datetime] NULL ,
+	[ClearCode] [nvarchar] (1) NULL ,
+	[WhatProcess] [nvarchar] (4) NULL ,
+	[XMProc] [nvarchar] (1) NULL  ,
+
+	[ViewOrder] [int] NULL ,
+
+	[UpdatedByUserId] [int]  NULL ,
+	[UpdatedDate] [datetime] NULL ,
+	[CreatedByUserId] [int]  NULL ,
+	[CreatedDate] [datetime] NULL
+
+) ON [PRIMARY]
+GO
+
+
+/* Insert here the code to create stored procs   */
+
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+/* Following procedure is for Add the Dispatch Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddDispatch]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddDispatch]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddDispatch]
+
+	@ModuleID int,
+
+	@DispatchCode nvarchar(12),
+	@DispatchName nvarchar(30),
+	@Office nvarchar(20),
+	@OfficeOverride nvarchar(9),
+	@ManagerOverride nvarchar(12),
+	@CommRate float,
+	@DefDisp nvarchar(1),
+	@DispPassw nvarchar(8),
+	@Status nvarchar(1),
+	@OffLogNo nvarchar(7),
+	@DOffLogNo nvarchar(9),
+	@AllowXM nvarchar(1),
+	@LogonLink nvarchar(16),
+	@LogDate datetime,
+	@LogTime datetime,
+	@ClearCode nvarchar(1),
+	@WhatProcess nvarchar(4),
+	@XMProc nvarchar(1),
+
+	@ViewOrder int,
+
+	@CreatedByUserId int
+AS
+
+INSERT INTO {objectQualifier}ARD_DispatchMasterfile (
+	[ModuleID],
+
+	[DispatchCode],
+	[DispatchName],
+	[Office],
+	[OfficeOverride],
+	[ManagerOverride],
+	[CommRate],
+	[DefDisp],
+	[DispPassw],
+	[Status],
+	[OffLogNo],
+	[DOffLogNo],
+	[AllowXM],
+	[LogonLink],
+	[LogDate],
+	[LogTime],
+	[ClearCode],
+	[WhatProcess],
+	[XMProc],
+
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	[UpdatedDate],
+	[CreatedByUserId],
+	[CreatedDate]
+
+) VALUES (
+	@ModuleID,
+
+	@DispatchCode,
+	@DispatchName,
+	@Office,
+	@OfficeOverride,
+	@ManagerOverride, 
+	@CommRate,
+	@DefDisp,
+	@DispPassw,
+	@Status,
+	@OffLogNo,
+	@DOffLogNo,
+	@AllowXM,
+	@LogonLink,
+	@LogDate,
+	@LogTime,
+	@ClearCode,
+	@WhatProcess,
+	@XMProc,
+
+	@ViewOrder,
+
+	@CreatedByUserId ,
+	GetDate(),
+	@CreatedByUserId ,
+	GetDate()
+)
+
+
+SELECT SCOPE_IDENTITY()
+GO
+
+
+
+
+
+/* Following procedure is for Update the Dispatch Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateDispatch]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateDispatch]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateDispatch]
+
+	@ItemID int,
+
+	@DispatchCode nvarchar(12),
+	@DispatchName nvarchar(30),
+	@Office nvarchar(20),
+	@OfficeOverride nvarchar(9),
+	@ManagerOverride nvarchar(12),
+	@CommRate float,
+	@DefDisp nvarchar(1),
+	@DispPassw nvarchar(8),
+	@Status nvarchar(1),
+	@OffLogNo nvarchar(7),
+	@DOffLogNo nvarchar(9),
+	@AllowXM nvarchar(1),
+	@LogonLink nvarchar(16),
+	@LogDate datetime,
+	@LogTime datetime,
+	@ClearCode nvarchar(1),
+	@WhatProcess nvarchar(4),
+	@XMProc nvarchar(1),
+
+	@ViewOrder int,
+	@UpdatedByUserId int
+AS
+
+UPDATE {objectQualifier}ARD_DispatchMasterfile
+
+SET
+	[DispatchCode] = @DispatchCode,
+	[DispatchName] = @DispatchName,
+	[Office] = @Office,
+	[OfficeOverride] = @OfficeOverride,
+	[ManagerOverride] = @ManagerOverride,
+	[CommRate] = @CommRate,
+	[DefDisp] = @DefDisp,
+	[DispPassw] = @DispPassw,
+	[Status] = @Status,
+	[OffLogNo] = @OffLogNo,
+	[DOffLogNo] = @DOffLogNo,
+	[AllowXM] = @AllowXM,
+	[LogonLink] = @LogonLink,
+	[LogDate] = @LogDate,
+	[LogTime] = @LogTime,
+	[ClearCode] = @ClearCode,
+	[WhatProcess] = @WhatProcess,
+	[XMProc] = @XMProc,
+
+	[ViewOrder] = @ViewOrder,
+
+	[UpdatedByUserId] = @UpdatedByUserId ,
+	[UpdatedDate] = GetDate()
+
+WHERE
+	[ItemID] = @ItemID
+GO
+
+
+
+
+/* Following procedure is for Fix the Dispatch Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_FixDispatchs]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_FixDispatchs]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_FixDispatchs]
+
+	@ModuleID int,
+	@UpdatedByUserId int
+AS
+
+UPDATE {objectQualifier}AR1_DispatchMaster SET	[ModuleID] = @ModuleID
+UPDATE {objectQualifier}AR1_DispatchMaster SET	[UpdatedByUserId] = @UpdatedByUserId
+UPDATE {objectQualifier}AR1_DispatchMaster SET	[UpdatedDate] = GetDate()
+GO
+
+
+
+
+
+/* Following procedure is for Delete the Dispatch Details */
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteDispatch]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteDispatch]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_DeleteDispatch]
+	@ItemId int
+
+AS
+
+DELETE
+FROM [{objectQualifier}ARD_DispatchMasterfile]
+WHERE ItemId = @ItemId
+GO
+
+
+/* Following procedure is for Get the Dispatcher Number or ID */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetDispatcherId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetDispatcherId]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetDispatcherId]
+	@DispatchCode [nvarchar](12)
+
+As
+
+SELECT [ItemID]
+FROM [{objectQualifier}ARD_DispatchMasterfile]
+WHERE [DispatchCode] = @DispatchCode
+GO
+
+
+
+
+
+/* Following procedure is for Get the Dispatch Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetDispatch]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetDispatch]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetDispatch]
+
+	@ItemID int
+AS
+
+SELECT
+	x.[ItemID],
+	x.[ModuleID],
+
+	x.[DispatchCode],
+	x.[DispatchName],
+	x.[Office],
+	x.[OfficeOverride],
+	x.[ManagerOverride], 
+	io.IOName, 
+	x.[CommRate],
+	x.[DefDisp],
+	x.[DispPassw],
+	x.[Status],
+	x.[OffLogNo],
+	x.[DOffLogNo],
+	x.[AllowXM],
+	x.[LogonLink],
+	x.[LogDate],
+	x.[LogTime],
+	x.[ClearCode],
+	x.[WhatProcess],
+	x.[XMProc],
+
+	x.[ViewOrder],
+
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate] ,
+	x.[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate] 
+
+FROM {objectQualifier}ARD_DispatchMasterfile AS x 
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId 
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId 
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS io on x.Office = io.JRCIOfficeCode 
+
+WHERE
+	x.[ItemID] = @ItemID
+GO
+
+
+
+/* Following procedure is for Get the Dispatch Module */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetModuleDispatchs]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetModuleDispatchs]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetModuleDispatchs]
+
+	@ModuleId int,
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	x.[DispatchCode],
+	x.[DispatchName],
+	x.[Office],
+	x.[OfficeOverride],
+	x.[ManagerOverride], 
+	io.IOName, 
+	x.[CommRate],
+	x.[DefDisp],
+	x.[DispPassw],
+	x.[Status],
+	x.[OffLogNo],
+	x.[DOffLogNo],
+	x.[AllowXM],
+	x.[LogonLink],
+	x.[LogDate],
+	x.[LogTime],
+	x.[ClearCode],
+	x.[WhatProcess],
+	x.[XMProc],
+
+	x.[ViewOrder],
+
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+    x.[UpdatedDate] ,
+	x.[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}ARD_DispatchMasterfile AS x
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS io on x.Office = io.JRCIOfficeCode 
+
+WHERE x.[ModuleId] = @ModuleId
+ORDER BY [DispatchName], [Office], x.[ViewOrder], x.[CreatedDate] desc
+GO
+
+
+
+/* Following procedure is for Get the Dispatch Portal */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetPortalDispatchs]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetPortalDispatchs]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetPortalDispatchs]
+
+	@PortalId int,
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	x.[DispatchCode],
+	x.[DispatchName],
+	x.[Office],
+	x.[OfficeOverride],
+	x.[ManagerOverride], 
+	io.IOName, 
+	x.[CommRate],
+	x.[DefDisp],
+	x.[DispPassw],
+	x.[Status],
+	x.[OffLogNo],
+	x.[DOffLogNo],
+	x.[AllowXM],
+	x.[LogonLink],
+	x.[LogDate],
+	x.[LogTime],
+	x.[ClearCode],
+	x.[WhatProcess],
+	x.[XMProc],
+
+	x.[ViewOrder],
+
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate] ,
+	x.[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}ARD_DispatchMasterfile AS x
+	INNER JOIN [{objectQualifier}Modules] As m on x.ModuleId = m.ModuleId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS io on x.Office = io.JRCIOfficeCode 
+
+WHERE m.PortalId = @PortalId
+ORDER BY [DispatchName], x.[Office], x.[ModuleId], x.ViewOrder, x.CreatedDate desc
+GO
+
+
+
+/* Following procedure is for Get the All Dispatch Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetAllDispatchs]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetAllDispatchs]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetAllDispatchs]
+
+@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	x.[DispatchCode],
+	x.[DispatchName],
+	x.[Office],
+	x.[OfficeOverride],
+	x.[ManagerOverride], 
+	io.IOName, 
+	x.[CommRate],
+	x.[DefDisp],
+	x.[DispPassw],
+	x.[Status],
+	x.[OffLogNo],
+	x.[DOffLogNo],
+	x.[AllowXM],
+	x.[LogonLink],
+	x.[LogDate],
+	x.[LogTime],
+	x.[ClearCode],
+	x.[WhatProcess],
+	x.[XMProc],
+
+	x.[ViewOrder],
+
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate] ,
+	x.[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}ARD_DispatchMasterfile AS x
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS io on x.Office = io.JRCIOfficeCode 
+
+ORDER BY [DispatchName], x.[Office], x.[ModuleId], x.ViewOrder, x.CreatedDate desc
+
+GO
+
+
+
+/* Following procedure is for Sort the Dispatch Detail */
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_SortDispatchs]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_SortDispatchs]
+GO
+
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}bhattji_SortDispatchs]
+	@ModuleId	int
+
+AS
+
+DECLARE	@counter as int
+DECLARE	@PK as int
+SET		@counter = 10
+
+--Make Temp table to hold Primary Keys FROM the table you want to renumber
+SELECT	ItemId
+INTO		[#TempTable]
+FROM		[{objectQualifier}ARD_DispatchMasterfile] as x
+WHERE	x.ModuleId = @ModuleId
+ORDER BY	x.ViewOrder asc,  x.CreatedDate desc
+
+
+--Loop through each temptable record
+WHILE (SELECT COUNT(ItemId) FROM #TempTable) > 0
+BEGIN
+	SET		rowcount 1
+
+	SELECT	@PK = ItemId
+	FROM #TempTable
+
+	SET rowcount 0
+
+
+	--UPDATE the view order for matching record in [{objectQualifier}ARD_DispatchMasterfile]
+	UPDATE [{objectQualifier}ARD_DispatchMasterfile]
+	SET ViewOrder = @counter
+	WHERE [{objectQualifier}ARD_DispatchMasterfile].ItemId = @PK
+	AND [{objectQualifier}ARD_DispatchMasterfile].ModuleId = @ModuleId
+
+	SET @counter = @counter + 10
+
+	SET rowcount 1
+
+	DELETE FROM #TempTable
+	SET rowcount 0
+END
+
+SET rowcount 0
+
+DROP TABLE #TempTable
+
+SELECT * FROM [{objectQualifier}ARD_DispatchMasterfile] ORDER BY ViewOrder
+GO
+
+
+
+
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              DispatchIo               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create/drop tables and stored procs   */
+
+/* Insert here the code to drop stored procs if exists  */
+
+
+/* Insert here the code to drop tables  */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DispatcherIO]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}bhattji_DispatcherIO]
+GO
+
+
+/* Insert here the code to create tables and stored procs   */
+
+/* Insert here the code to alter tables if exists else create new tables */
+
+
+
+CREATE TABLE {databaseOwner}[{objectQualifier}bhattji_DispatcherIO] (
+	[DispatcherId] [int] NOT NULL ,
+	[InterOfficeId] [int] NOT NULL,
+
+	PRIMARY KEY CLUSTERED (
+		[DispatcherId] ASC,
+		[InterOfficeId] ASC
+	) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+
+
+/* Insert here the code to create stored procs   */
+
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+/* Following procedure is for Add the DispatchIO */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddDispatcherIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddDispatcherIO]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddDispatcherIO]
+	@DispatcherId int ,
+	@InterOfficeId int
+
+AS
+
+Declare @TC as int
+SET @TC = (Select Count(*) From [{objectQualifier}bhattji_DispatcherIO] Where [DispatcherId] = @DispatcherId AND [InterOfficeId] = @InterOfficeId)
+
+If (@TC = 0)
+INSERT INTO [{objectQualifier}bhattji_DispatcherIO] (
+	[DispatcherId] ,
+	[InterOfficeId]
+
+) VALUES (
+	@DispatcherId ,
+	@InterOfficeId
+
+)
+
+GO
+
+
+
+/* Following procedure is for Delete the DispatchIO */
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteDispatcherIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteDispatcherIO]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_DeleteDispatcherIO]
+	@DispatcherId int ,
+	@InterOfficeId int
+
+AS
+
+DELETE
+FROM [{objectQualifier}bhattji_DispatcherIO]
+WHERE [DispatcherId] = @DispatcherId AND [InterOfficeId] = @InterOfficeId
+GO
+
+
+/* Following procedure is for Get the Dispatch By IO(InterOffice) */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetDispatchersByIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetDispatchersByIO]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetDispatchersByIO]
+	@InterOfficeId int
+
+AS
+
+SELECT
+	[DispatcherId] ,
+	dm.DispatchName
+
+
+FROM [{objectQualifier}bhattji_DispatcherIO] AS x
+	JOIN [{objectQualifier}ARD_DispatchMasterfile] AS dm ON x.DispatcherId = dm.ItemId
+
+WHERE
+	x.[InterOfficeId] = @InterOfficeId
+GO
+
+
+
+
+/* Following procedure is for Get the Dispatch By JRCIOfficeCode */
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetDispatchersByJRCIOfficeCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetDispatchersByJRCIOfficeCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetDispatchersByJRCIOfficeCode]
+	@JRCIOfficeCode nvarchar(7) 
+
+AS
+
+SELECT DISTINCT  
+	dm.DispatchName ,
+	dm.DispatchCode
+
+
+FROM [{objectQualifier}bhattji_DispatcherIO] AS x
+	JOIN [{objectQualifier}ARD_DispatchMasterfile] AS dm ON x.DispatcherId = dm.ItemId
+	JOIN [{objectQualifier}ARD_InterOffice] AS io ON x.InterOfficeId = io.ItemId
+
+WHERE
+	io.[JRCIOfficeCode] LIKE @JRCIOfficeCode + '%'
+
+ORDER BY 
+	dm.DispatchName ,
+	dm.DispatchCode
+		
+GO
+
+
+
+/* Following procedure is for Get the Dispatch By 9 digitJRCIOfficeCode */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetDispatchersByJRCIOfficeCode9]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetDispatchersByJRCIOfficeCode9]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetDispatchersByJRCIOfficeCode9]
+	@JRCIOfficeCode nvarchar(9) 
+
+AS
+
+SELECT DISTINCT  
+	dm.DispatchName ,
+	dm.DispatchCode
+
+
+FROM [{objectQualifier}bhattji_DispatcherIO] AS x
+	JOIN [{objectQualifier}ARD_DispatchMasterfile] AS dm ON x.DispatcherId = dm.ItemId
+	JOIN [{objectQualifier}ARD_InterOffice] AS io ON x.InterOfficeId = io.ItemId
+
+WHERE
+	io.[JRCIOfficeCode] = @JRCIOfficeCode 
+
+ORDER BY 
+	dm.DispatchName ,
+	dm.DispatchCode
+		
+GO
+
+
+
+
+
+/* Following procedure is for Get the IO By Dispatch */
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetIOsByDispatcher]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetIOsByDispatcher]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetIOsByDispatcher]
+	@DispatcherId int
+
+AS
+
+SELECT
+	x.[InterOfficeId] ,
+	io.IOName
+
+FROM [{objectQualifier}bhattji_DispatcherIO] AS x
+	JOIN [{objectQualifier}ARD_InterOffice] AS io ON x.InterOfficeId = io.ItemId
+
+WHERE x.[DispatcherId] = @DispatcherId
+
+ORDER BY io.IOName
+
+GO
+
+
+
+/* Following procedure is for Get the All Dispatch */
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetDispatchersAll]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetDispatchersAll]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetDispatchersAll]
+
+AS
+
+SELECT
+	'DispatcherId' = [{objectQualifier}ARD_DispatchMasterfile].ItemId,
+	[{objectQualifier}ARD_DispatchMasterfile].DispatchName
+
+FROM [{objectQualifier}ARD_DispatchMasterfile]
+
+GO
+
+
+
+/* Following procedure is for Get the All IO (InterOffice) */
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetIOsAll]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetIOsAll]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetIOsAll]
+
+AS
+
+SELECT
+	'InterOfficeId' = [{objectQualifier}ARD_InterOffice].ItemId,
+	[{objectQualifier}ARD_InterOffice].IOName
+
+FROM [{objectQualifier}ARD_InterOffice]
+
+ORDER BY [{objectQualifier}ARD_InterOffice].IOName
+
+GO
+
+
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO
+
+

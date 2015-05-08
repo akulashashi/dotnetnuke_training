@@ -1,0 +1,102 @@
+﻿if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[spUpdateMarks]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure [dbo].[spUpdateMarks]
+GO
+
+/* Create Stored Procedures */
+CREATE PROC [dbo].[spUpdateMarks]
+    @inputJSON VARCHAR(MAX)  -- '[{"ID":"1","C":"60","CPP":"60","CS":"60"}]'
+AS
+BEGIN
+    DECLARE @UpdateSQL AS VARCHAR(MAX)
+    DECLARE @Root_ID AS INT
+    DECLARE @parent_ID AS INT
+    DECLARE @StudentID AS INT
+    DECLARE @C AS INT
+    DECLARE @CPP AS INT
+    DECLARE @CS AS INT
+
+    -- Temp table to hold the parsed data
+    DECLARE @TempTableVariable TABLE(
+        element_id INT,
+        sequenceNo INT,
+        parent_ID INT,
+        [Object_ID] INT,
+        [NAME] NVARCHAR(2000),
+        StringValue NVARCHAR(MAX),
+        ValueType NVARCHAR(10)
+    )
+    -- Parse JSON string into a temp table
+    INSERT INTO @TempTableVariable
+    SELECT * FROM parseJSON(@inputJSON)
+    
+    -- Get the Root node ID
+    SELECT @Root_ID = MAX([Object_ID]) FROM @TempTableVariable
+    
+    -- If there is only one record to update
+    IF @Root_ID = 1
+    BEGIN
+        SELECT @StudentID = StringValue FROM @TempTableVariable
+        WHERE NAME = 'ID' AND parent_ID = @Root_ID
+        
+        SELECT @C = StringValue FROM @TempTableVariable
+        WHERE NAME = 'C' AND parent_ID = @Root_ID
+
+        SELECT @CPP = StringValue FROM @TempTableVariable
+        WHERE NAME = 'CPP' AND parent_ID = @Root_ID
+
+        SELECT @CS = StringValue FROM @TempTableVariable
+        WHERE NAME = 'CS' AND parent_ID = @Root_ID
+        
+        SET @UpdateSQL = ' UPDATE [tblStudent] ' +
+                         ' SET C = ' + CAST(@C AS VARCHAR) + ',' +
+                         ' CPP = ' + CAST(@CPP AS VARCHAR) + ',' +
+                         ' CS = ' + CAST(@CS AS VARCHAR) +
+                         ' WHERE StudentID = ' + CAST(@StudentID AS VARCHAR)
+        EXECUTE(@UpdateSQL)
+        --PRINT @UpdateSQL
+    END
+    ELSE
+    BEGIN
+        DECLARE curMarks CURSOR -- Declare cursor
+        LOCAL SCROLL STATIC
+        FOR
+        SELECT [Object_ID] FROM @TempTableVariable
+        WHERE [parent_ID] = @Root_ID
+        
+        OPEN curMarks -- open the cursor
+        
+        FETCH NEXT FROM curMarks
+        INTO @parent_ID
+        
+        WHILE @@FETCH_STATUS = 0
+        BEGIN
+            SELECT @StudentID = StringValue FROM @TempTableVariable
+            WHERE NAME = 'ID' AND parent_ID = @parent_ID
+            
+            SELECT @C = StringValue FROM @TempTableVariable
+            WHERE NAME = 'C' AND parent_ID = @parent_ID
+
+            SELECT @CPP = StringValue FROM @TempTableVariable
+            WHERE NAME = 'CPP' AND parent_ID = @parent_ID
+
+            SELECT @CS = StringValue FROM @TempTableVariable
+            WHERE NAME = 'CS' AND parent_ID = @parent_ID
+            
+            -- Create the UPDATE query dynamically and then execute
+            SET @UpdateSQL = ' UPDATE [tblStudent] ' +
+                             ' SET C = ' + CAST(@C AS VARCHAR) + ',' +
+                             ' CPP = ' + CAST(@CPP AS VARCHAR) + ',' +
+                             ' CS = ' + CAST(@CS AS VARCHAR) +
+                             ' WHERE StudentID = ' + CAST(@StudentID AS VARCHAR)
+            EXECUTE(@UpdateSQL)
+            --PRINT @UpdateSQL
+            
+            FETCH NEXT FROM curMarks INTO @parent_ID
+        END
+    
+        CLOSE curMarks -- close the cursor
+        DEALLOCATE curMarks -- Deallocate the cursor
+    END
+END
+
+

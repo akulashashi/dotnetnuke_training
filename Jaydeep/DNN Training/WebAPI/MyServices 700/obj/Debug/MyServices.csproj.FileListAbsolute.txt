@@ -1,0 +1,4 @@
+E:\DNN\DNN700\bin\MyServices.dll
+E:\DNN\DNN700\bin\MyServices.pdb
+E:\DNN\DNN700\DesktopModules\MyServices\obj\Debug\MyServices.dll
+E:\DNN\DNN700\DesktopModules\MyServices\obj\Debug\MyServices.pdb

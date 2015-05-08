@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<dotnetnuke version="3.0" type="Module">
+    <folders>
+        <folder>
+            <name>bhattji.JsonUpdates</name>
+            <friendlyname>bhattji.JsonUpdates</friendlyname>
+            <foldername>bhattji.JsonUpdates</foldername>
+            <modulename>bhattji.JsonUpdates</modulename>
+            <description>Description</description>
+            <version>01.00.00</version>
+            <businesscontrollerclass>bhattji.Modules.JsonUpdates.JsonUpdatesController, bhattji.Modules.JsonUpdates</businesscontrollerclass>
+            <resourcefile>source.bhattji</resourcefile>
+            <modules>
+                <module>
+                    <friendlyname>bhattji.JsonUpdates</friendlyname>
+                    <cachetime>0</cachetime>
+                    <controls>
+                        <control>
+                            <title>JsonUpdates</title>
+                            <src>Views.ascx</src>
+                            <type>View</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Views</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>Edit</key>
+                            <title>Edit JsonUpdates</title>
+                            <src>Edits.ascx</src>
+                            <type>Edit</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Edits</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>Settings</key>
+                            <title>JsonUpdates Settings</title>
+                            <src>Settings.ascx</src>
+                            <type>Edit</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Settings</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>Reports</key>
+                            <title>JsonUpdate Reports</title>
+                            <src>Reports.ascx</src>
+                            <type>View</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Reports</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>ItemDetails</key>
+                            <title>JsonUpdate Details</title>
+                            <src>Details.ascx</src>
+                            <type>View</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Details</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>ItemRatings</key>
+                            <title>JsonUpdate Ratings</title>
+                            <src>Ratings.ascx</src>
+                            <type>View</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Ratings</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                    </controls>
+                </module>
+            </modules>
+            <files>
+                <file>
+                    <name>bhattji.Modules.JsonUpdates.dll</name>
+                </file>
+                <file>
+                    <name>01.00.00.SqlDataProvider</name>
+                </file>
+                <file>
+                    <name>Uninstall.SqlDataProvider</name>
+                </file>
+            </files>
+        </folder>
+    </folders>
+</dotnetnuke>

@@ -1,0 +1,3 @@
+﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="SectionHeadControl.ascx.vb" Inherits="bhattji.Modules.LoadSheets.SectionHeadControl" %>
+<div><asp:imagebutton id="imgIcon" runat="server" enableviewstate="False" tabIndex="-1"/> <asp:label id="lblTitle" runat="server" enableviewstate="False"/></div>
+<asp:panel id="pnlRule" runat="server" enableviewstate="False"><hr noshade size="1" /></asp:panel>

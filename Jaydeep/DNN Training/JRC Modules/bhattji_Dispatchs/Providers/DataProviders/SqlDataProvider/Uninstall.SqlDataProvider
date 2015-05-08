@@ -1,0 +1,178 @@
+﻿/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              Dispatchs               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create/drop tables and stored procs   */
+
+/* Insert here the code to drop stored procs if exists  */
+
+
+/* Following procedure is for Add the Dispatch Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddDispatch]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddDispatch]
+GO
+
+
+/* Following procedure is for Update the Dispatch Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateDispatch]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateDispatch]
+GO
+
+/* Following procedure is for Fix the Dispatch Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_FixDispatchs]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_FixDispatchs]
+GO
+
+/* Following procedure is for Delete the Dispatch Details */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteDispatch]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteDispatch]
+GO
+
+
+/* Following procedure is for Get the Dispatcher Number or ID */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetDispatcherId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetDispatcherId]
+GO
+
+
+/* Following procedure is for Get the Dispatch Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetDispatch]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetDispatch]
+GO
+
+/* Following procedure is for Get the Dispatch Module */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetModuleDispatchs]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetModuleDispatchs]
+GO
+
+/* Following procedure is for Get the Dispatch Portal */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetPortalDispatchs]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetPortalDispatchs]
+GO
+
+/* Following procedure is for Get the All Dispatch Details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetAllDispatchs]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetAllDispatchs]
+GO
+
+/* Following procedure is for Sort the Dispatch Detail */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_SortDispatchs]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_SortDispatchs]
+GO
+
+/* Insert here the code to drop tables  */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}ARD_DispatchMasterfile]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}ARD_DispatchMasterfile]
+GO
+
+
+
+/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              DispatchIo               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create/drop tables and stored procs   */
+
+/* Insert here the code to drop stored procs if exists  */
+
+
+/* Insert here the code to drop tables  */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DispatcherIO]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}bhattji_DispatcherIO]
+GO
+
+
+/* Insert here the code to create tables and stored procs   */
+
+/* Insert here the code to alter tables if exists else create new tables */
+
+
+/* Insert here the code to create stored procs   */
+
+/* Following procedure is for Add the DispatchIO */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddDispatcherIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddDispatcherIO]
+GO
+
+
+/* Following procedure is for Delete the DispatchIO */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteDispatcherIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteDispatcherIO]
+GO
+
+/* Following procedure is for Get the Dispatch By IO(InterOffice) */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetDispatchersByIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetDispatchersByIO]
+GO
+
+
+/* Following procedure is for Get the Dispatch By JRCIOfficeCode */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetDispatchersByJRCIOfficeCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetDispatchersByJRCIOfficeCode]
+GO
+
+/* Following procedure is for Get the IO By Dispatch */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetIOsByDispatcher]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetIOsByDispatcher]
+GO
+
+
+/* Following procedure is for Get the All Dispatch */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetDispatchersAll]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetDispatchersAll]
+GO
+
+/* Following procedure is for Get the All IO (InterOffice) */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetIOsAll]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetIOsAll]
+GO

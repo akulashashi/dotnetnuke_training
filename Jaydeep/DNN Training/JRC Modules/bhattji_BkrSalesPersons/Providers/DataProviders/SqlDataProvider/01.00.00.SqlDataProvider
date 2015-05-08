@@ -1,0 +1,1505 @@
+﻿/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              SalesPersons               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create tables and stored procs   */
+
+/* Insert here the code to create tables */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+begin
+ALTER TABLE {databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile]  ALTER COLUMN [LastTrailerUsed] [nvarchar] (40) NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile]  ADD [ItemID] [int] IDENTITY (1, 1) NOT NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile]  ADD [ModuleId] [int] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile]  ADD [ViewOrder] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile]  ADD [UpdatedByUserId] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile]  ADD [UpdatedDate] [datetime] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile]  ADD [CreatedByUserId] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile]  ADD [CreatedDate] [datetime] NULL
+
+end
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+begin
+
+UPDATE {databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile]  SET [ModuleId] = 371
+
+UPDATE {databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile]  SET [UpdatedByUserId] = 1
+UPDATE {databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile]  SET [UpdatedDate] = GetDate()
+UPDATE {databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile]  SET [CreatedByUserId] = 1
+UPDATE {databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile]  SET [CreatedDate] = GetDate()
+
+UPDATE {databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile]  SET [DriverName] = 'To be assigned' Where [DriverCode] = 'ZXZX' 
+
+end
+
+else
+
+CREATE TABLE {databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile] (
+	[ItemID] [int] IDENTITY (1, 1) NOT NULL ,
+	[ModuleID] [int] NULL ,
+
+	[DriverCode] [nvarchar] (4) NULL ,
+	[DriverName] [nvarchar] (30) NULL ,
+	[DLastName] [nvarchar] (20) NULL ,
+	[DFirstName] [nvarchar] (20) NULL ,
+	[AddressLine1] [nvarchar] (30) NULL ,
+	[AddressLine2] [nvarchar] (30) NULL ,
+	[AddressLine3] [nvarchar] (30) NULL ,
+	[City] [nvarchar] (20) NULL ,
+	[State] [nvarchar] (2) NULL ,
+	[ZipCode] [nvarchar] (10) NULL ,
+	[CountryCode] [nvarchar] (3) NULL ,
+	[PhoneNo] [nvarchar] (17) NULL ,
+	[Ext] [nvarchar] (5) NULL ,
+	[EmailAddress] [nvarchar] (40) NULL ,
+	[CommRate] [float] NULL ,
+	[AdminExempt] [nvarchar] (1) NULL ,
+	[Status] [nvarchar] (1) NULL ,
+	[DriverNotes] [nvarchar] (150) NULL ,
+	[LoadType] [nvarchar] (2) NULL ,
+	[LastLoad] [datetime] NULL ,
+	[SafetyAuth] [nvarchar] (6) NULL ,
+	[CellPhone] [nvarchar] (17) NULL ,
+	[Pager] [nvarchar] (17) NULL ,
+	[AccountNo] [nvarchar] (7) NULL ,
+	[OfficeOwner] [nvarchar] (9) NULL ,
+	[FaxNo] [nvarchar] (17) NULL ,
+	[JRCTrailer] [nvarchar] (12) NULL ,
+	[LastLoadID] [nvarchar] (10) NULL ,
+	[LastPU] [nvarchar] (35) NULL ,
+	[LastDP] [nvarchar] (35) NULL ,
+	[SafetyNotes] [nvarchar] (150) NULL ,
+	[LastTrailerUsed] [nvarchar] (40) NULL ,
+	[LastLoadDeliv] [datetime] NULL ,
+	[DrugDate] [datetime] NULL ,
+	[LicenceDate] [datetime] NULL ,
+	[TruckInsDate] [datetime] NULL ,
+	[TrailerInsDate] [datetime] NULL ,
+	[RegRenewDate] [datetime] NULL ,
+	[NewLeaseDate] [datetime] NULL ,
+	[MedicalDate] [datetime] NULL ,
+	[LogBookOS] [nvarchar] (1) NULL ,
+	[Calc87] [nvarchar] (1) NULL ,
+	[Calc85] [nvarchar] (1) NULL ,
+	[BrokerCodeD] [nvarchar] (7) NULL ,
+	
+	[ViewOrder] [int] NULL ,
+
+	[UpdatedByUserId] [int]  NULL ,
+	[UpdatedDate] [datetime] NULL ,
+	[CreatedByUserId] [int]  NULL ,
+	[CreatedDate] [datetime] NULL
+
+) ON [PRIMARY]
+GO
+
+/* Insert here the code to create stored procs   */
+
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+/* Following procedure is for Add the Broker SalesPerson Details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrAddSalesPerson]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrAddSalesPerson]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrAddSalesPerson]
+
+	@ModuleID int,
+
+	@DriverCode nvarchar(4),
+	@DriverName nvarchar(30),
+	@DLastName nvarchar(20),
+	@DFirstName nvarchar(20),
+	@AddressLine1 nvarchar(30),
+	@AddressLine2 nvarchar(30),
+	@AddressLine3 nvarchar(30),
+	@City nvarchar(20),
+	@State nvarchar(2),
+	@ZipCode nvarchar(10),
+	@CountryCode nvarchar(3),
+	@PhoneNo nvarchar(17),
+	@Ext nvarchar(5),
+	@EmailAddress nvarchar(40),
+	@CommRate float,
+	@AdminExempt nvarchar(1),
+	@Status nvarchar(1),
+	@DriverNotes nvarchar(150),
+	@LoadType nvarchar(2),
+	@LastLoad datetime,
+	@SafetyAuth nvarchar(6),
+	@CellPhone nvarchar(17),
+	@Pager nvarchar(17),
+	@AccountNo nvarchar(7),
+	@OfficeOwner nvarchar(9),
+	@FaxNo nvarchar(17),
+	@JRCTrailer nvarchar(12),
+	@LastLoadID nvarchar(10),
+	@LastPU nvarchar(35),
+	@LastDP nvarchar(35),
+	@SafetyNotes nvarchar(150),
+	@LastTrailerUsed nvarchar(40),
+	@LastLoadDeliv datetime,
+	@DrugDate datetime,
+	@LicenceDate datetime,
+	@TruckInsDate datetime,
+	@TrailerInsDate datetime,
+	@RegRenewDate datetime,
+	@NewLeaseDate datetime,
+	@MedicalDate datetime,
+	@LogBookOS nvarchar(1),
+	@Calc87 nvarchar(1),
+	@Calc85 nvarchar(1),
+	@BrokerCodeD nvarchar(7),
+	
+	@ViewOrder int,
+	@CreatedByUserId int
+AS
+
+INSERT INTO {objectQualifier}BKR_SalesPersonMasterfile (
+	[ModuleID],
+
+	[DriverCode],
+	[DriverName],
+	[DLastName],
+	[DFirstName],
+	[AddressLine1],
+	[AddressLine2],
+	[AddressLine3],
+	[City],
+	[State],
+	[ZipCode],
+	[CountryCode],
+	[PhoneNo],
+	[Ext],
+	[EmailAddress],
+	[CommRate],
+	[AdminExempt],
+	[Status],
+	[DriverNotes],
+	[LoadType],
+	[LastLoad],
+	[SafetyAuth],
+	[CellPhone],
+	[Pager],
+	[AccountNo],
+	[OfficeOwner],
+	[FaxNo],
+	[JRCTrailer],
+	[LastLoadID],
+	[LastPU],
+	[LastDP],
+	[SafetyNotes],
+	[LastTrailerUsed],
+	[LastLoadDeliv],
+	[DrugDate],
+	[LicenceDate],
+	[TruckInsDate],
+	[TrailerInsDate],
+	[RegRenewDate],
+	[NewLeaseDate],
+	[MedicalDate],
+	[LogBookOS],
+	[Calc87],
+	[Calc85],
+	[BrokerCodeD],
+	
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	[UpdatedDate],
+	[CreatedByUserId],
+	[CreatedDate]
+
+) VALUES (
+
+	@ModuleID,
+
+	@DriverCode,
+	@DriverName,
+	@DLastName,
+	@DFirstName,
+	@AddressLine1,
+	@AddressLine2,
+	@AddressLine3,
+	@City,
+	@State,
+	@ZipCode,
+	@CountryCode,
+	@PhoneNo,
+	@Ext,
+	@EmailAddress,
+	@CommRate,
+	@AdminExempt,
+	@Status,
+	@DriverNotes,
+	@LoadType,
+	@LastLoad,
+	@SafetyAuth,
+	@CellPhone,
+	@Pager,
+	@AccountNo,
+	@OfficeOwner,
+	@FaxNo,
+	@JRCTrailer,
+	@LastLoadID,
+	@LastPU,
+	@LastDP,
+	@SafetyNotes,
+	@LastTrailerUsed,
+	@LastLoadDeliv,
+	@DrugDate,
+	@LicenceDate,
+	@TruckInsDate,
+	@TrailerInsDate,
+	@RegRenewDate,
+	@NewLeaseDate,
+	@MedicalDate,
+	@LogBookOS,
+	@Calc87,
+	@Calc85,
+	@BrokerCodeD,
+	
+	@ViewOrder,
+
+	@CreatedByUserId ,
+	GetDate(),
+	@CreatedByUserId ,
+	GetDate()
+)
+
+
+SELECT SCOPE_IDENTITY()
+GO
+
+
+
+
+/* Following procedure is for Update the Broker SalesPerson Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrUpdateSalesPerson]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrUpdateSalesPerson]
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrUpdateSalesPerson]
+
+	@ItemID int,
+
+	@DriverCode nvarchar(4),
+	@DriverName nvarchar(30),
+	@DLastName nvarchar(20),
+	@DFirstName nvarchar(20),
+	@AddressLine1 nvarchar(30),
+	@AddressLine2 nvarchar(30),
+	@AddressLine3 nvarchar(30),
+	@City nvarchar(20),
+	@State nvarchar(2),
+	@ZipCode nvarchar(10),
+	@CountryCode nvarchar(3),
+	@PhoneNo nvarchar(17),
+	@Ext nvarchar(5),
+	@EmailAddress nvarchar(40),
+	@CommRate float,
+	@AdminExempt nvarchar(1),
+	@Status nvarchar(1),
+	@DriverNotes nvarchar(150),
+	@LoadType nvarchar(2),
+	@LastLoad datetime,
+	@SafetyAuth nvarchar(6),
+	@CellPhone nvarchar(17),
+	@Pager nvarchar(17),
+	@AccountNo nvarchar(7),
+	@OfficeOwner nvarchar(9),
+	@FaxNo nvarchar(17),
+	@JRCTrailer nvarchar(12),
+	@LastLoadID nvarchar(10),
+	@LastPU nvarchar(35),
+	@LastDP nvarchar(35),
+	@SafetyNotes nvarchar(150),
+	@LastTrailerUsed nvarchar(40),
+	@LastLoadDeliv datetime,
+	@DrugDate datetime,
+	@LicenceDate datetime,
+	@TruckInsDate datetime,
+	@TrailerInsDate datetime,
+	@RegRenewDate datetime,
+	@NewLeaseDate datetime,
+	@MedicalDate datetime,
+	@LogBookOS nvarchar(1),
+	@Calc87 nvarchar(1),
+	@Calc85 nvarchar(1),
+	@BrokerCodeD nvarchar(7),
+	
+	@ViewOrder int,
+	@UpdatedByUserId int
+AS
+
+UPDATE {objectQualifier}BKR_SalesPersonMasterfile
+
+SET
+	[DriverCode] = @DriverCode,
+	[DriverName] = @DriverName,
+	[DLastName] = @DLastName,
+	[DFirstName] = @DFirstName,
+	[AddressLine1] = @AddressLine1,
+	[AddressLine2] = @AddressLine2,
+	[AddressLine3] = @AddressLine3,
+	[City] = @City,
+	[State] = @State,
+	[ZipCode] = @ZipCode,
+	[CountryCode] = @CountryCode,
+	[PhoneNo] = @PhoneNo,
+	[Ext] = @Ext,
+	[EmailAddress] = @EmailAddress,
+	[CommRate] = @CommRate,
+	[AdminExempt] = @AdminExempt,
+	[Status] = @Status,
+	[DriverNotes] = @DriverNotes,
+	[LoadType] = @LoadType,
+	[LastLoad] = @LastLoad,
+	[SafetyAuth] = @SafetyAuth,
+	[CellPhone] = @CellPhone,
+	[Pager] = @Pager,
+	[AccountNo] = @AccountNo,
+	[OfficeOwner] = @OfficeOwner,
+	[FaxNo] = @FaxNo,
+	[JRCTrailer] = @JRCTrailer,
+	[LastLoadID] = @LastLoadID,
+	[LastPU] = @LastPU,
+	[LastDP] = @LastDP,
+	[SafetyNotes] = @SafetyNotes,
+	[LastTrailerUsed] = @LastTrailerUsed,
+	[LastLoadDeliv] = @LastLoadDeliv,
+	[DrugDate] = @DrugDate,
+	[LicenceDate] = @LicenceDate,
+	[TruckInsDate] = @TruckInsDate,
+	[TrailerInsDate] = @TrailerInsDate,
+	[RegRenewDate] = @RegRenewDate,
+	[NewLeaseDate] = @NewLeaseDate,
+	[MedicalDate] = @MedicalDate,
+	[LogBookOS] = @LogBookOS,
+	[Calc87] = @Calc87,
+	[Calc85] = @Calc85,
+	[BrokerCodeD] = @BrokerCodeD,
+	
+	[ViewOrder] = @ViewOrder,
+
+	[UpdatedByUserId] = @UpdatedByUserId ,
+	[UpdatedDate] = GetDate()
+
+WHERE
+	[ItemID] = @ItemID
+GO
+
+
+
+/* Following procedure will clear LastLoad details details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrClearLastLoadData]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrClearLastLoadData]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrClearLastLoadData]
+
+	@LastLoadID nvarchar(10)
+	
+AS
+
+UPDATE {objectQualifier}BKR_SalesPersonMasterfile
+
+SET
+	[LastLoad] = null,
+	[LastLoadID] = null,
+	[LastPU] = null,
+	[LastDP] =null,
+	[LastTrailerUsed] = null,
+	[LastLoadDeliv] =null
+
+WHERE
+	[LastLoadID] = @LastLoadID
+GO
+
+
+/* Following procedure will get driver list for NULL LastLoadId  */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetDriversForNullLoadId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetDriversForNullLoadId]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrGetDriversForNullLoadId]
+	
+AS
+
+SELECT 
+	[DriverCode] 
+	
+FROM 
+	{objectQualifier}BKR_SalesPersonMasterfile
+
+WHERE
+	[LastLoadID] IS null 
+	
+GO
+
+
+/* Following procedure will get driver list for LastLoadId  */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetDriversForLastLoadId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetDriversForLastLoadId]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrGetDriversForLastLoadId]
+
+	@LastLoadID nvarchar(10)
+	
+AS
+
+SELECT 
+	[DriverCode] 
+	
+FROM 
+	{objectQualifier}BKR_SalesPersonMasterfile
+
+WHERE
+	[LastLoadID] = @LastLoadID
+GO
+
+
+
+
+
+/* Following procedure will refresh LastLoad details details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetLastLoadData]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetLastLoadData]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrGetLastLoadData]
+
+	@DriverCode nvarchar(4)
+	
+AS
+
+SELECT TOP 1 
+	'LastLoad' = x.[LoadDate],
+	'LastLoadID' = x.[LoadId],
+	'LastPU' = x.[PUCityST],
+	'LastDP' = x.[DPCityST],
+	'LastTrailerUsed' = x.[TrailerNumber]+
+						(CASE WHEN (x.[TrailerType] IS Null) THEN '' ELSE ', Type: ' + x.[TrailerType] END)+
+						(CASE WHEN (x.[TrailerDue] IS Null) THEN '' ELSE ', Due: ' + REPLACE(CONVERT(nVarChar(10), x.[TrailerDue], 110),'-','/') END),
+	'LastLoadDeliv' = x.[DeliveryDate],
+	x.[LoadStatus]
+
+FROM {objectQualifier}tblOOLoadSheetHeader as x
+
+WHERE x.[BkrDriverNo] = @DriverCode
+	AND x.[LoadType] = 'BK' 
+
+ORDER BY x.[LoadDate] desc, x.[ItemId] desc
+
+GO
+
+
+
+
+/* Following procedure is for Fix the Broker SalesPerson Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrFixSalesPersons]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrFixSalesPersons]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrFixSalesPersons]
+
+	@ModuleID int,
+	@UpdatedByUserId int
+AS
+
+UPDATE {objectQualifier}BKR_SalesPersonMasterfile SET	[ModuleID] = @ModuleID
+UPDATE {objectQualifier}BKR_SalesPersonMasterfile SET	[UpdatedByUserId] = @UpdatedByUserId
+UPDATE {objectQualifier}BKR_SalesPersonMasterfile SET	[UpdatedDate] = GetDate()
+
+GO
+
+
+
+
+
+/* Following procedure is for Delete the Broker SalesPerson Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrDeleteSalesPerson]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrDeleteSalesPerson]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrDeleteSalesPerson]
+	@ItemId int
+
+AS
+
+DELETE
+FROM [{objectQualifier}BKR_SalesPersonMasterfile]
+WHERE ItemId = @ItemId
+GO
+
+/* Following procedure is for Add none Broker Driver if it "ZXZX" */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddNoBkrDriver]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddNoBkrDriver]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddNoBkrDriver]
+AS
+if (SELECT * FROM {databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile] WHERE DriverCode = 'ZXZX')
+UPDATE {objectQualifier}BKR_SalesPersonMasterfile
+
+SET
+	[DriverCode] = 'ZXZX',
+	[CommRate] = '0',
+	[AdminExempt] = 'N',
+	[Status] = 'N',
+	[DriverNotes]  = 'used as default for broker or I/o loads',
+	[LoadType] = 'OO',
+	[AccountNo]='0000000',
+	[OfficeOwner]='000000000',
+	[BrokerCodeD] = '0000000'
+	
+WHERE
+	[DriverCode] = 'ZXZX'
+
+else
+
+INSERT INTO {objectQualifier}BKR_SalesPersonMasterfile(
+	[DriverCode],
+	[CommRate],
+	[AdminExempt],
+	[Status],
+	[DriverNotes],
+	[LoadType],
+	[AccountNo],
+	[OfficeOwner],
+	[BrokerCodeD],
+	
+	)VALUES(
+	
+	'ZXZX',
+	'0',
+	'N',
+	'N',
+	'used as default for broker or I/o loads',
+	'OO',
+	'0000000',
+	'000000000',
+	'0000000'
+	)
+
+Go
+
+
+
+/* Following procedure is for Get the Broker SalesPerson Number or ID */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonId]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonId]
+	@DriverCode [nvarchar](4)
+
+As
+
+SELECT [ItemID]
+FROM [{objectQualifier}BKR_SalesPersonMasterfile]
+WHERE [DriverCode] = @DriverCode
+GO
+
+
+/* Following procedure is for Get the Broker and SalesPerson Number or ID for Unique*/
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonIdUnique]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonIdUnique]
+	@DriverCode [nvarchar](4) ,
+	@BrokerCodeD [nvarchar](7)
+
+As
+
+SELECT [ItemID]
+FROM [{objectQualifier}BKR_SalesPersonMasterfile]
+WHERE [DriverCode] = @DriverCode
+AND [BrokerCodeD] = @BrokerCodeD
+GO
+
+
+
+
+/* Following procedure is for Get the Broker SalesPerson Details */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPerson]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPerson]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPerson]
+
+	@ItemID int
+AS
+
+SELECT
+	x.[ItemID],
+	x.[ModuleID],
+
+	x.[DriverCode],
+	x.[DriverName],
+	x.[DLastName],
+	x.[DFirstName],
+	x.[AddressLine1],
+	x.[AddressLine2],
+	x.[AddressLine3],
+	x.[City],
+	x.[State],
+	x.[ZipCode],
+	x.[CountryCode],
+	x.[PhoneNo],
+	x.[Ext],
+	x.[EmailAddress],
+	x.[CommRate],
+	x.[AdminExempt],
+	x.[Status],
+	x.[DriverNotes],
+	x.[LoadType],
+	x.[LastLoad],
+	x.[SafetyAuth],
+	x.[CellPhone],
+	x.[Pager],
+	x.[AccountNo],
+	x.[OfficeOwner],
+	io.IOName,
+	x.[FaxNo],
+	x.[JRCTrailer],
+	x.[LastLoadID],
+	x.[LastPU],
+	x.[LastDP],
+	x.[SafetyNotes],
+	x.[LastTrailerUsed],
+	x.[LastLoadDeliv],
+	x.[DrugDate],
+	x.[LicenceDate],
+	x.[TruckInsDate],
+	x.[TrailerInsDate],
+	x.[RegRenewDate],
+	x.[NewLeaseDate],
+	x.[MedicalDate],
+	x.[LogBookOS],
+	x.[Calc87],
+	x.[Calc85],
+	x.[BrokerCodeD],
+	
+	x.[ViewOrder],
+
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate] ,
+	x.[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}BKR_SalesPersonMasterfile AS x
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS io on x.OfficeOwner = io.JRCIOfficeCode
+
+WHERE
+	x.[ItemID] = @ItemID
+GO
+
+
+
+/* Following procedure is for Get the Broker SalesPerson Details- DriverCode and DriverName */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrDrivers]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrDrivers]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrDrivers]
+
+	@JRCIOfficeCode nvarchar(9), 
+	@BrokerCode nvarchar(7) 
+	
+AS
+
+SELECT
+
+	[DriverCode],
+	[DriverName]
+
+FROM {objectQualifier}BKR_SalesPersonMasterfile 
+
+WHERE [OfficeOwner] = @JRCIOfficeCode 
+	AND [BrokerCodeD] = @BrokerCode
+	
+ORDER By [DriverName]
+GO
+
+
+
+/* Following procedure is for Get the Broker SalesPerson Details- DriverCode and DriverName */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrDriversActive]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrDriversActive]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrDriversActive]
+
+	@JRCIOfficeCode nvarchar(9), 
+	@BrokerCode nvarchar(7) 
+	
+AS
+
+SELECT
+
+	[DriverCode],
+	[DriverName]
+
+FROM {objectQualifier}BKR_SalesPersonMasterfile 
+
+WHERE [OfficeOwner] = @JRCIOfficeCode 
+	AND [BrokerCodeD] = @BrokerCode 
+	AND [Status]='N' 
+	
+ORDER By [DriverName]
+GO
+
+
+
+/* Following procedure is for Get the Broker SalesPerson Module */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetModuleSalesPersons]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetModuleSalesPersons]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrGetModuleSalesPersons]
+
+	@ModuleId int,
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	x.[DriverCode],
+	x.[DriverName],
+	x.[DLastName],
+	x.[DFirstName],
+	x.[AddressLine1],
+	x.[AddressLine2],
+	x.[AddressLine3],
+	x.[City],
+	x.[State],
+	x.[ZipCode],
+	x.[CountryCode],
+	x.[PhoneNo],
+	x.[Ext],
+	x.[EmailAddress],
+	x.[CommRate],
+	x.[AdminExempt],
+	x.[Status],
+	x.[DriverNotes],
+	x.[LoadType],
+	x.[LastLoad],
+	x.[SafetyAuth],
+	x.[CellPhone],
+	x.[Pager],
+	x.[AccountNo],
+	x.[OfficeOwner],
+	io.IOName,
+	x.[FaxNo],
+	x.[JRCTrailer],
+	x.[LastLoadID],
+	x.[LastPU],
+	x.[LastDP],
+	x.[SafetyNotes],
+	x.[LastTrailerUsed],
+	x.[LastLoadDeliv],
+	x.[DrugDate],
+	x.[LicenceDate],
+	x.[TruckInsDate],
+	x.[TrailerInsDate],
+	x.[RegRenewDate],
+	x.[NewLeaseDate],
+	x.[MedicalDate],
+	x.[LogBookOS],
+	x.[Calc87],
+	x.[Calc85],
+	x.[BrokerCodeD], 
+	bk.BrokerName, 
+	
+	x.[ViewOrder],
+
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate] ,
+	x.[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}BKR_SalesPersonMasterfile AS x
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS io on x.OfficeOwner = io.JRCIOfficeCode
+	LEFT OUTER JOIN [{objectQualifier}ARD_BrokerMaster] AS bk on x.BrokerCodeD = bk.BrokerCode 
+	
+WHERE x.[ModuleId] = @ModuleId
+ORDER BY x.[ViewOrder], x.[CreatedDate] desc
+GO
+
+
+
+/* Following procedure is for Get the Broker SalesPerson Portal */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetPortalSalesPersons]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetPortalSalesPersons]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrGetPortalSalesPersons]
+
+	@PortalId int,
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	x.[DriverCode],
+	x.[DriverName],
+	x.[DLastName],
+	x.[DFirstName],
+	x.[AddressLine1],
+	x.[AddressLine2],
+	x.[AddressLine3],
+	x.[City],
+	x.[State],
+	x.[ZipCode],
+	x.[CountryCode],
+	x.[PhoneNo],
+	x.[Ext],
+	x.[EmailAddress],
+	x.[CommRate],
+	x.[AdminExempt],
+	x.[Status],
+	x.[DriverNotes],
+	x.[LoadType],
+	x.[LastLoad],
+	x.[SafetyAuth],
+	x.[CellPhone],
+	x.[Pager],
+	x.[AccountNo],
+	x.[OfficeOwner],
+	io.IOName,
+	x.[FaxNo],
+	x.[JRCTrailer],
+	x.[LastLoadID],
+	x.[LastPU],
+	x.[LastDP],
+	x.[SafetyNotes],
+	x.[LastTrailerUsed],
+	x.[LastLoadDeliv],
+	x.[DrugDate],
+	x.[LicenceDate],
+	x.[TruckInsDate],
+	x.[TrailerInsDate],
+	x.[RegRenewDate],
+	x.[NewLeaseDate],
+	x.[MedicalDate],
+	x.[LogBookOS],
+	x.[Calc87],
+	x.[Calc85],
+	x.[BrokerCodeD],
+	bk.BrokerName, 
+	
+	x.[ViewOrder],
+
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate] ,
+	x.[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}BKR_SalesPersonMasterfile AS x
+	INNER JOIN [{objectQualifier}Modules] As m on x.ModuleId = m.ModuleId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS io on x.OfficeOwner = io.JRCIOfficeCode 
+	LEFT OUTER JOIN [{objectQualifier}ARD_BrokerMaster] AS bk on x.BrokerCodeD = bk.BrokerCode 
+	
+WHERE m.PortalId = @PortalId
+ORDER BY x.[ModuleId], x.ViewOrder, x.CreatedDate desc
+GO
+
+
+
+
+/* Following procedure is for Get All Broker SalesPerson Detail */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetAllSalesPersons]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetAllSalesPersons]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrGetAllSalesPersons]
+
+@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	x.[DriverCode],
+	x.[DriverName],
+	x.[DLastName],
+	x.[DFirstName],
+	x.[AddressLine1],
+	x.[AddressLine2],
+	x.[AddressLine3],
+	x.[City],
+	x.[State],
+	x.[ZipCode],
+	x.[CountryCode],
+	x.[PhoneNo],
+	x.[Ext],
+	x.[EmailAddress],
+	x.[CommRate],
+	x.[AdminExempt],
+	x.[Status],
+	x.[DriverNotes],
+	x.[LoadType],
+	x.[LastLoad],
+	x.[SafetyAuth],
+	x.[CellPhone],
+	x.[Pager],
+	x.[AccountNo],
+	x.[OfficeOwner],
+	io.IOName,
+	x.[FaxNo],
+	x.[JRCTrailer],
+	x.[LastLoadID],
+	x.[LastPU],
+	x.[LastDP],
+	x.[SafetyNotes],
+	x.[LastTrailerUsed],
+	x.[LastLoadDeliv],
+	x.[DrugDate],
+	x.[LicenceDate],
+	x.[TruckInsDate],
+	x.[TrailerInsDate],
+	x.[RegRenewDate],
+	x.[NewLeaseDate],
+	x.[MedicalDate],
+	x.[LogBookOS],
+	x.[Calc87],
+	x.[Calc85],
+	x.[BrokerCodeD],
+	bk.BrokerName, 
+	
+	x.[ViewOrder],
+
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate] ,
+	x.[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}BKR_SalesPersonMasterfile AS x
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS io on x.OfficeOwner = io.JRCIOfficeCode 
+	LEFT OUTER JOIN [{objectQualifier}ARD_BrokerMaster] AS bk on x.BrokerCodeD = bk.BrokerCode 
+
+ORDER BY x.[ModuleId], x.ViewOrder, x.CreatedDate desc
+
+GO
+
+
+
+/* Following procedure is for Sort the Broker SalesPerson Detail */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrSortSalesPersons]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrSortSalesPersons]
+GO
+
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrSortSalesPersons]
+	@ModuleId	int
+
+AS
+
+DECLARE	@counter as int
+DECLARE	@PK as int
+SET		@counter = 10
+
+--Make Temp table to hold Primary Keys FROM the table you want to renumber
+SELECT	ItemId
+INTO		[#TempTable]
+FROM		[{objectQualifier}BKR_SalesPersonMasterfile] as x
+WHERE	x.ModuleId = @ModuleId
+ORDER BY	x.ViewOrder asc,  x.CreatedDate desc
+
+
+
+--Loop through each temptable record
+WHILE (SELECT COUNT(ItemId) FROM #TempTable) > 0
+BEGIN
+	SET		rowcount 1
+
+	SELECT	@PK = ItemId
+	FROM #TempTable
+
+	SET rowcount 0
+
+
+	--UPDATE the view order for matching record in [{objectQualifier}BKR_SalesPersonMasterfile]
+	UPDATE [{objectQualifier}BKR_SalesPersonMasterfile]
+	SET ViewOrder = @counter
+	WHERE [{objectQualifier}BKR_SalesPersonMasterfile].ItemId = @PK
+	AND [{objectQualifier}BKR_SalesPersonMasterfile].ModuleId = @ModuleId
+
+	SET @counter = @counter + 10
+
+	SET rowcount 1
+
+	DELETE FROM #TempTable
+	SET rowcount 0
+END
+
+SET rowcount 0
+
+DROP TABLE #TempTable
+
+SELECT * FROM [{objectQualifier}BKR_SalesPersonMasterfile] ORDER BY ViewOrder
+GO
+
+
+
+
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+
+
+
+
+/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              BoatTypes               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create/drop tables and stored procs   */
+
+/* Insert here the code to drop stored procs if exists  */
+
+
+/* Insert here the code to drop tables  */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrSalesPersonIO]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}bhattji_BkrSalesPersonIO]
+GO
+
+
+/* Insert here the code to create tables and stored procs   */
+
+/* Insert here the code to alter tables if exists else create new tables */
+
+
+
+CREATE TABLE {databaseOwner}[{objectQualifier}bhattji_BkrSalesPersonIO] (
+	[SalesPersonId] [int] NOT NULL ,
+	[InterOfficeId] [int] NOT NULL,
+
+	PRIMARY KEY CLUSTERED (
+		[SalesPersonId] ASC,
+		[InterOfficeId] ASC
+	) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+
+
+/* Insert here the code to create stored procs   */
+
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+
+/* Following procedure is for Add the Broker SalesPersonIo Detail */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrAddSalesPersonIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrAddSalesPersonIO]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrAddSalesPersonIO]
+	@SalesPersonId int ,
+	@InterOfficeId int
+
+AS
+
+Declare @TC as int
+SET @TC = (Select Count(*) From [{objectQualifier}bhattji_BkrSalesPersonIO] Where [SalesPersonId] = @SalesPersonId AND [InterOfficeId] = @InterOfficeId)
+
+If (@TC = 0)
+INSERT INTO [{objectQualifier}bhattji_BkrSalesPersonIO] (
+	[SalesPersonId] ,
+	[InterOfficeId]
+
+) VALUES (
+	@SalesPersonId ,
+	@InterOfficeId
+
+)
+
+GO
+
+
+
+
+/* Following procedure is for Delete the Broker SalesPersonIo Detail */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrDeleteSalesPersonIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrDeleteSalesPersonIO]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrDeleteSalesPersonIO]
+	@SalesPersonId int ,
+	@InterOfficeId int
+
+AS
+
+DELETE
+FROM [{objectQualifier}bhattji_BkrSalesPersonIO]
+WHERE [SalesPersonId] = @SalesPersonId AND [InterOfficeId] = @InterOfficeId
+GO
+
+
+
+/* Following procedure is for Get the Broker SalesPersonIo Detail */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonsByIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonsByIO]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonsByIO]
+	@InterOfficeId int
+
+AS
+
+SELECT
+	[SalesPersonId],
+	m.DriverCode,
+	m.DriverName
+
+FROM [{objectQualifier}bhattji_BkrSalesPersonIO] AS x
+	JOIN [{objectQualifier}BKR_SalesPersonMasterfile] AS m ON x.SalesPersonId = m.ItemId
+
+WHERE
+	[InterOfficeId] = @InterOfficeId
+GO
+
+
+
+
+
+/* Following procedure is for Get the Broker SalesPersonIo By IoCode */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonsByIOCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonsByIOCode]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonsByIOCode]
+	@JRCIOCode nvarchar(9)
+
+AS
+
+SELECT
+	[SalesPersonId],
+	m.DriverCode,
+	m.DriverName
+
+FROM [{objectQualifier}bhattji_BkrSalesPersonIO] AS x
+	JOIN [{objectQualifier}BKR_SalesPersonMasterfile] AS m ON x.SalesPersonId = m.ItemId
+
+WHERE
+	[InterOfficeId] = (Select {databaseOwner}[{objectQualifier}ARD_InterOffice].ItemId From {databaseOwner}[{objectQualifier}ARD_InterOffice] Where {databaseOwner}[{objectQualifier}ARD_InterOffice].JRCIOfficeCode = @JRCIOCode)
+
+ORDER BY m.[DriverName]
+
+GO
+
+
+
+/* Following procedure is for Get Active Broker SalesPersonIo By IoCode */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetActiveSalesPersonsByIOCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetActiveSalesPersonsByIOCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrGetActiveSalesPersonsByIOCode]
+	@JRCIOCode nvarchar(9)
+
+AS
+
+SELECT
+	DriverCode,
+	DriverName
+
+FROM  [{objectQualifier}BKR_SalesPersonMasterfile]
+
+WHERE 	(OfficeOwner=@JRCIOCode)
+	AND (Status='N')
+
+ORDER BY DriverName
+
+GO
+
+
+
+
+
+/* Following procedure is for Get IoCode by SalesPersonIo  */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetIOsBySalesPerson]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetIOsBySalesPerson]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrGetIOsBySalesPerson]
+	@SalesPersonId int
+
+AS
+
+SELECT
+	[InterOfficeId] ,
+	i.IOName
+
+FROM [{objectQualifier}bhattji_BkrSalesPersonIO] AS x
+	JOIN [{objectQualifier}ARD_InterOffice] AS i ON x.InterOfficeId = i.ItemId
+
+WHERE [SalesPersonId] = @SalesPersonId
+
+ORDER BY i.IOName
+
+GO
+
+
+
+/* Following procedure is for Get All Broker SalesPerson*/
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonsAll]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonsAll]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonsAll]
+
+AS
+
+SELECT
+	'SalesPersonId' = [{objectQualifier}BKR_SalesPersonMasterfile].ItemId,
+	[{objectQualifier}BKR_SalesPersonMasterfile].DriverName
+
+FROM [{objectQualifier}BKR_SalesPersonMasterfile]
+
+GO
+
+
+/* Following procedure is for Get All IoCode */
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetIOsAll]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetIOsAll]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrGetIOsAll]
+
+AS
+
+SELECT
+	'InterOfficeId' = [{objectQualifier}ARD_InterOffice].ItemId,
+	[{objectQualifier}ARD_InterOffice].IOName
+
+FROM [{objectQualifier}ARD_InterOffice]
+
+ORDER BY [{objectQualifier}ARD_InterOffice].IOName
+
+GO
+
+
+
+
+
+/* Following procedure is for Assign SalesPersonIo */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrAssignSalesPersonIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrAssignSalesPersonIO]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_BkrAssignSalesPersonIO]
+
+AS
+
+DECLARE	@counter as int
+DECLARE	@SalesPersonId as int
+DECLARE	@InterOfficeId as int
+DECLARE	@TC as int
+SET		@counter = 10
+
+--Make Temp table to hold Primary Keys FROM the table you want to renumber
+
+SELECT Distinct 'IoId'=i.ItemId, 'DriverId'=m.ItemId
+INTO		[#TempTable]
+FROM [{objectQualifier}tblOOLoadSheetHeader] AS x
+JOIN [{objectQualifier}BKR_SalesPersonMasterfile] AS m ON m.DriverCode=x.DriverCode
+JOIN [{objectQualifier}ARD_InterOffice] AS i ON i.JRCIOfficeCode=x.JRCIOfficeCode Order By IoId, DriverId
+
+
+
+--Loop through each temptable record
+WHILE (SELECT COUNT(*) FROM #TempTable) > 0
+BEGIN
+	SET		rowcount 1
+
+	SELECT	@SalesPersonId=DriverId ,
+		@InterOfficeId=IoId
+	FROM #TempTable
+
+	SET rowcount 0
+
+
+	--UPDATE the view order for matching record in [ARD_InterOffice]
+
+	SET @TC = (Select Count(*) From [bhattji_BkrSalesPersonIO] Where [SalesPersonId] = @SalesPersonId AND [InterOfficeId] = @InterOfficeId)
+
+	If (@TC = 0)
+	INSERT INTO [{objectQualifier}bhattji_BkrSalesPersonIO] (
+		[SalesPersonId] ,
+		[InterOfficeId]
+
+	) VALUES (
+		@SalesPersonId ,
+		@InterOfficeId
+
+	)
+
+	SET @counter = @counter + 10
+
+	SET rowcount 1
+
+	DELETE FROM #TempTable
+	SET rowcount 0
+END
+
+SET rowcount 0
+
+DROP TABLE #TempTable
+
+
+SELECT * FROM [{objectQualifier}bhattji_BkrSalesPersonIO] ORDER BY InterOfficeId, SalesPersonId
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+and exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}ARD_InterOffice]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+and exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+and exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrAssignSalesPersonIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+EXEC {databaseOwner}[{objectQualifier}bhattji_BkrAssignSalesPersonIO]
+GO
+
+
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO
+
+

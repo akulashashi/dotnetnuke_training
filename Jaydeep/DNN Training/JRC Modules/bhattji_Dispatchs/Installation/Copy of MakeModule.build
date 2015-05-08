@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<project name="MakeModulePA" default="ModulePA">
+	<target name="ModulePA" description="Zip all files neccessary for DotNetNuke Module PA deployment">
+		<property name="ModuleName" value="Dispatchs" />
+		<property name="ZipFileName" value="bhattji_04_${ModuleName}_PA.zip" />
+		<property name="ResourceZip" value="resources.zip" />
+
+		<!-- Remove "resources.zip" file -->
+		<if test="${file::exists(ResourceZip)}">
+			<delete file="${ResourceZip}" failonerror="false" />
+		</if>
+		<!-- Zip files to archive -->
+		<zip zipfile="${ResourceZip}">
+			<fileset>
+				<include name="../bhattji.${ModuleName}.*" />
+				<include name="../*.vb" />
+				<include name="../*.cs" />
+				<include name="../*.resx" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+			<fileset prefix="My Project">
+				<include name="../My Project/*.*" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+			<fileset prefix="Components">
+				<include name="../Components/*.vb" />
+				<include name="../Components/*.cs" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+			<fileset prefix="img">
+				<include name="../img/Thumb.aspx.*" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+		</zip>
+
+
+
+
+		<!-- Remove "ModuleNamePA.zip" file -->
+		<if test="${file::exists(ZipFileName)}">
+			<delete file="${ZipFileName}" failonerror="false" />
+		</if>
+		<!-- Zip files to archive -->
+		<zip zipfile="${ZipFileName}">
+			<fileset>
+				<include name="bhattji_${ModuleName}.dnn" />
+				<include name="../Providers/DataProviders/SqlDataProvider/0*.SqlDataProvider" />
+				<include name="../Providers/DataProviders/SqlDataProvider/Uninstall.SqlDataProvider" />
+				<include name="../../../bin/bhattji.Modules.${ModuleName}.dll" />
+				<include name="../*.ascx" />
+				<include name="../module.css" />
+				<include name="../img/Thumb.aspx" />
+				<include name="../img/NoImage.jpg" />
+				<include name="../img/bhattji*.*" />
+				<include name="../App_LocalResources/*.resx" />
+				<include name="../ratings/default/*.gif" />
+				<include name="../js/*.*" />
+				<include name="../SubModal/*.js" />
+				<include name="../SubModal/*.png" />
+				<include name="../css/*.*" />
+				<include name="../css/luna/*.*" />
+				<include name="../ratings/default/*.gif" />
+				<include name="${ResourceZip}" />
+
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+		</zip>
+
+	</target>
+</project>

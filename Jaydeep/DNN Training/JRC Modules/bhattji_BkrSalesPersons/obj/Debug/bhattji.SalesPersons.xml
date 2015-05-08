@@ -1,0 +1,2195 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+bhattji.Modules.BkrSalesPersons
+</name>
+</assembly>
+<members>
+<member name="M:bhattji.Modules.BkrSalesPersons.Thumb.Page_Init(System.Object,System.EventArgs)">
+Private designerPlaceholderDeclaration As System.Object
+
+</member><member name="M:bhattji.Modules.BkrSalesPersons.ViewList.Page_Load(System.Object,System.EventArgs)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Page_Load runs when the control is loaded
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/23/2004	Moved Links to a separate Project
+ </history>
+ -----------------------------------------------------------------------------
+
+
+</member><member name="T:bhattji.Modules.BkrSalesPersons.ViewList">
+ -----------------------------------------------------------------------------
+ <summary>
+ The Links Class provides the UI for displaying the Links
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/23/2004	Moved Links to a separate Project
+		[bhattji]	10/20/2004	Removed ViewOptions from Action menu
+ </history>
+ -----------------------------------------------------------------------------
+
+
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.lblBroker">
+	<summary>
+lblBroker control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.txtBrokerCode">
+	<summary>
+txtBrokerCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.btnBrokerSearch">
+	<summary>
+btnBrokerSearch control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.lblBokerName">
+	<summary>
+lblBokerName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.ddlBrokerCode">
+	<summary>
+ddlBrokerCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.rblSearchOn">
+	<summary>
+rblSearchOn control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.rblSearchType">
+	<summary>
+rblSearchType control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.plFromDate">
+	<summary>
+plFromDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.txtFrom">
+	<summary>
+txtFrom control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.imgFrom">
+	<summary>
+imgFrom control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.calFrom">
+	<summary>
+calFrom control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.plToDate">
+	<summary>
+plToDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.txtTo">
+	<summary>
+txtTo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.imgTo">
+	<summary>
+imgTo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.calTo">
+	<summary>
+calTo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.plStatus">
+	<summary>
+plStatus control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.rblStatus">
+	<summary>
+rblStatus control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.plJRCIOfficeCode">
+	<summary>
+plJRCIOfficeCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.ddlJRCIOfficeCode">
+	<summary>
+ddlJRCIOfficeCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.txtSearch">
+	<summary>
+txtSearch control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.btnSearch">
+	<summary>
+btnSearch control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.gdvViewList">
+	<summary>
+gdvViewList control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.ViewList.odsSalesPersons">
+	<summary>
+odsSalesPersons control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="T:bhattji.Modules.BkrSalesPersons.OptionsInfo">
+ -----------------------------------------------------------------------------
+ <summary>
+ The Options Class provides the TabbedPages Business Object
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/20/2004	Moved TabbedPages to a separate Project
+ </history>
+ -----------------------------------------------------------------------------
+ 
+
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plDriverCode">
+	<summary>
+plDriverCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtDriverCode">
+	<summary>
+txtDriverCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plDriverName">
+	<summary>
+plDriverName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtDriverName">
+	<summary>
+txtDriverName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plOfficeOwner">
+	<summary>
+plOfficeOwner control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.ddlOfficeOwner">
+	<summary>
+ddlOfficeOwner control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plDLastName">
+	<summary>
+plDLastName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plDFirstName">
+	<summary>
+plDFirstName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtDLastName">
+	<summary>
+txtDLastName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtDFirstName">
+	<summary>
+txtDFirstName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plAddressLine1">
+	<summary>
+plAddressLine1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtAddressLine1">
+	<summary>
+txtAddressLine1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtAddressLine2">
+	<summary>
+txtAddressLine2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plCity">
+	<summary>
+plCity control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtCity">
+	<summary>
+txtCity control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtState">
+	<summary>
+txtState control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtZipCode">
+	<summary>
+txtZipCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plCountryCode">
+	<summary>
+plCountryCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtCountryCode">
+	<summary>
+txtCountryCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plPhoneNo">
+	<summary>
+plPhoneNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plExt">
+	<summary>
+plExt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtExt">
+	<summary>
+txtExt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtPhoneNo">
+	<summary>
+txtPhoneNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plFaxNo">
+	<summary>
+plFaxNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtFaxNo">
+	<summary>
+txtFaxNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plCellPhone">
+	<summary>
+plCellPhone control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plPager">
+	<summary>
+plPager control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtCellPhone">
+	<summary>
+txtCellPhone control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtPager">
+	<summary>
+txtPager control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plEmailAddress">
+	<summary>
+plEmailAddress control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtEmailAddress">
+	<summary>
+txtEmailAddress control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plLastLoadID">
+	<summary>
+plLastLoadID control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plLastLoad">
+	<summary>
+plLastLoad control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtLastLoadID">
+	<summary>
+txtLastLoadID control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtLastLoad">
+	<summary>
+txtLastLoad control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plLastLoadDeliv">
+	<summary>
+plLastLoadDeliv control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtLastLoadDeliv">
+	<summary>
+txtLastLoadDeliv control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plLastPU">
+	<summary>
+plLastPU control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plLastDP">
+	<summary>
+plLastDP control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtLastPU">
+	<summary>
+txtLastPU control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtLastDP">
+	<summary>
+txtLastDP control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plLastTrailerUsed">
+	<summary>
+plLastTrailerUsed control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtLastTrailerUsed">
+	<summary>
+txtLastTrailerUsed control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plAccountNo">
+	<summary>
+plAccountNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtAccountNo">
+	<summary>
+txtAccountNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plCommRate">
+	<summary>
+plCommRate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtCommRate">
+	<summary>
+txtCommRate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plCalc85">
+	<summary>
+plCalc85 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.imgCalc85">
+	<summary>
+imgCalc85 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plJRCTrailer">
+	<summary>
+plJRCTrailer control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtJRCTrailer">
+	<summary>
+txtJRCTrailer control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plDriverNotes">
+	<summary>
+plDriverNotes control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtDriverNotes">
+	<summary>
+txtDriverNotes control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plAdminExempt">
+	<summary>
+plAdminExempt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.imgAdminExempt">
+	<summary>
+imgAdminExempt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plStatus">
+	<summary>
+plStatus control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.imgStatus">
+	<summary>
+imgStatus control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plBrokerCodeD">
+	<summary>
+plBrokerCodeD control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtBrokerCodeD">
+	<summary>
+txtBrokerCodeD control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plDrugDate">
+	<summary>
+plDrugDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plTruckInsDate">
+	<summary>
+plTruckInsDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtDrugDate">
+	<summary>
+txtDrugDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtTruckInsDate">
+	<summary>
+txtTruckInsDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plLicenceDate">
+	<summary>
+plLicenceDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plTrailerInsDate">
+	<summary>
+plTrailerInsDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtLicenceDate">
+	<summary>
+txtLicenceDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtTrailerInsDate">
+	<summary>
+txtTrailerInsDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plRegRenewDate">
+	<summary>
+plRegRenewDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plNewLeaseDate">
+	<summary>
+plNewLeaseDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtRegRenewDate">
+	<summary>
+txtRegRenewDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtNewLeaseDate">
+	<summary>
+txtNewLeaseDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plMedicalDate">
+	<summary>
+plMedicalDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plLogBookOS">
+	<summary>
+plLogBookOS control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtMedicalDate">
+	<summary>
+txtMedicalDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.imgLogBookOS">
+	<summary>
+imgLogBookOS control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.ctlSalesPersonIOs">
+	<summary>
+ctlSalesPersonIOs control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.btnUpdateIOs">
+	<summary>
+btnUpdateIOs control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.divButtons">
+	<summary>
+divButtons control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.tdEdit">
+	<summary>
+tdEdit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.hypImgEdit">
+	<summary>
+hypImgEdit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.hypEdit">
+	<summary>
+hypEdit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.hypImgClose">
+	<summary>
+hypImgClose control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.hypClose">
+	<summary>
+hypClose control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.hypImgPrint">
+	<summary>
+hypImgPrint control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.hypPrint">
+	<summary>
+hypPrint control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.ctlAudit">
+	<summary>
+ctlAudit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.ctlTracking">
+	<summary>
+ctlTracking control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plAddressLine2">
+	<summary>
+plAddressLine2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plAddressLine3">
+	<summary>
+plAddressLine3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtAddressLine3">
+	<summary>
+txtAddressLine3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plState">
+	<summary>
+plState control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plZipCode">
+	<summary>
+plZipCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plLoadType">
+	<summary>
+plLoadType control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtLoadType">
+	<summary>
+txtLoadType control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plSafetyAuth">
+	<summary>
+plSafetyAuth control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtSafetyAuth">
+	<summary>
+txtSafetyAuth control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plSafetyNotes">
+	<summary>
+plSafetyNotes control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtSafetyNotes">
+	<summary>
+txtSafetyNotes control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plCalc87">
+	<summary>
+plCalc87 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.chkCalc87">
+	<summary>
+chkCalc87 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.plViewOrder">
+	<summary>
+plViewOrder control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.Details.txtViewOrder">
+	<summary>
+txtViewOrder control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.lblMsg">
+	<summary>
+lblMsg control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.valValidationSummary">
+	<summary>
+valValidationSummary control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.ddlUpdateRedirection">
+	<summary>
+ddlUpdateRedirection control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.tdAdd">
+	<summary>
+tdAdd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.imbAdd">
+	<summary>
+imbAdd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.cmdAdd">
+	<summary>
+cmdAdd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.tdUpdate">
+	<summary>
+tdUpdate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.imbUpdate">
+	<summary>
+imbUpdate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.cmdUpdate">
+	<summary>
+cmdUpdate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.imbCancel">
+	<summary>
+imbCancel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.cmdCancel">
+	<summary>
+cmdCancel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.tdDelete">
+	<summary>
+tdDelete control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.imbDelete">
+	<summary>
+imbDelete control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.cmdDelete">
+	<summary>
+cmdDelete control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.tdPrint">
+	<summary>
+tdPrint control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.hypImgPrint">
+	<summary>
+hypImgPrint control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.hypPrint">
+	<summary>
+hypPrint control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plDriverCode">
+	<summary>
+plDriverCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plDriverName">
+	<summary>
+plDriverName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plOfficeOwner">
+	<summary>
+plOfficeOwner control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plStatus">
+	<summary>
+plStatus control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtDriverCode">
+	<summary>
+txtDriverCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.cvDriverCode">
+	<summary>
+cvDriverCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.actDriverCode">
+	<summary>
+actDriverCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtDriverName">
+	<summary>
+txtDriverName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.ddlOfficeOwner">
+	<summary>
+ddlOfficeOwner control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.chkStatus">
+	<summary>
+chkStatus control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.imgStatus">
+	<summary>
+imgStatus control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plBrokerCodeD">
+	<summary>
+plBrokerCodeD control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtBrokerCodeD">
+	<summary>
+txtBrokerCodeD control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.btnBrokerSearch">
+	<summary>
+btnBrokerSearch control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.ddlBrokerCodeD">
+	<summary>
+ddlBrokerCodeD control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.reqBrokerCode">
+	<summary>
+reqBrokerCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plDLastName">
+	<summary>
+plDLastName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plDFirstName">
+	<summary>
+plDFirstName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtDLastName">
+	<summary>
+txtDLastName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtDFirstName">
+	<summary>
+txtDFirstName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plAddressLine1">
+	<summary>
+plAddressLine1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtAddressLine1">
+	<summary>
+txtAddressLine1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtAddressLine2">
+	<summary>
+txtAddressLine2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plCity">
+	<summary>
+plCity control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtCity">
+	<summary>
+txtCity control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtState">
+	<summary>
+txtState control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtZipCode">
+	<summary>
+txtZipCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plCountryCode">
+	<summary>
+plCountryCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtCountryCode">
+	<summary>
+txtCountryCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plPhoneNo">
+	<summary>
+plPhoneNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtPhoneNo">
+	<summary>
+txtPhoneNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plExt">
+	<summary>
+plExt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtExt">
+	<summary>
+txtExt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.meePhoneNo">
+	<summary>
+meePhoneNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plFaxNo">
+	<summary>
+plFaxNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtFaxNo">
+	<summary>
+txtFaxNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.meeFaxNo">
+	<summary>
+meeFaxNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plCellPhone">
+	<summary>
+plCellPhone control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plPager">
+	<summary>
+plPager control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtCellPhone">
+	<summary>
+txtCellPhone control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.meeCellPhone">
+	<summary>
+meeCellPhone control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtPager">
+	<summary>
+txtPager control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.meePager">
+	<summary>
+meePager control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plEmailAddress">
+	<summary>
+plEmailAddress control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtEmailAddress">
+	<summary>
+txtEmailAddress control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.tdLastLoadID">
+	<summary>
+tdLastLoadID control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plLastLoadID">
+	<summary>
+plLastLoadID control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plLastLoad">
+	<summary>
+plLastLoad control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtLastLoadID">
+	<summary>
+txtLastLoadID control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtLastLoad">
+	<summary>
+txtLastLoad control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.imgLastLoad">
+	<summary>
+imgLastLoad control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.calLastLoad">
+	<summary>
+calLastLoad control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plLastLoadDeliv">
+	<summary>
+plLastLoadDeliv control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtLastLoadDeliv">
+	<summary>
+txtLastLoadDeliv control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.imgLastLoadDeliv">
+	<summary>
+imgLastLoadDeliv control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.calLastLoadDeliv">
+	<summary>
+calLastLoadDeliv control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plLastPU">
+	<summary>
+plLastPU control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plLastDP">
+	<summary>
+plLastDP control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtLastPU">
+	<summary>
+txtLastPU control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtLastDP">
+	<summary>
+txtLastDP control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plLastTrailerUsed">
+	<summary>
+plLastTrailerUsed control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtLastTrailerUsed">
+	<summary>
+txtLastTrailerUsed control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.trAccountAdmin">
+	<summary>
+trAccountAdmin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plAccountNo">
+	<summary>
+plAccountNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtAccountNo">
+	<summary>
+txtAccountNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.CustomValidator2">
+	<summary>
+CustomValidator2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plCommRate">
+	<summary>
+plCommRate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtCommRate">
+	<summary>
+txtCommRate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plCalc85">
+	<summary>
+plCalc85 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.chkCalc85">
+	<summary>
+chkCalc85 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plJRCTrailer">
+	<summary>
+plJRCTrailer control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtJRCTrailer">
+	<summary>
+txtJRCTrailer control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plDriverNotes">
+	<summary>
+plDriverNotes control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtDriverNotes">
+	<summary>
+txtDriverNotes control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plAdminExempt">
+	<summary>
+plAdminExempt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.chkAdminExempt">
+	<summary>
+chkAdminExempt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plDrugDate">
+	<summary>
+plDrugDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plTruckInsDate">
+	<summary>
+plTruckInsDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtDrugDate">
+	<summary>
+txtDrugDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.cmdCalendarDrugDate">
+	<summary>
+cmdCalendarDrugDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtTruckInsDate">
+	<summary>
+txtTruckInsDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.cmdCalendarTruckInsDate">
+	<summary>
+cmdCalendarTruckInsDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plLicenceDate">
+	<summary>
+plLicenceDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plTrailerInsDate">
+	<summary>
+plTrailerInsDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtLicenceDate">
+	<summary>
+txtLicenceDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.cmdCalendarLicenceDate">
+	<summary>
+cmdCalendarLicenceDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtTrailerInsDate">
+	<summary>
+txtTrailerInsDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.cmdCalendarTrailerInsDate">
+	<summary>
+cmdCalendarTrailerInsDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plRegRenewDate">
+	<summary>
+plRegRenewDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plNewLeaseDate">
+	<summary>
+plNewLeaseDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtRegRenewDate">
+	<summary>
+txtRegRenewDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.cmdCalendarRegRenewDate">
+	<summary>
+cmdCalendarRegRenewDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtNewLeaseDate">
+	<summary>
+txtNewLeaseDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.cmdCalendarNewLeaseDate">
+	<summary>
+cmdCalendarNewLeaseDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plMedicalDate">
+	<summary>
+plMedicalDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plLogBookOS">
+	<summary>
+plLogBookOS control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtMedicalDate">
+	<summary>
+txtMedicalDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.cmdCalendarMedicalDate">
+	<summary>
+cmdCalendarMedicalDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.chkLogBookOS">
+	<summary>
+chkLogBookOS control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.ctlSalesPersonIOs">
+	<summary>
+ctlSalesPersonIOs control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.btnUpdateIOs">
+	<summary>
+btnUpdateIOs control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.divPopup">
+	<summary>
+divPopup control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.ctlAudit">
+	<summary>
+ctlAudit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.ctlTracking">
+	<summary>
+ctlTracking control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plAddressLine2">
+	<summary>
+plAddressLine2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plAddressLine3">
+	<summary>
+plAddressLine3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtAddressLine3">
+	<summary>
+txtAddressLine3 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plState">
+	<summary>
+plState control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plZipCode">
+	<summary>
+plZipCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plLoadType">
+	<summary>
+plLoadType control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtLoadType">
+	<summary>
+txtLoadType control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plSafetyAuth">
+	<summary>
+plSafetyAuth control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtSafetyAuth">
+	<summary>
+txtSafetyAuth control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plSafetyNotes">
+	<summary>
+plSafetyNotes control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtSafetyNotes">
+	<summary>
+txtSafetyNotes control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plCalc87">
+	<summary>
+plCalc87 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.chkCalc87">
+	<summary>
+chkCalc87 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.plViewOrder">
+	<summary>
+plViewOrder control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.BkrSalesPersons.EditItem.txtViewOrder">
+	<summary>
+txtViewOrder control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="M:bhattji.Modules.BkrSalesPersons.Settings.LoadSettings">
+ -----------------------------------------------------------------------------
+ <summary>
+ LoadSettings loads the settings from the Databas and displays them
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+		[bhattji]	10/20/2004	created
+ </history>
+ -----------------------------------------------------------------------------
+ 
+
+</member><member name="M:bhattji.Modules.BkrSalesPersons.Settings.UpdateSettings">
+ -----------------------------------------------------------------------------
+ <summary>
+ UpdateSettings saves the modified settings to the Database
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+		[bhattji]	10/20/2004	created
+		[bhattji]	10/25/2004	upated to use TabModuleId rather than TabId/ModuleId
+ </history>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:bhattji.Modules.BkrSalesPersons.Settings.imbUpdate_Click(System.Object,System.Web.UI.ImageClickEventArgs)">
+ -----------------------------------------------------------------------------
+ <summary>
+ cmdUpdate_Click runs when the update button is clicked
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/23/2004	Updated to reflect design changes for Help, 508 support
+                       and localisation
+ </history>
+ -----------------------------------------------------------------------------
+ 
+
+</member><member name="M:bhattji.Modules.BkrSalesPersons.Settings.imbCancel_Click(System.Object,System.Web.UI.ImageClickEventArgs)">
+ -----------------------------------------------------------------------------
+ <summary>
+ cmdCancel_Click runs when the cancel button is clicked
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/23/2004	Updated to reflect design changes for Help, 508 support
+                       and localisation
+ </history>
+ -----------------------------------------------------------------------------
+
+</member>
+</members>
+</doc>

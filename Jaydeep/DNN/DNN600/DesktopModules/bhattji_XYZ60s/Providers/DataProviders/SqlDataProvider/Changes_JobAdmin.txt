@@ -1,0 +1,14 @@
+btnsearchCand
+btnsearchComp
+
+
+ResetViewStatescan
+ResetViewStatescomp
+
+odsJobAdmins_Selecting --> uncommnt InputParameters 
+
+add parameters to GetJobAdmins (____)
+
+GetSearchedJobAdminsCan
+GetSearchedJobAdminsComp
+

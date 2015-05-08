@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<dotnetnuke version="3.0" type="Module">
+	<folders>
+		<folder>
+			<name>bhattji.Customers</name>
+			<friendlyname>bhattji.Customers</friendlyname>
+			<foldername>bhattji.Customers</foldername>
+			<modulename>bhattji.Customers</modulename>
+			<description>Description</description>
+			<version>01.00.00</version>
+			<businesscontrollerclass>bhattji.Modules.Customers.Business.CustomersController, bhattji.Modules.Customers</businesscontrollerclass>
+			<resourcefile>install.bhattji</resourcefile>
+			<modules>
+				<module>
+					<friendlyname>bhattji.Customers</friendlyname>
+					<cachetime>0</cachetime>
+					<controls>
+						<control>
+							<title>Customers</title>
+							<src>Views.ascx</src>
+							<type>View</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+						<control>
+							<key>ItemDetails</key>
+							<title>Customer Details</title>
+							<src>Details.ascx</src>
+							<type>View</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+						
+						<control>
+							<key>Edit</key>
+							<title>Edit Customers</title>
+							<src>Edits.ascx</src>
+							<type>Edit</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+						<control>
+							<key>Settings</key>
+							<title>Customers Settings</title>
+							<src>Settings.ascx</src>
+							<type>Edit</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+					</controls>
+				</module>
+			</modules>
+			<files>
+				<file>
+					<name>bhattji.Modules.Customers.dll</name>
+				</file>
+				<file>
+					<name>01.00.00.SqlDataProvider</name>
+				</file>
+				<file>
+					<name>Uninstall.SqlDataProvider</name>
+				</file>				
+			</files>
+		</folder>
+	</folders>
+</dotnetnuke>

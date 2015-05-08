@@ -1,0 +1,15 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\bhattji.Modules.SalesPersons.Details.resources
+obj\Debug\bhattji.Modules.SalesPersons.EditItem.resources
+obj\Debug\bhattji.Modules.SalesPersons.Edits.resources
+obj\Debug\bhattji.Modules.SalesPersons.Thumb.resources
+obj\Debug\bhattji.Modules.SalesPersons.Settings.resources
+obj\Debug\bhattji.Modules.SalesPersons.ViewList.resources
+obj\Debug\bhattji.Modules.SalesPersons.Views.resources
+obj\Debug\bhattji.SalesPersons.vbproj.GenerateResource.Cache
+..\..\bin\bhattji.Modules.SalesPersons.dll
+..\..\bin\bhattji.Modules.SalesPersons.pdb
+..\..\bin\bhattji.SalesPersons.xml
+obj\Debug\bhattji.Modules.SalesPersons.dll
+obj\Debug\bhattji.SalesPersons.xml
+obj\Debug\bhattji.Modules.SalesPersons.pdb

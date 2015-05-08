@@ -1,0 +1,859 @@
+﻿/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              Brokers              *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create tables and stored procs   */
+
+/* Insert here the code to create tables */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}ARD_BrokerMaster]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+begin
+
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_BrokerMaster]  ALTER COLUMN [EmailAddress] [nvarchar] (40) NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_BrokerMaster]  ADD [ItemID] [int] IDENTITY (1, 1) NOT NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_BrokerMaster]  ADD [ModuleId] [int] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_BrokerMaster]  ADD [ViewOrder] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_BrokerMaster]  ADD [UpdatedByUserId] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_BrokerMaster]  ADD [UpdatedDate] [datetime] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_BrokerMaster]  ADD [CreatedByUserId] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_BrokerMaster]  ADD [CreatedDate] [datetime] NULL
+
+end
+GO
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}ARD_BrokerMaster]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+begin
+
+UPDATE {databaseOwner}[{objectQualifier}ARD_BrokerMaster]  SET [ModuleId] = 371
+
+UPDATE {databaseOwner}[{objectQualifier}ARD_BrokerMaster]  SET [UpdatedByUserId] = 1
+UPDATE {databaseOwner}[{objectQualifier}ARD_BrokerMaster]  SET [UpdatedDate] = GetDate()
+UPDATE {databaseOwner}[{objectQualifier}ARD_BrokerMaster]  SET [CreatedByUserId] = 1
+UPDATE {databaseOwner}[{objectQualifier}ARD_BrokerMaster]  SET [CreatedDate] = GetDate()
+
+end
+
+else
+
+CREATE TABLE {databaseOwner}[{objectQualifier}ARD_BrokerMaster] (
+	[ItemID] [int] IDENTITY (1, 1) NOT NULL ,
+	[ModuleID] [int] NULL ,
+
+	[BrokerCode] [nvarchar] (7) NULL ,
+	[BrokerName] [nvarchar] (30) NULL ,
+	[AddressLine1] [nvarchar] (30) NULL ,
+	[AddressLine2] [nvarchar] (30) NULL ,
+	[City] [nvarchar] (20) NULL ,
+	[State] [nvarchar] (2) NULL ,
+	[ZipCode] [nvarchar] (10) NULL ,
+	[PhoneNo] [nvarchar] (14) NULL ,
+	[Ext] [nvarchar] (5) NULL ,
+	[ContactCode] [nvarchar] (10) NULL ,
+	[VendorRef] [nvarchar] (4) NULL ,
+	[CountryCode] [nvarchar] (3) NULL ,
+	[EmailAddress] [nvarchar] (40) NULL ,
+	[CommRate] [float] NULL ,
+	[AdminExempt] [nvarchar] (1) NULL ,
+	[Status] [nvarchar] (1) NULL ,
+	[LoadType] [nvarchar] (2) NULL ,
+	[Favorite] [nvarchar] (1) NULL ,
+	[SortSeq] [nvarchar] (8) NULL ,
+	[BrokerNotes] [nvarchar] (150) NULL ,
+	[BkrType] [nvarchar] (2) NULL ,
+	[CorpUpd] [datetime] NULL ,
+	[Division] [nvarchar] (3) NULL ,
+	[FaxNo] [nvarchar] (14) NULL ,
+	[JRCTrailer] [nvarchar] (12) NULL ,
+	[BStatus] [nvarchar] (10) NULL ,
+	[ThirdPartyOK] [nvarchar] (1) NULL ,
+	[TPPct] [float] NULL ,
+	[TPAmt] [float] NULL  ,
+
+
+	[ViewOrder] [int] NULL ,
+	[UpdatedByUserId] [int]  NULL ,
+	[UpdatedDate] [datetime] NULL ,
+	[CreatedByUserId] [int]  NULL ,
+	[CreatedDate] [datetime] NULL
+
+) ON [PRIMARY]
+GO
+
+
+
+
+
+/* Insert here the code to create stored procs   */
+
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+/* Following procedure is for Add the Broker Details */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddBroker]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddBroker]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddBroker]
+
+	@ModuleID int,
+
+	@BrokerCode nvarchar(7),
+	@BrokerName nvarchar(30),
+	@AddressLine1 nvarchar(30),
+	@AddressLine2 nvarchar(30),
+	@City nvarchar(20),
+	@State nvarchar(2),
+	@ZipCode nvarchar(10),
+	@PhoneNo nvarchar(14),
+	@Ext nvarchar(5),
+	@ContactCode nvarchar(10),
+	@VendorRef nvarchar(4),
+	@CountryCode nvarchar(3),
+	@EmailAddress nvarchar(40),
+	@CommRate float,
+	@AdminExempt nvarchar(1),
+	@Status nvarchar(1),
+	@LoadType nvarchar(2),
+	@Favorite nvarchar(1),
+	@SortSeq nvarchar(8),
+	@BrokerNotes nvarchar(150),
+	@BkrType nvarchar(2),
+	@CorpUpd datetime,
+	@Division nvarchar(3),
+	@FaxNo nvarchar(14),
+	@JRCTrailer nvarchar(12),
+	@BStatus nvarchar(10),
+	@ThirdPartyOK nvarchar(1),
+	@TPPct float,
+	@TPAmt float,
+
+	@ViewOrder int,
+
+	@CreatedByUserId int
+
+AS
+
+INSERT INTO {objectQualifier}ARD_BrokerMaster (
+	[ModuleID],
+
+	[BrokerCode],
+	[BrokerName],
+	[AddressLine1],
+	[AddressLine2],
+	[City],
+	[State],
+	[ZipCode],
+	[PhoneNo],
+	[Ext],
+	[ContactCode],
+	[VendorRef],
+	[CountryCode],
+	[EmailAddress],
+	[CommRate],
+	[AdminExempt],
+	[Status],
+	[LoadType],
+	[Favorite],
+	[SortSeq],
+	[BrokerNotes],
+	[BkrType],
+	[CorpUpd],
+	[Division],
+	[FaxNo],
+	[JRCTrailer],
+	[BStatus],
+	[ThirdPartyOK],
+	[TPPct],
+	[TPAmt],
+
+	[ViewOrder],
+	[UpdatedByUserId],
+	[UpdatedDate],
+	[CreatedByUserId],
+	[CreatedDate]
+
+) VALUES (
+	@ModuleID,
+
+	@BrokerCode,
+	@BrokerName,
+	@AddressLine1,
+	@AddressLine2,
+	@City,
+	@State,
+	@ZipCode,
+	@PhoneNo,
+	@Ext,
+	@ContactCode,
+	@VendorRef,
+	@CountryCode,
+	@EmailAddress,
+	@CommRate,
+	@AdminExempt,
+	@Status,
+	@LoadType,
+	@Favorite,
+	@SortSeq,
+	@BrokerNotes,
+	@BkrType,
+	@CorpUpd,
+	@Division,
+	@FaxNo,
+	@JRCTrailer,
+	@BStatus,
+	@ThirdPartyOK,
+	@TPPct,
+	@TPAmt,
+
+	@ViewOrder,
+	@CreatedByUserId ,
+	GetDate(),
+	@CreatedByUserId ,
+	GetDate()
+)
+
+
+SELECT SCOPE_IDENTITY()
+GO
+
+
+
+/* Following procedure is for Update the Broker Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateBroker]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateBroker]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateBroker]
+
+	@ItemID int,
+
+	@BrokerCode nvarchar(7),
+	@BrokerName nvarchar(30),
+	@AddressLine1 nvarchar(30),
+	@AddressLine2 nvarchar(30),
+	@City nvarchar(20),
+	@State nvarchar(2),
+	@ZipCode nvarchar(10),
+	@PhoneNo nvarchar(14),
+	@Ext nvarchar(5),
+	@ContactCode nvarchar(10),
+	@VendorRef nvarchar(4),
+	@CountryCode nvarchar(3),
+	@EmailAddress nvarchar(40),
+	@CommRate float,
+	@AdminExempt nvarchar(1),
+	@Status nvarchar(1),
+	@LoadType nvarchar(2),
+	@Favorite nvarchar(1),
+	@SortSeq nvarchar(8),
+	@BrokerNotes nvarchar(150),
+	@BkrType nvarchar(2),
+	@CorpUpd datetime,
+	@Division nvarchar(3),
+	@FaxNo nvarchar(14),
+	@JRCTrailer nvarchar(12),
+	@BStatus nvarchar(10),
+	@ThirdPartyOK nvarchar(1),
+	@TPPct float,
+	@TPAmt float,
+
+	@ViewOrder int,
+	@UpdatedByUserId int
+
+AS
+
+UPDATE {objectQualifier}ARD_BrokerMaster
+
+SET
+	[BrokerCode] = @BrokerCode,
+	[BrokerName] = @BrokerName,
+	[AddressLine1] = @AddressLine1,
+	[AddressLine2] = @AddressLine2,
+	[City] = @City,
+	[State] = @State,
+	[ZipCode] = @ZipCode,
+	[PhoneNo] = @PhoneNo,
+	[Ext] = @Ext,
+	[ContactCode] = @ContactCode,
+	[VendorRef] = @VendorRef,
+	[CountryCode] = @CountryCode,
+	[EmailAddress] = @EmailAddress,
+	[CommRate] = @CommRate,
+	[AdminExempt] = @AdminExempt,
+	[Status] = @Status,
+	[LoadType] = @LoadType,
+	[Favorite] = @Favorite,
+	[SortSeq] = @SortSeq,
+	[BrokerNotes] = @BrokerNotes,
+	[BkrType] = @BkrType,
+	[CorpUpd] = @CorpUpd,
+	[Division] = @Division,
+	[FaxNo] = @FaxNo,
+	[JRCTrailer] = @JRCTrailer,
+	[BStatus] = @BStatus,
+	[ThirdPartyOK] = @ThirdPartyOK,
+	[TPPct] = @TPPct,
+	[TPAmt] = @TPAmt,
+
+	[ViewOrder] = @ViewOrder,
+
+	[UpdatedByUserId] = @UpdatedByUserId ,
+	[UpdatedDate] = GetDate()
+
+WHERE
+	[ItemID] = @ItemID
+GO
+
+
+
+/* Following procedure is for Fix the Broker Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_FixBrokers]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_FixBrokers]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_FixBrokers]
+
+	@ModuleID int,
+	@UpdatedByUserId int
+AS
+
+UPDATE {objectQualifier}AR1_BrokerMaster SET	[ModuleID] = @ModuleID
+UPDATE {objectQualifier}AR1_BrokerMaster SET	[UpdatedByUserId] = @UpdatedByUserId
+UPDATE {objectQualifier}AR1_BrokerMaster SET	[UpdatedDate] = GetDate()
+
+
+GO
+
+
+
+
+/* Following procedure is for Delete the Broker Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteBroker]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteBroker]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_DeleteBroker]
+	@ItemId int
+
+AS
+
+DELETE
+FROM [{objectQualifier}ARD_BrokerMaster]
+WHERE ItemId = @ItemId
+GO
+
+
+/* Following procedure is for Add none Broker if it "0000000" */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddNoBroker]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddNoBroker]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddNoBroker]
+AS
+if ((SELECT Count(*) FROM {databaseOwner}[{objectQualifier}ARD_BrokerMaster] WHERE BrokerCode = '0000000')>0)
+UPDATE {objectQualifier}ARD_BrokerMaster
+
+SET
+	[BrokerCode] = '0000000',
+	[BrokerName] = 'Broker to be assigned',
+	[VendorRef] = 'ZXZX',
+	[EmailAddress] = 'nobroker@bhattji.com',
+	[Status] = 'N',
+	[BrokerNotes] = 'Broker to be assigned',
+	[BStatus] = 'INACTIVE'
+	
+WHERE
+	[BrokerCode] = '0000000'
+
+else
+
+INSERT INTO {objectQualifier}ARD_BrokerMaster(
+	[BrokerCode],
+	[BrokerName],
+	[VendorRef],
+	[EmailAddress],
+	[Status],
+	[BrokerNotes],
+	[BStatus]
+	
+	)VALUES(
+	
+	'0000000',
+	'Broker to be assigned',
+	'ZXZX',
+	'nobroker@bhattji.com',
+	'N',
+	'Broker to be assigned',
+	'INACTIVE'
+	)
+
+Go
+
+/* Following procedure is for execute No Broker */
+
+
+EXEC {databaseOwner}[{objectQualifier}bhattji_AddNoBroker]
+
+
+
+/* Following procedure is for Get the BrokerId by VendorRef*/
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetBrokerIdByVendorRef]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetBrokerIdByVendorRef]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetBrokerIdByVendorRef]
+	@VendorRef [nvarchar](4)
+
+As
+
+SELECT [ItemID]
+FROM [{objectQualifier}ARD_BrokerMaster]
+WHERE [VendorRef] = @VendorRef
+GO
+
+
+
+
+/* Following procedure is for Get the BrokerId */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetBrokerId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetBrokerId]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetBrokerId]
+	@BrokerCode [nvarchar](7)
+
+As
+
+SELECT [ItemID]
+FROM [{objectQualifier}ARD_BrokerMaster]
+WHERE [BrokerCode] = @BrokerCode
+GO
+
+
+
+/* Following procedure is for Get the Broker Details */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetBroker]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetBroker]
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetBroker]
+
+	@ItemID int
+AS
+
+SELECT
+	[ItemID],
+	x.[ModuleID],
+
+	[BrokerCode],
+	[BrokerName],
+	[AddressLine1],
+	[AddressLine2],
+	[City],
+	[State],
+	[ZipCode],
+	[PhoneNo],
+	[Ext],
+	[ContactCode],
+	[VendorRef],
+	[CountryCode],
+	[EmailAddress],
+	[CommRate],
+	[AdminExempt],
+	[Status],
+	[LoadType],
+	[Favorite],
+	[SortSeq],
+	[BrokerNotes],
+	[BkrType],
+	[CorpUpd],
+	[Division],
+	[FaxNo],
+	[JRCTrailer],
+	[BStatus],
+	[ThirdPartyOK],
+	[TPPct],
+	[TPAmt],
+
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate] ,
+	[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}ARD_BrokerMaster AS x
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+
+WHERE
+	[ItemID] = @ItemID
+GO
+
+
+
+/* Following procedure is for Get the Broker Module */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetModuleBrokers]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetModuleBrokers]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetModuleBrokers]
+
+	@ModuleId int,
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+
+	x.[ItemID],
+	x.[ModuleID],
+
+	[BrokerCode],
+	[BrokerName],
+	[AddressLine1],
+	[AddressLine2],
+	[City],
+	[State],
+	[ZipCode],
+	[PhoneNo],
+	[Ext],
+	[ContactCode],
+	[VendorRef],
+	[CountryCode],
+	[EmailAddress],
+	[CommRate],
+	[AdminExempt],
+	[Status],
+	[LoadType],
+	[Favorite],
+	[SortSeq],
+	[BrokerNotes],
+	[BkrType],
+	[CorpUpd],
+	[Division],
+	[FaxNo],
+	[JRCTrailer],
+	[BStatus],
+	[ThirdPartyOK],
+	[TPPct],
+	[TPAmt],
+
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+    x.[UpdatedDate] ,
+	[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}ARD_BrokerMaster AS x
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+
+WHERE x.[ModuleId] = @ModuleId
+ORDER BY [ViewOrder], x.[CreatedDate] desc
+GO
+
+
+
+
+/* Following procedure is for Get the Broker Portal */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetPortalBrokers]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetPortalBrokers]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetPortalBrokers]
+
+	@PortalId int,
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	[BrokerCode],
+	[BrokerName],
+	[AddressLine1],
+	[AddressLine2],
+	[City],
+	[State],
+	[ZipCode],
+	[PhoneNo],
+	[Ext],
+	[ContactCode],
+	[VendorRef],
+	[CountryCode],
+	[EmailAddress],
+	[CommRate],
+	[AdminExempt],
+	[Status],
+	[LoadType],
+	[Favorite],
+	[SortSeq],
+	[BrokerNotes],
+	[BkrType],
+	[CorpUpd],
+	[Division],
+	[FaxNo],
+	[JRCTrailer],
+	[BStatus],
+	[ThirdPartyOK],
+	[TPPct],
+	[TPAmt],
+
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate] ,
+	[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}ARD_BrokerMaster AS x
+		INNER JOIN [{objectQualifier}Modules] As m on x.ModuleId = m.ModuleId
+		LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+		LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+
+WHERE m.PortalId = @PortalId
+ORDER BY x.[ModuleId], x.ViewOrder, x.CreatedDate desc
+GO
+
+
+
+/* Following procedure is for Get All the Broker Details */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetAllBrokers]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetAllBrokers]
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetAllBrokers]
+
+@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	[BrokerCode],
+	[BrokerName],
+	[AddressLine1],
+	[AddressLine2],
+	[City],
+	[State],
+	[ZipCode],
+	[PhoneNo],
+	[Ext],
+	[ContactCode],
+	[VendorRef],
+	[CountryCode],
+	[EmailAddress],
+	[CommRate],
+	[AdminExempt],
+	[Status],
+	[LoadType],
+	[Favorite],
+	[SortSeq],
+	[BrokerNotes],
+	[BkrType],
+	[CorpUpd],
+	[Division],
+	[FaxNo],
+	[JRCTrailer],
+	[BStatus],
+	[ThirdPartyOK],
+	[TPPct],
+	[TPAmt],
+
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate] ,
+	[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}ARD_BrokerMaster AS x
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+
+ORDER BY x.[ModuleId], x.ViewOrder, x.CreatedDate desc
+
+GO
+
+
+
+
+/* Following procedure is for Search the Broker Details */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetSearchedBrokers]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetSearchedBrokers]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetSearchedBrokers]
+	@SearchText nvarchar(50)
+
+AS
+
+SELECT
+	[BrokerCode],
+	[BrokerName]
+
+FROM {objectQualifier}ARD_BrokerMaster AS x
+
+WHERE x.[BrokerName] LIKE '%' + @SearchText + '%'
+
+ORDER BY x.[BrokerName]
+
+GO
+
+
+
+
+/* Following procedure is for Sort the Broker Details */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_SortBrokers]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_SortBrokers]
+GO
+
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}bhattji_SortBrokers]
+	@ModuleId	int
+
+AS
+
+DECLARE	@counter as int
+DECLARE	@PK as int
+SET		@counter = 10
+
+--Make Temp table to hold Primary Keys FROM the table you want to renumber
+SELECT	ItemId
+INTO		[#TempTable]
+FROM		[{objectQualifier}ARD_BrokerMaster] as x
+WHERE	x.ModuleId = @ModuleId
+ORDER BY	x.ViewOrder asc,  x.CreatedDate desc
+
+
+
+--Loop through each temptable record
+WHILE (SELECT COUNT(ItemId) FROM #TempTable) > 0
+BEGIN
+	SET		rowcount 1
+
+	SELECT	@PK = ItemId
+	FROM #TempTable
+
+	SET rowcount 0
+
+
+	--UPDATE the view order for matching record in [{objectQualifier}ARD_BrokerMaster]
+	UPDATE [{objectQualifier}ARD_BrokerMaster]
+	SET ViewOrder = @counter
+	WHERE [{objectQualifier}ARD_BrokerMaster].ItemId = @PK
+	AND [{objectQualifier}ARD_BrokerMaster].ModuleId = @ModuleId
+
+	SET @counter = @counter + 10
+
+	SET rowcount 1
+
+	DELETE FROM #TempTable
+	SET rowcount 0
+END
+
+SET rowcount 0
+
+DROP TABLE #TempTable
+
+SELECT * FROM [{objectQualifier}ARD_BrokerMaster] ORDER BY ViewOrder
+GO
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetBrokerNames]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetBrokerNames]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetBrokerNames]
+	@SearchText nvarchar(30), 
+	@NoOfItems int 
+
+AS
+
+SELECT DISTINCT TOP (@NoOfItems) 
+	[BrokerName], 
+	[BrokerCode], 
+	[City], 
+	[State]
+
+FROM [{objectQualifier}ARD_BrokerMaster]
+
+WHERE BrokerName LIKE  @SearchText + '%'
+
+ORDER BY BrokerName, BrokerCode
+
+GO
+
+
+
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO
+

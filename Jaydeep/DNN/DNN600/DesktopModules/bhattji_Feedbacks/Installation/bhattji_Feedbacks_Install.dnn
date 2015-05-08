@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<dotnetnuke version="3.0" type="Module">
+    <folders>
+        <folder>
+            <name>bhattji.Feedbacks</name>
+            <friendlyname>bhattji.Feedbacks</friendlyname>
+            <foldername>bhattji.Feedbacks</foldername>
+            <modulename>bhattji.Feedbacks</modulename>
+            <description>Description</description>
+            <version>01.00.00</version>
+            <businesscontrollerclass>bhattji.Modules.Feedbacks.FeedbacksController, bhattji.Modules.Feedbacks</businesscontrollerclass>
+            <resourcefile>install.bhattji</resourcefile>
+            <modules>
+                <module>
+                    <friendlyname>bhattji.Feedbacks</friendlyname>
+                    <cachetime>0</cachetime>
+                    <controls>
+                        <control>
+                            <title>Feedbacks</title>
+                            <src>Views.ascx</src>
+                            <type>View</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Views</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>Edit</key>
+                            <title>Edit Feedbacks</title>
+                            <src>Edits.ascx</src>
+                            <type>Edit</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Edits</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>Settings</key>
+                            <title>Feedbacks Settings</title>
+                            <src>Settings.ascx</src>
+                            <type>Edit</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Settings</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>Reports</key>
+                            <title>Feedback Reports</title>
+                            <src>Reports.ascx</src>
+                            <type>View</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Reports</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>ItemDetails</key>
+                            <title>Feedback Details</title>
+                            <src>Details.ascx</src>
+                            <type>View</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Details</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>ItemRatings</key>
+                            <title>Feedback Ratings</title>
+                            <src>Ratings.ascx</src>
+                            <type>View</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Ratings</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                    </controls>
+                </module>
+            </modules>
+            <files>
+                <file>
+                    <name>bhattji.Modules.Feedbacks.dll</name>
+                </file>
+                <file>
+                    <name>01.00.00.SqlDataProvider</name>
+                </file>
+                <file>
+                    <name>Uninstall.SqlDataProvider</name>
+                </file>
+            </files>
+        </folder>
+    </folders>
+</dotnetnuke>

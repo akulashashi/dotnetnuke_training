@@ -1,0 +1,15 @@
+..\..\bin\bhattji.Modules.SalesReps.dll
+..\..\bin\bhattji.Modules.SalesReps.pdb
+..\..\bin\bhattji.SalesReps.xml
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\bhattji.Modules.SalesReps.Details.resources
+obj\Debug\bhattji.Modules.SalesReps.EditItem.resources
+obj\Debug\bhattji.Modules.SalesReps.Edits.resources
+obj\Debug\bhattji.Modules.SalesReps.Thumb.resources
+obj\Debug\bhattji.Modules.SalesReps.Settings.resources
+obj\Debug\bhattji.Modules.SalesReps.ViewList.resources
+obj\Debug\bhattji.Modules.SalesReps.Views.resources
+obj\Debug\bhattji.SalesReps.vbproj.GenerateResource.Cache
+obj\Debug\bhattji.Modules.SalesReps.dll
+obj\Debug\bhattji.SalesReps.xml
+obj\Debug\bhattji.Modules.SalesReps.pdb

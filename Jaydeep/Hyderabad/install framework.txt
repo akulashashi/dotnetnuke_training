@@ -1,0 +1,17 @@
+what is the ip of this machine we want to copy few files from this machine
+
+PLEASE
+HELP
+
+you can use host name as D10H00241 ( trainer machine)
+
+
+Open CMD as "run as administrator"
+
+use the below command
+
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\aspnet_regiis.exe -i
+
+
+
+i am disconnecting the remote

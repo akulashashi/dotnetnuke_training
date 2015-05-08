@@ -1,0 +1,73 @@
+﻿<dotnetnuke type="Package" version="5.0">
+    <packages>
+        <package name="bhattji.YouTubeVideos" type="Module" version="01.00.00">
+            <friendlyName>bhattji.YouTubeVideos</friendlyName>
+            <description>A short Description about bhattji's YouTubeVideos Module</description>
+            <owner>
+                <name>Jaydeep Bhatt</name>
+                <organization>Vision Consultants</organization>
+                <url>http://www.bhattji.com</url>
+                <email>support@bhattji.com</email>
+            </owner>
+            <license src="license.txt" />
+            <releaseNotes src="releasenotes.txt" />
+            <iconFile>DesktopModules/bhattji.YouTubeVideos/vision.ico</iconFile>
+            <components>
+                
+                <component type="Module">
+                    <desktopModule>
+                        <moduleName>bhattji.YouTubeVideos</moduleName>
+                        <foldername>bhattji.YouTubeVideos</foldername>
+                        <businessControllerClass>bhattji.Modules.YouTubeVideos.YouTubeVideosController, bhattji.Modules.YouTubeVideos</businessControllerClass>
+                        <supportedFeatures />
+                        <moduleDefinitions>
+                            <moduleDefinition>
+                                <friendlyName>bhattji.YouTubeVideos</friendlyName>
+                                <defaultCacheTime>0</defaultCacheTime>
+                                <moduleControls>
+                                    <moduleControl>
+                                        <controlKey />
+                                        <controlSrc>DesktopModules/bhattji.YouTubeVideos/Views.ascx</controlSrc>
+                                        <supportsPartialRendering>False</supportsPartialRendering>
+                                        <controlTitle>YouTubeVideos</controlTitle>
+                                        <controlType>View</controlType>
+                                        <iconFile />
+                                        <helpUrl>http://www.bhattji.com/modulehelp/?ctl=Views</helpUrl>
+                                        <viewOrder>0</viewOrder>
+                                    </moduleControl>
+                                    
+                                    <moduleControl>
+                                        <controlKey>Settings</controlKey>
+                                        <controlSrc>DesktopModules/bhattji.YouTubeVideos/Settings.ascx</controlSrc>
+                                        <supportsPartialRendering>False</supportsPartialRendering>
+                                        <controlTitle>YouTubeVideos Settings</controlTitle>
+                                        <controlType>Edit</controlType>
+                                        <iconFile />
+                                        <helpUrl>http://www.bhattji.com/modulehelp/?ctl=Settings</helpUrl>
+                                        <viewOrder>0</viewOrder>
+                                    </moduleControl>
+                                </moduleControls>
+                            </moduleDefinition>
+                        </moduleDefinitions>
+                    </desktopModule>
+                </component>
+                <component type="Assembly">
+                    <assemblies>
+                        <assembly>
+                            <path>bin</path>
+                            <name>bhattji.Modules.YouTubeVideos.dll</name>
+                        </assembly>
+                    </assemblies>
+                </component>
+                <component type="ResourceFile">
+                    <resourceFiles>
+                        <basePath>DesktopModules\bhattji.YouTubeVideos</basePath>
+                        <resourceFile>
+                            <name>source.bhattji.zip</name>
+                        </resourceFile>
+                    </resourceFiles>
+                </component>
+            </components>
+        </package>
+    </packages>
+</dotnetnuke>

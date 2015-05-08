@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<dotnetnuke version="3.0" type="Module">
+    <folders>
+        <folder>
+            <name>bhattji.YouTubeVideos</name>
+            <friendlyname>bhattji.YouTubeVideos</friendlyname>
+            <foldername>bhattji.YouTubeVideos</foldername>
+            <modulename>bhattji.YouTubeVideos</modulename>
+            <description>Description</description>
+            <version>01.00.00</version>
+            <businesscontrollerclass>bhattji.Modules.YouTubeVideos.YouTubeVideosController, bhattji.Modules.YouTubeVideos</businesscontrollerclass>
+            <resourcefile>install.bhattji</resourcefile>
+            <modules>
+                <module>
+                    <friendlyname>bhattji.YouTubeVideos</friendlyname>
+                    <cachetime>0</cachetime>
+                    <controls>
+                        <control>
+                            <title>YouTubeVideos</title>
+                            <src>Views.ascx</src>
+                            <type>View</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Views</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>Edit</key>
+                            <title>Edit YouTubeVideos</title>
+                            <src>Edits.ascx</src>
+                            <type>Edit</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Edits</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>Settings</key>
+                            <title>YouTubeVideos Settings</title>
+                            <src>Settings.ascx</src>
+                            <type>Edit</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Settings</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>Reports</key>
+                            <title>YouTubeVideo Reports</title>
+                            <src>Reports.ascx</src>
+                            <type>View</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Reports</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>ItemDetails</key>
+                            <title>YouTubeVideo Details</title>
+                            <src>Details.ascx</src>
+                            <type>View</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Details</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>ItemRatings</key>
+                            <title>YouTubeVideo Ratings</title>
+                            <src>Ratings.ascx</src>
+                            <type>View</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Ratings</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                    </controls>
+                </module>
+            </modules>
+            <files>
+                <file>
+                    <name>bhattji.Modules.YouTubeVideos.dll</name>
+                </file>
+                <file>
+                    <name>01.00.00.SqlDataProvider</name>
+                </file>
+                <file>
+                    <name>Uninstall.SqlDataProvider</name>
+                </file>
+            </files>
+        </folder>
+    </folders>
+</dotnetnuke>

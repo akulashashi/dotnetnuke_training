@@ -1,0 +1,4987 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+bhattji.Modules.InterOffices
+</name>
+</assembly>
+<members>
+<member name="M:bhattji.Modules.InterOffices.Settings.LoadSettings">
+ -----------------------------------------------------------------------------
+ <summary>
+ LoadSettings loads the settings from the Databas and displays them
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+		[bhattji]	10/20/2004	created
+ </history>
+ -----------------------------------------------------------------------------
+ 
+
+</member><member name="M:bhattji.Modules.InterOffices.Settings.UpdateSettings">
+ -----------------------------------------------------------------------------
+ <summary>
+ UpdateSettings saves the modified settings to the Database
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+		[bhattji]	10/20/2004	created
+		[bhattji]	10/25/2004	upated to use TabModuleId rather than TabId/ModuleId
+ </history>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:bhattji.Modules.InterOffices.Settings.imbUpdate_Click(System.Object,System.Web.UI.ImageClickEventArgs)">
+ -----------------------------------------------------------------------------
+ <summary>
+ cmdUpdate_Click runs when the update button is clicked
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/23/2004	Updated to reflect design changes for Help, 508 support
+                       and localisation
+ </history>
+ -----------------------------------------------------------------------------
+ 
+
+</member><member name="M:bhattji.Modules.InterOffices.Settings.imbCancel_Click(System.Object,System.Web.UI.ImageClickEventArgs)">
+ -----------------------------------------------------------------------------
+ <summary>
+ cmdCancel_Click runs when the cancel button is clicked
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/23/2004	Updated to reflect design changes for Help, 508 support
+                       and localisation
+ </history>
+ -----------------------------------------------------------------------------
+
+</member><member name="T:bhattji.Modules.InterOffices.OptionsInfo">
+ -----------------------------------------------------------------------------
+ <summary>
+ The Options Class provides the TabbedPages Business Object
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/20/2004	Moved TabbedPages to a separate Project
+ </history>
+ -----------------------------------------------------------------------------
+ 
+
+</member><member name="F:bhattji.Modules.InterOffices.Edits.uprEditMain">
+	<summary>
+uprEditMain control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="M:bhattji.Modules.InterOffices.ViewList.Page_Load(System.Object,System.EventArgs)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Page_Load runs when the control is loaded
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/23/2004	Moved Links to a separate Project
+ </history>
+ -----------------------------------------------------------------------------
+ 
+
+</member><member name="T:bhattji.Modules.InterOffices.ViewList">
+ -----------------------------------------------------------------------------
+ <summary>
+ The Links Class provides the UI for displaying the Links
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/23/2004	Moved Links to a separate Project
+		[bhattji]	10/20/2004	Removed ViewOptions from Action menu
+ </history>
+ -----------------------------------------------------------------------------
+ 
+
+</member><member name="M:bhattji.Modules.InterOffices.Thumb.Page_Init(System.Object,System.EventArgs)">
+Private designerPlaceholderDeclaration As System.Object
+
+</member><member name="F:bhattji.Modules.InterOffices.Details.jrcmaintable">
+	<summary>
+jrcmaintable control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plJRCIOfficeCode">
+	<summary>
+plJRCIOfficeCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plIOfficeCode">
+	<summary>
+plIOfficeCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plIOName">
+	<summary>
+plIOName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plJRCActive">
+	<summary>
+plJRCActive control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtJRCIOfficeCode">
+	<summary>
+txtJRCIOfficeCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtIOfficeCode">
+	<summary>
+txtIOfficeCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtIOName">
+	<summary>
+txtIOName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.chkJRCActive">
+	<summary>
+chkJRCActive control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.tblIODetails">
+	<summary>
+tblIODetails control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plAbvrName">
+	<summary>
+plAbvrName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtAbvrName">
+	<summary>
+txtAbvrName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plAddressLine1">
+	<summary>
+plAddressLine1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtAddressLine1">
+	<summary>
+txtAddressLine1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtAddressLine2">
+	<summary>
+txtAddressLine2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plCity">
+	<summary>
+plCity control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtCity">
+	<summary>
+txtCity control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtState">
+	<summary>
+txtState control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtZipCode">
+	<summary>
+txtZipCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtCountryCode">
+	<summary>
+txtCountryCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plCountryCode">
+	<summary>
+plCountryCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plPhoneNo">
+	<summary>
+plPhoneNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtPhoneNo">
+	<summary>
+txtPhoneNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plExt">
+	<summary>
+plExt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtExt">
+	<summary>
+txtExt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plFaxNo">
+	<summary>
+plFaxNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtFaxNo">
+	<summary>
+txtFaxNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plEmailAddress">
+	<summary>
+plEmailAddress control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtEmailAddress">
+	<summary>
+txtEmailAddress control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plLogOnPW">
+	<summary>
+plLogOnPW control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtLogOnPW">
+	<summary>
+txtLogOnPW control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plSubOffComm">
+	<summary>
+plSubOffComm control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.chkSubOffComm">
+	<summary>
+chkSubOffComm control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plAPCodeFM">
+	<summary>
+plAPCodeFM control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtAPCodeFM">
+	<summary>
+txtAPCodeFM control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plAbvrNameFM">
+	<summary>
+plAbvrNameFM control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtAbvrNameFM">
+	<summary>
+txtAbvrNameFM control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plCommRateFM">
+	<summary>
+plCommRateFM control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtCommRateFM">
+	<summary>
+txtCommRateFM control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plBKCommRateFM">
+	<summary>
+plBKCommRateFM control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtBKCommRateFM">
+	<summary>
+txtBKCommRateFM control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plBrokerOnly">
+	<summary>
+plBrokerOnly control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.chkBrokerOnly">
+	<summary>
+chkBrokerOnly control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plIntraOComm">
+	<summary>
+plIntraOComm control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.chkIntraOComm">
+	<summary>
+chkIntraOComm control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plPASplit">
+	<summary>
+plPASplit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.chkPASplit">
+	<summary>
+chkPASplit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plCommAdj">
+	<summary>
+plCommAdj control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.chkCommAdj">
+	<summary>
+chkCommAdj control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plAllowCDed">
+	<summary>
+plAllowCDed control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.chkAllowCDed">
+	<summary>
+chkAllowCDed control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plDvrDAcct1">
+	<summary>
+plDvrDAcct1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtDvrDAcct1">
+	<summary>
+txtDvrDAcct1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plDoABU">
+	<summary>
+plDoABU control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.chkDoABU">
+	<summary>
+chkDoABU control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plXMissionSeq">
+	<summary>
+plXMissionSeq control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.chkXMissionSeq">
+	<summary>
+chkXMissionSeq control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plWhatDivision">
+	<summary>
+plWhatDivision control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.ddlWhatDivision">
+	<summary>
+ddlWhatDivision control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plGenCode">
+	<summary>
+plGenCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtGenCode">
+	<summary>
+txtGenCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plLoadAcct">
+	<summary>
+plLoadAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtLoadAcct">
+	<summary>
+txtLoadAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plDiscAcct">
+	<summary>
+plDiscAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtDiscAcct">
+	<summary>
+txtDiscAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plDetenAcct">
+	<summary>
+plDetenAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtDetenAcct">
+	<summary>
+txtDetenAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plTollsAcct">
+	<summary>
+plTollsAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtTollsAcct">
+	<summary>
+txtTollsAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plFuelAcct">
+	<summary>
+plFuelAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtFuelAcct">
+	<summary>
+txtFuelAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plDropAcct">
+	<summary>
+plDropAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtDropAcct">
+	<summary>
+txtDropAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plReconAcct">
+	<summary>
+plReconAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtReconAcct">
+	<summary>
+txtReconAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plTarpAcct">
+	<summary>
+plTarpAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtTarpAcct">
+	<summary>
+txtTarpAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plLumperAcct">
+	<summary>
+plLumperAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtLumperAcct">
+	<summary>
+txtLumperAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plUnloadAcct">
+	<summary>
+plUnloadAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtUnloadAcct">
+	<summary>
+txtUnloadAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plAdminMiscAcct">
+	<summary>
+plAdminMiscAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtAdminMiscAcct">
+	<summary>
+txtAdminMiscAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plTempFile1">
+	<summary>
+plTempFile1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtTempFile1">
+	<summary>
+txtTempFile1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plLastXferDate">
+	<summary>
+plLastXferDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtLastXferDate">
+	<summary>
+txtLastXferDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plLastXmission">
+	<summary>
+plLastXmission control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtLastXmission">
+	<summary>
+txtLastXmission control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plXfer">
+	<summary>
+plXfer control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtXfer">
+	<summary>
+txtXfer control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plLoadAcctB">
+	<summary>
+plLoadAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtLoadAcctB">
+	<summary>
+txtLoadAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plDiscAcctB">
+	<summary>
+plDiscAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtDiscAcctB">
+	<summary>
+txtDiscAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plDetenAcctB">
+	<summary>
+plDetenAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtDetenAcctB">
+	<summary>
+txtDetenAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plTollsAcctB">
+	<summary>
+plTollsAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtTollsAcctB">
+	<summary>
+txtTollsAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plFuelAcctB">
+	<summary>
+plFuelAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtFuelAcctB">
+	<summary>
+txtFuelAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plDropAcctB">
+	<summary>
+plDropAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtDropAcctB">
+	<summary>
+txtDropAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plReconAcctB">
+	<summary>
+plReconAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtReconAcctB">
+	<summary>
+txtReconAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plTarpAcctB">
+	<summary>
+plTarpAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtTarpAcctB">
+	<summary>
+txtTarpAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plLumperAcctB">
+	<summary>
+plLumperAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtLumperAcctB">
+	<summary>
+txtLumperAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plUnloadAcctB">
+	<summary>
+plUnloadAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtUnloadAcctB">
+	<summary>
+txtUnloadAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plAdminMiscAcctB">
+	<summary>
+plAdminMiscAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtAdminMiscAcctB">
+	<summary>
+txtAdminMiscAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plOONo">
+	<summary>
+plOONo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtOONo">
+	<summary>
+txtOONo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plBKNo">
+	<summary>
+plBKNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtBKNo">
+	<summary>
+txtBKNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plAVNo">
+	<summary>
+plAVNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtAVNo">
+	<summary>
+txtAVNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plNoOffChar">
+	<summary>
+plNoOffChar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.ddlNoOffChar">
+	<summary>
+ddlNoOffChar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plOOLoadNo">
+	<summary>
+plOOLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtOOLoadNo">
+	<summary>
+txtOOLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plBKLoadNo">
+	<summary>
+plBKLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtBKLoadNo">
+	<summary>
+txtBKLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plAVLoadNo">
+	<summary>
+plAVLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtAVLoadNo">
+	<summary>
+txtAVLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plConfName">
+	<summary>
+plConfName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtConfName">
+	<summary>
+txtConfName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plConfAddr">
+	<summary>
+plConfAddr control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtConfAddr">
+	<summary>
+txtConfAddr control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plConfSTZ">
+	<summary>
+plConfSTZ control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtConfSTZ">
+	<summary>
+txtConfSTZ control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plConfPNo">
+	<summary>
+plConfPNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtConfPNo">
+	<summary>
+txtConfPNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plBWordsA">
+	<summary>
+plBWordsA control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtBWordsA">
+	<summary>
+txtBWordsA control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plBWordsB">
+	<summary>
+plBWordsB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtBWordsB">
+	<summary>
+txtBWordsB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plBWordsC">
+	<summary>
+plBWordsC control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtBWordsC">
+	<summary>
+txtBWordsC control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.tdConfirmation">
+	<summary>
+tdConfirmation control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plOfficeOR">
+	<summary>
+plOfficeOR control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.chkOfficeOR">
+	<summary>
+chkOfficeOR control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plOfficeORAcct">
+	<summary>
+plOfficeORAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtOfficeORAcct">
+	<summary>
+txtOfficeORAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plOfficeORPct">
+	<summary>
+plOfficeORPct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtOfficeORPct">
+	<summary>
+txtOfficeORPct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plDivision">
+	<summary>
+plDivision control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtDivision">
+	<summary>
+txtDivision control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plStatus">
+	<summary>
+plStatus control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.chkStatus">
+	<summary>
+chkStatus control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plCommRate">
+	<summary>
+plCommRate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtCommRate">
+	<summary>
+txtCommRate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plOfficePct">
+	<summary>
+plOfficePct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtOfficePct">
+	<summary>
+txtOfficePct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plBKOfficePct">
+	<summary>
+plBKOfficePct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtBKOfficePct">
+	<summary>
+txtBKOfficePct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.tblNewIO">
+	<summary>
+tblNewIO control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plTemplate">
+	<summary>
+plTemplate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.cboTemplate">
+	<summary>
+cboTemplate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.lblTemplateDescription">
+	<summary>
+lblTemplateDescription control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plFirstName">
+	<summary>
+plFirstName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtFirstName">
+	<summary>
+txtFirstName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plLastName">
+	<summary>
+plLastName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtLastName">
+	<summary>
+txtLastName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plUsername">
+	<summary>
+plUsername control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtUsername">
+	<summary>
+txtUsername control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plPassword">
+	<summary>
+plPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtPassword">
+	<summary>
+txtPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plConfirm">
+	<summary>
+plConfirm control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtConfirm">
+	<summary>
+txtConfirm control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.plEmail">
+	<summary>
+plEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.txtEmail">
+	<summary>
+txtEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.lblMessage">
+	<summary>
+lblMessage control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.lstResults">
+	<summary>
+lstResults control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.cmdAddPortal">
+	<summary>
+cmdAddPortal control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.divButtons">
+	<summary>
+divButtons control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.tdEdit">
+	<summary>
+tdEdit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.hypImgEdit">
+	<summary>
+hypImgEdit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.hypEdit">
+	<summary>
+hypEdit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.hypImgClose">
+	<summary>
+hypImgClose control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.hypClose">
+	<summary>
+hypClose control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.hypImgPrint">
+	<summary>
+hypImgPrint control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.hypPrint">
+	<summary>
+hypPrint control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.ctlAudit">
+	<summary>
+ctlAudit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.Details.ctlTracking">
+	<summary>
+ctlTracking control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.jrcmaintable">
+	<summary>
+jrcmaintable control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plJRCIOfficeCode">
+	<summary>
+plJRCIOfficeCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plIOfficeCode">
+	<summary>
+plIOfficeCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plIOName">
+	<summary>
+plIOName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plJRCActive">
+	<summary>
+plJRCActive control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkCorpOff">
+	<summary>
+chkCorpOff control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkShowOnWeb">
+	<summary>
+chkShowOnWeb control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtJRCIOfficeCode">
+	<summary>
+txtJRCIOfficeCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.fteJRCIOfficeCode">
+	<summary>
+fteJRCIOfficeCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.cvJRCIOfficeCode">
+	<summary>
+cvJRCIOfficeCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxJRCIOfficeCode0">
+	<summary>
+vlxJRCIOfficeCode0 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valJRCIOfficeCode">
+	<summary>
+valJRCIOfficeCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxJRCIOfficeCode">
+	<summary>
+vlxJRCIOfficeCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtIOfficeCode">
+	<summary>
+txtIOfficeCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.fteIOfficeCode">
+	<summary>
+fteIOfficeCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.cvIOfficeCode">
+	<summary>
+cvIOfficeCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxIOfficeCode0">
+	<summary>
+vlxIOfficeCode0 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valIOfficeCode">
+	<summary>
+valIOfficeCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxIOfficeCode">
+	<summary>
+vlxIOfficeCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtIOName">
+	<summary>
+txtIOName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valIOName">
+	<summary>
+valIOName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxIOName">
+	<summary>
+vlxIOName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkJRCActive">
+	<summary>
+chkJRCActive control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.imgJRCActive">
+	<summary>
+imgJRCActive control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.tblIODetails">
+	<summary>
+tblIODetails control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plAbvrName">
+	<summary>
+plAbvrName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtAbvrName">
+	<summary>
+txtAbvrName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plAddressLine1">
+	<summary>
+plAddressLine1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtAddressLine1">
+	<summary>
+txtAddressLine1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtAddressLine2">
+	<summary>
+txtAddressLine2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plCity">
+	<summary>
+plCity control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtCity">
+	<summary>
+txtCity control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.ddlStateCode">
+	<summary>
+ddlStateCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valState">
+	<summary>
+valState control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxState">
+	<summary>
+vlxState control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtZipCode">
+	<summary>
+txtZipCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtCountryCode">
+	<summary>
+txtCountryCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plCountryCode">
+	<summary>
+plCountryCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plPhoneNo">
+	<summary>
+plPhoneNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtPhoneNo">
+	<summary>
+txtPhoneNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plExt">
+	<summary>
+plExt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtExt">
+	<summary>
+txtExt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plFaxNo">
+	<summary>
+plFaxNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtFaxNo">
+	<summary>
+txtFaxNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plEmailAddress">
+	<summary>
+plEmailAddress control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtEmailAddress">
+	<summary>
+txtEmailAddress control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkHasProbDrivers">
+	<summary>
+chkHasProbDrivers control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plLogOnPW">
+	<summary>
+plLogOnPW control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtLogOnPW">
+	<summary>
+txtLogOnPW control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkSubOffComm">
+	<summary>
+chkSubOffComm control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plSubOffComm">
+	<summary>
+plSubOffComm control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plAPCodeFM">
+	<summary>
+plAPCodeFM control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtAPCodeFM">
+	<summary>
+txtAPCodeFM control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plAbvrNameFM">
+	<summary>
+plAbvrNameFM control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtAbvrNameFM">
+	<summary>
+txtAbvrNameFM control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plCommRateFM">
+	<summary>
+plCommRateFM control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtCommRateFM">
+	<summary>
+txtCommRateFM control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.fteCommRateFM">
+	<summary>
+fteCommRateFM control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plBKCommRateFM">
+	<summary>
+plBKCommRateFM control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtBKCommRateFM">
+	<summary>
+txtBKCommRateFM control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.fteBKCommRateFM">
+	<summary>
+fteBKCommRateFM control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plBrokerOnly">
+	<summary>
+plBrokerOnly control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkBrokerOnly">
+	<summary>
+chkBrokerOnly control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.trIntraOComm">
+	<summary>
+trIntraOComm control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plIntraOComm">
+	<summary>
+plIntraOComm control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkIntraOComm">
+	<summary>
+chkIntraOComm control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plPASplit">
+	<summary>
+plPASplit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkPASplit">
+	<summary>
+chkPASplit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plCommAdj">
+	<summary>
+plCommAdj control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkCommAdj">
+	<summary>
+chkCommAdj control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plAllowCDed">
+	<summary>
+plAllowCDed control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkAllowCDed">
+	<summary>
+chkAllowCDed control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.trDvrDAcct1">
+	<summary>
+trDvrDAcct1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plDvrDAcct1">
+	<summary>
+plDvrDAcct1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtDvrDAcct1">
+	<summary>
+txtDvrDAcct1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plDoABU">
+	<summary>
+plDoABU control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkDoABU">
+	<summary>
+chkDoABU control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plXMissionSeq">
+	<summary>
+plXMissionSeq control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkXMissionSeq">
+	<summary>
+chkXMissionSeq control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plWhatDivision">
+	<summary>
+plWhatDivision control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.ddlWhatDivision">
+	<summary>
+ddlWhatDivision control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plGenCode">
+	<summary>
+plGenCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtGenCode">
+	<summary>
+txtGenCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.cmdGo">
+	<summary>
+cmdGo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valGenCode">
+	<summary>
+valGenCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxGenCode">
+	<summary>
+vlxGenCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plLoadAcct">
+	<summary>
+plLoadAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtLoadAcct">
+	<summary>
+txtLoadAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valLoadAcct">
+	<summary>
+valLoadAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxLoadAcct">
+	<summary>
+vlxLoadAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plDiscAcct">
+	<summary>
+plDiscAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtDiscAcct">
+	<summary>
+txtDiscAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valDiscAcct">
+	<summary>
+valDiscAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxDiscAcct">
+	<summary>
+vlxDiscAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plDetenAcct">
+	<summary>
+plDetenAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtDetenAcct">
+	<summary>
+txtDetenAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valDetenAcct">
+	<summary>
+valDetenAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxDetenAcct">
+	<summary>
+vlxDetenAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plTollsAcct">
+	<summary>
+plTollsAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtTollsAcct">
+	<summary>
+txtTollsAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valTollsAcct">
+	<summary>
+valTollsAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxTollsAcct">
+	<summary>
+vlxTollsAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plFuelAcct">
+	<summary>
+plFuelAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtFuelAcct">
+	<summary>
+txtFuelAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valFuelAcct">
+	<summary>
+valFuelAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxFuelAcct">
+	<summary>
+vlxFuelAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plDropAcct">
+	<summary>
+plDropAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtDropAcct">
+	<summary>
+txtDropAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valDropAcct">
+	<summary>
+valDropAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxDropAcct">
+	<summary>
+vlxDropAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plReconAcct">
+	<summary>
+plReconAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtReconAcct">
+	<summary>
+txtReconAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valReconAcct">
+	<summary>
+valReconAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxReconAcct">
+	<summary>
+vlxReconAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plTarpAcct">
+	<summary>
+plTarpAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtTarpAcct">
+	<summary>
+txtTarpAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valTarpAcct">
+	<summary>
+valTarpAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxTarpAcct">
+	<summary>
+vlxTarpAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plLumperAcct">
+	<summary>
+plLumperAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtLumperAcct">
+	<summary>
+txtLumperAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valLumperAcct">
+	<summary>
+valLumperAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxLumperAcct">
+	<summary>
+vlxLumperAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plUnloadAcct">
+	<summary>
+plUnloadAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtUnloadAcct">
+	<summary>
+txtUnloadAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valUnloadAcct">
+	<summary>
+valUnloadAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxUnloadAcct">
+	<summary>
+vlxUnloadAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plAdminMiscAcct">
+	<summary>
+plAdminMiscAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtAdminMiscAcct">
+	<summary>
+txtAdminMiscAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valAdminMiscAcct">
+	<summary>
+valAdminMiscAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxAdminMiscAcct">
+	<summary>
+vlxAdminMiscAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plTempFile1">
+	<summary>
+plTempFile1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtTempFile1">
+	<summary>
+txtTempFile1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valTempFile1">
+	<summary>
+valTempFile1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxTempFile1">
+	<summary>
+vlxTempFile1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plLastXferDate">
+	<summary>
+plLastXferDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtLastXferDate">
+	<summary>
+txtLastXferDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.imgLastXferDate">
+	<summary>
+imgLastXferDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.calLastXferDate">
+	<summary>
+calLastXferDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plLastXmission">
+	<summary>
+plLastXmission control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtLastXmission">
+	<summary>
+txtLastXmission control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plXfer">
+	<summary>
+plXfer control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtXfer">
+	<summary>
+txtXfer control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plLoadAcctB">
+	<summary>
+plLoadAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtLoadAcctB">
+	<summary>
+txtLoadAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valLoadAcctB">
+	<summary>
+valLoadAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxLoadAcctB">
+	<summary>
+vlxLoadAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plDiscAcctB">
+	<summary>
+plDiscAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtDiscAcctB">
+	<summary>
+txtDiscAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valDiscAcctB">
+	<summary>
+valDiscAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxDiscAcctB">
+	<summary>
+vlxDiscAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plDetenAcctB">
+	<summary>
+plDetenAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtDetenAcctB">
+	<summary>
+txtDetenAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valDetenAcctB">
+	<summary>
+valDetenAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxDetenAcctB">
+	<summary>
+vlxDetenAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plTollsAcctB">
+	<summary>
+plTollsAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtTollsAcctB">
+	<summary>
+txtTollsAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valTollsAcctB">
+	<summary>
+valTollsAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxTollsAcctB">
+	<summary>
+vlxTollsAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plFuelAcctB">
+	<summary>
+plFuelAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtFuelAcctB">
+	<summary>
+txtFuelAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valFuelAcctB">
+	<summary>
+valFuelAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxFuelAcctB">
+	<summary>
+vlxFuelAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plDropAcctB">
+	<summary>
+plDropAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtDropAcctB">
+	<summary>
+txtDropAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valDropAcctB">
+	<summary>
+valDropAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxDropAcctB">
+	<summary>
+vlxDropAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plReconAcctB">
+	<summary>
+plReconAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtReconAcctB">
+	<summary>
+txtReconAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valReconAcctB">
+	<summary>
+valReconAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxReconAcctB">
+	<summary>
+vlxReconAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plTarpAcctB">
+	<summary>
+plTarpAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtTarpAcctB">
+	<summary>
+txtTarpAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valTarpAcctB">
+	<summary>
+valTarpAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxTarpAcctB">
+	<summary>
+vlxTarpAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plLumperAcctB">
+	<summary>
+plLumperAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtLumperAcctB">
+	<summary>
+txtLumperAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valLumperAcctB">
+	<summary>
+valLumperAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxLumperAcctB">
+	<summary>
+vlxLumperAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plUnloadAcctB">
+	<summary>
+plUnloadAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtUnloadAcctB">
+	<summary>
+txtUnloadAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valUnloadAcctB">
+	<summary>
+valUnloadAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxUnloadAcctB">
+	<summary>
+vlxUnloadAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plAdminMiscAcctB">
+	<summary>
+plAdminMiscAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtAdminMiscAcctB">
+	<summary>
+txtAdminMiscAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valAdminMiscAcctB">
+	<summary>
+valAdminMiscAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxAdminMiscAcctB">
+	<summary>
+vlxAdminMiscAcctB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plNoOffChar">
+	<summary>
+plNoOffChar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.ddlNoOffChar">
+	<summary>
+ddlNoOffChar control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.lblPreFix">
+	<summary>
+lblPreFix control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.lblLoadNo">
+	<summary>
+lblLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plOONo">
+	<summary>
+plOONo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtOONo">
+	<summary>
+txtOONo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valOONo">
+	<summary>
+valOONo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxOONo">
+	<summary>
+vlxOONo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.cvOONo">
+	<summary>
+cvOONo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxOONo0">
+	<summary>
+vlxOONo0 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtOOLoadNo">
+	<summary>
+txtOOLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.fteOOLoadNo">
+	<summary>
+fteOOLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valOOLoadNo">
+	<summary>
+valOOLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxOOLoadNo">
+	<summary>
+vlxOOLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valOOLoadNo0">
+	<summary>
+valOOLoadNo0 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxOOLoadNo0">
+	<summary>
+vlxOOLoadNo0 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plBKNo">
+	<summary>
+plBKNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtBKNo">
+	<summary>
+txtBKNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valBKNo">
+	<summary>
+valBKNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxBKNo">
+	<summary>
+vlxBKNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.cvBKNo">
+	<summary>
+cvBKNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxBKNo0">
+	<summary>
+vlxBKNo0 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtBKLoadNo">
+	<summary>
+txtBKLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.fteBKLoadNo">
+	<summary>
+fteBKLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valBKLoadNo">
+	<summary>
+valBKLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxBKLoadNo">
+	<summary>
+vlxBKLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valBKLoadNo0">
+	<summary>
+valBKLoadNo0 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxBKLoadNo0">
+	<summary>
+vlxBKLoadNo0 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plAVNo">
+	<summary>
+plAVNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtAVNo">
+	<summary>
+txtAVNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valAVNo">
+	<summary>
+valAVNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxAVNo">
+	<summary>
+vlxAVNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.cvAVNo">
+	<summary>
+cvAVNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxAVNo0">
+	<summary>
+vlxAVNo0 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtAVLoadNo">
+	<summary>
+txtAVLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.fteAVLoadNo">
+	<summary>
+fteAVLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valAVLoadNo">
+	<summary>
+valAVLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxAVLoadNo">
+	<summary>
+vlxAVLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valAVLoadNo0">
+	<summary>
+valAVLoadNo0 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxAVLoadNo0">
+	<summary>
+vlxAVLoadNo0 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plOOLoadNo">
+	<summary>
+plOOLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plBKLoadNo">
+	<summary>
+plBKLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plAVLoadNo">
+	<summary>
+plAVLoadNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkCopyAddress">
+	<summary>
+chkCopyAddress control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plConfName">
+	<summary>
+plConfName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtConfName">
+	<summary>
+txtConfName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plConfAddr">
+	<summary>
+plConfAddr control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtConfAddr">
+	<summary>
+txtConfAddr control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plConfSTZ">
+	<summary>
+plConfSTZ control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtConfSTZ">
+	<summary>
+txtConfSTZ control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plConfPNo">
+	<summary>
+plConfPNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtConfPNo">
+	<summary>
+txtConfPNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plBWordsA">
+	<summary>
+plBWordsA control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtBWordsA">
+	<summary>
+txtBWordsA control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plBWordsB">
+	<summary>
+plBWordsB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtBWordsB">
+	<summary>
+txtBWordsB control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plBWordsC">
+	<summary>
+plBWordsC control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtBWordsC">
+	<summary>
+txtBWordsC control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.tdConfirmation">
+	<summary>
+tdConfirmation control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.rblOfficeOR">
+	<summary>
+rblOfficeOR control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkOfficeOR">
+	<summary>
+chkOfficeOR control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plOfficeOR">
+	<summary>
+plOfficeOR control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plOfficeORAcct">
+	<summary>
+plOfficeORAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtOfficeORAcct">
+	<summary>
+txtOfficeORAcct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plOfficeORPct">
+	<summary>
+plOfficeORPct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtOfficeORPct">
+	<summary>
+txtOfficeORPct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.fteOfficeORPct">
+	<summary>
+fteOfficeORPct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plDivision">
+	<summary>
+plDivision control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtDivision">
+	<summary>
+txtDivision control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valDivision">
+	<summary>
+valDivision control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxDivision">
+	<summary>
+vlxDivision control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plStatus">
+	<summary>
+plStatus control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkStatus">
+	<summary>
+chkStatus control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plCommRate">
+	<summary>
+plCommRate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtCommRate">
+	<summary>
+txtCommRate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.fteCommRate">
+	<summary>
+fteCommRate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valCommRate">
+	<summary>
+valCommRate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxCommRate">
+	<summary>
+vlxCommRate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plOfficePct">
+	<summary>
+plOfficePct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtOfficePct">
+	<summary>
+txtOfficePct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.fteOfficePct">
+	<summary>
+fteOfficePct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valOfficePct">
+	<summary>
+valOfficePct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxOfficePct">
+	<summary>
+vlxOfficePct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plBKOfficePct">
+	<summary>
+plBKOfficePct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtBKOfficePct">
+	<summary>
+txtBKOfficePct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.fteBKOfficePct">
+	<summary>
+fteBKOfficePct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valBKOfficePct">
+	<summary>
+valBKOfficePct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.vlxBKOfficePct">
+	<summary>
+vlxBKOfficePct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.tblNewIO">
+	<summary>
+tblNewIO control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plTemplate">
+	<summary>
+plTemplate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.cboTemplate">
+	<summary>
+cboTemplate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valTemplate">
+	<summary>
+valTemplate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.lblTemplateDescription">
+	<summary>
+lblTemplateDescription control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plFirstName">
+	<summary>
+plFirstName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtFirstName">
+	<summary>
+txtFirstName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valFirstName">
+	<summary>
+valFirstName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plLastName">
+	<summary>
+plLastName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtLastName">
+	<summary>
+txtLastName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valLastName">
+	<summary>
+valLastName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plUsername">
+	<summary>
+plUsername control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtUsername">
+	<summary>
+txtUsername control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valUsername">
+	<summary>
+valUsername control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plPassword">
+	<summary>
+plPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtPassword">
+	<summary>
+txtPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valPassword">
+	<summary>
+valPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plConfirm">
+	<summary>
+plConfirm control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtConfirm">
+	<summary>
+txtConfirm control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valConfirm">
+	<summary>
+valConfirm control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plEmail">
+	<summary>
+plEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtEmail">
+	<summary>
+txtEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valEmail">
+	<summary>
+valEmail control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.lblMessage">
+	<summary>
+lblMessage control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.lstResults">
+	<summary>
+lstResults control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.cmdAddPortal">
+	<summary>
+cmdAddPortal control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.divPopup">
+	<summary>
+divPopup control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.lblMsg">
+	<summary>
+lblMsg control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.valValidationSummary">
+	<summary>
+valValidationSummary control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.trUpdateRedirection">
+	<summary>
+trUpdateRedirection control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.ddlUpdateRedirection">
+	<summary>
+ddlUpdateRedirection control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.tdAdd">
+	<summary>
+tdAdd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.imbAdd">
+	<summary>
+imbAdd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.cmdAdd">
+	<summary>
+cmdAdd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.tdUpdate">
+	<summary>
+tdUpdate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.imbUpdate">
+	<summary>
+imbUpdate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.cmdUpdate">
+	<summary>
+cmdUpdate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.imbCancel">
+	<summary>
+imbCancel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.cmdCancel">
+	<summary>
+cmdCancel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.tdDelete">
+	<summary>
+tdDelete control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.imbDelete">
+	<summary>
+imbDelete control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.cmdDelete">
+	<summary>
+cmdDelete control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.tdPrint">
+	<summary>
+tdPrint control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.hypImgPrint">
+	<summary>
+hypImgPrint control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.hypPrint">
+	<summary>
+hypPrint control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.ctlAudit">
+	<summary>
+ctlAudit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.ctlTracking">
+	<summary>
+ctlTracking control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plAddressLine2">
+	<summary>
+plAddressLine2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plState">
+	<summary>
+plState control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plZipCode">
+	<summary>
+plZipCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plAdminExempt">
+	<summary>
+plAdminExempt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkAdminExempt">
+	<summary>
+chkAdminExempt control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plLoadType">
+	<summary>
+plLoadType control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtLoadType">
+	<summary>
+txtLoadType control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plOfficeCodeNo">
+	<summary>
+plOfficeCodeNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtOfficeCodeNo">
+	<summary>
+txtOfficeCodeNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plOfficName">
+	<summary>
+plOfficName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtOfficName">
+	<summary>
+txtOfficName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plOfficeAddr">
+	<summary>
+plOfficeAddr control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtOfficeAddr">
+	<summary>
+txtOfficeAddr control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plOfficeAbrv">
+	<summary>
+plOfficeAbrv control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtOfficeAbrv">
+	<summary>
+txtOfficeAbrv control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plUseDispatch">
+	<summary>
+plUseDispatch control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkUseDispatch">
+	<summary>
+chkUseDispatch control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plAllowORide">
+	<summary>
+plAllowORide control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkAllowORide">
+	<summary>
+chkAllowORide control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plJRCAdminP">
+	<summary>
+plJRCAdminP control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtJRCAdminP">
+	<summary>
+txtJRCAdminP control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plReminder">
+	<summary>
+plReminder control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtReminder">
+	<summary>
+txtReminder control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plDefDispNo">
+	<summary>
+plDefDispNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtDefDispNo">
+	<summary>
+txtDefDispNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plDefDispName">
+	<summary>
+plDefDispName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtDefDispName">
+	<summary>
+txtDefDispName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plMultiSing">
+	<summary>
+plMultiSing control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkMultiSing">
+	<summary>
+chkMultiSing control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plAutoLoadSeq">
+	<summary>
+plAutoLoadSeq control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkAutoLoadSeq">
+	<summary>
+chkAutoLoadSeq control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plInitQForCust">
+	<summary>
+plInitQForCust control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkInitQForCust">
+	<summary>
+chkInitQForCust control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plDay0">
+	<summary>
+plDay0 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtDay0">
+	<summary>
+txtDay0 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plDay7">
+	<summary>
+plDay7 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtDay7">
+	<summary>
+txtDay7 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plDay15">
+	<summary>
+plDay15 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtDay15">
+	<summary>
+txtDay15 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plDay30">
+	<summary>
+plDay30 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtDay30">
+	<summary>
+txtDay30 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plAlumaPct">
+	<summary>
+plAlumaPct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtAlumaPct">
+	<summary>
+txtAlumaPct control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plLastcorpbu">
+	<summary>
+plLastcorpbu control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtLastcorpbu">
+	<summary>
+txtLastcorpbu control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.cmdCalendarLastcorpbu">
+	<summary>
+cmdCalendarLastcorpbu control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plCNOfficName">
+	<summary>
+plCNOfficName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtCNOfficName">
+	<summary>
+txtCNOfficName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plOffOrgin">
+	<summary>
+plOffOrgin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtOffOrgin">
+	<summary>
+txtOffOrgin control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plTSL">
+	<summary>
+plTSL control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtTSL">
+	<summary>
+txtTSL control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plTPBCalc">
+	<summary>
+plTPBCalc control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtTPBCalc">
+	<summary>
+txtTPBCalc control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plLastCustUpd">
+	<summary>
+plLastCustUpd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtLastCustUpd">
+	<summary>
+txtLastCustUpd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.cmdCalendarLastCustUpd">
+	<summary>
+cmdCalendarLastCustUpd control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plLastUpdTime">
+	<summary>
+plLastUpdTime control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtLastUpdTime">
+	<summary>
+txtLastUpdTime control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.cmdCalendarLastUpdTime">
+	<summary>
+cmdCalendarLastUpdTime control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plUserOn">
+	<summary>
+plUserOn control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtUserOn">
+	<summary>
+txtUserOn control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plMgrCode">
+	<summary>
+plMgrCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtMgrCode">
+	<summary>
+txtMgrCode control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plMgrName">
+	<summary>
+plMgrName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtMgrName">
+	<summary>
+txtMgrName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plCommRatex">
+	<summary>
+plCommRatex control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtCommRatex">
+	<summary>
+txtCommRatex control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plBKCommRate">
+	<summary>
+plBKCommRate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtBKCommRate">
+	<summary>
+txtBKCommRate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plMGRSplit">
+	<summary>
+plMGRSplit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.chkMGRSplit">
+	<summary>
+chkMGRSplit control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plIODiv">
+	<summary>
+plIODiv control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtIODiv">
+	<summary>
+txtIODiv control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plLogDisp">
+	<summary>
+plLogDisp control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtLogDisp">
+	<summary>
+txtLogDisp control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plLogDispName">
+	<summary>
+plLogDispName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtLogDispName">
+	<summary>
+txtLogDispName control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plLogonOffice">
+	<summary>
+plLogonOffice control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtLogonOffice">
+	<summary>
+txtLogonOffice control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plJRCOfficeNo">
+	<summary>
+plJRCOfficeNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtJRCOfficeNo">
+	<summary>
+txtJRCOfficeNo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plDvrDAcct2">
+	<summary>
+plDvrDAcct2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtDvrDAcct2">
+	<summary>
+txtDvrDAcct2 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.plViewOrder">
+	<summary>
+plViewOrder control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.EditItem.txtViewOrder">
+	<summary>
+txtViewOrder control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.ViewList.rblSearchOn">
+	<summary>
+rblSearchOn control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.ViewList.rblSearchType">
+	<summary>
+rblSearchType control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.ViewList.plFromDate">
+	<summary>
+plFromDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.ViewList.txtFrom">
+	<summary>
+txtFrom control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.ViewList.imgFrom">
+	<summary>
+imgFrom control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.ViewList.calFrom">
+	<summary>
+calFrom control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.ViewList.plToDate">
+	<summary>
+plToDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.ViewList.txtTo">
+	<summary>
+txtTo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.ViewList.imgTo">
+	<summary>
+imgTo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.ViewList.calTo">
+	<summary>
+calTo control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.ViewList.btnScanProbDrivers">
+	<summary>
+btnScanProbDrivers control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.ViewList.txtSearch">
+	<summary>
+txtSearch control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.ViewList.btnSearch">
+	<summary>
+btnSearch control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.ViewList.gdvViewList">
+	<summary>
+gdvViewList control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:bhattji.Modules.InterOffices.ViewList.odsInterOffices">
+	<summary>
+odsInterOffices control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+</members>
+</doc>

@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<project name="MakeModulePA" default="ModulePA">
+	<target name="ModulePA" description="Zip all files neccessary for DotNetNuke Module PA deployment">
+		<property name="ModuleName" value="Customers" />
+		<property name="ZipFileName" value="bhattji_${ModuleName}_PA.zip" />
+
+		<!-- Remove "ModuleNamePA.zip" file -->
+		<if test="${file::exists(ZipFileName)}">
+			<delete file="${ZipFileName}" failonerror="false" />
+		</if>
+
+
+		<!-- Zip files to archive -->
+		<zip zipfile="${ZipFileName}">
+			<fileset>
+				<include name="bhattji_${ModuleName}.dnn" />
+				<include name="../Providers/DataProviders/SqlDataProvider/0*.SqlDataProvider" />
+				<include name="../Providers/DataProviders/SqlDataProvider/Uninstall.SqlDataProvider" />
+				<include name="../bin/bhattji.Modules.${ModuleName}.dll" />
+				<include name="../*.ascx" />
+				<include name="../module.css" />
+				<include name="../img/Thumb.aspx" />				
+				<include name="../img/NoImage.jpg" />
+				<include name="../App_LocalResources/*.resx" />
+				<include name="../ratings/default/*.gif" />
+				<include name="../js/*.*" />
+				<include name="../css/*.*" />
+				<include name="../css/luna/*.*" />
+				<include name="../ratings/default/*.gif" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+		</zip>
+		
+	</target>
+</project>

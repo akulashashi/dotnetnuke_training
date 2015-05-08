@@ -1,0 +1,1793 @@
+﻿/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              XYZ70s               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create/drop tables and stored procs   */
+
+/* Insert here the code to drop tables  */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_XYZ70s]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}bhattji_XYZ70s]
+GO
+
+
+/* Insert here the code to create tables and stored procs   */
+
+/* Insert here the code to alter tables if exists else create new tables */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_XYZ70s]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+begin
+
+ALTER TABLE {databaseOwner}[{objectQualifier}bhattji_XYZ70s]  ADD [ItemID] int IDENTITY(1, 1) NOT NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}bhattji_XYZ70s]  ADD [ModuleId] int NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}bhattji_XYZ70s]  ADD [ViewOrder] int NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}bhattji_XYZ70s]  ADD [CreatedByUser] nvarchar(100) NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}bhattji_XYZ70s]  ADD [CreatedDate] datetime NULL
+
+end
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_XYZ70s]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+begin
+
+UPDATE {databaseOwner}[{objectQualifier}bhattji_XYZ70s]  SET [ModuleId] = 99999
+
+UPDATE {databaseOwner}[{objectQualifier}bhattji_XYZ70s]  SET [CreatedByUser] = '1'
+UPDATE {databaseOwner}[{objectQualifier}bhattji_XYZ70s]  SET [CreatedDate] = [UpdatedDate]
+
+end
+
+else
+
+CREATE TABLE {databaseOwner}[{objectQualifier}bhattji_XYZ70s] (
+	[ItemID] int IDENTITY(1, 1) NOT NULL, 
+	[ModuleID] int NULL, 
+
+	[Title] nvarchar(150) NULL, 
+	[CategoryId] int NULL, 
+	[MediaSrc] nvarchar(150) NULL, 
+	[MediaWidth] nvarchar(10) NULL, 
+	[MediaHeight] nvarchar(10) NULL , 
+	[MediaAlign] nvarchar(10) NULL, 
+	[Description] nvarchar(2000) NULL, 
+
+	[ActualFields] nvarchar(150) NULL, 
+
+	[Details] ntext NULL, 
+	[MediaSrc2] nvarchar(150) NULL, 
+	[MediaWidth2] nvarchar(10) NULL, 
+	[MediaHeight2] nvarchar(10) NULL , 
+	[MediaAlign2] nvarchar(10) NULL, 
+
+
+	[NavURL] nvarchar(150) NULL, 
+
+	[PublishDate] datetime NULL, 
+	[ExpiryDate] datetime NULL, 
+
+	[ViewOrder] int NULL, 
+	[UpdatedByUserId] int NULL, 
+	[UpdatedDate] datetime NULL, 
+	[CreatedByUserId] int NULL, 
+	[CreatedDate] datetime NULL, 
+
+	[RatingVotes] int NULL, 
+	[RatingTotal] int NULL
+
+) ON [PRIMARY]
+GO
+
+
+/* Insert here the code to add the Primary Key */
+/****** Object:  Index [PK_{objectQualifier}bhattji_XYZ70s] ******/
+IF  EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}bhattji_XYZ70s]') AND name = N'PK_{objectQualifier}bhattji_XYZ70s')
+    ALTER TABLE {databaseOwner}[{objectQualifier}bhattji_XYZ70s] DROP CONSTRAINT [PK_{objectQualifier}bhattji_XYZ70s]	
+ALTER TABLE {databaseOwner}[{objectQualifier}bhattji_XYZ70s] ADD  CONSTRAINT [PK_{objectQualifier}bhattji_XYZ70s] PRIMARY KEY NONCLUSTERED ([ItemId] DESC) 
+
+/* Insert here the code to add the Unique Key */
+/****** Object:  Index [UK_{objectQualifier}bhattji_XYZ70s_Title] ******/
+IF  EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}bhattji_XYZ70s]') AND name = N'UK_{objectQualifier}bhattji_XYZ70s_Title')
+    ALTER TABLE {databaseOwner}[{objectQualifier}bhattji_XYZ70s] DROP CONSTRAINT [UK_{objectQualifier}bhattji_XYZ70s_Title]	
+ALTER TABLE {databaseOwner}[{objectQualifier}bhattji_XYZ70s] ADD  CONSTRAINT [UK_{objectQualifier}bhattji_XYZ70s_Title] UNIQUE NONCLUSTERED ([Title] ASC) 
+
+
+/* Insert here the code to add the second Category table */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_XYZ70Categories]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}bhattji_XYZ70Categories]
+GO
+
+CREATE TABLE {databaseOwner}[{objectQualifier}bhattji_XYZ70Categories] (
+	[ItemID] int IDENTITY(1, 1) NOT NULL, 
+	[ModuleID] int NULL, 
+
+	[Category] nvarchar(20) NULL,
+
+	[ViewOrder] int NULL
+
+) ON [PRIMARY]
+GO
+
+
+
+/* Insert here the code to add the second PQR45 table */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_XYZ70PQR45s]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}bhattji_XYZ70PQR45s]
+GO
+
+CREATE TABLE {databaseOwner}[{objectQualifier}bhattji_XYZ70PQR45s] (
+	[ItemID] int IDENTITY(1, 1) NOT NULL, 
+	[XYZ70Id] int NULL, 
+
+	[PQR45] nvarchar(20) NULL,
+
+	[ViewOrder] int NULL
+
+) ON [PRIMARY]
+GO
+
+
+
+
+/* Insert here the code to add StateCode table */
+if not (exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_StateCodes]') and OBJECTPROPERTY(id, N'IsUserTable') = 1))
+CREATE TABLE {databaseOwner}[{objectQualifier}bhattji_StateCodes] (
+
+	[ItemId] int IDENTITY(1, 1) NOT NULL, 
+	[StateCode] nvarchar(2) NOT NULL,
+	[State] nvarchar(25) NULL
+
+) ON [PRIMARY]
+GO
+
+/* Insert here the code to add ZipCode table */
+if not (exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_ZipCodes]') and OBJECTPROPERTY(id, N'IsUserTable') = 1))
+CREATE TABLE {databaseOwner}[{objectQualifier}bhattji_ZipCodes] (
+
+	[ItemId] int IDENTITY(1, 1) NOT NULL, 
+	[ZipCode] nvarchar(5) NOT NULL,
+	[Area] nvarchar(25) NULL,
+	[City] nvarchar(25) NULL,
+	[StateCode] nvarchar(2) NULL
+
+) ON [PRIMARY]
+GO
+
+
+
+/* Insert here the code to create stored procs   */
+
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+/* Insert here the code to drop stored procs if exists  */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddXYZ70]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddXYZ70]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddXYZ70]
+
+	@ModuleID int, 
+
+	@Title nvarchar(150), 
+	@CategoryId int, 
+	@MediaSrc nvarchar(150), 
+	@MediaWidth nvarchar(10), 
+	@MediaHeight nvarchar(10), 
+	@MediaAlign nvarchar(10), 
+	@Description nvarchar(2000), 
+
+	@ActualFields nvarchar(150), 
+
+	@Details ntext , 
+	@MediaSrc2 nvarchar(150), 
+	@MediaWidth2 nvarchar(10), 
+	@MediaHeight2 nvarchar(10), 
+	@MediaAlign2 nvarchar(10), 
+
+
+	@NavURL nvarchar(150), 
+
+	@PublishDate datetime, 
+	@ExpiryDate datetime, 
+
+	@ViewOrder int, 
+
+	@CreatedByUserId int
+
+AS
+
+INSERT INTO {objectQualifier}bhattji_XYZ70s (
+	[ModuleID],
+
+	[Title], 
+	[CategoryId], 
+	[MediaSrc], 
+	[MediaWidth], 
+	[MediaHeight], 
+	[MediaAlign], 
+	[Description], 
+
+	[ActualFields], 
+
+	[Details] , 
+	[MediaSrc2], 
+	[MediaWidth2], 
+	[MediaHeight2], 
+	[MediaAlign2], 
+
+
+	[NavURL], 
+
+	[PublishDate], 
+	[ExpiryDate], 
+
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	[UpdatedDate],
+	[CreatedByUserId],
+	[CreatedDate]
+
+) VALUES (
+
+	@ModuleID,
+
+	@Title, 
+	@CategoryId, 
+	@MediaSrc, 
+	@MediaWidth, 
+	@MediaHeight, 
+	@MediaAlign, 
+	@Description, 
+
+	@ActualFields, 
+
+	@Details, 
+	@MediaSrc2, 
+	@MediaWidth2, 
+	@MediaHeight2, 
+	@MediaAlign2, 
+
+
+	@NavURL, 
+
+	@PublishDate, 
+	@ExpiryDate, 
+
+	@ViewOrder, 
+
+	@CreatedByUserId, 
+	GetDate(),
+	@CreatedByUserId, 
+	GetDate()
+
+)
+SELECT SCOPE_IDENTITY()
+GO
+
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateXYZ70]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateXYZ70]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateXYZ70]
+
+	@ItemID int,
+
+	@Title nvarchar(150), 
+	@CategoryId int, 
+	@MediaSrc nvarchar(150), 
+	@MediaWidth nvarchar(10), 
+	@MediaHeight nvarchar(10), 
+	@MediaAlign nvarchar(10), 
+	@Description nvarchar(2000), 
+
+	@ActualFields nvarchar(150), 
+
+	@Details ntext, 
+	@MediaSrc2 nvarchar(150), 
+	@MediaWidth2 nvarchar(10), 
+	@MediaHeight2 nvarchar(10), 
+	@MediaAlign2 nvarchar(10), 
+
+
+	@NavURL nvarchar(150), 
+
+	@PublishDate datetime, 
+	@ExpiryDate datetime, 
+
+	@ViewOrder int, 
+
+	@UpdatedByUserId int
+AS
+
+UPDATE {objectQualifier}bhattji_XYZ70s
+
+SET
+	[Title] = @Title, 
+	[CategoryId] = @CategoryId, 
+	[MediaSrc] = @MediaSrc, 
+	[MediaWidth] = @MediaWidth, 
+	[MediaHeight] = @MediaHeight, 
+	[MediaAlign] = @MediaAlign, 
+	[Description] = @Description, 
+
+	[ActualFields] = @ActualFields, 
+
+	[Details] = @Details, 
+	[MediaSrc2] = @MediaSrc2, 
+	[MediaWidth2] = @MediaWidth2, 
+	[MediaHeight2] = @MediaHeight2, 
+	[MediaAlign2] = @MediaAlign2, 
+
+
+	[NavURL] = @NavURL, 
+
+	[PublishDate] = @PublishDate, 
+	[ExpiryDate] = @ExpiryDate, 
+
+	[ViewOrder] = @ViewOrder, 
+
+	[UpdatedByUserId] = @UpdatedByUserId, 
+	[UpdatedDate] = GetDate()
+
+WHERE
+	[ItemID] = @ItemID
+GO
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteXYZ70]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteXYZ70]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_DeleteXYZ70]
+	@ItemId int
+
+AS
+
+DELETE
+FROM [{objectQualifier}bhattji_XYZ70s]
+WHERE ItemId = @ItemId
+GO
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateXYZ70Rating]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateXYZ70Rating]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateXYZ70Rating]
+	@ItemId      int,
+	@RatingTotal   int
+
+AS
+
+UPDATE [{objectQualifier}bhattji_XYZ70s]
+SET	[RatingVotes] = CASE WHEN [RatingVotes] IS NULL THEN 1 ELSE ([RatingVotes] + 1) END
+WHERE ItemId = @ItemId
+
+UPDATE [{objectQualifier}bhattji_XYZ70s]
+SET	[RatingTotal] = CASE WHEN RatingTotal IS NULL THEN @RatingTotal ELSE ([RatingTotal] + @RatingTotal) END
+WHERE [ItemId] = @ItemId
+
+GO
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetXYZ70Id]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetXYZ70Id]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetXYZ70Id]
+	@Title nvarchar(150)
+
+AS
+
+SELECT 	[ItemID]
+
+FROM 	{objectQualifier}bhattji_XYZ70s 
+
+WHERE 	[Title] = @Title 
+GO
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetXYZ70]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetXYZ70]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetXYZ70]
+
+	@ItemID int
+AS
+
+SELECT
+	x.[ItemID],
+	x.[ModuleID],
+
+	x.[Title], 
+	x.[CategoryId], 
+	ca.[Category], 
+	'MediaSrc' = CASE WHEN mf.FileName IS NULL THEN x.MediaSrc ELSE mf.Folder + mf.FileName END,
+	x.[MediaWidth], 
+	x.[MediaHeight], 
+	x.[MediaAlign], 
+	x.[Description], 
+
+	x.[ActualFields], 
+
+	x.[Details], 
+	'MediaSrc2' = CASE WHEN mf2.FileName IS NULL THEN x.MediaSrc2 ELSE mf2.Folder + mf2.FileName END,
+	x.[MediaWidth2], 
+	x.[MediaHeight2], 
+	x.[MediaAlign2], 
+
+
+	'NavURL' = CASE WHEN nf.FileName IS NULL THEN x.NavURL ELSE nf.Folder + nf.FileName END,
+	nt.[NewWindow],
+	nt.[TrackClicks],
+
+	x.[PublishDate], 
+	x.[ExpiryDate], 
+	'DisplayDate' = CASE WHEN x.PublishDate IS NULL THEN x.CreatedDate ELSE x.PublishDate END,
+
+	x.[ViewOrder],
+
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = CASE WHEN uu.DisplayName IS NULL THEN uu.FirstName + ' ' + uu.LastName ELSE uu.DisplayName END,
+	x.[UpdatedDate], 
+	x.[CreatedByUserId],
+	'CreatedByUser' = CASE WHEN uc.DisplayName IS NULL THEN uc.FirstName + ' ' + uc.LastName ELSE uc.DisplayName END,
+	x.[CreatedDate], 
+
+	x.[RatingVotes], 
+	x.[RatingTotal], 
+	'RatingAverage' = CASE WHEN x.RatingVotes IS NULL OR x.RatingTotal IS NULL OR (x.RatingVotes < 1) THEN 0 WHEN (CAST((x.RatingTotal / x.RatingVotes) AS Integer) > 9) THEN 10 ELSE CAST((x.RatingTotal / x.RatingVotes) AS Integer) END
+
+FROM {objectQualifier}bhattji_XYZ70s as x
+	LEFT OUTER JOIN [{objectQualifier}Files] As mf ON x.MediaSrc = 'FileId=' + convert(varchar,mf.FileID)
+	LEFT OUTER JOIN [{objectQualifier}Files] As mf2 ON x.MediaSrc2 = 'FileId=' + convert(varchar,mf2.FileID)
+	LEFT OUTER JOIN [{objectQualifier}Files] As nf ON x.NavURL = 'FileId=' + convert(varchar,nf.FileID)
+	LEFT OUTER JOIN [{objectQualifier}UrlTracking] As nt ON x.NavURL = nt.Url AND nt.ModuleId = x.ModuleId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu ON x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc ON x.CreatedByUserId = uc.UserId
+	LEFT OUTER JOIN [{objectQualifier}bhattji_XYZ70Categories] AS ca ON x.CategoryId = ca.ItemId
+
+
+
+WHERE
+	x.[ItemID] = @ItemID
+GO
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetModuleXYZ70s]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetModuleXYZ70s]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetModuleXYZ70s]
+
+	@ModuleId int,
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	x.[Title], 
+	x.[CategoryId], 
+	ca.[Category], 
+	'MediaSrc' = CASE WHEN mf.FileName IS NULL THEN x.MediaSrc ELSE mf.Folder + mf.FileName END,
+	x.[MediaWidth], 
+	x.[MediaHeight], 
+	x.[MediaAlign], 
+	x.[Description], 
+
+	x.[ActualFields], 
+
+	x.[Details], 
+	'MediaSrc2' = CASE WHEN mf2.FileName IS NULL THEN x.MediaSrc2 ELSE mf2.Folder + mf2.FileName END,
+	x.[MediaWidth2], 
+	x.[MediaHeight2], 
+	x.[MediaAlign2], 
+
+
+	'NavURL' = CASE WHEN nf.FileName IS NULL THEN x.NavURL ELSE nf.Folder + nf.FileName END,
+	nt.[NewWindow],
+	nt.[TrackClicks],
+
+	x.[PublishDate], 
+	x.[ExpiryDate], 
+	'DisplayDate' = CASE WHEN x.PublishDate IS NULL THEN x.CreatedDate ELSE x.PublishDate END,
+
+	x.[ViewOrder],
+
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = CASE WHEN uu.DisplayName IS NULL THEN uu.FirstName + ' ' + uu.LastName ELSE uu.DisplayName END,
+    x.[UpdatedDate], 
+	x.[CreatedByUserId],
+	'CreatedByUser' = CASE WHEN uc.DisplayName IS NULL THEN uc.FirstName + ' ' + uc.LastName ELSE uc.DisplayName END,
+	x.[CreatedDate], 
+
+	x.[RatingVotes], 
+	x.[RatingTotal], 
+	'RatingAverage' = CASE WHEN x.RatingVotes IS NULL OR x.RatingTotal IS NULL OR (x.RatingVotes < 1) THEN 0 WHEN (CAST((x.RatingTotal / x.RatingVotes) AS Integer) > 9) THEN 10 ELSE CAST((x.RatingTotal / x.RatingVotes) AS Integer) END
+
+FROM {objectQualifier}bhattji_XYZ70s as x
+	LEFT OUTER JOIN [{objectQualifier}Files] As mf ON x.MediaSrc = 'FileId=' + convert(varchar,mf.FileID)
+	LEFT OUTER JOIN [{objectQualifier}Files] As mf2 ON x.MediaSrc2 = 'FileId=' + convert(varchar,mf2.FileID)
+	LEFT OUTER JOIN [{objectQualifier}UrlTracking] As nt ON x.NavURL = nt.Url AND nt.ModuleId = x.ModuleId
+	LEFT OUTER JOIN [{objectQualifier}Files] As nf ON x.NavURL = 'FileId=' + convert(varchar,nf.FileID)
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu ON x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc ON x.CreatedByUserId = uc.UserId
+	LEFT OUTER JOIN [{objectQualifier}bhattji_XYZ70Categories] AS ca ON x.CategoryId = ca.ItemId
+
+
+WHERE x.[ModuleId] = @ModuleId
+ORDER BY x.[ViewOrder], x.[CreatedDate] desc
+GO
+
+
+
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetPortalXYZ70s]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetPortalXYZ70s]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetPortalXYZ70s]
+
+	@PortalId int,
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+    x.[ModuleID],
+
+	x.[Title], 
+	x.[CategoryId], 
+	ca.[Category], 
+	'MediaSrc' = CASE WHEN mf.FileName IS NULL THEN x.MediaSrc ELSE mf.Folder + mf.FileName END,
+	x.[MediaWidth], 
+	x.[MediaHeight], 
+	x.[MediaAlign], 
+	x.[Description], 
+
+	x.[ActualFields], 
+
+	x.[Details], 
+	'MediaSrc2' = CASE WHEN mf2.FileName IS NULL THEN x.MediaSrc2 ELSE mf2.Folder + mf2.FileName END,
+	x.[MediaWidth2], 
+	x.[MediaHeight2], 
+	x.[MediaAlign2], 
+
+
+	'NavURL' = CASE WHEN nf.FileName IS NULL THEN x.NavURL ELSE nf.Folder + nf.FileName END,
+	nt.[NewWindow],
+	nt.[TrackClicks],
+
+	x.[PublishDate], 
+	x.[ExpiryDate], 
+	'DisplayDate' = CASE WHEN x.PublishDate IS NULL THEN x.CreatedDate ELSE x.PublishDate END,
+
+	x.[ViewOrder],
+
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = CASE WHEN uu.DisplayName IS NULL THEN uu.FirstName + ' ' + uu.LastName ELSE uu.DisplayName END,
+	x.[UpdatedDate], 
+	x.[CreatedByUserId],
+	'CreatedByUser' = CASE WHEN uc.DisplayName IS NULL THEN uc.FirstName + ' ' + uc.LastName ELSE uc.DisplayName END,
+	x.[CreatedDate], 
+
+	x.[RatingVotes], 
+	x.[RatingTotal], 
+	'RatingAverage' = CASE WHEN x.RatingVotes IS NULL OR x.RatingTotal IS NULL OR (x.RatingVotes < 1) THEN 0 WHEN (CAST((x.RatingTotal / x.RatingVotes) AS Integer) > 9) THEN 10 ELSE CAST((x.RatingTotal / x.RatingVotes) AS Integer) END
+
+FROM {objectQualifier}bhattji_XYZ70s as x
+	JOIN [{objectQualifier}Modules] As m ON x.ModuleId = m.ModuleId
+	LEFT OUTER JOIN [{objectQualifier}Files] As mf ON x.MediaSrc = 'FileId=' + convert(varchar,mf.FileID)
+	LEFT OUTER JOIN [{objectQualifier}Files] As mf2 ON x.MediaSrc2 = 'FileId=' + convert(varchar,mf2.FileID)
+	LEFT OUTER JOIN [{objectQualifier}UrlTracking] As nt ON x.NavURL = nt.Url AND nt.ModuleId = x.ModuleId
+	LEFT OUTER JOIN [{objectQualifier}Files] As nf ON x.NavURL = 'FileId=' + convert(varchar,nf.FileID)
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu ON x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc ON x.CreatedByUserId = uc.UserId
+	LEFT OUTER JOIN [{objectQualifier}bhattji_XYZ70Categories] AS ca ON x.CategoryId = ca.ItemId
+
+
+WHERE m.PortalId = @PortalId
+ORDER BY x.[ModuleId], x.ViewOrder, x.CreatedDate desc
+GO
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetAllXYZ70s]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetAllXYZ70s]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetAllXYZ70s]
+
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	x.[Title], 
+	x.[CategoryId], 
+	ca.[Category], 
+	'MediaSrc' = CASE WHEN mf.FileName IS NULL THEN x.MediaSrc ELSE mf.Folder + mf.FileName END,
+	x.[MediaWidth], 
+	x.[MediaHeight], 
+	x.[MediaAlign], 
+	x.[Description], 
+
+	x.[ActualFields], 
+
+	x.[Details], 
+	'MediaSrc2' = CASE WHEN mf2.FileName IS NULL THEN x.MediaSrc2 ELSE mf2.Folder + mf2.FileName END,
+	x.[MediaWidth2], 
+	x.[MediaHeight2], 
+	x.[MediaAlign2], 
+
+
+	'NavURL' = CASE WHEN nf.FileName IS NULL THEN x.NavURL ELSE nf.Folder + nf.FileName END,
+	nt.[NewWindow],
+	nt.[TrackClicks],
+
+	x.[PublishDate], 
+	x.[ExpiryDate], 
+	'DisplayDate' = CASE WHEN x.PublishDate IS NULL THEN x.CreatedDate ELSE x.PublishDate END,
+
+	x.[ViewOrder],
+
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = CASE WHEN uu.DisplayName IS NULL THEN uu.FirstName + ' ' + uu.LastName ELSE uu.DisplayName END,
+	x.[UpdatedDate], 
+	x.[CreatedByUserId],
+	'CreatedByUser' = CASE WHEN uc.DisplayName IS NULL THEN uc.FirstName + ' ' + uc.LastName ELSE uc.DisplayName END,
+	x.[CreatedDate], 
+
+	x.[RatingVotes], 
+	x.[RatingTotal], 
+	'RatingAverage' = CASE WHEN x.RatingVotes IS NULL OR x.RatingTotal IS NULL OR (x.RatingVotes < 1) THEN 0 WHEN (CAST((x.RatingTotal / x.RatingVotes) AS Integer) > 9) THEN 10 ELSE CAST((x.RatingTotal / x.RatingVotes) AS Integer) END
+
+FROM {objectQualifier}bhattji_XYZ70s as x
+	LEFT OUTER JOIN [{objectQualifier}Files] As mf ON x.MediaSrc = 'FileId=' + convert(varchar,mf.FileID)
+	LEFT OUTER JOIN [{objectQualifier}Files] As mf2 ON x.MediaSrc2 = 'FileId=' + convert(varchar,mf2.FileID)
+	LEFT OUTER JOIN [{objectQualifier}UrlTracking] As nt ON x.NavURL = nt.Url AND nt.ModuleId = x.ModuleId
+	LEFT OUTER JOIN [{objectQualifier}Files] As nf ON x.NavURL = 'FileId=' + convert(varchar,nf.FileID)
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu ON x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc ON x.CreatedByUserId = uc.UserId
+	LEFT OUTER JOIN [{objectQualifier}bhattji_XYZ70Categories] AS ca ON x.CategoryId = ca.ItemId
+
+
+ORDER BY x.[ModuleId], x.ViewOrder, x.CreatedDate desc
+
+GO
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_SetViewOrderXYZ70s]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_SetViewOrderXYZ70s]
+GO
+
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}bhattji_SetViewOrderXYZ70s]
+	@ModuleId	int
+
+AS
+
+DECLARE	@counter as int
+DECLARE	@PK as int
+SET		@counter = 10
+
+--Make Temp table to hold Primary Keys FROM the table you want to renumber
+SELECT	ItemId
+INTO		[#TempTable]
+FROM		[{objectQualifier}bhattji_XYZ70s] as x
+WHERE	x.ModuleId = @ModuleId
+ORDER BY	x.ViewOrder asc,  x.CreatedDate desc
+
+
+
+--Loop through each temptable record
+WHILE (SELECT COUNT(ItemId) FROM #TempTable) > 0
+BEGIN
+	SET		rowcount 1
+
+	SELECT	@PK = ItemId
+	FROM #TempTable
+
+	SET rowcount 0
+
+
+	--UPDATE the view order for matching record in [{objectQualifier}bhattji_XYZ70s]
+	UPDATE [{objectQualifier}bhattji_XYZ70s]
+	SET ViewOrder = @counter
+	WHERE [{objectQualifier}bhattji_XYZ70s].ItemId = @PK
+	AND [{objectQualifier}bhattji_XYZ70s].ModuleId = @ModuleId
+
+	SET @counter = @counter + 10
+
+	SET rowcount 1
+
+	DELETE FROM #TempTable
+	SET rowcount 0
+END
+
+SET rowcount 0
+
+DROP TABLE #TempTable
+
+SELECT * FROM [{objectQualifier}bhattji_XYZ70s] ORDER BY ViewOrder
+GO
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_ClaimOrphanXYZ70s]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_ClaimOrphanXYZ70s]
+GO
+
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}bhattji_ClaimOrphanXYZ70s]
+	@ModuleId	int
+
+AS
+
+UPDATE [{objectQualifier}bhattji_XYZ70s]
+SET [ModuleId] = @ModuleId
+WHERE ([ModuleId] IS Null)
+	OR ([ModuleId] = 99999)
+GO
+
+
+
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+
+
+
+
+/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              XYZ70Categories               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create/drop tables and stored procs   */
+
+/* Insert here the code to drop tables  */
+
+
+/* Insert here the code to create tables and stored procs   */
+
+/* Insert here the code to alter tables if exists else create new tables */
+
+
+
+
+
+
+
+/* Insert here the code to create stored procs   */
+
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+/* Insert here the code to drop stored procs if exists  */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddXYZ70Category]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddXYZ70Category]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddXYZ70Category]
+
+	@ModuleID int, 
+	@Category nvarchar(20),
+	@ViewOrder int
+
+AS
+
+IF (SELECT COUNT(*) FROM {objectQualifier}bhattji_XYZ70Categories WHERE Category = @Category) < 1
+BEGIN
+	INSERT INTO {objectQualifier}bhattji_XYZ70Categories (
+
+		[ModuleID],
+		[Category],
+		[ViewOrder]
+
+	) VALUES (
+
+		@ModuleID,
+		@Category,
+		@ViewOrder
+
+	)
+	SELECT SCOPE_IDENTITY()
+END
+GO
+
+/* Insert here the code to populate tables  */
+
+/* INSERT INTO {objectQualifier}bhattji_XYZ70Categories([Category]) VALUES ('General') */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_XYZ70Categories]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+EXEC {databaseOwner}[{objectQualifier}bhattji_AddXYZ70Category] 99999, 'General', Null
+GO
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateXYZ70Category]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateXYZ70Category]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateXYZ70Category]
+
+	@ItemID int,
+	@Category nvarchar(20),
+	@ViewOrder int
+
+AS
+
+IF (SELECT COUNT(*) FROM {objectQualifier}bhattji_XYZ70Categories WHERE Category = @Category) < 1
+BEGIN
+	UPDATE {objectQualifier}bhattji_XYZ70Categories
+	SET
+		[Category] = @Category,
+		[ViewOrder] = @ViewOrder
+
+	WHERE
+		[ItemID] = @ItemID
+END
+ELSE
+BEGIN
+	UPDATE {objectQualifier}bhattji_XYZ70Categories
+	SET
+		[ViewOrder] = @ViewOrder
+
+	WHERE
+		[ItemID] = @ItemID
+END
+GO
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteXYZ70Category]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteXYZ70Category]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_DeleteXYZ70Category]
+	@ItemId int
+
+AS
+
+DELETE
+FROM [{objectQualifier}bhattji_XYZ70Categories]
+WHERE ItemId = @ItemId
+GO
+
+
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetXYZ70CategoryId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetXYZ70CategoryId]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetXYZ70CategoryId]
+
+	@Category nvarchar(20)
+AS
+
+SELECT  [ItemID]
+
+FROM {objectQualifier}bhattji_XYZ70Categories
+
+WHERE  [Category ] = @Category 
+GO
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetXYZ70Category]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetXYZ70Category]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetXYZ70Category]
+
+	@ItemID int
+AS
+
+SELECT
+	[ItemID],
+	[ModuleID],
+
+	[Category], 
+
+	[ViewOrder]
+
+FROM {objectQualifier}bhattji_XYZ70Categories
+
+
+
+WHERE
+	[ItemID] = @ItemID
+GO
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetModuleXYZ70Categories]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetModuleXYZ70Categories]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetModuleXYZ70Categories]
+
+	@ModuleId int
+
+AS
+
+SELECT
+	[ItemID],
+	[ModuleID],
+
+	[Category], 
+
+	[ViewOrder]
+
+FROM {objectQualifier}bhattji_XYZ70Categories
+
+WHERE [ModuleId] = @ModuleId
+ORDER BY [ViewOrder], [Category]
+GO
+
+
+
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetPortalXYZ70Categories]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetPortalXYZ70Categories]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetPortalXYZ70Categories]
+
+	@PortalId int
+
+AS
+
+SELECT
+	x.[ItemID],
+    x.[ModuleID],
+
+	x.[Category], 
+
+	x.[ViewOrder]
+
+FROM {objectQualifier}bhattji_XYZ70Categories as x
+	JOIN [{objectQualifier}Modules] As m ON x.ModuleId = m.ModuleId
+
+
+WHERE m.PortalId = @PortalId
+ORDER BY x.[ViewOrder], x.[Category]
+GO
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetAllXYZ70Categories]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetAllXYZ70Categories]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetAllXYZ70Categories]
+
+AS
+
+SELECT
+	[ItemID],
+	[ModuleID],
+
+	[Category], 
+
+	[ViewOrder]
+
+FROM {objectQualifier}bhattji_XYZ70Categories
+
+ORDER BY [ViewOrder], [Category]
+
+GO
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_SetViewOrderXYZ70Categories]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_SetViewOrderXYZ70Categories]
+GO
+
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}bhattji_SetViewOrderXYZ70Categories]
+	@ModuleId	int
+
+AS
+
+DECLARE	@counter as int
+DECLARE	@PK as int
+SET		@counter = 10
+
+--Make Temp table to hold Primary Keys FROM the table you want to renumber
+SELECT	ItemId
+INTO		[#TempTable]
+FROM		[{objectQualifier}bhattji_XYZ70Categories] as x
+WHERE		x.ModuleId = @ModuleId
+ORDER BY	x.ViewOrder
+
+
+
+--Loop through each temptable record
+WHILE (SELECT COUNT(ItemId) FROM #TempTable) > 0
+BEGIN
+	SET		rowcount 1
+
+	SELECT	@PK = ItemId
+	FROM #TempTable
+
+	SET rowcount 0
+
+
+	--UPDATE the view order for matching record in [{objectQualifier}bhattji_XYZ70Categories]
+	UPDATE [{objectQualifier}bhattji_XYZ70Categories]
+	SET ViewOrder = @counter
+	WHERE [{objectQualifier}bhattji_XYZ70Categories].ItemId = @PK
+	AND [{objectQualifier}bhattji_XYZ70Categories].ModuleId = @ModuleId
+
+	SET @counter = @counter + 10
+
+	SET rowcount 1
+
+	DELETE FROM #TempTable
+	SET rowcount 0
+END
+
+SET rowcount 0
+
+DROP TABLE #TempTable
+
+SELECT * FROM [{objectQualifier}bhattji_XYZ70Categories] ORDER BY ViewOrder
+GO
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_ClaimOrphanXYZ70Categories]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_ClaimOrphanXYZ70Categories]
+GO
+
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}bhattji_ClaimOrphanXYZ70Categories]
+	@ModuleId	int
+
+AS
+
+UPDATE [{objectQualifier}bhattji_XYZ70Categories]
+SET [ModuleId] = @ModuleId
+WHERE ([ModuleId] IS Null)
+	OR ([ModuleId] = 99999)
+GO
+
+
+
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+
+
+
+/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              XYZ70PQR45s               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create/drop tables and stored procs   */
+
+/* Insert here the code to drop tables  */
+
+
+/* Insert here the code to create tables and stored procs   */
+
+/* Insert here the code to alter tables if exists else create new tables */
+
+
+
+
+
+
+
+/* Insert here the code to create stored procs   */
+
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+/* Insert here the code to drop stored procs if exists  */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddXYZ70PQR45]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddXYZ70PQR45]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddXYZ70PQR45]
+
+	@XYZ70Id int, 
+	@PQR45 nvarchar(20),
+	@ViewOrder int
+
+AS
+
+IF (SELECT COUNT(*) FROM {objectQualifier}bhattji_XYZ70PQR45s WHERE (XYZ70Id=@XYZ70Id) AND (PQR45=@PQR45)) < 1
+BEGIN
+	INSERT INTO {objectQualifier}bhattji_XYZ70PQR45s (
+
+		[XYZ70Id],
+		[PQR45],
+		[ViewOrder]
+
+	) VALUES (
+
+		@XYZ70Id,
+		@PQR45,
+		@ViewOrder
+
+	)
+	SELECT SCOPE_IDENTITY()
+END
+GO
+
+/* Insert here the code to populate tables  */
+
+/* INSERT INTO {objectQualifier}bhattji_XYZ70PQR45s([PQR45]) VALUES ('Standard') */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_XYZ70PQR45s]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+EXEC {databaseOwner}[{objectQualifier}bhattji_AddXYZ70PQR45] Null, 'Standard', Null
+GO
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateXYZ70PQR45]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateXYZ70PQR45]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateXYZ70PQR45]
+
+	@ItemID int,
+	@XYZ70Id int, 
+	@PQR45 nvarchar(20),
+	@ViewOrder int
+
+AS
+
+IF (SELECT COUNT(*) FROM {objectQualifier}bhattji_XYZ70PQR45s WHERE (XYZ70Id=@XYZ70Id) AND (PQR45=@PQR45)) < 1
+BEGIN
+	UPDATE {objectQualifier}bhattji_XYZ70PQR45s
+	SET
+		[PQR45] = @PQR45,
+		[ViewOrder] = @ViewOrder
+
+	WHERE
+		[ItemID] = @ItemID
+END
+ELSE
+BEGIN
+	UPDATE {objectQualifier}bhattji_XYZ70PQR45s
+	SET
+		[ViewOrder] = @ViewOrder
+
+	WHERE
+		[ItemID] = @ItemID
+END
+GO
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteXYZ70PQR45]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteXYZ70PQR45]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_DeleteXYZ70PQR45]
+	@ItemId int
+
+AS
+
+DELETE
+FROM [{objectQualifier}bhattji_XYZ70PQR45s]
+WHERE ItemId = @ItemId
+GO
+
+
+
+
+
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetXYZ70PQR45]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetXYZ70PQR45]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetXYZ70PQR45]
+
+	@ItemID int
+AS
+
+SELECT
+	x.[ItemID],
+	x.[XYZ70Id],
+	'XYZ70Title' = p.Title,
+
+	x.[PQR45], 
+
+	x.[ViewOrder]
+
+FROM {objectQualifier}bhattji_XYZ70PQR45s AS x
+	LEFT OUTER JOIN [{objectQualifier}bhattji_XYZ70s] AS p ON x.XYZ70Id = p.ItemId
+
+WHERE
+	x.[ItemID] = @ItemID
+GO
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetXYZ70PQR45s]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetXYZ70PQR45s]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetXYZ70PQR45s]
+
+	@XYZ70Id int
+
+AS
+
+SELECT
+	x.[ItemID],
+	x.[XYZ70Id],
+	'XYZ70Title' = p.Title,
+
+	x.[PQR45], 
+
+	x.[ViewOrder]
+
+FROM {objectQualifier}bhattji_XYZ70PQR45s AS x
+	LEFT OUTER JOIN [{objectQualifier}bhattji_XYZ70s] AS p ON x.XYZ70Id = p.ItemId
+
+WHERE
+	x.[XYZ70Id] = @XYZ70Id
+
+ORDER BY x.[ViewOrder], x.[PQR45]
+GO
+
+
+
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetAllXYZ70PQR45s]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetAllXYZ70PQR45s]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetAllXYZ70PQR45s]
+
+AS
+
+SELECT
+	x.[ItemID],
+	x.[XYZ70Id],
+	'XYZ70Title' = p.Title,
+
+	x.[PQR45], 
+
+	x.[ViewOrder]
+
+FROM {objectQualifier}bhattji_XYZ70PQR45s AS x
+	LEFT OUTER JOIN [{objectQualifier}bhattji_XYZ70s] AS p ON x.XYZ70Id = p.ItemId
+
+ORDER BY x.[XYZ70Id], x.[ViewOrder], x.[PQR45]
+GO
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_SetViewOrderXYZ70PQR45s]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_SetViewOrderXYZ70PQR45s]
+GO
+
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}bhattji_SetViewOrderXYZ70PQR45s]
+	@XYZ70Id	int
+
+AS
+
+DECLARE	@counter as int
+DECLARE	@PK as int
+SET		@counter = 10
+
+--Make Temp table to hold Primary Keys FROM the table you want to renumber
+SELECT	ItemId
+INTO		[#TempTable]
+FROM		[{objectQualifier}bhattji_XYZ70PQR45s] as x
+WHERE		x.XYZ70Id = @XYZ70Id
+ORDER BY	x.ViewOrder
+
+
+
+--Loop through each temptable record
+WHILE (SELECT COUNT(ItemId) FROM #TempTable) > 0
+BEGIN
+	SET		rowcount 1
+
+	SELECT	@PK = ItemId
+	FROM #TempTable
+
+	SET rowcount 0
+
+
+	--UPDATE the view order for matching record in [{objectQualifier}bhattji_XYZ70PQR45s]
+	UPDATE [{objectQualifier}bhattji_XYZ70PQR45s]
+	SET ViewOrder = @counter
+	WHERE [{objectQualifier}bhattji_XYZ70PQR45s].ItemId = @PK
+	AND [{objectQualifier}bhattji_XYZ70PQR45s].XYZ70Id = @XYZ70Id
+
+	SET @counter = @counter + 10
+
+	SET rowcount 1
+
+	DELETE FROM #TempTable
+	SET rowcount 0
+END
+
+SET rowcount 0
+
+DROP TABLE #TempTable
+
+SELECT * FROM [{objectQualifier}bhattji_XYZ70PQR45s] ORDER BY ViewOrder
+GO
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_ClaimOrphanXYZ70PQR45s]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_ClaimOrphanXYZ70PQR45s]
+GO
+
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}bhattji_ClaimOrphanXYZ70PQR45s]
+	@XYZ70Id	int
+
+AS
+
+UPDATE [{objectQualifier}bhattji_XYZ70PQR45s]
+SET [XYZ70Id] = @XYZ70Id
+WHERE ([XYZ70Id] IS Null)
+	OR ([XYZ70Id] = 99999)
+GO
+
+
+
+
+
+
+
+/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****                 StateCodes                       *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create/drop tables and stored procs   */
+
+/* Insert here the code to drop stored procs if exists  */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddStateCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddStateCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddStateCode]
+
+	@StateCode nvarchar(2), 
+	@State nvarchar(25)
+AS
+
+IF (SELECT COUNT(*) FROM {objectQualifier}bhattji_StateCodes WHERE StateCode = @StateCode) < 1
+BEGIN
+	INSERT INTO {objectQualifier}bhattji_StateCodes (
+
+		[StateCode], 
+		[State]
+
+	) VALUES (
+
+		@StateCode, 
+		@State
+
+	)
+	SELECT SCOPE_IDENTITY()
+END
+GO
+
+
+/* Insert here the code to populate tables  */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_StateCodes]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+EXEC {databaseOwner}[{objectQualifier}bhattji_AddStateCode] 'StateCode','State'
+GO
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateStateCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateStateCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateStateCode]
+
+	@ItemId int , 
+	@StateCode nvarchar(2), 
+	@State nvarchar(25)
+AS
+
+UPDATE {objectQualifier}bhattji_StateCodes
+
+SET
+	[StateCode] = @StateCode, 
+	[State] = @State
+
+WHERE
+	[ItemId] = @ItemId
+GO
+
+
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddUpdateStateCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddUpdateStateCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddUpdateStateCode]
+
+	@StateCode nvarchar(2), 
+	@State nvarchar(25)
+AS
+
+IF (SELECT COUNT(*) FROM {objectQualifier}bhattji_StateCodes WHERE StateCode = @StateCode) < 1
+BEGIN
+	INSERT INTO {objectQualifier}bhattji_StateCodes (
+
+		[StateCode], 
+		[State]
+
+	) VALUES (
+
+		@StateCode, 
+		@State
+
+	)
+
+	SELECT SCOPE_IDENTITY()
+END
+
+ELSE
+
+BEGIN
+	UPDATE {objectQualifier}bhattji_StateCodes
+	SET [StateCode] = @StateCode
+	WHERE [State] = @State
+
+	SELECT [ItemId] FROM {objectQualifier}bhattji_StateCodes WHERE [StateCode] = @StateCode
+END
+GO
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteStateCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteStateCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_DeleteStateCode]
+
+	@ItemId int
+
+AS
+
+DELETE
+FROM [{objectQualifier}bhattji_StateCodes]
+WHERE ItemId = @ItemId
+GO
+
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetStateCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetStateCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetStateCode]
+
+	@ItemId int
+
+AS
+
+SELECT
+	x.[ItemId], 
+	x.[StateCode], 
+	x.[State]
+
+FROM [{objectQualifier}bhattji_StateCodes] AS x
+
+WHERE x.[ItemId] = @ItemId
+GO
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetStateCodes]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetStateCodes]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetStateCodes]
+
+AS
+
+SELECT
+	x.[ItemId], 
+	x.[StateCode], 
+	x.[State]
+
+FROM [{objectQualifier}bhattji_StateCodes] AS x
+GO
+
+
+
+
+
+
+
+
+/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****                 ZipCodes                         *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create/drop tables and stored procs   */
+
+/* Insert here the code to drop stored procs if exists  */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddZipCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddZipCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddZipCode]
+
+	@ZipCode nvarchar(5), 
+	@Area nvarchar(25), 
+	@City nvarchar(25), 
+	@StateCode nvarchar(2), 
+	@State nvarchar(25)
+
+AS
+
+
+IF (SELECT COUNT(*) FROM {objectQualifier}bhattji_ZipCodes WHERE ZipCode = @ZipCode) < 1
+BEGIN
+	EXEC {databaseOwner}[{objectQualifier}bhattji_AddUpdateStateCode] @StateCode, @State
+
+	INSERT INTO {objectQualifier}bhattji_ZipCodes (
+
+		[ZipCode], 
+		[Area], 
+		[City], 
+		[StateCode]
+
+	) VALUES (
+
+		@ZipCode, 
+		@Area, 
+		@City, 
+		@StateCode
+
+	)
+	SELECT SCOPE_IDENTITY()
+END
+GO
+
+/* Insert here the code to populate tables  */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_ZipCodes]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+EXEC {databaseOwner}[{objectQualifier}bhattji_AddZipCode] 'ZipCode','Area','City','StateCode','State'
+GO
+
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateZipCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateZipCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateZipCode]
+
+	@ItemId int, 
+	@ZipCode nvarchar(5), 
+	@Area nvarchar(25), 
+	@City nvarchar(25), 
+	@StateCode nvarchar(2) , 
+	@State nvarchar(25)
+
+AS
+
+BEGIN
+	EXEC {databaseOwner}[{objectQualifier}bhattji_AddUpdateStateCode] @StateCode, @State
+
+	UPDATE {objectQualifier}bhattji_ZipCodes
+
+	SET
+		[ZipCode] = @ZipCode, 
+		[Area] = @Area, 
+		[City] = @City, 
+		[StateCode] = @StateCode
+
+	WHERE
+		[ItemId] = @ItemId
+END
+GO
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteZipCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteZipCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_DeleteZipCode]
+
+	@ItemId int
+
+AS
+
+DELETE
+FROM [{objectQualifier}bhattji_ZipCodes]
+WHERE ItemId = @ItemId
+GO
+
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetZipCodeByZipCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetZipCodeByZipCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetZipCodeByZipCode]
+
+	@ZipCode nvarchar(5)
+
+AS
+
+SELECT
+	x.[ItemId], 
+	x.[ZipCode], 
+	x.[Area], 
+	x.[City], 
+	x.[StateCode], 
+	sc.[State]
+
+FROM [{objectQualifier}bhattji_ZipCodes] AS x
+	LEFT OUTER JOIN [{objectQualifier}bhattji_StateCodes] AS sc on x.StateCode = sc.StateCode
+
+WHERE x.[ZipCode] = @ZipCode
+GO
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetZipCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetZipCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetZipCode]
+
+	@ItemId int
+
+AS
+
+SELECT
+	x.[ItemId], 
+	x.[ZipCode], 
+	x.[Area], 
+	x.[City], 
+	x.[StateCode], 
+	sc.[State]
+
+FROM [{objectQualifier}bhattji_ZipCodes] AS x
+	LEFT OUTER JOIN [{objectQualifier}bhattji_StateCodes] AS sc on x.StateCode = sc.StateCode
+
+WHERE x.[ItemId] = @ItemId
+GO
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetZipCodes]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetZipCodes]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetZipCodes]
+
+AS
+
+SELECT
+	x.[ItemId], 
+	x.[ZipCode], 
+	x.[Area], 
+	x.[City], 
+	x.[StateCode], 
+	sc.[State]
+
+FROM [{objectQualifier}bhattji_ZipCodes] AS x
+	LEFT OUTER JOIN [{objectQualifier}bhattji_StateCodes] AS sc on x.StateCode = sc.StateCode
+GO
+
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO
+
+
+

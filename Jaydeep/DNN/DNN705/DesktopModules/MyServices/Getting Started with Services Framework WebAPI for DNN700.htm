@@ -1,0 +1,81 @@
+
+<!-- saved from url=(0114)http://www.dotnetnuke.com/Resources/Blogs/EntryId/3500/Getting-Started-with-Services-Framework-WebAPI-Edition.aspx -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Getting Started with Services Framework WebAPI Edition (Print Friendly View)</title></head><body bgcolor="white"><table width="100%"><tbody><tr><td align="left"><h1>Getting Started with Services Framework WebAPI Edition</h1></td><td align="right"><h5>Written by:Scott S 9/14/2012 12:34:00 PM</h5></td></tr></tbody></table><hr><p>Getting started with the Services Framework in DNN 7.0 CTP.</p>
+<p>In DotNetNuke 7 the Services Framework has been updated to be based on the new WebAPI stack instead of ASP.Net MVC. Switching to WebAPI is a great thing for the Services Framework, primarily because WebAPI is built from the ground up as a tool for writing web services on HTTP</p>
+<p><br>
+</p>
+<hr><p>In DotNetNuke 7 the Services Framework has been updated to be based on the new WebAPI stack instead of ASP.Net MVC. Switching to WebAPI is a great thing for the Services Framework, primarily because WebAPI is built from the ground up as a tool for writing web services on HTTP. MVC was a pretty decent way to build web services, but it was never specifically intended for the task. This post will layout the basic Hello World service implementation. A future post will explain how to convert an existing MVC based controller to WebAPI.</p>
+<p>Creating a web service with Services Framework is very easy. Before you begin, ensure that you have installed the <a href="http://dotnetnuke.codeplex.com/releases/view/93277" target="_blank">7.0 CTP</a>2 or the final release when it is available.</p>
+<p>The next step is to setup a new class library project with references to all the appropriate libraries.</p>
+<ol>
+    <li>In Visual Studio create a new class library project for .Net Framework 4.0 </li>
+    <li>Add references to the following libraries in your installation (Browse to the /bin folder of you install using the Add Reference dialog box)
+    <ul>
+        <li>DotNetNuke.dll </li>
+        <li>DotNetNuke.Web.dll </li>
+        <li>System.Net.Http.dll </li>
+        <li>System.Net.Http.Formatting.dll </li>
+        <li>System.Web.Http.dll </li>
+    </ul>
+    </li>
+    <li>Add references to the following standard .Net libraries (Use the .Net tab of the Add Reference dialog box)
+    <ul>
+        <li>System.Web </li>
+    </ul>
+    </li>
+    <li>Set the output path of your project to the /bin folder of your 7.0 installation </li>
+    <li>Delete the default Class1.cs file </li>
+</ol>
+<p>Now you are ready to write your own controller, add a new class with the following code:
+</p>
+<pre><code>using System;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using DotNetNuke.Web.Api;
+
+namespace MyServices
+{
+    public class WelcomeController : DnnApiController
+    {
+        [AllowAnonymous] 
+        [HttpGet]
+        public HttpResponseMessage HelloWorld()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, "Hello World!");
+        }
+    }
+}
+</code></pre>
+<p>The first important detail in this code snippet is the class name. WebAPI requires that the name of all controllers end with the word Controller hence the name of our class WelcomeController. Without the Controller at the end of the name the service will not work.</p>
+<p>The next thing to take note of is that we have inherited from DnnApiController. This is very similar to the WebAPI ApiController class but adds the various DotNetNuke framework integrations such as authentication, and access to portal settings.</p>
+<p>You will notice that the method returns a HttpResponseMessage. With such a simple method we could have simply returned a string, but using HttpResponseMessage is a good habit to build as it will provide much more flexibility when writing services that need to return more than just a simple OK response.</p>
+<p>The HelloWorld method also has two attributes. The HttpGet attribute allows the method to be accessed from Get requests. The final important detail is the use of the AllowAnonymous attribute. Authorization is one area where the DotNetNuke Services Framework deviates substantially from WebAPI. A standard WebAPI service essentially leaves all the methods open to anonymous access by default, and then various Auth filter are applied to tighten that access where needed. DotNetNuke has taken the opposite approach, by default all methods require Host level authorization, and then various Auth filters are applied to loosen that access where needed. In this case we want to allow anonymous access to our HelloWorld service.</p>
+<p>The service itself is pretty simple, the only remaining question is what URL to use to call this service. Those familiar with WebAPI will know that you must setup a route to make the methods on your controllers accessible to the web. Create another class and insert the following code:</p>
+<pre><code>using System;
+using DotNetNuke.Web.Api;
+
+namespace MyServices
+{
+    public class RouteMapper : IServiceRouteMapper
+    {
+        public void RegisterRoutes(IMapRoute mapRouteManager)
+        {
+            mapRouteManager.MapHttpRoute("MyServices", "default", "{controller}/{action}", new[] {"MyServices"});
+        }
+    }
+}
+</code></pre>
+<p>Traditionally routing is done inside Global.asax. It would be very messy to update Global.asax for every service installed in a DotNetNuke site so instead we create the IServiceRouteMapper interface. This interface allows you to register routes in a fashion very similar to WebAPI. All routes for the Services Framework will be mapped to the following structure:</p>
+<p><code><em>~/DesktopModules/&lt;moduleFolderName&gt;/API/<strong><url></url></strong></em></code></p>
+<p>Here is a break down of each of the parameters passed to IMapRoute.MapHttpRoute:</p>
+<p><strong>"MyServices" - string moduleFolderName:</strong> Unique to DNN this parameter should be a name unique to your module/service, and will typically match the name of the DesktopModules folder in which your module is installed. It is important to use a name unique to your service to avoid routing conflicts with other services that may be installed.</p>
+<p><strong>"default" - string routeName:</strong> A name for your route. &nbsp;This makes up part of the total route name when routes are registered in ASP.Net. &nbsp;The combination of moduleFolderName and routeName must always be unique. &nbsp;This name is important when trying to use the UrlHelper extensions. &nbsp;For most services that only use a single route, "default" is perfectly acceptable.</p>
+<p><strong>"{controller}/{action}" - string url:</strong> Standard WebAPI parameter that defines the unique characteristics of your route.</p>
+<p><strong>"new [] {"MyServices"} = string[] namespaces:</strong> Unique to DNN, this is an array of namespaces to search for controllers for this route. The parameter helps prevent conflict between services built by different developers.</p>
+<p>Now compile the code and all that remains to do is to test your service. There is no installation or registration require for Services Framework, as long as the .dll is present in the /bin folder the service will be setup when the site starts. See step 4 above if the .dll is not in the website's /bin folder after the compilation.</p>
+<p>To test the service simply open a browser to ~/DesktopModules/MyServices/API/Welcome/HelloWorld and your browser should load a page that says "Hello World!".</p>
+<p>That is all there is to building a basic service using DotNetNuke Services Framework in 7.0. Stay tuned for more posts with all the details...</p>
+<p>I recommend following the instructions in this example to create a working service, but the code can also be found on <a href="https://github.com/sschlesier/sf-webapi-helloworld" target="_blank">github</a>.</p>
+<p>Finally you can also find more documentation on the Service Framework in DotNetNuke 7 in the <a href="http://www.dotnetnuke.com/Resources/Wiki/Page/DotNetNuke-7-0-Developer-Quick-Start.aspx#Services_Framework_3" target="_blank">Wiki</a>.</p>
+</body></html>

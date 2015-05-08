@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<dotnetnuke version="3.0" type="Module">
+	<folders>
+		<folder>
+			<name>bhattji.InterOffices</name>
+			<friendlyname>bhattji.InterOffices</friendlyname>
+			<foldername>bhattji.InterOffices</foldername>
+			<modulename>bhattji.InterOffices</modulename>
+			<description>Description</description>
+			<version>01.00.00</version>
+			<businesscontrollerclass>bhattji.Modules.InterOffices.Business.InterOfficesController, bhattji.Modules.InterOffices</businesscontrollerclass>
+			<resourcefile>install.bhattji</resourcefile>
+			<modules>
+				<module>
+					<friendlyname>bhattji.InterOffices</friendlyname>
+					<cachetime>0</cachetime>
+					<controls>
+						<control>
+							<title>InterOffices</title>
+							<src>Views.ascx</src>
+							<type>View</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+						<control>
+							<key>ItemDetails</key>
+							<title>InterOffice Details</title>
+							<src>Details.ascx</src>
+							<type>View</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+						
+						<control>
+							<key>Edit</key>
+							<title>Edit InterOffices</title>
+							<src>Edits.ascx</src>
+							<type>Edit</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+						<control>
+							<key>Settings</key>
+							<title>InterOffices Settings</title>
+							<src>Settings.ascx</src>
+							<type>Edit</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+					</controls>
+				</module>
+			</modules>
+			<files>
+				<file>
+					<name>bhattji.Modules.InterOffices.dll</name>
+				</file>
+				<file>
+					<name>01.00.00.SqlDataProvider</name>
+				</file>
+				<file>
+					<name>Uninstall.SqlDataProvider</name>
+				</file>			
+			</files>
+		</folder>
+	</folders>
+</dotnetnuke>

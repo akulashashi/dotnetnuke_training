@@ -1,0 +1,18 @@
+/* ================================
+    CSS STYLES FOR Module Feedbacks
+   ================================
+*/
+
+.fbLabel
+{
+    font-weight:bold;
+}
+.fbTextBox
+{
+    background-color: #b5b5b5; 
+    min-height: 35px; 
+    width: 100%; 
+    color: #ffffff;
+    border-radius: 5px; 
+    -webkit-border-radius: 5px;
+}

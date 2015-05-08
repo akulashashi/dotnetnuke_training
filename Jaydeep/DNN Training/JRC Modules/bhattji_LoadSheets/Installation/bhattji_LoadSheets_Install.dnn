@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dotnetnuke version="3.0" type="Module">
+	<folders>
+		<folder>
+			<name>bhattji.LoadSheets</name>
+			<friendlyname>bhattji.LoadSheets</friendlyname>
+			<foldername>bhattji.LoadSheets</foldername>
+			<modulename>bhattji.LoadSheets</modulename>
+			<description>Description</description>
+			<version>01.00.00</version>
+			<businesscontrollerclass>bhattji.Modules.LoadSheets.Business.LoadSheetsController, bhattji.Modules.LoadSheets</businesscontrollerclass>
+			<resourcefile>install.bhattji</resourcefile>
+			<modules>
+				<module>
+					<friendlyname>bhattji.LoadSheets</friendlyname>
+					<cachetime>0</cachetime>
+					<controls>
+						<control>
+							<title>LoadSheets</title>
+							<src>Views.ascx</src>
+							<type>View</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+						<control>
+							<key>ItemDetails</key>
+							<title>LoadSheet Details</title>
+							<src>Details.ascx</src>
+							<type>View</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+						<control>
+							<key>Reports</key>
+							<title>LoadSheet Reports</title>
+							<src>Reports.ascx</src>
+							<type>View</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+
+						<control>
+							<key>Edit</key>
+							<title>Edit LoadSheets</title>
+							<src>Edits.ascx</src>
+							<type>Edit</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+
+						<control>
+							<key>EditPUDrops</key>
+							<title>Edit PUDrops</title>
+							<src>EditPUDrops.ascx</src>
+							<type>Edit</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+							<supportspartialrendering>true</supportspartialrendering>
+						</control>
+
+						<control>
+							<key>EditAcct</key>
+							<title>Edit LoadAccounts</title>
+							<src>EditAcct.ascx</src>
+							<type>Edit</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+							<supportspartialrendering>true</supportspartialrendering>
+						</control>
+
+						<control>
+							<key>Settings</key>
+							<title>LoadSheets Settings</title>
+							<src>Settings.ascx</src>
+							<type>Edit</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+					</controls>
+				</module>
+			</modules>
+			<files>
+				<file>
+					<name>bhattji.Modules.LoadSheets.dll</name>
+				</file>				
+				<file>
+					<name>01.00.00.SqlDataProvider</name>
+				</file>
+				<file>
+					<name>Uninstall.SqlDataProvider</name>
+				</file>				
+			</files>
+		</folder>
+	</folders>
+</dotnetnuke>
+
+

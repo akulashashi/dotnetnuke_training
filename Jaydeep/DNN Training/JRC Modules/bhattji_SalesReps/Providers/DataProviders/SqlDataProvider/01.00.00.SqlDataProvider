@@ -1,0 +1,550 @@
+﻿/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              SalesReps               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create tables and stored procs   */
+
+/* Insert here the code to create tables */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}ARD_SalesRepMasterfile]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+begin
+
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_SalesRepMasterfile]  ALTER COLUMN [RepRate] [money] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_SalesRepMasterfile]  ALTER COLUMN [RepDollar] [money] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_SalesRepMasterfile]  ADD [SecPinA] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_SalesRepMasterfile]  ADD [SecPinB] [int] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_SalesRepMasterfile]  ADD [ItemID] [int] IDENTITY (1, 1) NOT NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_SalesRepMasterfile]  ADD [ModuleId] [int] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_SalesRepMasterfile]  ADD [ViewOrder] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_SalesRepMasterfile]  ADD [UpdatedByUserId] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_SalesRepMasterfile]  ADD [UpdatedDate] [datetime] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_SalesRepMasterfile]  ADD [CreatedByUserId] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_SalesRepMasterfile]  ADD [CreatedDate] [datetime] NULL
+
+end
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}ARD_SalesRepMasterfile]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+begin
+
+UPDATE {databaseOwner}[{objectQualifier}ARD_SalesRepMasterfile]  SET [ModuleId] = 371
+UPDATE {databaseOwner}[{objectQualifier}ARD_SalesRepMasterfile]  SET [UpdatedByUserId] = 1
+UPDATE {databaseOwner}[{objectQualifier}ARD_SalesRepMasterfile]  SET [UpdatedDate] = GetDate()
+UPDATE {databaseOwner}[{objectQualifier}ARD_SalesRepMasterfile]  SET [CreatedByUserId] = 1
+UPDATE {databaseOwner}[{objectQualifier}ARD_SalesRepMasterfile]  SET [CreatedDate] = GetDate()
+
+end
+
+else
+
+CREATE TABLE {databaseOwner}[{objectQualifier}ARD_SalesRepMasterfile] (
+	[ItemID] [int] IDENTITY (1, 1) NOT NULL ,
+	[ModuleID] [int] NULL ,
+
+	[RepNo] [nvarchar] (7) NOT NULL ,
+	[RepName] [nvarchar] (30) NULL ,
+	[RepRate] [money] NULL ,
+	[RepDollar] [money] NULL  ,
+
+	[SecPinA] [int]  NULL ,
+	[SecPinB [int]  NULL ,
+	
+	[ViewOrder] [int] NULL ,
+	[UpdatedByUserId] [int]  NULL ,
+	[UpdatedDate] [datetime] NULL ,
+	[CreatedByUserId] [int]  NULL ,
+	[CreatedDate] [datetime] NULL
+
+) ON [PRIMARY]
+GO
+
+
+
+
+
+/* Insert here the code to create stored procs   */
+
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+/* Following procedure is for Add the SalesRepresentative Details */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddSalesRep]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddSalesRep]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddSalesRep]
+
+	@ModuleID int,
+
+	@RepNo nvarchar(7),
+	@RepName nvarchar(30),
+	@RepRate money,
+	@RepDollar money,
+
+	@SecPinA int,
+	@SecPinB int,
+	
+	@ViewOrder int,
+
+	@CreatedByUserId int
+AS
+
+INSERT INTO {objectQualifier}ARD_SalesRepMasterfile (
+	[ModuleID],
+
+	[RepNo],
+	[RepName],
+	[RepRate],
+	[RepDollar],
+
+	[SecPinA],
+	[SecPinB],
+
+	[ViewOrder],
+	
+	[UpdatedByUserId],
+	[UpdatedDate],
+	[CreatedByUserId],
+	[CreatedDate]
+
+) VALUES (
+	@ModuleID,
+
+	@RepNo,
+	@RepName,
+	@RepRate,
+	@RepDollar,
+
+	@SecPinA, 
+	@SecPinB, 
+
+	@ViewOrder ,
+
+	@CreatedByUserId ,
+	GetDate(),
+	@CreatedByUserId ,
+	GetDate()
+)
+
+
+SELECT SCOPE_IDENTITY()
+GO
+
+
+
+/* Following procedure is for Update the SalesRepresentative Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateSalesRep]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateSalesRep]
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateSalesRep]
+
+	@ItemID int,
+
+	@RepNo nvarchar(7),
+	@RepName nvarchar(30),
+	@RepRate money,
+	@RepDollar money ,
+
+	@SecPinA int,
+	@SecPinB int,
+	
+	@ViewOrder int ,
+
+	@UpdatedByUserId int
+AS
+
+UPDATE {objectQualifier}ARD_SalesRepMasterfile
+
+SET
+	[RepNo] = @RepNo,
+	[RepName] = @RepName,
+	[RepRate] = @RepRate,
+	[RepDollar] = @RepDollar,
+
+	[SecPinA] = @SecPinA,
+	[SecPinB] = @SecPinB,
+	
+	[ViewOrder] = @ViewOrder ,
+
+	[UpdatedByUserId] = @UpdatedByUserId ,
+	[UpdatedDate] = GetDate()
+
+WHERE
+	[ItemID] = @ItemID
+GO
+
+
+
+/* Following procedure is for Fix the SalesRepresentative Details */
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_FixSalesReps]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_FixSalesReps]
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_FixSalesReps]
+
+	@ModuleID int,
+	@UpdatedByUserId int
+AS
+
+UPDATE {objectQualifier}ARD_SalesRepMasterfile SET	[ModuleID] = @ModuleID
+UPDATE {objectQualifier}ARD_SalesRepMasterfile SET	[UpdatedByUserId] = @UpdatedByUserId
+UPDATE {objectQualifier}ARD_SalesRepMasterfile SET	[UpdatedDate] = GetDate()
+
+GO
+
+
+
+
+/* Following procedure is for Delate the SalesRepresentative Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteSalesRep]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteSalesRep]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_DeleteSalesRep]
+	@ItemId int
+
+AS
+
+DELETE
+FROM [{objectQualifier}ARD_SalesRepMasterfile]
+WHERE ItemId = @ItemId
+GO
+
+/* Following procedure is for Add none Rep NO if it "0000000" */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddNoRepNo]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddNoRepNo]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddNoRepNo]
+AS
+if ((SELECT Count(*) FROM {databaseOwner}[{objectQualifier}ARD_SalesRepMasterfile] WHERE RepNo = '0000000')>0)
+UPDATE {objectQualifier}ARD_SalesRepMasterfile
+
+SET
+	[RepNo] = '0000000',
+	[RepName] = 'No Rep Assigned'
+	
+WHERE
+	[RepNo] = '0000000'
+
+else
+
+INSERT INTO {objectQualifier}ARD_SalesRepMasterfile(
+	[RepNo],
+	[RepName]
+	
+	)VALUES(
+	
+	'0000000',
+	'No Rep Assigned'
+	)
+
+Go
+
+
+
+
+
+/* Following procedure is for Get the SalesRepresentative ID */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetSalesRepId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetSalesRepId]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetSalesRepId]
+	@RepNo nvarchar(7)
+
+AS
+
+SELECT [ItemID]
+FROM {objectQualifier}ARD_SalesRepMasterfile
+WHERE [RepNo] = @RepNo
+GO
+
+
+
+/* Following procedure is for Get the SalesRepresentative Details */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetSalesRep]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetSalesRep]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetSalesRep]
+	@ItemID int 
+AS 
+
+SELECT 
+	x.[ItemID],
+	x.[ModuleID],
+
+	[RepNo],
+	[RepName],
+	[RepRate],
+	[RepDollar],
+
+	[SecPinA],
+	[SecPinB],
+	
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate] ,
+	[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}ARD_SalesRepMasterfile AS x
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+
+WHERE
+	x.[ItemID] = @ItemID
+GO
+
+
+
+/* Following procedure is for Get the SalesRepresentative Module */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetModuleSalesReps]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetModuleSalesReps]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetModuleSalesReps]
+
+	@ModuleId int,
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	[RepNo],
+	[RepName],
+	[RepRate],
+	[RepDollar],
+
+	[SecPinA],
+	[SecPinB],
+	
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+    x.[UpdatedDate] ,
+	[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+	FROM {objectQualifier}ARD_SalesRepMasterfile AS x
+
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+
+WHERE x.[ModuleId] = @ModuleId
+ORDER BY [ViewOrder], x.[CreatedDate] desc
+GO
+
+
+
+/* Following procedure is for Get the SalesRepresentative Portal */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetPortalSalesReps]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetPortalSalesReps]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetPortalSalesReps]
+
+	@PortalId int,
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	[RepNo],
+	[RepName],
+	[RepRate],
+	[RepDollar],
+
+	[SecPinA],
+	[SecPinB],
+	
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate] ,
+	[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}ARD_SalesRepMasterfile AS x
+	INNER JOIN [{objectQualifier}Modules] As m on x.ModuleId = m.ModuleId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+
+WHERE m.PortalId = @PortalId
+ORDER BY x.[ModuleId], x.ViewOrder, x.CreatedDate desc
+GO
+
+
+
+/* Following procedure is for Get All the SalesRepresentative Details */
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetAllSalesReps]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetAllSalesReps]
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetAllSalesReps]
+
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	[RepNo],
+	[RepName],
+	[RepRate],
+	[RepDollar],
+
+	[SecPinA],
+	[SecPinB],
+	
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate] ,
+	[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}ARD_SalesRepMasterfile AS x
+
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+
+
+ORDER BY x.[ModuleId], x.ViewOrder, x.CreatedDate desc
+
+GO
+
+
+
+/* Following procedure is for Sort the SalesRepresentative Details */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_SortSalesReps]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_SortSalesReps]
+GO
+
+
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}bhattji_SortSalesReps]
+	@ModuleId	int
+
+AS
+
+DECLARE	@counter as int
+DECLARE	@PK as int
+SET		@counter = 10
+
+--Make Temp table to hold Primary Keys FROM the table you want to renumber
+SELECT	ItemId
+INTO		[#TempTable]
+FROM		[{objectQualifier}ARD_SalesRepMasterfile] as x
+WHERE	x.ModuleId = @ModuleId
+ORDER BY	x.ViewOrder asc,  x.CreatedDate desc
+
+
+
+--Loop through each temptable record
+WHILE (SELECT COUNT(ItemId) FROM #TempTable) > 0
+BEGIN
+	SET		rowcount 1
+
+	SELECT	@PK = ItemId
+	FROM #TempTable
+
+	SET rowcount 0
+
+
+	--UPDATE the view order for matching record in [{objectQualifier}ARD_SalesRepMasterfile]
+	UPDATE [{objectQualifier}ARD_SalesRepMasterfile]
+	SET ViewOrder = @counter
+	WHERE [{objectQualifier}ARD_SalesRepMasterfile].ItemId = @PK
+	AND [{objectQualifier}ARD_SalesRepMasterfile].ModuleId = @ModuleId
+
+	SET @counter = @counter + 10
+
+	SET rowcount 1
+
+	DELETE FROM #TempTable
+	SET rowcount 0
+END
+
+SET rowcount 0
+
+DROP TABLE #TempTable
+
+SELECT * FROM [{objectQualifier}ARD_SalesRepMasterfile] ORDER BY ViewOrder
+GO
+
+
+
+
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO
+

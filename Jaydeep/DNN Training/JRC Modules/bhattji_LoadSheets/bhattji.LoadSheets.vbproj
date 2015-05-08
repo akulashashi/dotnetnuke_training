@@ -1,0 +1,742 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7B9DB4D4-BA46-4E79-A90E-64A56C7E1651}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>bhattji.Modules.LoadSheets</AssemblyName>
+    <SignAssembly>false</SignAssembly>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DocumentationFile>bhattji.LoadSheets.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DocumentationFile>bhattji.LoadSheets.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=1.0.10618.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AJAXExtensionsToolbox, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="bhattji.Modules.BkrSalesPersons, Version=4.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="bhattji.Modules.Brokers, Version=4.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="bhattji.Modules.InterOffices, Version=4.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="bhattji.Modules.SalesPersons, Version=4.3.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="DotNetNuke, Version=4.8.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\WINDOWS\assembly\GAC_MSIL\Microsoft.ReportViewer.WebForms\9.0.0.0__b03f5f7f11d50a3a\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Web.Extensions.Design, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="DotNetNuke" />
+    <Import Include="DotNetNuke.Common" />
+    <Import Include="DotNetNuke.Common.Utilities" />
+    <Import Include="DotNetNuke.Data" />
+    <Import Include="DotNetNuke.Entities" />
+    <Import Include="DotNetNuke.Entities.Tabs" />
+    <Import Include="DotNetNuke.Framework" />
+    <Import Include="DotNetNuke.Modules" />
+    <Import Include="DotNetNuke.Security" />
+    <Import Include="DotNetNuke.Services" />
+    <Import Include="DotNetNuke.Services.Exceptions" />
+    <Import Include="DotNetNuke.Services.Localization" />
+    <Import Include="DotNetNuke.UI" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddLoad.ascx.designer.vb">
+      <DependentUpon>AddLoad.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AddLoad.ascx.vb">
+      <DependentUpon>AddLoad.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rvDrvCerti.ascx.designer.vb">
+      <DependentUpon>rvDrvCerti.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="rvDrvCerti.ascx.vb">
+      <DependentUpon>rvDrvCerti.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rvContainer.ascx.designer.vb">
+      <DependentUpon>rvContainer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="rvContainer.ascx.vb">
+      <DependentUpon>rvContainer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="jbMessageBox.ascx.designer.vb">
+      <DependentUpon>jbMessageBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="jbMessageBox.ascx.vb">
+      <DependentUpon>jbMessageBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SectionHeadControl.ascx.designer.vb">
+      <DependentUpon>SectionHeadControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SectionHeadControl.ascx.vb">
+      <DependentUpon>SectionHeadControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewLoadDrops.ascx.designer.vb">
+      <DependentUpon>ViewLoadDrops.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLoadDrops.ascx.vb">
+      <DependentUpon>ViewLoadDrops.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewLoadPUs.ascx.designer.vb">
+      <DependentUpon>ViewLoadPUs.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewLoadPUs.ascx.vb">
+      <DependentUpon>ViewLoadPUs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditLoadPUs.ascx.designer.vb">
+      <DependentUpon>EditLoadPUs.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="EditLoadPUs.ascx.vb">
+      <DependentUpon>EditLoadPUs.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditLoadDrops.ascx.designer.vb">
+      <DependentUpon>EditLoadDrops.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="EditLoadDrops.ascx.vb">
+      <DependentUpon>EditLoadDrops.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebService.asmx.vb">
+      <DependentUpon>WebService.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\ZipCodeInfo.vb" />
+    <Compile Include="Components\LoadAcctInfo.vb" />
+    <Compile Include="Components\LoadDropInfo.vb" />
+    <Compile Include="Components\LoadPUInfo.vb" />
+    <Compile Include="Components\OptionsInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\ItemInfo.vb" />
+    <Compile Include="EditPUDrops.ascx.designer.vb">
+      <DependentUpon>EditPUDrops.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="EditPUDrops.ascx.vb">
+      <DependentUpon>EditPUDrops.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rvSysInquiry.ascx.designer.vb">
+      <DependentUpon>rvSysInquiry.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="rvSysInquiry.ascx.vb">
+      <DependentUpon>rvSysInquiry.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rvLoadReport.ascx.designer.vb">
+      <DependentUpon>rvLoadReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="rvLoadReport.ascx.vb">
+      <DependentUpon>rvLoadReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rvLoadConfirm.ascx.designer.vb">
+      <DependentUpon>rvLoadConfirm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="rvLoadConfirm.ascx.vb">
+      <DependentUpon>rvLoadConfirm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rvLoadStatusBroker.ascx.designer.vb">
+      <DependentUpon>rvLoadStatusBroker.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="rvLoadStatusBroker.ascx.vb">
+      <DependentUpon>rvLoadStatusBroker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rvLoadStatusDriver.ascx.designer.vb">
+      <DependentUpon>rvLoadStatusDriver.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="rvLoadStatusDriver.ascx.vb">
+      <DependentUpon>rvLoadStatusDriver.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rvLoadStatusReview.ascx.designer.vb">
+      <DependentUpon>rvLoadStatusReview.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="rvLoadStatusReview.ascx.vb">
+      <DependentUpon>rvLoadStatusReview.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rvXmission.ascx.designer.vb">
+      <DependentUpon>rvXmission.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="rvXmission.ascx.vb">
+      <DependentUpon>rvXmission.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rvSalesSummary.ascx.designer.vb">
+      <DependentUpon>rvSalesSummary.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="rvSalesSummary.ascx.vb">
+      <DependentUpon>rvSalesSummary.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewList.ascx.designer.vb">
+      <DependentUpon>ViewList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewList.ascx.vb">
+      <DependentUpon>ViewList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rvDriverStatus.ascx.designer.vb">
+      <DependentUpon>rvDriverStatus.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="rvDriverStatus.ascx.vb">
+      <DependentUpon>rvDriverStatus.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptDriverStatus.ascx.designer.vb">
+      <DependentUpon>rptDriverStatus.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="rptDriverStatus.ascx.vb">
+      <DependentUpon>rptDriverStatus.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptReport1.ascx.designer.vb">
+      <DependentUpon>rptReport1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="rptReport1.ascx.vb">
+      <DependentUpon>rptReport1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptLoadConfirm.ascx.designer.vb">
+      <DependentUpon>rptLoadConfirm.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="rptLoadConfirm.ascx.vb">
+      <DependentUpon>rptLoadConfirm.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports.ascx.designer.vb">
+      <DependentUpon>Reports.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.ascx.vb">
+      <DependentUpon>Reports.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptLoadSheetInit.ascx.designer.vb">
+      <DependentUpon>rptLoadSheetInit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="rptLoadSheetInit.ascx.vb">
+      <DependentUpon>rptLoadSheetInit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Details.ascx.designer.vb">
+      <DependentUpon>Details.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Details.ascx.vb">
+      <DependentUpon>Details.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditAcct.ascx.designer.vb">
+      <DependentUpon>EditAcct.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="EditAcct.ascx.vb">
+      <DependentUpon>EditAcct.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditItem.ascx.designer.vb">
+      <DependentUpon>EditItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="EditItem.ascx.vb">
+      <DependentUpon>EditItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Edits.ascx.designer.vb">
+      <DependentUpon>Edits.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Edits.ascx.vb">
+      <DependentUpon>Edits.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="img\Thumb.aspx.designer.vb">
+      <DependentUpon>Thumb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="img\Thumb.aspx.vb">
+      <DependentUpon>Thumb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="rptReport2Broker.ascx.designer.vb">
+      <DependentUpon>rptReport2Broker.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="rptReport2Broker.ascx.vb">
+      <DependentUpon>rptReport2Broker.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptReport2Driver.ascx.designer.vb">
+      <DependentUpon>rptReport2Driver.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="rptReport2Driver.ascx.vb">
+      <DependentUpon>rptReport2Driver.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptReport3.ascx.designer.vb">
+      <DependentUpon>rptReport3.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="rptReport3.ascx.vb">
+      <DependentUpon>rptReport3.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rptXmission.ascx.designer.vb">
+      <DependentUpon>rptXmission.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="rptXmission.ascx.vb">
+      <DependentUpon>rptXmission.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Settings.ascx.designer.vb">
+      <DependentUpon>Settings.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.ascx.vb">
+      <DependentUpon>Settings.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewReport.ascx.designer.vb">
+      <DependentUpon>ViewReport.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewReport.ascx.vb">
+      <DependentUpon>ViewReport.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views.ascx.designer.vb">
+      <DependentUpon>Views.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views.ascx.vb">
+      <DependentUpon>Views.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Xmission.ascx.designer.vb">
+      <DependentUpon>Xmission.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Xmission.ascx.vb">
+      <DependentUpon>Xmission.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddLoad.ascx" />
+    <Content Include="rptDriverStatus.ascx" />
+    <Content Include="rptReport1.ascx" />
+    <Content Include="rptLoadConfirm.ascx" />
+    <Content Include="Reports.ascx" />
+    <Content Include="rptLoadSheetInit.ascx" />
+    <Content Include="Details.ascx" />
+    <Content Include="EditAcct.ascx" />
+    <Content Include="EditItem.ascx" />
+    <Content Include="Edits.ascx" />
+    <Content Include="img\Thumb.aspx" />
+    <Content Include="module.css" />
+    <Content Include="rptReport2Broker.ascx" />
+    <Content Include="rptReport2Driver.ascx" />
+    <Content Include="rptReport3.ascx" />
+    <Content Include="rptXmission.ascx" />
+    <Content Include="Settings.ascx" />
+    <Content Include="ViewReport.ascx" />
+    <Content Include="Views.ascx" />
+    <Content Include="Xmission.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AddLoad.ascx.resx">
+      <DependentUpon>AddLoad.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="App_LocalResources\AddLoad.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\Details.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\EditAcct.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\EditItem.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\Edits.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\rptDriverStatus.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\rptLoadConfirm.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\rptLoadSheetInit.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\rptReport1.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\rptReport2Broker.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\rptReport2Driver.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\rptReport3.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\rptXmission.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\rvDriverStatus.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\rvLoadConfirm.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\rvLoadReport.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\rvLoadStatusBroker.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\rvLoadStatusDriver.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\rvSalesSummary.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\rvXmission.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\Settings.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\ViewList.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\ViewLoadDrops.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\ViewLoadPUs.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\ViewReport.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\Views.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\Xmission.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\rvLoadStatusReview.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\rvSysInquiry.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\EditLoadDrops.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\EditLoadPUs.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\rvContainer.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\rvDrvCerti.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <EmbeddedResource Include="Reports\DrvCerti.rdlc" />
+    <EmbeddedResource Include="rvDrvCerti.ascx.resx">
+      <DependentUpon>rvDrvCerti.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Trailer.rdlc" />
+    <EmbeddedResource Include="rvContainer.ascx.resx">
+      <DependentUpon>rvContainer.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Container.rdlc" />
+    <EmbeddedResource Include="ViewLoadDrops.ascx.resx">
+      <DependentUpon>ViewLoadDrops.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewLoadPUs.ascx.resx">
+      <DependentUpon>ViewLoadPUs.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditLoadPUs.ascx.resx">
+      <DependentUpon>EditLoadPUs.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditLoadDrops.ascx.resx">
+      <DependentUpon>EditLoadDrops.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPUDrops.ascx.resx">
+      <DependentUpon>EditPUDrops.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rvSysInquiry.ascx.resx">
+      <DependentUpon>rvSysInquiry.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SysInquiry.rdlc" />
+    <EmbeddedResource Include="Reports\DriverStatus.rdlc" />
+    <EmbeddedResource Include="Reports\LoadConfirm.rdlc" />
+    <EmbeddedResource Include="Reports\LoadReport.rdlc" />
+    <EmbeddedResource Include="Reports\LoadStatusBroker.rdlc" />
+    <EmbeddedResource Include="Reports\LoadStatusDriver.rdlc" />
+    <EmbeddedResource Include="Reports\LoadStatusReview.rdlc" />
+    <EmbeddedResource Include="Reports\SalesSummary.rdlc" />
+    <EmbeddedResource Include="Reports\Xmission.rdlc" />
+    <EmbeddedResource Include="rvLoadReport.ascx.resx">
+      <DependentUpon>rvLoadReport.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rvLoadConfirm.ascx.resx">
+      <DependentUpon>rvLoadConfirm.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rvLoadStatusBroker.ascx.resx">
+      <DependentUpon>rvLoadStatusBroker.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rvLoadStatusDriver.ascx.resx">
+      <DependentUpon>rvLoadStatusDriver.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rvLoadStatusReview.ascx.resx">
+      <DependentUpon>rvLoadStatusReview.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rvXmission.ascx.resx">
+      <DependentUpon>rvXmission.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rvSalesSummary.ascx.resx">
+      <DependentUpon>rvSalesSummary.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewList.ascx.resx">
+      <DependentUpon>ViewList.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rvDriverStatus.ascx.resx">
+      <DependentUpon>rvDriverStatus.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDriverStatus.ascx.resx">
+      <DependentUpon>rptDriverStatus.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptReport1.ascx.resx">
+      <DependentUpon>rptReport1.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptLoadConfirm.ascx.resx">
+      <DependentUpon>rptLoadConfirm.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports.ascx.resx">
+      <DependentUpon>Reports.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptLoadSheetInit.ascx.resx">
+      <DependentUpon>rptLoadSheetInit.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Details.ascx.resx">
+      <DependentUpon>Details.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditAcct.ascx.resx">
+      <DependentUpon>EditAcct.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditItem.ascx.resx">
+      <DependentUpon>EditItem.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edits.ascx.resx">
+      <DependentUpon>Edits.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="img\Thumb.aspx.resx">
+      <DependentUpon>Thumb.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptReport2Broker.ascx.resx">
+      <DependentUpon>rptReport2Broker.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptReport2Driver.ascx.resx">
+      <DependentUpon>rptReport2Driver.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptReport3.ascx.resx">
+      <DependentUpon>rptReport3.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptXmission.ascx.resx">
+      <DependentUpon>rptXmission.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.ascx.resx">
+      <DependentUpon>Settings.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewReport.ascx.resx">
+      <DependentUpon>ViewReport.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views.ascx.resx">
+      <DependentUpon>Views.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="rvLoadStatusBroker.ascx" />
+    <Content Include="rvLoadStatusDriver.ascx" />
+    <Content Include="rvLoadStatusReview.ascx" />
+    <Content Include="rvXmission.ascx" />
+    <Content Include="rvSalesSummary.ascx" />
+    <Content Include="ViewList.ascx" />
+    <Content Include="rvDriverStatus.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="rvDrvCerti.ascx" />
+    <Content Include="rvContainer.ascx" />
+    <Content Include="jbMessageBox.ascx" />
+    <Content Include="SectionHeadControl.ascx" />
+    <Content Include="jbMessageBox.css" />
+    <Content Include="ViewLoadDrops.ascx" />
+    <Content Include="ViewLoadPUs.ascx" />
+    <Content Include="EditLoadPUs.ascx" />
+    <Content Include="EditLoadDrops.ascx" />
+    <Content Include="WebService.asmx" />
+    <Content Include="EditPUDrops.ascx" />
+    <Content Include="rvSysInquiry.ascx" />
+    <Content Include="img\maskBG.png" />
+    <Content Include="img\NoImage.jpg" />
+    <Content Include="js\JbRattleImage.js" />
+    <Content Include="js\JB_ActiveContent.js" />
+    <Content Include="rvLoadReport.ascx" />
+    <Content Include="rvLoadConfirm.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Installation\bhattji_LoadSheets.dnn" />
+    <None Include="Installation\bhattji_LoadSheets_Install.dnn" />
+    <None Include="Installation\bhattji_LoadSheets_Source.dnn" />
+    <None Include="Installation\MakeModule.bat" />
+    <None Include="Installation\MakeModule.build" />
+    <None Include="Providers\DataProviders\SqlDataProvider\01.00.00.SqlDataProvider" />
+    <None Include="Providers\DataProviders\SqlDataProvider\Uninstall.SqlDataProvider" />
+    <None Include="web.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" Condition="" />
+  <Import Project="Installation\bhattjiModule.build" Condition="Exists('$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets')" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1445</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://JRC45/DesktopModules/bhattji_LoadSheets</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://JRC45</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

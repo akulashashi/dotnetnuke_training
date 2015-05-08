@@ -1,0 +1,167 @@
+<?xml version="1.0" ?>
+<project name="MakeModulePA" default="ModulePA">
+	<target name="ModulePA" description="Zip all files neccessary for DotNetNuke Module PA deployment">
+		<property name="ModuleName" value="LoadSheets" />
+		<property name="InstallZip" value="bhattji_09.${ModuleName}_Install.zip" />
+		<property name="SourceZip" value="bhattji_09.${ModuleName}_Source.zip" />
+		<property name="ResourceZip" value="source.resource" />
+
+		<!-- Remove "resources.zip" file -->
+		<if test="${file::exists(ResourceZip)}">
+			<delete file="${ResourceZip}" failonerror="false" />
+		</if>
+		<!-- Zip files to archive -->
+		<zip zipfile="${ResourceZip}">
+			<fileset>
+				<include name="../bhattji.${ModuleName}.*" />
+				<include name="../*.vb" />
+				<include name="../*.cs" />
+				<include name="../*.resx" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+			<fileset prefix="My Project">
+				<include name="../My Project/*.*" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+			<fileset prefix="Properties">
+				<include name="../Properties/*.*" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+			<fileset prefix="Components">
+				<include name="../Components/*.vb" />
+				<include name="../Components/*.cs" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+			<fileset prefix="img">
+				<include name="../img/Thumb.aspx.*" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+		</zip>
+
+		<!-- Remove "ModuleNamePA.zip" file -->
+		<if test="${file::exists(InstallZip)}">
+			<delete file="${InstallZip}" failonerror="false" />
+		</if>
+		<!-- Zip files to archive -->
+		<zip zipfile="${InstallZip}">
+			<fileset>
+				<include name="bhattji_${ModuleName}.dnn" />
+				<include name="../../../bin/bhattji.Modules.${ModuleName}.dll" />
+				<include name="../*.ascx" />				
+				<include name="../module.css" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+
+			<fileset prefix="Providers/DataProviders/SqlDataProvider">
+				<include name="../Providers/DataProviders/SqlDataProvider/0*.SqlDataProvider" />
+				<include name="../Providers/DataProviders/SqlDataProvider/Uninstall.SqlDataProvider" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+
+			<fileset prefix="img">
+				<include name="../img/Thumb.aspx" />
+				<include name="../img/NoImage.jpg" />
+				<include name="../img/maskBG.png" />
+				<include name="../img/bhattji*.*" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+
+			<fileset prefix="Reports">
+				<include name="../Reports/*.rpt" />
+				<include name="../Reports/*.rdlc" />
+				<exclude name="../Reports/**/Copy*.*" />
+			</fileset>
+			
+			<fileset prefix="App_LocalResources">
+				<include name="../App_LocalResources/*.resx" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+
+			<fileset prefix="ratings/default">
+				<include name="../ratings/default/*.gif" />
+				<exclude name="../**/Copy*.*" />
+				<exclude name="../**/Thumbs.db" />
+			</fileset>
+
+			<fileset prefix="js">
+				<include name="../js/*.*" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+
+			<fileset prefix="SubModal">
+				<include name="../SubModal/*.js" />
+				<include name="../SubModal/*.png" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+
+			<fileset prefix="css">
+				<include name="../css/*.*" />
+				<include name="../css/luna/*.*" />
+				<exclude name="../**/Thumbs.db" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+		</zip>
+
+		<!-- Remove "ModuleNamePASource.zip" file -->
+		<if test="${file::exists(SourceZip)}">
+			<delete file="${SourceZip}" failonerror="false" />
+		</if>
+		<!-- Zip files to archive -->
+		<zip zipfile="${SourceZip}">
+			<fileset>
+				<include name="bhattji_${ModuleName}_Source.dnn" />
+				<include name="../../../bin/bhattji.Modules.${ModuleName}.dll" />
+				<include name="../*.ascx" />
+				<include name="../*.rpt" />
+				<include name="../module.css" />
+				<include name="${ResourceZip}" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+
+			<fileset prefix="Providers/DataProviders/SqlDataProvider">
+				<include name="../Providers/DataProviders/SqlDataProvider/0*.SqlDataProvider" />
+				<include name="../Providers/DataProviders/SqlDataProvider/Uninstall.SqlDataProvider" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+
+			<fileset prefix="img">
+				<include name="../img/Thumb.aspx" />
+				<include name="../img/NoImage.jpg" />
+				<include name="../img/bhattji*.*" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+
+			<fileset prefix="App_LocalResources">
+				<include name="../App_LocalResources/*.resx" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+
+			<fileset prefix="ratings/default">
+				<include name="../ratings/default/*.gif" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+
+			<fileset prefix="js">
+				<include name="../js/*.*" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+
+			<fileset prefix="SubModal">
+				<include name="../SubModal/*.js" />
+				<include name="../SubModal/*.png" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+
+			<fileset prefix="css">
+				<include name="../css/*.*" />
+				<include name="../css/luna/*.*" />
+				<exclude name="../**/Copy*.*" />
+			</fileset>
+		</zip>
+
+		<!-- Remove "resources.zip" file -->
+		<if test="${file::exists(ResourceZip)}">
+			<delete file="${ResourceZip}" failonerror="false" />
+		</if>
+	</target>
+</project>

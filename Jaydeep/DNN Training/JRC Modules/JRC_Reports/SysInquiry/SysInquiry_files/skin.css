@@ -1,0 +1,60 @@
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(images/bodybg.png); PADDING-BOTTOM: 0px; MARGIN: 0px; COLOR: #333333; PADDING-TOP: 0px; BACKGROUND-REPEAT: repeat-x; FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #ffffff
+}
+#wrapper {
+	LEFT: 50%; MARGIN-LEFT: -380px; WIDTH: 760px; POSITION: relative
+}
+#container {
+	MARGIN: 0px auto; WIDTH: 770px; TEXT-ALIGN: left
+}
+#contentbg {
+	FLOAT: left; BACKGROUND-IMAGE: url(images/contentbg.jpg); BACKGROUND-REPEAT: repeat-y; POSITION: relative
+}
+#contentbg2 {
+	FLOAT: left; POSITION: relative; BACKGROUND-COLOR: #ffffff
+}
+#content {
+	BORDER-RIGHT: #8bb7c4 2px solid; FLOAT: left; BACKGROUND-IMAGE: url(images/contentbg-2col.jpg); BORDER-LEFT: #e1f1f7 2px solid; WIDTH: 769px; BORDER-BOTTOM: #8bb7c4 2px solid; BACKGROUND-REPEAT: no-repeat; POSITION: relative; BACKGROUND-COLOR: transparent
+}
+#content2 {
+	BORDER-RIGHT: #8bb7c4 2px solid; FLOAT: left; BACKGROUND-IMAGE: url(images/contentbg-100.jpg); BORDER-LEFT: #e1f1f7 2px solid; WIDTH: 769px; BORDER-BOTTOM: #8bb7c4 2px solid; BACKGROUND-REPEAT: no-repeat; POSITION: relative; BACKGROUND-COLOR: transparent
+}
+#header {
+	FLOAT: left
+}
+#banner {
+	FLOAT: left; WIDTH: 769px; HEIGHT: 121px
+}
+#navigation {
+	MARGIN-TOP: 0px! important; FLOAT: left; BACKGROUND-IMAGE: url(images/menubg.gif); WIDTH: 769px; COLOR: white; BACKGROUND-REPEAT: repeat-x; HEIGHT: 19px; BACKGROUND-COLOR: #232c35
+}
+#navigation A {
+	COLOR: white
+}
+#navigation A:hover {
+	COLOR: #cccccc; TEXT-DECORATION: underline
+}
+.login {
+	FLOAT: right
+}
+#leftcolumn {
+	FLOAT: left; WIDTH: 254px; BACKGROUND-COLOR: transparent
+}
+#contentcolumn {
+	FLOAT: left; WIDTH: 513px; BACKGROUND-COLOR: transparent
+}
+#contentcolumn2 {
+	FLOAT: left; WIDTH: 769px; BACKGROUND-COLOR: transparent
+}
+.leftpane {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 15px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.contentpane {
+	
+}
+#footer {
+	CLEAR: both; MARGIN-TOP: 10px; FONT-SIZE: 10px; MARGIN-BOTTOM: 10px; PADDING-BOTTOM: 10px; WIDTH: 100%; PADDING-TOP: 10px; TEXT-ALIGN: center
+}
+.Normal {
+	FONT-SIZE: 12px; COLOR: #333333; FONT-FAMILY: Tahoma, Arial, Helvetica, sans-serif
+}

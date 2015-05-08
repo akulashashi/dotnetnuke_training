@@ -1,0 +1,859 @@
+﻿/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              Customers            *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create tables and stored procs   */
+
+/* Insert here the code to create tables */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}AR1_CustomerMaster]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+begin
+
+ALTER TABLE {databaseOwner}[{objectQualifier}AR1_CustomerMaster]  ADD [ItemID] [int] IDENTITY (1, 1) NOT NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}AR1_CustomerMaster]  ADD [ModuleId] [int] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}AR1_CustomerMaster]  ADD [ViewOrder] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}AR1_CustomerMaster]  ADD [UpdatedByUserId] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}AR1_CustomerMaster]  ADD [UpdatedDate] [datetime] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}AR1_CustomerMaster]  ADD [CreatedByUserId] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}AR1_CustomerMaster]  ADD [CreatedDate] [datetime] NULL
+
+end
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}AR1_CustomerMaster]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+begin
+
+UPDATE {databaseOwner}[{objectQualifier}AR1_CustomerMaster]  SET [ModuleId] = 371
+
+UPDATE {databaseOwner}[{objectQualifier}AR1_CustomerMaster]  SET [UpdatedByUserId] = 1
+UPDATE {databaseOwner}[{objectQualifier}AR1_CustomerMaster]  SET [UpdatedDate] = GetDate()
+UPDATE {databaseOwner}[{objectQualifier}AR1_CustomerMaster]  SET [CreatedByUserId] = 1
+UPDATE {databaseOwner}[{objectQualifier}AR1_CustomerMaster]  SET [CreatedDate] = GetDate()
+
+end
+
+else
+
+CREATE TABLE {databaseOwner}[{objectQualifier}AR1_CustomerMaster] (
+	[ItemID] [int] IDENTITY (1, 1) NOT NULL ,
+	[ModuleID] [int] NULL ,
+
+	[CustomerNumber] [nvarchar] (7) NULL ,
+	[CustomerName] [nvarchar] (40) NULL ,
+	[AddressLine1] [nvarchar] (30) NULL ,
+	[AddressLine2] [nvarchar] (30) NULL ,
+	[AddressLine3] [nvarchar] (1) NULL ,
+	[City] [nvarchar] (20) NULL ,
+	[State] [nvarchar] (2) NULL ,
+	[ZipCode] [nvarchar] (10) NULL ,
+	[PhoneNumber] [nvarchar] (14) NULL ,
+	[Extension] [nvarchar] (5) NULL ,
+	[FaxNumber] [nvarchar] (14) NULL ,
+	[ContactCode] [nvarchar] (20) NULL ,
+	[BillingInfo] [nvarchar] (150) NULL ,
+	[Favor] [nvarchar] (1) NULL ,
+	[RepNo] [nvarchar] (7) NULL ,
+	[RepName] [nvarchar] (30) NULL ,
+	[SortSeq] [nvarchar] (8) NULL ,
+	[RepDlr] [money] NULL ,
+	[RepPct] [money] NULL ,
+	[Cowner] [nvarchar] (7) NULL ,
+	[CorpUpd] [datetime] NULL ,
+	[Division] [nvarchar] (3) NULL ,
+	[OldCustNo] [nvarchar] (7) NULL ,
+	[GSMStatus] [nvarchar] (1) NULL ,
+	[CustomerStatus] [nvarchar] (1) NULL ,
+	[CStatus] [nvarchar] (12) NULL ,
+	[MCNO] [nvarchar] (10) NULL ,
+	[WhoDoneIT] [nvarchar] (10) NULL ,
+
+	[ViewOrder] [int] NULL ,
+	[UpdatedByUserId] [int]  NULL ,
+	[UpdatedDate] [datetime] NULL ,
+	[CreatedByUserId] [int]  NULL ,
+	[CreatedDate] [datetime] NULL
+
+) ON [PRIMARY]
+GO
+
+
+
+
+
+/* Insert here the code to create stored procs   */
+
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+/* Following procedure is for Add the customer Details */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddCustomer]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddCustomer]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddCustomer]
+
+	@ModuleID int,
+
+	@CustomerNumber nvarchar(7),
+	@CustomerName nvarchar(40),
+	@AddressLine1 nvarchar(30),
+	@AddressLine2 nvarchar(30),
+	@AddressLine3 nvarchar(1),
+	@City nvarchar(20),
+	@State nvarchar(2),
+	@ZipCode nvarchar(10),
+	@PhoneNumber nvarchar(14),
+	@Extension nvarchar(5),
+	@FaxNumber nvarchar(14),
+	@ContactCode nvarchar(20),
+	@BillingInfo nvarchar(150),
+	@Favor nvarchar(1),
+	@RepNo nvarchar(7),
+	@RepName nvarchar(30),
+	@SortSeq nvarchar(8),
+	@RepDlr money,
+	@RepPct money,
+	@Cowner nvarchar(7),
+	@CorpUpd datetime,
+	@Division nvarchar(3),
+	@OldCustNo nvarchar(7),
+	@GSMStatus nvarchar(1),
+	@CustomerStatus nvarchar(1),
+	@CStatus nvarchar(12),
+	@MCNO nvarchar(10),
+	@WhoDoneIT nvarchar(10),
+
+	@ViewOrder int,
+
+	@CreatedByUserId int
+AS
+
+INSERT INTO {objectQualifier}AR1_CustomerMaster (
+	[ModuleID],
+
+	[CustomerNumber],
+	[CustomerName],
+	[AddressLine1],
+	[AddressLine2],
+	[AddressLine3],
+	[City],
+	[State],
+	[ZipCode],
+	[PhoneNumber],
+	[Extension],
+	[FaxNumber],
+	[ContactCode],
+	[BillingInfo],
+	[Favor],
+	[RepNo],
+	[RepName],
+	[SortSeq],
+	[RepDlr],
+	[RepPct],
+	[Cowner],
+	[CorpUpd],
+	[Division],
+	[OldCustNo],
+	[GSMStatus],
+	[CustomerStatus],
+	[CStatus],
+	[MCNO],
+	[WhoDoneIT],
+
+	[ViewOrder],
+	[UpdatedByUserId],
+	[UpdatedDate],
+	[CreatedByUserId],
+	[CreatedDate]
+
+) VALUES (
+	@ModuleID,
+
+	@CustomerNumber,
+	@CustomerName,
+	@AddressLine1,
+	@AddressLine2,
+	@AddressLine3,
+	@City,
+	@State,
+	@ZipCode,
+	@PhoneNumber,
+	@Extension,
+	@FaxNumber,
+	@ContactCode,
+	@BillingInfo,
+	@Favor,
+	@RepNo,
+	@RepName,
+	@SortSeq,
+	@RepDlr,
+	@RepPct,
+	@Cowner,
+	@CorpUpd,
+	@Division,
+	@OldCustNo,
+	@GSMStatus,
+	@CustomerStatus,
+	@CStatus,
+	@MCNO,
+	@WhoDoneIT,
+
+	@ViewOrder,
+	@CreatedByUserId ,
+	GetDate(),
+	@CreatedByUserId ,
+	GetDate()
+)
+
+
+SELECT SCOPE_IDENTITY()
+GO
+
+
+
+
+/* Following procedure is for Update the customer Details */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateCustomer]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateCustomer]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateCustomer]
+
+	@ItemID int,
+
+	@CustomerNumber nvarchar(7),
+	@CustomerName nvarchar(40),
+	@AddressLine1 nvarchar(30),
+	@AddressLine2 nvarchar(30),
+	@AddressLine3 nvarchar(1),
+	@City nvarchar(20),
+	@State nvarchar(2),
+	@ZipCode nvarchar(10),
+	@PhoneNumber nvarchar(14),
+	@Extension nvarchar(5),
+	@FaxNumber nvarchar(14),
+	@ContactCode nvarchar(20),
+	@BillingInfo nvarchar(150),
+	@Favor nvarchar(1),
+	@RepNo nvarchar(7),
+	@RepName nvarchar(30),
+	@SortSeq nvarchar(8),
+	@RepDlr money,
+	@RepPct money,
+	@Cowner nvarchar(7),
+	@CorpUpd datetime,
+	@Division nvarchar(3),
+	@OldCustNo nvarchar(7),
+	@GSMStatus nvarchar(1),
+	@CustomerStatus nvarchar(1),
+	@CStatus nvarchar(12),
+	@MCNO nvarchar(10),
+	@WhoDoneIT nvarchar(10),
+
+	@ViewOrder int,
+	@UpdatedByUserId int
+
+AS
+
+UPDATE {objectQualifier}AR1_CustomerMaster
+
+SET
+	[CustomerNumber] = @CustomerNumber,
+	[CustomerName] = @CustomerName,
+	[AddressLine1] = @AddressLine1,
+	[AddressLine2] = @AddressLine2,
+	[AddressLine3] = @AddressLine3,
+	[City] = @City,
+	[State] = @State,
+	[ZipCode] = @ZipCode,
+	[PhoneNumber] = @PhoneNumber,
+	[Extension] = @Extension,
+	[FaxNumber] = @FaxNumber,
+	[ContactCode] = @ContactCode,
+	[BillingInfo] = @BillingInfo,
+	[Favor] = @Favor,
+	[RepNo] = @RepNo,
+	[RepName] = @RepName,
+	[SortSeq] = @SortSeq,
+	[RepDlr] = @RepDlr,
+	[RepPct] = @RepPct,
+	[Cowner] = @Cowner,
+	[CorpUpd] = @CorpUpd,
+	[Division] = @Division,
+	[OldCustNo] = @OldCustNo,
+	[GSMStatus] = @GSMStatus,
+	[CustomerStatus] = @CustomerStatus,
+	[CStatus] = @CStatus,
+	[MCNO] = @MCNO,
+	[WhoDoneIT] = @WhoDoneIT,
+
+	[ViewOrder] = @ViewOrder,
+
+	[UpdatedByUserId] = @UpdatedByUserId ,
+	[UpdatedDate] = GetDate()
+
+WHERE
+	[ItemID] = @ItemID
+
+GO
+
+
+
+
+/* Following procedure is for Fix the customer Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_FixCustomers]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_FixCustomers]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_FixCustomers]
+
+	@ModuleID int,
+	@UpdatedByUserId int
+AS
+
+UPDATE {objectQualifier}AR1_CustomerMaster SET	[ModuleID] = @ModuleID
+UPDATE {objectQualifier}AR1_CustomerMaster SET	[UpdatedByUserId] = @UpdatedByUserId
+UPDATE {objectQualifier}AR1_CustomerMaster SET	[UpdatedDate] = GetDate()
+
+GO
+
+
+
+
+
+/* Following procedure is for Delete the customer Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteCustomer]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteCustomer]
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_DeleteCustomer]
+	@ItemId int
+
+AS
+
+DELETE
+FROM [{objectQualifier}AR1_CustomerMaster]
+WHERE ItemId = @ItemId
+GO
+
+/* Following procedure is for Add none Customer if it "0000000" */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddNoCustomer]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddNoCustomer]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddNoCustomer]
+AS
+if ((SELECT Count(*) FROM {databaseOwner}[{objectQualifier}AR1_CustomerMaster] WHERE CustomerNumber = '0000000')>0)
+UPDATE {objectQualifier}AR1_CustomerMaster
+
+SET
+	[CustomerNumber] = '0000000',
+	[CustomerName] = 'Customer to be assigned',
+	[BillingInfo] = 'CLICK ON NEW CUSTOMER TO ADD NEW CUSTOMER OR USE COMPANY SELECTION BOX TO SELECT A CUSTOMER FOR UPDATING',
+	[Favor] = '0',
+	[RepNo] = '0000000',
+	[RepName] = 'NO REP ASSIGNED',
+	[SortSeq] = '00000000',
+	[RepDlr] = '0',
+	[RepPct] = '0',
+	[Division] = 'JRC',
+	[OldCustNo] = '0000000',
+	[CustomerStatus] = 'A',
+	[CStatus] = 'Active'
+WHERE
+	[CustomerNumber] = '0000000'
+
+else
+
+INSERT INTO {objectQualifier}AR1_CustomerMaster(
+	[CustomerNumber],
+	[CustomerName],
+	[BillingInfo],
+	[Favor],
+	[RepNo],
+	[RepName],
+	[SortSeq],
+	[RepDlr],
+	[RepPct],
+	[Division],
+	[OldCustNo],
+	[CustomerStatus],
+	[CStatus]
+	
+	)VALUES(
+	
+	'0000000',
+	'Customer to be assigned',
+	'CLICK ON NEW CUSTOMER TO ADD NEW CUSTOMER OR USE COMPANY SELECTION BOX TO SELECT A CUSTOMER FOR UPDATING',
+	'0',
+	'0000000',
+	'NO REP ASSIGNED',
+	'00000000',
+	'0',
+	'0',
+	'JRC',
+	'0000000',
+	'A',
+	'Active'
+	)
+
+Go
+
+
+
+
+/* Following procedure is for Get the customer Number or ID */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetCustomerId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetCustomerId]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetCustomerId]
+	@CustomerNumber [nvarchar](7)
+
+As
+
+SELECT [ItemID]
+FROM [{objectQualifier}AR1_CustomerMaster]
+WHERE [CustomerNumber] = @CustomerNumber
+
+GO
+
+
+/* Following procedure is for Get the customer Name */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetCustomerName]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetCustomerName]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetCustomerName]
+	@CustomerNumber [nvarchar](7)
+
+As
+
+SELECT [CustomerName]
+FROM [{objectQualifier}AR1_CustomerMaster]
+WHERE [CustomerNumber] = @CustomerNumber
+
+GO
+
+
+
+
+/* Following procedure is for Get the customerDetails */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetCustomer]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetCustomer]
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetCustomer]
+
+	@ItemID int
+AS
+
+SELECT
+	x.[ItemID],
+	x.[ModuleID],
+
+	[CustomerNumber],
+	[CustomerName],
+	[AddressLine1],
+	[AddressLine2],
+	[AddressLine3],
+	[City],
+	[State],
+	[ZipCode],
+	[PhoneNumber],
+	[Extension],
+	[FaxNumber],
+	[ContactCode],
+	[BillingInfo],
+	[Favor],
+	x.[RepNo],
+	sr.[RepName],
+	[SortSeq],
+	[RepDlr],
+	[RepPct],
+	[Cowner],
+	[CorpUpd],
+	[Division],
+	[OldCustNo],
+	[GSMStatus],
+	[CustomerStatus],
+	[CStatus],
+	[MCNO],
+	[WhoDoneIT],
+
+	x.[ViewOrder],
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate] ,
+	x.[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}AR1_CustomerMaster AS x
+	LEFT OUTER JOIN [{objectQualifier}ARD_SalesRepMasterfile] as sr on x.RepNo = sr.RepNo
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+
+WHERE
+	x.[ItemID] = @ItemID
+GO
+
+
+
+/* Following procedure is for Get the customer Module */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetModuleCustomers]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetModuleCustomers]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetModuleCustomers]
+
+	@ModuleId int,
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	[CustomerNumber],
+	[CustomerName],
+	[AddressLine1],
+	[AddressLine2],
+	[AddressLine3],
+	[City],
+	[State],
+	[ZipCode],
+	[PhoneNumber],
+	[Extension],
+	[FaxNumber],
+	[ContactCode],
+	[BillingInfo],
+	[Favor],
+	x.[RepNo],
+	sr.[RepName],
+	[SortSeq],
+	[RepDlr],
+	[RepPct],
+	[Cowner],
+	[CorpUpd],
+	[Division],
+	[OldCustNo],
+	[GSMStatus],
+	[CustomerStatus],
+	[CStatus],
+	[MCNO],
+	[WhoDoneIT],
+
+	x.[ViewOrder],
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate],
+	x.[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}AR1_CustomerMaster AS x
+	LEFT OUTER JOIN [{objectQualifier}ARD_SalesRepMasterfile] as sr on x.RepNo = sr.RepNo
+	LEFT OUTER JOIN [{objectQualifier}Users] as uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] as uc on x.CreatedByUserId = uc.UserId
+
+WHERE x.[ModuleId] = @ModuleId
+ORDER BY x.[ViewOrder], x.[CreatedDate] desc
+GO
+
+
+
+
+/* Following procedure is for Get the customer Portal */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetPortalCustomers]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetPortalCustomers]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetPortalCustomers]
+
+	@PortalId int,
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	[CustomerNumber],
+	[CustomerName],
+	[AddressLine1],
+	[AddressLine2],
+	[AddressLine3],
+	[City],
+	[State],
+	[ZipCode],
+	[PhoneNumber],
+	[Extension],
+	[FaxNumber],
+	[ContactCode],
+	[BillingInfo],
+	[Favor],
+	x.[RepNo],
+	sr.[RepName],
+	[SortSeq],
+	[RepDlr],
+	[RepPct],
+	[Cowner],
+	[CorpUpd],
+	[Division],
+	[OldCustNo],
+	[GSMStatus],
+	[CustomerStatus],
+	[CStatus],
+	[MCNO],
+	[WhoDoneIT],
+
+	x.[ViewOrder],
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate],
+	x.[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}AR1_CustomerMaster AS x
+	JOIN [{objectQualifier}Modules] AS m on x.ModuleId = m.ModuleId
+	LEFT OUTER JOIN [{objectQualifier}ARD_SalesRepMasterfile] as sr on x.RepNo = sr.RepNo
+	LEFT OUTER JOIN [{objectQualifier}Users] as uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] as uc on x.CreatedByUserId = uc.UserId
+
+WHERE m.PortalId = @PortalId
+ORDER BY x.[ModuleId], x.ViewOrder, x.CreatedDate desc
+GO
+
+
+
+/* Following procedure is for Get All customer Detail */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetAllCustomers]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetAllCustomers]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetAllCustomers]
+
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	[CustomerNumber],
+	[CustomerName],
+	[AddressLine1],
+	[AddressLine2],
+	[AddressLine3],
+	[City],
+	[State],
+	[ZipCode],
+	[PhoneNumber],
+	[Extension],
+	[FaxNumber],
+	[ContactCode],
+	[BillingInfo],
+	[Favor],
+	x.[RepNo],
+	sr.[RepName],
+	[SortSeq],
+	[RepDlr],
+	[RepPct],
+	[Cowner],
+	[CorpUpd],
+	[Division],
+	[OldCustNo],
+	[GSMStatus],
+	[CustomerStatus],
+	[CStatus],
+	[MCNO],
+	[WhoDoneIT],
+
+	x.[ViewOrder],
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate],
+	x.[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}AR1_CustomerMaster AS x
+	LEFT OUTER JOIN [{objectQualifier}ARD_SalesRepMasterfile] as sr on x.RepNo = sr.RepNo
+	LEFT OUTER JOIN [{objectQualifier}Users] as uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] as uc on x.CreatedByUserId = uc.UserId
+
+ORDER BY x.[ModuleId], x.ViewOrder, x.CreatedDate desc
+
+GO
+
+
+
+/* Following procedure is for Search the customer Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetSearchedCustomers]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetSearchedCustomers]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetSearchedCustomers]
+	@SearchText nvarchar(50)
+
+AS
+
+SELECT
+	[CustomerNumber],
+	[CustomerName]
+
+FROM {objectQualifier}AR1_CustomerMaster
+
+WHERE [{objectQualifier}AR1_CustomerMaster].[CustomerName] LIKE '%' + @SearchText + '%'
+
+ORDER BY [{objectQualifier}AR1_CustomerMaster].[CustomerName]
+
+GO
+
+
+
+/* Following procedure is for Sort the customer Detail */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_SortCustomers]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_SortCustomers]
+GO
+
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}bhattji_SortCustomers]
+	@ModuleId	int
+
+AS
+
+DECLARE	@counter as int
+DECLARE	@PK as int
+SET		@counter = 10
+
+--Make Temp table to hold Primary Keys FROM the table you want to renumber
+SELECT	ItemId
+INTO		[#TempTable]
+FROM		[{objectQualifier}AR1_CustomerMaster] AS x
+WHERE	x.ModuleId = @ModuleId
+ORDER BY	x.ViewOrder asc,  x.CreatedDate desc
+
+
+
+--Loop through each temptable record
+WHILE (SELECT COUNT(ItemId) FROM #TempTable) > 0
+BEGIN
+	SET		rowcount 1
+
+	SELECT	@PK = ItemId
+	FROM #TempTable
+
+	SET rowcount 0
+
+
+	--UPDATE the view order for matching record in [{objectQualifier}AR1_CustomerMaster]
+	UPDATE [{objectQualifier}AR1_CustomerMaster]
+	SET ViewOrder = @counter
+	WHERE [{objectQualifier}AR1_CustomerMaster].ItemId = @PK
+	AND [{objectQualifier}AR1_CustomerMaster].ModuleId = @ModuleId
+
+	SET @counter = @counter + 10
+
+	SET rowcount 1
+
+	DELETE FROM #TempTable
+	SET rowcount 0
+END
+
+SET rowcount 0
+
+DROP TABLE #TempTable
+
+SELECT * FROM [{objectQualifier}AR1_CustomerMaster] ORDER BY ViewOrder
+GO
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetCustomerNames]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetCustomerNames]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetCustomerNames]
+	@SearchText nvarchar(40), 
+	@NoOfItems int 
+
+AS
+
+SELECT DISTINCT TOP (@NoOfItems) 
+	[CustomerName], 
+	[CustomerNumber], 
+	[City], 
+	[State]
+
+FROM [{objectQualifier}AR1_CustomerMaster]
+
+WHERE CustomerName LIKE  @SearchText + '%'
+
+ORDER BY CustomerName, CustomerNumber
+
+GO
+
+
+
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO
+

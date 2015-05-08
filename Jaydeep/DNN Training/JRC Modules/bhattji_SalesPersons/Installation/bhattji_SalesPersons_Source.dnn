@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<dotnetnuke version="3.0" type="Module">
+	<folders>
+		<folder>
+			<name>bhattji.SalesPersons</name>
+			<friendlyname>bhattji.SalesPersons</friendlyname>
+			<foldername>bhattji.SalesPersons</foldername>
+			<modulename>bhattji.SalesPersons</modulename>
+			<description>Description</description>
+			<version>01.00.00</version>
+			<businesscontrollerclass>bhattji.Modules.SalesPersons.Business.SalesPersonsController, bhattji.Modules.SalesPersons</businesscontrollerclass>
+			<resourcefile>source.resource</resourcefile>
+			<modules>
+				<module>
+					<friendlyname>bhattji.SalesPersons</friendlyname>
+					<cachetime>0</cachetime>
+					<controls>
+						<control>
+							<title>Drivers</title>
+							<src>Views.ascx</src>
+							<type>View</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+						<control>
+							<key>ItemDetails</key>
+							<title>Driver Details</title>
+							<src>Details.ascx</src>
+							<type>View</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+
+						<control>
+							<key>Edit</key>
+							<title>Edit Driver</title>
+							<src>Edits.ascx</src>
+							<type>Edit</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+						<control>
+							<key>Settings</key>
+							<title>Drivers Settings</title>
+							<src>Settings.ascx</src>
+							<type>Edit</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+					</controls>
+				</module>
+			</modules>
+			<files>
+				<file>
+					<name>bhattji.Modules.SalesPersons.dll</name>
+				</file>
+				<file>
+					<name>01.00.00.SqlDataProvider</name>
+				</file>
+				<file>
+					<name>Uninstall.SqlDataProvider</name>
+				</file>
+			</files>
+		</folder>
+	</folders>
+</dotnetnuke>

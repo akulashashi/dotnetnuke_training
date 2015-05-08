@@ -1,0 +1,8 @@
+E:\DNN\DNN600\bin\bhattji.Modules.JsonUpdates.dll
+E:\DNN\DNN600\bin\bhattji.Modules.JsonUpdates.pdb
+E:\DNN\DNN600\DesktopModules\bhattji_JsonUpdates\obj\Release\bhattji.Modules.JsonUpdates.Thumb.resources
+E:\DNN\DNN600\DesktopModules\bhattji_JsonUpdates\obj\Release\bhattji.Modules.JsonUpdates.Settings.resources
+E:\DNN\DNN600\DesktopModules\bhattji_JsonUpdates\obj\Release\bhattji.Modules.JsonUpdates.Views.resources
+E:\DNN\DNN600\DesktopModules\bhattji_JsonUpdates\obj\Release\bhattji.Modules.JsonUpdates.csproj.GenerateResource.Cache
+E:\DNN\DNN600\DesktopModules\bhattji_JsonUpdates\obj\Release\bhattji.Modules.JsonUpdates.dll
+E:\DNN\DNN600\DesktopModules\bhattji_JsonUpdates\obj\Release\bhattji.Modules.JsonUpdates.pdb

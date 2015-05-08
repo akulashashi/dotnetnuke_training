@@ -1,0 +1,7 @@
+E:\DNN\DNN600\bin\bhattji.Modules.VimeoVideos.dll
+E:\DNN\DNN600\bin\bhattji.Modules.VimeoVideos.pdb
+E:\DNN\DNN600\DesktopModules\bhattji_VimeoVideos\obj\Release\bhattji.Modules.VimeoVideos.Settings.resources
+E:\DNN\DNN600\DesktopModules\bhattji_VimeoVideos\obj\Release\bhattji.Modules.VimeoVideos.Views.resources
+E:\DNN\DNN600\DesktopModules\bhattji_VimeoVideos\obj\Release\bhattji.Modules.VimeoVideos.csproj.GenerateResource.Cache
+E:\DNN\DNN600\DesktopModules\bhattji_VimeoVideos\obj\Release\bhattji.Modules.VimeoVideos.dll
+E:\DNN\DNN600\DesktopModules\bhattji_VimeoVideos\obj\Release\bhattji.Modules.VimeoVideos.pdb

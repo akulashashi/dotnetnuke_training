@@ -1,0 +1,209 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+bhattji.Modules.Dispatchs
+</name>
+</assembly>
+<members>
+<member name="M:bhattji.Modules.Dispatchs.ViewGrid.Page_Load(System.Object,System.EventArgs)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Page_Load runs when the control is loaded
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/23/2004	Moved Links to a separate Project
+ </history>
+ -----------------------------------------------------------------------------
+ 
+
+</member><member name="T:bhattji.Modules.Dispatchs.ViewGrid">
+ -----------------------------------------------------------------------------
+ <summary>
+ The Links Class provides the UI for displaying the Links
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/23/2004	Moved Links to a separate Project
+		[bhattji]	10/20/2004	Removed ViewOptions from Action menu
+ </history>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:bhattji.Modules.Dispatchs.ViewList.Page_Load(System.Object,System.EventArgs)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Page_Load runs when the control is loaded
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/23/2004	Moved Links to a separate Project
+ </history>
+ -----------------------------------------------------------------------------
+ 
+
+</member><member name="T:bhattji.Modules.Dispatchs.ViewList">
+ -----------------------------------------------------------------------------
+ <summary>
+ The Links Class provides the UI for displaying the Links
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/23/2004	Moved Links to a separate Project
+		[bhattji]	10/20/2004	Removed ViewOptions from Action menu
+ </history>
+ -----------------------------------------------------------------------------
+ 
+
+</member><member name="M:bhattji.Modules.Dispatchs.Thumb.Page_Init(System.Object,System.EventArgs)">
+Private designerPlaceholderDeclaration As System.Object
+
+</member><member name="T:bhattji.Modules.Dispatchs.OptionsInfo">
+ -----------------------------------------------------------------------------
+ <summary>
+ The Options Class provides the TabbedPages Business Object
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/20/2004	Moved TabbedPages to a separate Project
+ </history>
+ -----------------------------------------------------------------------------
+ 
+
+</member><member name="M:bhattji.Modules.Dispatchs.ViewThumbs.Page_Load(System.Object,System.EventArgs)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Page_Load runs when the control is loaded
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/23/2004	Moved Links to a separate Project
+ </history>
+ -----------------------------------------------------------------------------
+ 
+
+</member><member name="T:bhattji.Modules.Dispatchs.ViewThumbs">
+ -----------------------------------------------------------------------------
+ <summary>
+ The Links Class provides the UI for displaying the Links
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/23/2004	Moved Links to a separate Project
+		[bhattji]	10/20/2004	Removed ViewOptions from Action menu
+ </history>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:bhattji.Modules.Dispatchs.Settings.LoadSettings">
+ -----------------------------------------------------------------------------
+ <summary>
+ LoadSettings loads the settings from the Databas and displays them
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+		[bhattji]	10/20/2004	created
+ </history>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:bhattji.Modules.Dispatchs.Settings.UpdateSettings">
+ -----------------------------------------------------------------------------
+ <summary>
+ UpdateSettings saves the modified settings to the Database
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+		[bhattji]	10/20/2004	created
+		[bhattji]	10/25/2004	upated to use TabModuleId rather than TabId/ModuleId
+ </history>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:bhattji.Modules.Dispatchs.Settings.imbUpdate_Click(System.Object,System.Web.UI.ImageClickEventArgs)">
+ -----------------------------------------------------------------------------
+ <summary>
+ cmdUpdate_Click runs when the update button is clicked
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/23/2004	Updated to reflect design changes for Help, 508 support
+                       and localisation
+ </history>
+ -----------------------------------------------------------------------------
+ 
+
+</member><member name="M:bhattji.Modules.Dispatchs.Settings.imbCancel_Click(System.Object,System.Web.UI.ImageClickEventArgs)">
+ -----------------------------------------------------------------------------
+ <summary>
+ cmdCancel_Click runs when the cancel button is clicked
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/23/2004	Updated to reflect design changes for Help, 508 support
+                       and localisation
+ </history>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:bhattji.Modules.Dispatchs.ViewCat.Page_Load(System.Object,System.EventArgs)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Page_Load runs when the control is loaded
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/23/2004	Moved Links to a separate Project
+ </history>
+ -----------------------------------------------------------------------------
+ 
+
+</member><member name="T:bhattji.Modules.Dispatchs.ViewCat">
+ -----------------------------------------------------------------------------
+ <summary>
+ The Links Class provides the UI for displaying the Links
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/23/2004	Moved Links to a separate Project
+		[bhattji]	10/20/2004	Removed ViewOptions from Action menu
+ </history>
+ -----------------------------------------------------------------------------
+
+</member><member name="M:bhattji.Modules.Dispatchs.ViewTabs.Page_Load(System.Object,System.EventArgs)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Page_Load runs when the control is loaded
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/23/2004	Moved Links to a separate Project
+ </history>
+ -----------------------------------------------------------------------------
+
+</member><member name="T:bhattji.Modules.Dispatchs.ViewTabs">
+ -----------------------------------------------------------------------------
+ <summary>
+ The Links Class provides the UI for displaying the Links
+ </summary>
+	<remarks>
+	</remarks>
+	<history>
+ 	[bhattji]	9/23/2004	Moved Links to a separate Project
+		[bhattji]	10/20/2004	Removed ViewOptions from Action menu
+ </history>
+ -----------------------------------------------------------------------------
+
+</member>
+</members>
+</doc>

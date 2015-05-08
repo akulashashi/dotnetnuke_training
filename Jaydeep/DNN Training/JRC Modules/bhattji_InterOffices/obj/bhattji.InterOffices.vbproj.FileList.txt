@@ -1,0 +1,15 @@
+..\..\bin\bhattji.Modules.InterOffices.dll
+..\..\bin\bhattji.Modules.InterOffices.pdb
+..\..\bin\bhattji.InterOffices.xml
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\bhattji.Modules.InterOffices.Details.resources
+obj\Debug\bhattji.Modules.InterOffices.EditItem.resources
+obj\Debug\bhattji.Modules.InterOffices.Edits.resources
+obj\Debug\bhattji.Modules.InterOffices.Thumb.resources
+obj\Debug\bhattji.Modules.InterOffices.Settings.resources
+obj\Debug\bhattji.Modules.InterOffices.ViewList.resources
+obj\Debug\bhattji.Modules.InterOffices.Views.resources
+obj\Debug\bhattji.InterOffices.vbproj.GenerateResource.Cache
+obj\Debug\bhattji.Modules.InterOffices.dll
+obj\Debug\bhattji.InterOffices.xml
+obj\Debug\bhattji.Modules.InterOffices.pdb

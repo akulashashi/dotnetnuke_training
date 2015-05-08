@@ -1,0 +1,4 @@
+E:\bin\ChristocTheme.dll
+E:\bin\ChristocTheme.pdb
+E:\DNN\DNN705\DesktopModules\ChristocTheme\obj\Release\ChristocTheme.dll
+E:\DNN\DNN705\DesktopModules\ChristocTheme\obj\Release\ChristocTheme.pdb

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dotnetnuke version="3.0" type="Module">
+	<folders>
+		<folder>
+			<name>bhattji.LoadSheets</name>
+			<friendlyname>bhattji.LoadSheets</friendlyname>
+			<foldername>bhattji.LoadSheets</foldername>
+			<modulename>bhattji.LoadSheets</modulename>
+			<description>Description</description>
+			<version>01.00.00</version>
+			<businesscontrollerclass>bhattji.Modules.LoadSheets.Business.LoadSheetsController, bhattji.Modules.LoadSheets</businesscontrollerclass>
+      <resourcefile>source.resource</resourcefile>
+      <modules>
+				<module>
+					<friendlyname>bhattji.LoadSheets</friendlyname>
+					<cachetime>0</cachetime>
+					<controls>
+						<control>
+							<title>LoadSheets</title>
+							<src>Views.ascx</src>
+							<type>View</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+						<control>
+							<key>ItemDetails</key>
+							<title>LoadSheet Details</title>
+							<src>Details.ascx</src>
+							<type>View</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+						<control>
+							<key>Reports</key>
+							<title>LoadSheet Reports</title>
+							<src>Reports.ascx</src>
+							<type>View</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+
+						<control>
+							<key>Edit</key>
+							<title>Edit LoadSheets</title>
+							<src>Edits.ascx</src>
+							<type>Edit</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+
+						<control>
+							<key>EditPUDrops</key>
+							<title>Edit PUDrops</title>
+							<src>EditPUDrops.ascx</src>
+							<type>Edit</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+							<supportspartialrendering>true</supportspartialrendering>
+						</control>
+
+						<control>
+							<key>EditAcct</key>
+							<title>Edit LoadAccounts</title>
+							<src>EditAcct.ascx</src>
+							<type>Edit</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+							<supportspartialrendering>true</supportspartialrendering>
+						</control>
+
+						<control>
+							<key>Settings</key>
+							<title>LoadSheets Settings</title>
+							<src>Settings.ascx</src>
+							<type>Edit</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+					</controls>
+				</module>
+			</modules>
+			<files>
+				<file>
+					<name>bhattji.Modules.LoadSheets.dll</name>
+				</file>
+				<file>
+					<name>module.css</name>
+				</file>
+				<file>
+					<name>Views.ascx</name>
+				</file>
+
+				<file>
+					<name>Xmission.ascx</name>
+				</file>
+				<file>
+					<name>ViewList.ascx</name>
+				</file>
+
+				<file>
+					<name>Details.ascx</name>
+				</file>
+
+				<file>
+					<name>Edits.ascx</name>
+				</file>
+				<file>
+					<name>AddLoad.ascx</name>
+				</file>
+				
+				<file>
+					<name>EditPUDrops.ascx</name>
+				</file>
+				<file>
+					<name>EditAcct.ascx</name>
+				</file>
+				<file>
+					<name>EditItem.ascx</name>
+				</file>
+				<file>
+					<name>ViewLoadPUs.ascx</name>
+				</file>
+
+				<file>
+					<name>ViewLoadDrops.ascx</name>
+				</file>
+				
+				<file>
+					<name>Reports.ascx</name>
+				</file>
+				<file>
+					<name>rptLoadSheetInit.ascx</name>
+				</file>
+				<file>
+					<name>rptLoadConfirm.ascx</name>
+				</file>
+				<file>
+					<name>rptReport1.ascx</name>
+				</file>
+				<file>
+					<name>rptReport2Driver.ascx</name>
+				</file>
+				<file>
+					<name>rptReport2Broker.ascx</name>
+				</file>
+				<file>
+					<name>rptReport3.ascx</name>
+				</file>
+				<file>
+					<name>rptDriverStatus.ascx</name>
+				</file>
+				<file>
+					<name>Settings.ascx</name>
+				</file>
+				<file>
+					<name>01.00.00.SqlDataProvider</name>
+				</file>
+				<file>
+					<name>Uninstall.SqlDataProvider</name>
+				</file>
+
+
+				<file>
+					<path>img</path>
+					<name>NoImage.jpg</name>
+				</file>
+				<file>
+					<path>img</path>
+					<name>Thumb.aspx</name>
+				</file>
+
+
+				<file>
+					<path>App_LocalResources</path>
+					<name>Views.ascx.resx</name>
+				</file>
+
+				<file>
+					<path>App_LocalResources</path>
+					<name>Xmission.ascx.resx</name>
+				</file>
+				<file>
+					<path>App_LocalResources</path>
+					<name>ViewList.ascx.resx</name>
+				</file>
+
+				<file>
+					<path>App_LocalResources</path>
+					<name>Details.ascx.resx</name>
+				</file>
+
+				<file>
+					<path>App_LocalResources</path>
+					<name>Edits.ascx.resx</name>
+				</file>
+				<file>
+					<path>App_LocalResources</path>
+					<name>AddLoad.ascx.resx</name>
+				</file>
+				<file>
+					<path>App_LocalResources</path>
+					<name>EditPUDrops.ascx.resx</name>
+				</file>
+				<file>
+					<path>App_LocalResources</path>
+					<name>EditAcct.ascx.resx</name>
+				</file>
+				<file>
+					<path>App_LocalResources</path>
+					<name>EditItem.ascx.resx</name>
+				</file>
+
+				<file>
+					<path>App_LocalResources</path>
+					<name>ViewLoadPUs.ascx.resx</name>
+				</file>
+
+				<file>
+					<path>App_LocalResources</path>
+					<name>ViewLoadDrops.ascx.resx</name>
+				</file>
+				<file>
+					<path>App_LocalResources</path>
+					<name>rptLoadSheetInit.ascx.resx</name>
+				</file>
+				<file>
+					<path>App_LocalResources</path>
+					<name>rptLoadConfirm.ascx.resx</name>
+				</file>
+				<file>
+					<path>App_LocalResources</path>
+					<name>Settings.ascx.resx</name>
+				</file>
+
+				<file>
+					<path>App_LocalResources</path>
+					<name>rptReport1.ascx.resx</name>
+				</file>
+				<file>
+					<path>App_LocalResources</path>
+					<name>rptReport2Driver.ascx.resx</name>
+				</file>
+				<file>
+					<path>App_LocalResources</path>
+					<name>rptReport2Broker.ascx.resx</name>
+				</file>
+				<file>
+					<path>App_LocalResources</path>
+					<name>rptReport3.ascx.resx</name>
+				</file>
+				<file>
+					<path>App_LocalResources</path>
+					<name>rptDriverStatus.ascx.resx</name>
+				</file>
+				
+				<file>
+					<path>js</path>
+					<name>JB_ActiveContent.js</name>
+				</file>
+				<file>
+					<path>js</path>
+					<name>JbRattleImage.js</name>
+				</file>
+
+			</files>
+		</folder>
+	</folders>
+</dotnetnuke>
+
+

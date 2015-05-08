@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plDriverCode.Text" xml:space="preserve">
+    <value>Driver Code</value>
+  </data>
+  <data name="plDriverCode.Help" xml:space="preserve">
+    <value>Enter the Driver Code</value>
+  </data>
+  <data name="plDriverName.Text" xml:space="preserve">
+    <value>Driver Name</value>
+  </data>
+  <data name="plDriverName.Help" xml:space="preserve">
+    <value>Enter the Driver Name</value>
+  </data>
+  <data name="plDLastName.Text" xml:space="preserve">
+    <value>Driver Last Name</value>
+  </data>
+  <data name="plDLastName.Help" xml:space="preserve">
+    <value>Enter the Driver Last Name</value>
+  </data>
+  <data name="plDFirstName.Text" xml:space="preserve">
+    <value>Driver First Name</value>
+  </data>
+  <data name="plDFirstName.Help" xml:space="preserve">
+    <value>Enter the Driver First Name</value>
+  </data>
+  <data name="plAddressLine1.Text" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="plAddressLine1.Help" xml:space="preserve">
+    <value>Enter the AddressLine1</value>
+  </data>
+  <data name="plAddressLine2.Text" xml:space="preserve">
+    <value>AddressLine2</value>
+  </data>
+  <data name="plAddressLine2.Help" xml:space="preserve">
+    <value>Enter the AddressLine2</value>
+  </data>
+  <data name="plAddressLine3.Text" xml:space="preserve">
+    <value>AddressLine3</value>
+  </data>
+  <data name="plAddressLine3.Help" xml:space="preserve">
+    <value>Enter the AddressLine3</value>
+  </data>
+  <data name="plCity.Text" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="plCity.Help" xml:space="preserve">
+    <value>Enter the Driver Details in order as City/State/Pincode </value>
+  </data>
+  <data name="plState.Text" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="plState.Help" xml:space="preserve">
+    <value>Enter the State Of Driver</value>
+  </data>
+  <data name="plZipCode.Text" xml:space="preserve">
+    <value>Zip Code</value>
+  </data>
+  <data name="plZipCode.Help" xml:space="preserve">
+    <value>Enter the Zip Code</value>
+  </data>
+  <data name="plCountryCode.Text" xml:space="preserve">
+    <value>Country Code</value>
+  </data>
+  <data name="plCountryCode.Help" xml:space="preserve">
+    <value>Enter the Country Code Of Driver</value>
+  </data>
+  <data name="plPhoneNo.Text" xml:space="preserve">
+    <value>Phone No</value>
+  </data>
+  <data name="plPhoneNo.Help" xml:space="preserve">
+    <value>Enter the Phone No Of Driver</value>
+  </data>
+  <data name="plExt.Text" xml:space="preserve">
+    <value>Ext</value>
+  </data>
+  <data name="plExt.Help" xml:space="preserve">
+    <value>Enter the Ext</value>
+  </data>
+  <data name="plEmailAddress.Text" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="plEmailAddress.Help" xml:space="preserve">
+    <value>Enter the Email Address Of Driver</value>
+  </data>
+  <data name="plCommRate.Text" xml:space="preserve">
+    <value>Commission Rate</value>
+  </data>
+  <data name="plCommRate.Help" xml:space="preserve">
+    <value>Enter the Commission Rate</value>
+  </data>
+  <data name="plAdminExempt.Text" xml:space="preserve">
+    <value>AdminExempt</value>
+  </data>
+  <data name="plAdminExempt.Help" xml:space="preserve">
+    <value>Enter the Admin Exempt</value>
+  </data>
+  <data name="plStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="plStatus.Help" xml:space="preserve">
+    <value>Enter the Status</value>
+  </data>
+  <data name="plDriverNotes.Text" xml:space="preserve">
+    <value>Driver Notes</value>
+  </data>
+  <data name="plDriverNotes.Help" xml:space="preserve">
+    <value>Enter the Driver Notes</value>
+  </data>
+  <data name="plLoadType.Text" xml:space="preserve">
+    <value>Load Type</value>
+  </data>
+  <data name="plLoadType.Help" xml:space="preserve">
+    <value>Enter the Load Type</value>
+  </data>
+  <data name="plLastLoad.Text" xml:space="preserve">
+    <value>Last Load</value>
+  </data>
+  <data name="plLastLoad.Help" xml:space="preserve">
+    <value>Enter the Last Load</value>
+  </data>
+  <data name="plSafetyAuth.Text" xml:space="preserve">
+    <value>SafetyAuth</value>
+  </data>
+  <data name="plSafetyAuth.Help" xml:space="preserve">
+    <value>Check/Unchek the Safety Auth</value>
+  </data>
+  <data name="plCellPhone.Text" xml:space="preserve">
+    <value>Cell Phone</value>
+  </data>
+  <data name="plCellPhone.Help" xml:space="preserve">
+    <value>Enter the Cell Phone</value>
+  </data>
+  <data name="plPager.Text" xml:space="preserve">
+    <value>Pager</value>
+  </data>
+  <data name="plPager.Help" xml:space="preserve">
+    <value>Enter the Pager</value>
+  </data>
+  <data name="plAccountNo.Text" xml:space="preserve">
+    <value>Account No</value>
+  </data>
+  <data name="plAccountNo.Help" xml:space="preserve">
+    <value>Enter the Account No</value>
+  </data>
+  <data name="plOfficeOwner.Text" xml:space="preserve">
+    <value>Office Owner</value>
+  </data>
+  <data name="plOfficeOwner.Help" xml:space="preserve">
+    <value>Select the Office Owner</value>
+  </data>
+  <data name="plFaxNo.Text" xml:space="preserve">
+    <value>FaxNo</value>
+  </data>
+  <data name="plFaxNo.Help" xml:space="preserve">
+    <value>Enter the FaxNo</value>
+  </data>
+  <data name="plJRCTrailer.Text" xml:space="preserve">
+    <value>JRCTrailer</value>
+  </data>
+  <data name="plJRCTrailer.Help" xml:space="preserve">
+    <value>Enter the JRC Trailer</value>
+  </data>
+  <data name="plLastLoadID.Text" xml:space="preserve">
+    <value>LastLoadID</value>
+  </data>
+  <data name="plLastLoadID.Help" xml:space="preserve">
+    <value>Enter the LastLoadID</value>
+  </data>
+  <data name="plLastPU.Text" xml:space="preserve">
+    <value>Last Pick Up</value>
+  </data>
+  <data name="plLastPU.Help" xml:space="preserve">
+    <value>Enter the Last Pick Up</value>
+  </data>
+  <data name="plLastDP.Text" xml:space="preserve">
+    <value>Last Drop</value>
+  </data>
+  <data name="plLastDP.Help" xml:space="preserve">
+    <value>Enter the Last Drop</value>
+  </data>
+  <data name="plSafetyNotes.Text" xml:space="preserve">
+    <value>Safety Notes</value>
+  </data>
+  <data name="plSafetyNotes.Help" xml:space="preserve">
+    <value>Check/Uncheck the Safety Notes</value>
+  </data>
+  <data name="plLastTrailerUsed.Text" xml:space="preserve">
+    <value>LastTrailerUsed</value>
+  </data>
+  <data name="plLastTrailerUsed.Help" xml:space="preserve">
+    <value>Enter the Last Trailer Used</value>
+  </data>
+  <data name="plLastLoadDeliv.Text" xml:space="preserve">
+    <value>Last Load Delivery</value>
+  </data>
+  <data name="plLastLoadDeliv.Help" xml:space="preserve">
+    <value>Enter the Last Load Delivery</value>
+  </data>
+  <data name="plDrugDate.Text" xml:space="preserve">
+    <value>Drug Date</value>
+  </data>
+  <data name="plDrugDate.Help" xml:space="preserve">
+    <value>Enter the Drug Date</value>
+  </data>
+  <data name="plLicenceDate.Text" xml:space="preserve">
+    <value>Licence Date</value>
+  </data>
+  <data name="plLicenceDate.Help" xml:space="preserve">
+    <value>Enter the Licence Date</value>
+  </data>
+  <data name="plTruckInsDate.Text" xml:space="preserve">
+    <value>TruckIns Date</value>
+  </data>
+  <data name="plTruckInsDate.Help" xml:space="preserve">
+    <value>Enter the Truck Ins Date</value>
+  </data>
+  <data name="plTrailerInsDate.Text" xml:space="preserve">
+    <value>TrailerIns Date</value>
+  </data>
+  <data name="plTrailerInsDate.Help" xml:space="preserve">
+    <value>Enter the Trailer Ins Date</value>
+  </data>
+  <data name="plRegRenewDate.Text" xml:space="preserve">
+    <value>RegRenew Date</value>
+  </data>
+  <data name="plRegRenewDate.Help" xml:space="preserve">
+    <value>Enter the Register Renew Date</value>
+  </data>
+  <data name="plNewLeaseDate.Text" xml:space="preserve">
+    <value>NewLease Date</value>
+  </data>
+  <data name="plNewLeaseDate.Help" xml:space="preserve">
+    <value>Enter the New Lease Date</value>
+  </data>
+  <data name="plMedicalDate.Text" xml:space="preserve">
+    <value>Medical Date</value>
+  </data>
+  <data name="plMedicalDate.Help" xml:space="preserve">
+    <value>Enter the Medical Date</value>
+  </data>
+  <data name="plLogBookOS.Text" xml:space="preserve">
+    <value>LogBookOS</value>
+  </data>
+  <data name="plLogBookOS.Help" xml:space="preserve">
+    <value>Enter the LogBookOS</value>
+  </data>
+
+
+		<data name="plMoMaint.Text"><value>MoMaint</value></data><data name="plMoMaint.Help"><value>Enter the MoMaint</value></data>
+		<data name="plDotInspec.Text"><value>DotInspec</value></data><data name="plDotInspec.Help"><value>Enter the DotInspec</value></data>
+		<data name="plTrailerMaint.Text"><value>TrailerMaint</value></data><data name="plTrailerMaint.Help"><value>Enter the TrailerMaint</value></data>
+		<data name="plRegRenew.Text"><value>RegRenew</value></data><data name="plRegRenew.Help"><value>Enter the RegRenew</value></data>
+		<data name="plOccIns.Text"><value>OccIns</value></data><data name="plOccIns.Help"><value>Enter the OccIns</value></data>
+		<data name="plNtlIns.Text"><value>NtlIns</value></data><data name="plNtlIns.Help"><value>Enter the NtlIns</value></data>
+		<data name="plPhysDmg.Text"><value>PhysDmg</value></data><data name="plPhysDmg.Help"><value>Enter the PhysDmg</value></data>
+		<data name="plSeaLink.Text"><value>SeaLink</value></data><data name="plSeaLink.Help"><value>Enter the SeaLink</value></data>
+		<data name="plAnnIns.Text"><value>AnnIns</value></data><data name="plAnnIns.Help"><value>Enter the AnnIns</value></data>
+	
+
+  <data name="plCalc87.Text" xml:space="preserve">
+    <value>Calc87</value>
+  </data>
+  <data name="plCalc87.Help" xml:space="preserve">
+    <value>Enter the Calc87</value>
+  </data>
+  <data name="plCalc85.Text" xml:space="preserve">
+    <value>Calc85</value>
+  </data>
+  <data name="plCalc85.Help" xml:space="preserve">
+    <value>Enter the Calc85</value>
+  </data>
+  <data name="plBrokerCodeD.Text" xml:space="preserve">
+    <value>BrokerCodeD</value>
+  </data>
+  <data name="plBrokerCodeD.Help" xml:space="preserve">
+    <value>Enter the Broker Code D</value>
+  </data>
+  <data name="plDvrDedPct.Text" xml:space="preserve">
+    <value>DvrDedPct</value>
+  </data>
+  <data name="plDvrDedPct.Help" xml:space="preserve">
+    <value>Enter the Driver Deduction Percentage</value>
+  </data>
+  <data name="plDvrDedResn.Text" xml:space="preserve">
+    <value>DvrDedResn</value>
+  </data>
+  <data name="plDvrDedResn.Help" xml:space="preserve">
+    <value>Enter the DvrDedResn</value>
+  </data>
+  <data name="RepeatAdd.Text" xml:space="preserve">
+    <value>Repeat Add Item ?</value>
+  </data>
+  <data name="plViewOrder.Text" xml:space="preserve">
+    <value>View Order</value>
+  </data>
+  <data name="plViewOrder.Help" xml:space="preserve">
+    <value>Enter the View Order</value>
+  </data>
+  <data name="Print.Text" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="plInactivateDate.Help" xml:space="preserve">
+    <value>Enter the Inactivate Date</value>
+  </data>
+  <data name="plInactivateDate.Text" xml:space="preserve">
+    <value>Inactive / Termination Date</value>
+  </data>
+  <data name="plTerminated.Text" xml:space="preserve">
+    <value>Terminated</value>
+  </data>
+  <data name="plTerminated.Help" xml:space="preserve">
+    <value>Select the Terminated ?</value>
+  </data>
+  <data name="Terminated.Text" xml:space="preserve">
+    <value>Terminated ?</value>
+  </data>
+  <data name="plTerm_Staff.Text" xml:space="preserve">
+    <value>Term_Staff</value>
+  </data>
+  <data name="plTerm_Staff.Help" xml:space="preserve">
+    <value>Enter the Term_Staff</value>
+  </data>
+  <data name="plTerm_Date.Text" xml:space="preserve">
+    <value>Term_Date</value>
+  </data>
+  <data name="plTerm_Date.Help" xml:space="preserve">
+    <value>Enter the Term_Date</value>
+  </data>
+  <data name="plTerm_Reason.Text" xml:space="preserve">
+    <value>Term_Reason</value>
+  </data>
+  <data name="plTerm_Reason.Help" xml:space="preserve">
+    <value>Enter the Term_Reason</value>
+  </data>
+  <data name="Termination.Text" xml:space="preserve">
+    <value>Termination</value>
+  </data>
+  <data name="cmdUnterminate.Text" xml:space="preserve">
+    <value>Unterminate</value>
+  </data>
+</root>

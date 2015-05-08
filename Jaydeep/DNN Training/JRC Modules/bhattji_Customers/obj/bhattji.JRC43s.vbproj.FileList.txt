@@ -1,0 +1,9 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\bhattji.Modules.Customers.Details.resources
+obj\Debug\bhattji.Modules.Customers.EditItem.resources
+obj\Debug\bhattji.Modules.Customers.Edits.resources
+obj\Debug\bhattji.Modules.Customers.Thumb.resources
+obj\Debug\bhattji.Modules.Customers.Settings.resources
+obj\Debug\bhattji.Modules.Customers.ViewList.resources
+obj\Debug\bhattji.Modules.Customers.Views.resources
+obj\Debug\bhattji.Customers.vbproj.GenerateResource.Cache

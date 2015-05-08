@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="WDCConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="WDCConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.WDCConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter1" GeneratorDataComponentClassName="DataTable1TableAdapter1" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter1">
+            <MainSource>
+              <DbSource ConnectionRef="WDCConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     TOP (200) x.ItemID, x.DriverCode, x.DriverName, x.AccountNo, ls.LoadStatus, ls.LoadType, ls.ItemID AS 'LoadItemId', x.LastLoadID, x.LastLoad, 
+                      x.LastPU, x.LastDP, x.CellPhone, NULL AS 'BrokerCodeD', x.OfficeOwner, ls.DispatchCode, ls.XMissionDate
+FROM         ARD_SalesPersonMasterfile AS x LEFT OUTER JOIN
+                      tblOOLoadSheetHeader AS ls ON x.LastLoadID = ls.LoadID
+WHERE     (x.Status = 'N')
+ORDER BY x.OfficeOwner, x.DriverName, x.LastLoad DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ItemID" DataSetColumn="ItemID" />
+              <Mapping SourceColumn="DriverCode" DataSetColumn="DriverCode" />
+              <Mapping SourceColumn="DriverName" DataSetColumn="DriverName" />
+              <Mapping SourceColumn="AccountNo" DataSetColumn="AccountNo" />
+              <Mapping SourceColumn="LoadStatus" DataSetColumn="LoadStatus" />
+              <Mapping SourceColumn="LoadType" DataSetColumn="LoadType" />
+              <Mapping SourceColumn="LoadItemId" DataSetColumn="LoadItemId" />
+              <Mapping SourceColumn="LastLoadID" DataSetColumn="LastLoadID" />
+              <Mapping SourceColumn="LastLoad" DataSetColumn="LastLoad" />
+              <Mapping SourceColumn="LastPU" DataSetColumn="LastPU" />
+              <Mapping SourceColumn="LastDP" DataSetColumn="LastDP" />
+              <Mapping SourceColumn="CellPhone" DataSetColumn="CellPhone" />
+              <Mapping SourceColumn="BrokerCodeD" DataSetColumn="BrokerCodeD" />
+              <Mapping SourceColumn="OfficeOwner" DataSetColumn="OfficeOwner" />
+              <Mapping SourceColumn="DispatchCode" DataSetColumn="DispatchCode" />
+              <Mapping SourceColumn="XMissionDate" DataSetColumn="XMissionDate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet1" msprop:Generator_DataSetName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_TablePropName="DataTable1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ItemID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="ItemID" msprop:Generator_ColumnPropNameInRow="ItemID" msprop:Generator_ColumnVarNameInTable="columnItemID" msprop:Generator_ColumnPropNameInTable="ItemIDColumn" type="xs:int" />
+              <xs:element name="DriverCode" msprop:Generator_UserColumnName="DriverCode" msprop:Generator_ColumnPropNameInRow="DriverCode" msprop:Generator_ColumnVarNameInTable="columnDriverCode" msprop:Generator_ColumnPropNameInTable="DriverCodeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DriverName" msprop:Generator_UserColumnName="DriverName" msprop:Generator_ColumnPropNameInRow="DriverName" msprop:Generator_ColumnVarNameInTable="columnDriverName" msprop:Generator_ColumnPropNameInTable="DriverNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AccountNo" msprop:Generator_UserColumnName="AccountNo" msprop:Generator_ColumnPropNameInRow="AccountNo" msprop:Generator_ColumnVarNameInTable="columnAccountNo" msprop:Generator_ColumnPropNameInTable="AccountNoColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LoadStatus" msprop:Generator_UserColumnName="LoadStatus" msprop:Generator_ColumnPropNameInRow="LoadStatus" msprop:Generator_ColumnVarNameInTable="columnLoadStatus" msprop:Generator_ColumnPropNameInTable="LoadStatusColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LoadType" msprop:Generator_UserColumnName="LoadType" msprop:Generator_ColumnPropNameInRow="LoadType" msprop:Generator_ColumnVarNameInTable="columnLoadType" msprop:Generator_ColumnPropNameInTable="LoadTypeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LoadItemId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="LoadItemId" msprop:Generator_ColumnPropNameInRow="LoadItemId" msprop:Generator_ColumnVarNameInTable="columnLoadItemId" msprop:Generator_ColumnPropNameInTable="LoadItemIdColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="LastLoadID" msprop:Generator_UserColumnName="LastLoadID" msprop:Generator_ColumnPropNameInRow="LastLoadID" msprop:Generator_ColumnVarNameInTable="columnLastLoadID" msprop:Generator_ColumnPropNameInTable="LastLoadIDColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LastLoad" msprop:Generator_UserColumnName="LastLoad" msprop:Generator_ColumnPropNameInRow="LastLoad" msprop:Generator_ColumnVarNameInTable="columnLastLoad" msprop:Generator_ColumnPropNameInTable="LastLoadColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LastPU" msprop:Generator_UserColumnName="LastPU" msprop:Generator_ColumnPropNameInRow="LastPU" msprop:Generator_ColumnVarNameInTable="columnLastPU" msprop:Generator_ColumnPropNameInTable="LastPUColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LastDP" msprop:Generator_UserColumnName="LastDP" msprop:Generator_ColumnPropNameInRow="LastDP" msprop:Generator_ColumnVarNameInTable="columnLastDP" msprop:Generator_ColumnPropNameInTable="LastDPColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="35" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CellPhone" msprop:Generator_UserColumnName="CellPhone" msprop:Generator_ColumnPropNameInRow="CellPhone" msprop:Generator_ColumnVarNameInTable="columnCellPhone" msprop:Generator_ColumnPropNameInTable="CellPhoneColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="17" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BrokerCodeD" msdata:ReadOnly="true" msprop:Generator_UserColumnName="BrokerCodeD" msprop:Generator_ColumnPropNameInRow="BrokerCodeD" msprop:Generator_ColumnVarNameInTable="columnBrokerCodeD" msprop:Generator_ColumnPropNameInTable="BrokerCodeDColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="OfficeOwner" msprop:Generator_UserColumnName="OfficeOwner" msprop:Generator_ColumnPropNameInRow="OfficeOwner" msprop:Generator_ColumnVarNameInTable="columnOfficeOwner" msprop:Generator_ColumnPropNameInTable="OfficeOwnerColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DispatchCode" msprop:Generator_UserColumnName="DispatchCode" msprop:Generator_ColumnPropNameInRow="DispatchCode" msprop:Generator_ColumnVarNameInTable="columnDispatchCode" msprop:Generator_ColumnPropNameInTable="DispatchCodeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="XMissionDate" msprop:Generator_UserColumnName="XMissionDate" msprop:Generator_ColumnPropNameInRow="XMissionDate" msprop:Generator_ColumnVarNameInTable="columnXMissionDate" msprop:Generator_ColumnPropNameInTable="XMissionDateColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

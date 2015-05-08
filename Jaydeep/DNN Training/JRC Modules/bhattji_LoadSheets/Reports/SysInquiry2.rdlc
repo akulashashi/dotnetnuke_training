@@ -1,0 +1,1726 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="WDCConnectionString">
+      <rd:DataSourceID>8846c2ca-e0e0-4e7d-bc94-4ff969e96384</rd:DataSourceID>
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="prmCopyright">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>default Value of param</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>prmCopyright</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="prmCompanyName">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <DefaultValue>
+        <Values>
+          <Value>bhattji.com</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>prmCompanyName</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>0.5in</RightMargin>
+  <LeftMargin>0.5in</LeftMargin>
+  <PageHeader>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox19">
+        <Top>0.0625in</Top>
+        <Width>1.75in</Width>
+        <Style>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>10.125in</Left>
+        <Height>0.25in</Height>
+        <Value>=Globals!ExecutionTime</Value>
+      </Textbox>
+      <Textbox Name="txtPageHeading">
+        <Width>2.875in</Width>
+        <Style>
+          <Color>Navy</Color>
+          <FontFamily>Impact</FontFamily>
+          <FontSize>18pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>5.625in</Left>
+        <Value>JRC System Inquiry Report</Value>
+      </Textbox>
+      <Textbox Name="textbox6">
+        <rd:DefaultName>textbox6</rd:DefaultName>
+        <Top>0.125in</Top>
+        <Width>3in</Width>
+        <Style>
+          <FontFamily>Tahoma</FontFamily>
+          <FontSize>11pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Value>=Parameters!prmCompanyName.Value</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.375in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageHeader>
+  <BottomMargin>0.5in</BottomMargin>
+  <rd:ReportID>bba3d1ea-658b-4c43-8eff-32f28b80fb1a</rd:ReportID>
+  <PageWidth>13in</PageWidth>
+  <DataSets>
+    <DataSet Name="DataSet1_DataTable1">
+      <Fields>
+        <Field Name="ItemID">
+          <DataField>ItemID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="DriverCode">
+          <DataField>DriverCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DriverName">
+          <DataField>DriverName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AccountNo">
+          <DataField>AccountNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LoadStatus">
+          <DataField>LoadStatus</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LoadType">
+          <DataField>LoadType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LoadItemId">
+          <DataField>LoadItemId</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="LastLoadID">
+          <DataField>LastLoadID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LastLoad">
+          <DataField>LastLoad</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="LastPU">
+          <DataField>LastPU</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LastDP">
+          <DataField>LastDP</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CellPhone">
+          <DataField>CellPhone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BrokerCodeD">
+          <DataField>BrokerCodeD</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="OfficeOwner">
+          <DataField>OfficeOwner</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LoadID">
+          <DataField>LoadID</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="LoadDate">
+          <DataField>LoadDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="BBaseLoad">
+          <DataField>BBaseLoad</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="RepDlr">
+          <DataField>RepDlr</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="DRTotDue">
+          <DataField>DRTotDue</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="JRCIOOffC1">
+          <DataField>JRCIOOffC1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IOCommTot">
+          <DataField>IOCommTot</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="IOOffL1">
+          <DataField>IOOffL1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IOComm3">
+          <DataField>IOComm3</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="JRCOffComm">
+          <DataField>JRCOffComm</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="JRCTotal">
+          <DataField>JRCTotal</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="OCommPlus">
+          <DataField>OCommPlus</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="CustomerNumber">
+          <DataField>CustomerNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustomerName">
+          <DataField>CustomerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="JRCIOfficeCode">
+          <DataField>JRCIOfficeCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BCustBill">
+          <DataField>BCustBill</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="DispatchCode">
+          <DataField>DispatchCode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="XMissionDate">
+          <DataField>XMissionDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="XMissionFile">
+          <DataField>XMissionFile</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DispatchName">
+          <DataField>DispatchName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IOName">
+          <DataField>IOName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="PUCityST">
+          <DataField>PUCityST</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DPCityST">
+          <DataField>DPCityST</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustPO">
+          <DataField>CustPO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="BrokerName">
+          <DataField>BrokerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IOAdminTot">
+          <DataField>IOAdminTot</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="ExTot">
+          <DataField>ExTot</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="JRCOnePct">
+          <DataField>JRCOnePct</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="GPPct">
+          <DataField>GPPct</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="APComm4">
+          <DataField>APComm4</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>WDCConnectionString</DataSourceName>
+        <CommandText>SELECT     TOP (100) 
+	x.ItemID, 
+	x.JRCIOfficeCode, 
+
+	x.LoadID, 
+	x.LoadDate, 
+	x.LoadStatus, 
+	x.XMissionFile, 
+	cn.CustomerName, 
+	dm.DispatchName, 
+	x.CustPO, 
+	io.IOName, 
+	x.PUCityST, 
+	x.DPCityST, 
+	sp.DriverName, 
+	bk.BrokerName, 
+
+	la.BCustBill, 
+	la.BBaseLoad, 
+	la.RepDlr, 
+	la.DRTotDue, 
+	la.IOCommTot, 
+	la.IOAdminTot, 
+	la.ExTot, 
+	la.APComm4, 
+	la.JRCOffComm, 
+	la.JRCOnePct, 
+	la.JRCTotal, 
+	la.GPPct 
+
+FROM         tblOOLoadSheetHeader AS x 
+	LEFT OUTER JOIN tblLoadAcct AS la ON x.LoadID = la.LoadID 
+	LEFT OUTER JOIN AR1_CustomerMaster AS cn ON x.CustomerNumber = cn.CustomerNumber
+	LEFT OUTER JOIN ARD_DispatchMasterfile AS dm ON x.DispatchCode = dm.DispatchCode 
+	LEFT OUTER JOIN ARD_SalesPersonMasterfile AS sp ON x.DriverCode = sp.DriverCode 
+	LEFT OUTER JOIN ARD_BrokerMaster bk ON x.BrokerCode = bk.BrokerCode 
+	LEFT OUTER JOIN ARD_InterOffice as io ON x.JRCIOCode = io.JRCIOfficeCode </CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DataSet1</rd:DataSetName>
+        <rd:TableName>DataTable1</rd:TableName>
+        <rd:TableAdapterName>DataTable1TableAdapter1</rd:TableAdapterName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <Code />
+  <Width>12in</Width>
+  <Body>
+    <ReportItems>
+      <Table Name="table1">
+        <DataSetName>DataSet1_DataTable1</DataSetName>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox24">
+                      <rd:DefaultName>textbox24</rd:DefaultName>
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>51</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox81">
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>50</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!LoadID.Value</SortExpression>
+                      </UserSort>
+                      <Value>Load ID</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox47">
+                      <rd:DefaultName>textbox47</rd:DefaultName>
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>49</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!LoadDate.Value</SortExpression>
+                      </UserSort>
+                      <Value>Load Date</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox1">
+                      <rd:DefaultName>textbox1</rd:DefaultName>
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>48</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!LoadStatus.Value</SortExpression>
+                      </UserSort>
+                      <Value>Status</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox41">
+                      <rd:DefaultName>textbox41</rd:DefaultName>
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>47</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!RepDlr.Value</SortExpression>
+                      </UserSort>
+                      <Value>Customer</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox83">
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>46</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!BCustBill.Value</SortExpression>
+                      </UserSort>
+                      <Value>Xmission File</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox38">
+                      <rd:DefaultName>textbox38</rd:DefaultName>
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>45</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!DRTotDue.Value</SortExpression>
+                      </UserSort>
+                      <Value>Name</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox35">
+                      <rd:DefaultName>textbox35</rd:DefaultName>
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>44</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!JRCIOOffC1.Value</SortExpression>
+                      </UserSort>
+                      <Value>P/O</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox32">
+                      <rd:DefaultName>textbox32</rd:DefaultName>
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>43</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!IOCommTot.Value</SortExpression>
+                      </UserSort>
+                      <Value>=Switch(Fields!LoadType.Value="OO","Driver",Fields!LoadType.Value="BK","Broker",Fields!LoadType.Value="IO","I/O Office")</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox29">
+                      <rd:DefaultName>textbox29</rd:DefaultName>
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>42</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!IOOffL1.Value</SortExpression>
+                      </UserSort>
+                      <Value>Pick Up</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox26">
+                      <rd:DefaultName>textbox26</rd:DefaultName>
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>41</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!IOComm3.Value</SortExpression>
+                      </UserSort>
+                      <Value>Drops</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox23">
+                      <rd:DefaultName>textbox23</rd:DefaultName>
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>40</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!JRCOffComm.Value</SortExpression>
+                      </UserSort>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox30">
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>39</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!JRCOffComm.Value</SortExpression>
+                      </UserSort>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox28">
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>38</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox63">
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>37</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!LoadID.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="LoadDate">
+                      <rd:DefaultName>LoadDate</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <Format>d</Format>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>36</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!LoadDate.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="LoadStatus">
+                      <rd:DefaultName>LoadStatus</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>35</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Left(Fields!LoadStatus.Value,4)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="CustomerName_1">
+                      <rd:DefaultName>CustomerName_1</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <Format>F</Format>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>34</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!CustomerName.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox65">
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <Format>N</Format>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>33</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!XMissionFile.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="CustomerName_2">
+                      <rd:DefaultName>CustomerName_2</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <Format>N</Format>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>32</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!CustomerName.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="CustPO">
+                      <rd:DefaultName>CustPO</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <Format>N</Format>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>31</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!CustPO.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="IOName">
+                      <rd:DefaultName>IOName</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <Format>N</Format>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>30</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Switch(Fields!LoadType.Value="OO",Fields!DriverName.Value,Fields!LoadType.Value="BK",Fields!BrokerName.Value,Fields!LoadType.Value="IO",Fields!IOName.Value)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="PUCityST">
+                      <rd:DefaultName>PUCityST</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <Format>N</Format>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>29</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!PUCityST.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="DPCityST">
+                      <rd:DefaultName>DPCityST</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <Format>N</Format>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>28</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!DPCityST.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="DriverName">
+                      <rd:DefaultName>DriverName</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <Format>N</Format>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>27</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="BrokerName">
+                      <rd:DefaultName>BrokerName</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <Format>N</Format>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>26</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox48">
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>25</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox51">
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>24</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!LoadID.Value</SortExpression>
+                      </UserSort>
+                      <Value>Cust Bill</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox52">
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>23</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!LoadDate.Value</SortExpression>
+                      </UserSort>
+                      <Value>Base Load</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox50">
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>22</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!LoadStatus.Value</SortExpression>
+                      </UserSort>
+                      <Value>Rep Due</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox54">
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>21</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!RepDlr.Value</SortExpression>
+                      </UserSort>
+                      <Value>I/O Comm</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox53">
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>20</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!BCustBill.Value</SortExpression>
+                      </UserSort>
+                      <Value>Carrier Due</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox55">
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>19</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!DRTotDue.Value</SortExpression>
+                      </UserSort>
+                      <Value>I/O Admin</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox56">
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>18</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!JRCIOOffC1.Value</SortExpression>
+                      </UserSort>
+                      <Value>Exclude</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox57">
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>17</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!IOCommTot.Value</SortExpression>
+                      </UserSort>
+                      <Value>Overrides</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox58">
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>16</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!IOOffL1.Value</SortExpression>
+                      </UserSort>
+                      <Value>Office Comm</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox59">
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>15</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!IOComm3.Value</SortExpression>
+                      </UserSort>
+                      <Value>JRC 1%</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox60">
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>14</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!JRCOffComm.Value</SortExpression>
+                      </UserSort>
+                      <Value>JRC Total</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox62">
+                      <Style>
+                        <Color>White</Color>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"SteelBlue","SkyBlue")</BackgroundColor>
+                        <BorderColor>
+                          <Default>Red</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>13</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!JRCTotal.Value</SortExpression>
+                      </UserSort>
+                      <Value>G/P %</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox34">
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>3pt</Default>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>12</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox43">
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>3pt</Default>
+                        </BorderWidth>
+                        <Format>N</Format>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>11</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!BCustBill.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox44">
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>3pt</Default>
+                        </BorderWidth>
+                        <Format>N</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>10</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!BBaseLoad.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox42">
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>3pt</Default>
+                        </BorderWidth>
+                        <Format>N</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>9</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!RepDlr.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox84">
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>3pt</Default>
+                        </BorderWidth>
+                        <Format>N</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>8</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!IOCommTot.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox79">
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>3pt</Default>
+                        </BorderWidth>
+                        <Format>N</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>7</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!DRTotDue.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox85">
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>3pt</Default>
+                        </BorderWidth>
+                        <Format>N</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!IOAdminTot.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox86">
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>3pt</Default>
+                        </BorderWidth>
+                        <Format>N</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!ExTot.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox87">
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>3pt</Default>
+                        </BorderWidth>
+                        <Format>N</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!APComm4.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox88">
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>3pt</Default>
+                        </BorderWidth>
+                        <Format>N</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!JRCOffComm.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox89">
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>3pt</Default>
+                        </BorderWidth>
+                        <Format>N</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!JRCOnePct.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox90">
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>3pt</Default>
+                        </BorderWidth>
+                        <Format>N</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!JRCTotal.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox91">
+                      <Style>
+                        <BackgroundColor>=IIf(RowNumber(Nothing) Mod 2,"#d6dfe2","White")</BackgroundColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>3pt</Default>
+                        </BorderWidth>
+                        <Format>N</Format>
+                        <TextAlign>Right</TextAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!GPPct.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.25in</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <TableColumns>
+          <TableColumn>
+            <Width>0.3in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.875in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.875in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.75in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.5in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.9in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.9in</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.9in</Width>
+          </TableColumn>
+        </TableColumns>
+      </Table>
+    </ReportItems>
+    <Height>1in</Height>
+  </Body>
+  <Language>en-US</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox5">
+        <rd:DefaultName>textbox5</rd:DefaultName>
+        <Width>1.75in</Width>
+        <Style>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>10.125in</Left>
+        <Value>="Page: " &amp; Globals!PageNumber &amp; "/" &amp; Globals!TotalPages</Value>
+      </Textbox>
+      <Textbox Name="txtPageFooter">
+        <Width>2.125in</Width>
+        <Style>
+          <FontFamily>Times New Roman</FontFamily>
+          <FontSize>9pt</FontSize>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Value>=Parameters!prmCopyright.Value</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.25in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+  <TopMargin>0.5in</TopMargin>
+</Report>

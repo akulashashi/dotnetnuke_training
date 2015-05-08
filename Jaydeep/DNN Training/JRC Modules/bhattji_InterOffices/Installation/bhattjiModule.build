@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<Major>01</Major>
+		<Minor>00</Minor>
+		<Build>00</Build>
+		<ProjectName>InterOffices</ProjectName>
+		<DNNDirectory>C:\DNN\JRC45</DNNDirectory>
+		<ModuleFolder>C:\DNN\JRC45\DesktopModules\bhattji_InterOffices</ModuleFolder>
+		<PackageDirectory>C:\DNN\JRC45\DesktopModules\bhattji_InterOffices\Installation</PackageDirectory>
+		<PackageSerialNo>02.</PackageSerialNo>
+	</PropertyGroup>
+	<Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+	<Target Name="AfterBuild" DependsOnTargets="DeployModule"></Target>
+	<Target Name="DeployModule">
+		<!--
+		<CreateItem Include="$(MSBuildProjectDirectory)\$(OutputPath)$(AssemblyName).dll">
+			<Output TaskParameter="Include" ItemName="ModuleAssemblies" />
+		</CreateItem>
+-->
+		<!-- Copy Files to DotNetNuke Installation -->
+		<Copy SourceFiles="$(MSBuildProjectDirectory)\$(OutputPath)$(AssemblyName).dll" DestinationFolder="$(MSBuildProjectDirectory)\bin\" SkipUnchangedFiles="false" ContinueOnError="true" />
+		<CreateItem Include="bhattji.Modules.$(ProjectName).*">
+			<Output TaskParameter="Include" ItemName="ProjectSourceFiles" />
+		</CreateItem>
+		<CreateItem Include="Providers\DataProviders\SqlDataProvider\0*.SqlDataProvider;Providers\DataProviders\SqlDataProvider\Uninstall.SqlDataProvider">
+			<Output TaskParameter="Include" ItemName="SqlDataProviderFiles" />
+		</CreateItem>
+		<CreateItem Include="Reports\*.*" Exclude="Reports\Copy*.*">
+			<Output TaskParameter="Include" ItemName="ReportFiles" />
+		</CreateItem>
+		<!-- Zip the interenal resouce files for Install Version -->
+		<Zip Files="@(Content);@(ReportFiles)" ZipFileName="$(PackageDirectory)\install.bhattji" Flatten="False" />
+		<!-- Zip the interenal resouce files for Source Version -->
+		<Zip Files="@(Content);@(ReportFiles);@(Compile);@(ProjectSourceFiles)" ZipFileName="$(PackageDirectory)\source.bhattji" Flatten="False" />
+		<!-- Zip the Install Version -->
+		<Zip Files="bin\$(AssemblyName).dll;@(SqlDataProviderFiles);Installation\install.bhattji;Installation\bhattji_$(ProjectName)_Install.dnn" ZipFileName="$(PackageDirectory)\bhattji_$(PackageSerialNo)$(ProjectName).$(Major).$(Minor).$(Build)_Install.zip" Flatten="False" />
+		<!-- Zip the Source Version -->
+		<Zip Files="bin\$(AssemblyName).dll;@(SqlDataProviderFiles);Installation\source.bhattji;Installation\bhattji_$(ProjectName)_Source.dnn" ZipFileName="$(PackageDirectory)\bhattji_$(PackageSerialNo)$(ProjectName).$(Major).$(Minor).$(Build)_Source.zip" Flatten="False" />
+		<!-- Copy Files to DotNetNuke Installation -->
+		<Copy SourceFiles="$(PackageDirectory)\bhattji_$(PackageSerialNo)$(ProjectName).$(Major).$(Minor).$(Build)_Install.zip" DestinationFolder="$(DNNDirectory)\Install\Module\" SkipUnchangedFiles="false" ContinueOnError="true" />
+		<!-- Delete the interenal resouce files -->
+		<Delete Files="$(PackageDirectory)\install.bhattji" />
+		<Delete Files="$(PackageDirectory)\source.bhattji" />
+	</Target>
+</Project>

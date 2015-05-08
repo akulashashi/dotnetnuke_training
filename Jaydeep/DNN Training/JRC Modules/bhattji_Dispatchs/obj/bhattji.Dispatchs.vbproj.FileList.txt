@@ -1,0 +1,15 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\bhattji.Modules.Dispatchs.Details.resources
+obj\Debug\bhattji.Modules.Dispatchs.EditItem.resources
+obj\Debug\bhattji.Modules.Dispatchs.Edits.resources
+obj\Debug\bhattji.Modules.Dispatchs.Thumb.resources
+obj\Debug\bhattji.Modules.Dispatchs.Settings.resources
+obj\Debug\bhattji.Modules.Dispatchs.ViewList.resources
+obj\Debug\bhattji.Modules.Dispatchs.Views.resources
+obj\Debug\bhattji.Dispatchs.vbproj.GenerateResource.Cache
+..\..\bin\bhattji.Modules.Dispatchs.dll
+..\..\bin\bhattji.Modules.Dispatchs.pdb
+..\..\bin\bhattji.Dispatchs.xml
+obj\Debug\bhattji.Modules.Dispatchs.dll
+obj\Debug\bhattji.Dispatchs.xml
+obj\Debug\bhattji.Modules.Dispatchs.pdb

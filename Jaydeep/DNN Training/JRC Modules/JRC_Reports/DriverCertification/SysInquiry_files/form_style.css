@@ -1,0 +1,75 @@
+.contentpane {
+	TEXT-ALIGN: center
+}
+TABLE.form {
+	MARGIN: 0px auto; TEXT-ALIGN: left
+}
+TABLE.form2 {
+	MARGIN: 0px auto; TEXT-ALIGN: left
+}
+DIV.table {
+	BORDER-RIGHT: #162f49 1px solid; PADDING-RIGHT: 3px; BORDER-TOP: #162f49 1px solid; PADDING-LEFT: 3px; BACKGROUND: #e5f5f9; PADDING-BOTTOM: 3px; BORDER-LEFT: #162f49 1px solid; PADDING-TOP: 3px; BORDER-BOTTOM: #162f49 1px solid
+}
+DIV.table TABLE TD {
+	PADDING-BOTTOM: 5px; PADDING-TOP: 0px
+}
+.form_title {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 18px; BACKGROUND: #3578af; PADDING-BOTTOM: 5px; COLOR: #fff; PADDING-TOP: 5px
+}
+.results_title {
+	PADDING-RIGHT: 10px; MARGIN-TOP: 0px; PADDING-LEFT: 10px; FONT-WEIGHT: bold; FONT-SIZE: 18px; BACKGROUND: #aa0000; MARGIN-BOTTOM: 5px; PADDING-BOTTOM: 10px; COLOR: #fff; PADDING-TOP: 10px; POSITION: relative; TEXT-ALIGN: center
+}
+TD.main_title {
+	PADDING-LEFT: 5px; FONT-WEIGHT: bold; FONT-SIZE: 12px; BACKGROUND: #3578af; PADDING-BOTTOM: 3px! important; COLOR: #fff; PADDING-TOP: 2px! important
+}
+TD.title {
+	PADDING-LEFT: 2px; FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #21496d
+}
+TD.result_title {
+	BORDER-RIGHT: #000 1px solid; PADDING-LEFT: 1px; FONT-WEIGHT: bold; FONT-SIZE: 10px; BACKGROUND: #3578af; COLOR: #fff; LINE-HEIGHT: 16px
+}
+TD.result {
+	BORDER-RIGHT: #000 1px solid; PADDING-LEFT: 1px; FONT-WEIGHT: normal; FONT-SIZE: 10px; BACKGROUND: #fff; COLOR: #000; LINE-HEIGHT: 14px
+}
+TD.result2 {
+	BORDER-RIGHT: #000 1px solid; PADDING-LEFT: 1px; FONT-WEIGHT: normal; FONT-SIZE: 10px; BACKGROUND: #dbe1e4; COLOR: #000; LINE-HEIGHT: 14px
+}
+TD.last {
+	BORDER-RIGHT-WIDTH: 0px; BORDER-RIGHT-COLOR: transparent
+}
+TD.field INPUT {
+	WIDTH: 90%
+}
+TD.field SELECT {
+	
+}
+TD.city INPUT {
+	WIDTH: 90%
+}
+TD.state INPUT {
+	WIDTH: 60%
+}
+TD.zip INPUT {
+	WIDTH: 60%
+}
+TD.from INPUT {
+	WIDTH: 80%! important
+}
+TD.to INPUT {
+	WIDTH: 80%! important
+}
+TD.customer_search INPUT {
+	WIDTH: 80%! important
+}
+TD.broker_search INPUT {
+	WIDTH: 80%! important
+}
+.NormalTextBox {
+	BORDER-RIGHT: #162f49 1px solid; BORDER-TOP: #162f49 1px solid; BORDER-LEFT: #162f49 1px solid; BORDER-BOTTOM: #162f49 1px solid; BACKGROUND-COLOR: #fafcfe
+}
+.NormalTextBox:hover {
+	BORDER-RIGHT: #162f49 1px solid; BORDER-TOP: #162f49 1px solid; BORDER-LEFT: #162f49 1px solid; BORDER-BOTTOM: #162f49 1px solid; BACKGROUND-COLOR: #eaf1f9
+}
+HR {
+	BORDER-TOP-WIDTH: 0px; MARGIN-TOP: 10px; BORDER-LEFT-WIDTH: 0px; BORDER-LEFT-COLOR: #000; BACKGROUND: #000; BORDER-BOTTOM-WIDTH: 0px; BORDER-BOTTOM-COLOR: #000; BORDER-TOP-COLOR: #000; HEIGHT: 3px; BORDER-RIGHT-WIDTH: 0px; BORDER-RIGHT-COLOR: #000
+}

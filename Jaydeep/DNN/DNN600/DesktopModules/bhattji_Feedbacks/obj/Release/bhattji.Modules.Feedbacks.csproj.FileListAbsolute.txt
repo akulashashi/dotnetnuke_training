@@ -1,0 +1,8 @@
+E:\DNN\DNN600\bin\bhattji.Modules.Feedbacks.dll
+E:\DNN\DNN600\bin\bhattji.Modules.Feedbacks.pdb
+E:\DNN\DNN600\DesktopModules\bhattji_Feedbacks\obj\Release\bhattji.Modules.Feedbacks.Thumb.resources
+E:\DNN\DNN600\DesktopModules\bhattji_Feedbacks\obj\Release\bhattji.Modules.Feedbacks.Settings.resources
+E:\DNN\DNN600\DesktopModules\bhattji_Feedbacks\obj\Release\bhattji.Modules.Feedbacks.Views.resources
+E:\DNN\DNN600\DesktopModules\bhattji_Feedbacks\obj\Release\bhattji.Modules.Feedbacks.csproj.GenerateResource.Cache
+E:\DNN\DNN600\DesktopModules\bhattji_Feedbacks\obj\Release\bhattji.Modules.Feedbacks.dll
+E:\DNN\DNN600\DesktopModules\bhattji_Feedbacks\obj\Release\bhattji.Modules.Feedbacks.pdb

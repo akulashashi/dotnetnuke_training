@@ -1,0 +1,226 @@
+﻿/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              SalesPersons               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create/drop tables and stored procs   */
+
+/* Insert here the code to drop stored procs if exists  */
+
+
+
+/* Following procedure is for Add the Broker SalesPerson Details */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrAddSalesPerson]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrAddSalesPerson]
+GO
+
+/* Following procedure is for Update the Broker SalesPerson Details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrUpdateSalesPerson]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrUpdateSalesPerson]
+GO
+
+
+/* Following procedure is for Fix the Broker SalesPerson Details */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrFixSalesPersons]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrFixSalesPersons]
+GO
+
+
+/* Following procedure is for Delete the Broker SalesPerson Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrDeleteSalesPerson]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrDeleteSalesPerson]
+GO
+
+/* Following procedure is for Add none Broker Driver if it "ZXZX" */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddNoBkrDriver]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddNoBkrDriver]
+GO
+
+
+/* Following procedure is for Get the Broker SalesPerson Number or ID */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonId]
+GO
+
+/* Following procedure is for Get the Broker and SalesPerson Number or ID for Unique*/
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonIdUnique]
+GO
+
+
+/* Following procedure is for Get the Broker SalesPerson Details */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPerson]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPerson]
+GO
+
+
+/* Following procedure is for Get the Broker SalesPerson Details- DriverCode and DriverName */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrDrivers]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrDrivers]
+GO
+
+/* Following procedure is for Get the Broker SalesPerson Module */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetModuleSalesPersons]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetModuleSalesPersons]
+GO
+
+
+/* Following procedure is for Get the Broker SalesPerson Portal */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetPortalSalesPersons]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetPortalSalesPersons]
+GO
+
+
+/* Following procedure is for Get All Broker SalesPerson Detail */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetAllSalesPersons]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetAllSalesPersons]
+GO
+
+
+/* Following procedure is for Sort the Broker SalesPerson Detail */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrSortSalesPersons]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrSortSalesPersons]
+GO
+
+/* Insert here the code to drop tables  */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}BKR_SalesPersonMasterfile]
+GO
+
+
+
+
+/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              BoatTypes               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create/drop tables and stored procs   */
+
+/* Insert here the code to drop stored procs if exists  */
+
+
+/* Insert here the code to drop tables  */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrSalesPersonIO]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}bhattji_BkrSalesPersonIO]
+GO
+
+
+/* Insert here the code to create tables and stored procs   */
+
+/* Insert here the code to alter tables if exists else create new tables */
+
+
+/* Following procedure is for Add the Broker SalesPersonIo Detail */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrAddSalesPersonIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrAddSalesPersonIO]
+GO
+
+
+/* Following procedure is for Delete the Broker SalesPersonIo Detail */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrDeleteSalesPersonIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrDeleteSalesPersonIO]
+GO
+
+
+/* Following procedure is for Get the Broker SalesPersonIo Detail */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonsByIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonsByIO]
+GO
+
+
+/* Following procedure is for Get the Broker SalesPersonIo By IoCode */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonsByIOCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonsByIOCode]
+GO
+
+
+/* Following procedure is for Get Active Broker SalesPersonIo By IoCode */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetActiveSalesPersonsByIOCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetActiveSalesPersonsByIOCode]
+GO
+
+/* Following procedure is for Get IoCode by SalesPersonIo  */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetIOsBySalesPerson]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetIOsBySalesPerson]
+GO
+
+
+/* Following procedure is for Get All Broker SalesPerson*/
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonsAll]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetSalesPersonsAll]
+GO
+
+/* Following procedure is for Get All IoCode */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrGetIOsAll]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrGetIOsAll]
+GO
+
+
+/* Following procedure is for Assign SalesPersonIo */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_BkrAssignSalesPersonIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_BkrAssignSalesPersonIO]
+GO
+
+
+

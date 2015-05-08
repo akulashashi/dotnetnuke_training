@@ -1,0 +1,15 @@
+C:\DNN\JRC45\bin\bhattji.Modules.InterOffices.dll
+C:\DNN\JRC45\bin\bhattji.Modules.InterOffices.pdb
+C:\DNN\JRC45\bin\bhattji.InterOffices.xml
+C:\DNN\JRC45\DesktopModules\bhattji_InterOffices\obj\Debug\ResolveAssemblyReference.cache
+C:\DNN\JRC45\DesktopModules\bhattji_InterOffices\obj\Debug\bhattji.Modules.InterOffices.Details.resources
+C:\DNN\JRC45\DesktopModules\bhattji_InterOffices\obj\Debug\bhattji.Modules.InterOffices.EditItem.resources
+C:\DNN\JRC45\DesktopModules\bhattji_InterOffices\obj\Debug\bhattji.Modules.InterOffices.Edits.resources
+C:\DNN\JRC45\DesktopModules\bhattji_InterOffices\obj\Debug\bhattji.Modules.InterOffices.Thumb.resources
+C:\DNN\JRC45\DesktopModules\bhattji_InterOffices\obj\Debug\bhattji.Modules.InterOffices.Settings.resources
+C:\DNN\JRC45\DesktopModules\bhattji_InterOffices\obj\Debug\bhattji.Modules.InterOffices.ViewList.resources
+C:\DNN\JRC45\DesktopModules\bhattji_InterOffices\obj\Debug\bhattji.Modules.InterOffices.Views.resources
+C:\DNN\JRC45\DesktopModules\bhattji_InterOffices\obj\Debug\bhattji.InterOffices.vbproj.GenerateResource.Cache
+C:\DNN\JRC45\DesktopModules\bhattji_InterOffices\obj\Debug\bhattji.Modules.InterOffices.dll
+C:\DNN\JRC45\DesktopModules\bhattji_InterOffices\obj\Debug\bhattji.InterOffices.xml
+C:\DNN\JRC45\DesktopModules\bhattji_InterOffices\obj\Debug\bhattji.Modules.InterOffices.pdb

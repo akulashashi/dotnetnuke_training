@@ -1,0 +1,8 @@
+E:\DNN\DNN620\DesktopModules\DnnTest\obj\Debug\ResolveAssemblyReference.cache
+E:\DNN\DNN620\bin\YourCompany.Modules.DnnTest.dll
+E:\DNN\DNN620\bin\YourCompany.Modules.DnnTest.pdb
+E:\DNN\DNN620\DesktopModules\DnnTest\obj\Debug\YourCompany.Modules.DnnTest.dll
+E:\DNN\DNN620\DesktopModules\DnnTest\obj\Debug\YourCompany.Modules.DnnTest.pdb
+E:\DNN\DNN620\DesktopModules\YourCompany.DnnTest\obj\Debug\ResolveAssemblyReference.cache
+E:\DNN\DNN620\DesktopModules\YourCompany.DnnTest\obj\Debug\YourCompany.Modules.DnnTest.dll
+E:\DNN\DNN620\DesktopModules\YourCompany.DnnTest\obj\Debug\YourCompany.Modules.DnnTest.pdb

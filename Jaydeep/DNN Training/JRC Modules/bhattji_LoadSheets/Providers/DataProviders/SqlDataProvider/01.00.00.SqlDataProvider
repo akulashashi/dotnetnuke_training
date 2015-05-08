@@ -1,0 +1,5304 @@
+﻿/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              LoadSheets               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create/drop tables and stored procs   */
+
+
+
+/* Insert here the code to create tables and stored procs   */
+
+/* Insert here the code to alter tables if exists else create new tables */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+begin
+
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ALTER COLUMN [DispatchCode] [nvarchar] (12) NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ALTER COLUMN [CompletedLoad] [bit] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ALTER COLUMN [CommPaid] [bit] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ADD [ShowPUInfo] [bit] NULL 
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ADD [TrailerDue] [datetime] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ADD [Container1] [nvarchar] (20) NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ADD [Container1Due] [datetime] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ADD [Container2] [nvarchar] (20) NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ADD [Container2Due] [datetime] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ADD [XMissionSave] [bit] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ADD [CanRecover] [nvarchar] (12) NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ADD [CreationSource] [int] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ADD [CodCheckSeq] [nvarchar] (18)  NULL 	
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ADD [CodCheckAmt] [float] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ADD [ItemID] [int] IDENTITY (1, 1) NOT NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ADD [ModuleId] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ADD [ViewOrder] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ADD [UpdatedByUserId] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ADD [UpdatedDate] [datetime] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ADD [CreatedByUserId] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  ADD [CreatedDate] [datetime] NULL
+
+end
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+begin
+
+UPDATE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  SET [ModuleId] = 371,[UpdatedByUserId] = 1,[UpdatedDate] = GetDate(),[CreatedByUserId] = 1,[CreatedDate] = GetDate()
+
+end
+
+else
+
+CREATE TABLE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader] (
+	[ItemID] [int] IDENTITY (1, 1) NOT NULL ,
+	[ModuleID] [int] NULL ,
+
+	[LoadID] [nvarchar] (10)  NULL ,
+	[OfficeVendorNO] [nvarchar] (7)  NULL ,
+	[JRCIOfficeCode] [nvarchar] (9)  NULL ,
+	[LoadDate] [datetime] NULL ,
+	[DeliveryDate] [datetime] NULL ,
+	[CompletedLoad] [bit] NULL ,
+	[CompletedDate] [datetime] NULL ,
+	[OfficeCode] [nvarchar] (3)  NULL ,
+	[CustomerNumber] [nvarchar] (7)  NULL ,
+	[CustomerName] [nvarchar] (40)  NULL ,
+	[CustPO] [nvarchar] (50)  NULL ,
+	[TrailerNumber] [nvarchar] (20)  NULL ,
+	[TrailerDue] [datetime] NULL ,
+	
+		[Container1][nvarchar](20) NULL ,
+		[Container1Due][datetime] NULL ,
+		[Container2][nvarchar](20) NULL ,
+		[Container2Due][datetime] NULL ,
+	
+	[DriverCode] [nvarchar] (4)  NULL ,
+	[DriverName] [nvarchar] (30)  NULL ,
+	[BrokerCode] [nvarchar] (7)  NULL ,
+	[BrokerName] [nvarchar] (30)  NULL ,
+	[JRCIOCode] [nvarchar] (9)  NULL ,
+	[IOCode] [nvarchar] (7)  NULL ,
+	[IOName] [nvarchar] (30)  NULL ,
+	[OverrideComm] [float] NULL ,
+	[DriverPct] [float] NULL ,
+	[FOB] [nvarchar] (1)  NULL ,
+	[LoadNotes] [nvarchar] (1)  NULL ,
+	[ComCheckSeq] [nvarchar] (18)  NULL ,
+	[ComCheckAmt] [float] NULL ,	
+	[CodCheckSeq] [nvarchar] (18)  NULL ,
+	[CodCheckAmt] [float] NULL ,	
+	[TarpMessage] [nvarchar] (50)  NULL ,
+	[DispatchCode] [nvarchar] (12)  NULL ,
+	[DispName] [nvarchar] (30)  NULL ,
+	[LoadStatus] [nvarchar] (8)  NULL ,
+	[DispOverride] [float] NULL ,
+	[RepNo] [nvarchar] (7)  NULL ,
+	[RepName] [nvarchar] (30)  NULL ,
+	[LastUpdate] [datetime] NULL ,
+	[XmissionSeq] [float] NULL ,
+	[LoadType] [nvarchar] (2)  NULL ,
+	[DriverComm] [float] NULL ,
+	[BrokerComm] [float] NULL ,
+	[LoadWeight] [nvarchar] (10)  NULL ,
+	[LoadPieces] [nvarchar] (10)  NULL ,
+	[LoadMileage] [float] NULL ,
+	[AdminExempt] [nvarchar] (1)  NULL ,
+	[TarpLoad] [nvarchar] (1)  NULL ,
+	[ProNox] [nvarchar] (4)  NULL ,
+	[XMissionSave] [bit] NULL ,
+	[XMissionFile] [nvarchar] (20)  NULL ,
+	[XMissionDate] [datetime] NULL ,
+	[EntryDate] [datetime] NULL ,
+	[RepDlrM] [float] NULL ,
+	[RepPctM] [float] NULL ,
+	[RepOverride] [nvarchar] (1)  NULL ,
+	[RepDlrStd] [float] NULL ,
+	[RepPctStd] [float] NULL ,
+	[CorpTo] [nvarchar] (1)  NULL ,
+	[TrailerType] [nvarchar] (2)  NULL ,
+	[BrokerType] [nvarchar] (2)  NULL ,
+	[OfficePaid] [nvarchar] (1)  NULL ,
+	[PDCkNo] [nvarchar] (10)  NULL ,
+	[PDDate] [datetime] NULL ,
+	[PDAmt] [float] NULL ,
+	[ProJob] [nvarchar] (50)  NULL ,
+	[InvCommentA] [nvarchar] (50)  NULL ,
+	[InvCommentB] [nvarchar] (50)  NULL ,
+	[InvCommentC] [nvarchar] (50)  NULL ,
+	[InvCommentD] [nvarchar] (50)  NULL ,
+	[BkrInvNo] [nvarchar] (12)  NULL ,
+	[ReasonFor] [nvarchar] (100)  NULL ,
+	[BkrInvDate] [datetime] NULL ,
+	[IOAvail] [nvarchar] (1)  NULL ,
+	[IsPrinted] [nvarchar] (7)  NULL ,
+	[AcctNull] [nvarchar] (1)  NULL ,
+	[BkrFunds] [nvarchar] (2)  NULL ,
+	[OffFunds] [nvarchar] (2)  NULL ,
+	[OffOrgin] [nvarchar] (2)  NULL ,
+	[CNOfficeVendorNO] [nvarchar] (7)  NULL ,
+	[PUSEQ] [float] NULL ,
+	[ShowPUInfo] [bit] NULL, 
+	[PUCityST] [nvarchar] (35)  NULL ,
+	[DPCityST] [nvarchar] (35)  NULL ,
+	[DPSEQ] [float] NULL ,
+	[IsIODiv] [nvarchar] (1)  NULL ,
+	[OLPUDate] [datetime] NULL ,
+	[OLNoStops] [nvarchar] (1)  NULL ,
+	[CarrierName] [nvarchar] (30)  NULL ,
+	[BkrIOName] [nvarchar] (30)  NULL ,
+	[BkrDriverNo] [nvarchar] (4)  NULL ,
+	[BKDriver] [nvarchar] (30)  NULL ,
+	[CommPaid] [bit] NULL ,
+	[LDNotesA] [nvarchar] (60)  NULL ,
+	[LDNotesB] [nvarchar] (60)  NULL ,
+	[LDNotesC] [nvarchar] (60)  NULL ,
+	[LDNotesD] [nvarchar] (60)  NULL ,
+	[LoadMo] [float] NULL ,
+	[LoadYR] [float] NULL ,
+	[Calc85] [nvarchar] (1)  NULL ,
+	[DvrDedPct] [float] NULL ,
+	[DvrDedResn] [nvarchar] (20)  NULL ,
+	
+	[CanRecover] [nvarchar] (12)  NULL ,
+	[CreationSource] [int] NULL ,
+
+	[ViewOrder] [int] NULL ,
+	[UpdatedByUserId] [int]  NULL ,
+	[UpdatedDate] [datetime] NULL ,
+	[CreatedByUserId] [int]  NULL ,
+	[CreatedDate] [datetime] NULL
+
+) ON [PRIMARY]
+GO
+
+
+/* Insert here the code to create stored procs   */
+
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+/* Following procedure is for Add the LoadSheet Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddLoadSheet]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddLoadSheet]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddLoadSheet]
+
+	@ModuleID int ,
+
+	@LoadID nvarchar(10),
+	@OfficeVendorNO nvarchar(7),
+	@JRCIOfficeCode nvarchar(9),
+	@LoadDate datetime,
+	@DeliveryDate datetime,
+	@CompletedLoad bit,
+	@CompletedDate datetime,
+	@OfficeCode nvarchar(3),
+	@CustomerNumber nvarchar(7),
+	@CustomerName nvarchar(40),
+	@CustPO nvarchar(50),
+	@TrailerNumber nvarchar(20),
+	@TrailerDue datetime,
+	@DriverCode nvarchar(4),
+	@DriverName nvarchar(30),
+	@BrokerCode nvarchar(7),
+	@BrokerName nvarchar(30),
+	@JRCIOCode nvarchar(9),
+	@IOCode nvarchar(7),
+	@IOName nvarchar(30),
+	@OverrideComm float,
+	@DriverPct float,
+	@FOB nvarchar(1),
+	@LoadNotes nvarchar(1),
+	@ComCheckSeq nvarchar(18),
+	@ComCheckAmt float,
+	@CodCheckSeq nvarchar(18),
+	@CodCheckAmt float,
+	@TarpMessage nvarchar(50),
+	@DispatchCode nvarchar(12),
+	@DispName nvarchar(30),
+	@LoadStatus nvarchar(8),
+	@DispOverride float,
+	@RepNo nvarchar(7),
+	@RepName nvarchar(30),
+	@LastUpdate datetime,
+	@XmissionSeq float,
+	@LoadType nvarchar(2),
+	@DriverComm float,
+	@BrokerComm float,
+	@LoadWeight nvarchar(10),
+	@LoadPieces nvarchar(10),
+	@LoadMileage float,
+	@AdminExempt nvarchar(1),
+	@TarpLoad nvarchar(1),
+	@ProNox nvarchar(4),
+	@XMissionSave bit,
+	@XMissionFile nvarchar(20),
+	@XMissionDate datetime,
+	@EntryDate datetime,
+	@RepDlrM float,
+	@RepPctM float,
+	@RepOverride nvarchar(1),
+	@RepDlrStd float,
+	@RepPctStd float,
+	@CorpTo nvarchar(1),
+	@TrailerType nvarchar(2),
+	@BrokerType nvarchar(2),
+	@OfficePaid nvarchar(1),
+	@PDCkNo nvarchar(10),
+	@PDDate datetime,
+	@PDAmt float,
+	@ProJob nvarchar(50),
+	@InvCommentA nvarchar(50),
+	@InvCommentB nvarchar(50),
+	@InvCommentC nvarchar(50),
+	@InvCommentD nvarchar(50),
+	@BkrInvNo nvarchar(12),
+	@ReasonFor nvarchar(100),
+	@BkrInvDate datetime,
+	@IOAvail nvarchar(1),
+	@IsPrinted nvarchar(7),
+	@AcctNull nvarchar(1),
+	@BkrFunds nvarchar(2),
+	@OffFunds nvarchar(2),
+	@OffOrgin nvarchar(2),
+	@CNOfficeVendorNO nvarchar(7),
+	@PUSEQ float,
+	@PUCityST nvarchar(35),
+	@DPCityST nvarchar(35),
+	@DPSEQ float,
+	@IsIODiv nvarchar(1),
+	@OLPUDate datetime,
+	@OLNoStops nvarchar(1),
+	@CarrierName nvarchar(30),
+	@BkrIOName nvarchar(30),
+	@BkrDriverNo nvarchar(4),
+	@BKDriver nvarchar(30),
+	@CommPaid bit,
+	@LDNotesA nvarchar(60),
+	@LDNotesB nvarchar(60),
+	@LDNotesC nvarchar(60),
+	@LDNotesD nvarchar(60),
+	@LoadMo float,
+	@LoadYR float,
+	@Calc85 nvarchar(1),
+	@DvrDedPct float,
+	@DvrDedResn nvarchar(20),
+	
+	@CanRecover nvarchar(12), 
+	@CreationSource int,
+	
+	@ViewOrder int ,
+
+	@CreatedByUserId int
+
+AS
+
+INSERT INTO {objectQualifier}tblOOLoadSheetHeader (
+
+	[ModuleID],
+
+	[LoadID],
+	[OfficeVendorNO],
+	[JRCIOfficeCode],
+	[LoadDate],
+	[DeliveryDate],
+	[CompletedLoad],
+	[CompletedDate],
+	[OfficeCode],
+	[CustomerNumber],
+	[CustomerName],
+	[CustPO],
+	[TrailerNumber],
+	[TrailerDue],
+	[DriverCode],
+	[DriverName],
+	[BrokerCode],
+	[BrokerName],
+	[JRCIOCode],
+	[IOCode],
+	[IOName],
+	[OverrideComm],
+	[DriverPct],
+	[FOB],
+	[LoadNotes],
+	[ComCheckSeq],
+	[ComCheckAmt],
+	[CodCheckSeq],
+	[CodCheckAmt],
+	[TarpMessage],
+	[DispatchCode],
+	[DispName],
+	[LoadStatus],
+	[DispOverride],
+	[RepNo],
+	[RepName],
+	[LastUpdate],
+	[XmissionSeq],
+	[LoadType],
+	[DriverComm],
+	[BrokerComm],
+	[LoadWeight],
+	[LoadPieces],
+	[LoadMileage],
+	[AdminExempt],
+	[TarpLoad],
+	[ProNox],
+	[XMissionSave], 
+	[XMissionFile],
+	[XMissionDate],
+	[EntryDate],
+	[RepDlrM],
+	[RepPctM],
+	[RepOverride],
+	[RepDlrStd],
+	[RepPctStd],
+	[CorpTo],
+	[TrailerType],
+	[BrokerType],
+	[OfficePaid],
+	[PDCkNo],
+	[PDDate],
+	[PDAmt],
+	[ProJob],
+	[InvCommentA],
+	[InvCommentB],
+	[InvCommentC],
+	[InvCommentD],
+	[BkrInvNo],
+	[ReasonFor],
+	[BkrInvDate],
+	[IOAvail],
+	[IsPrinted],
+	[AcctNull],
+	[BkrFunds],
+	[OffFunds],
+	[OffOrgin],
+	[CNOfficeVendorNO],
+	[PUSEQ],
+	[PUCityST],
+	[DPCityST],
+	[DPSEQ],
+	[IsIODiv],
+	[OLPUDate],
+	[OLNoStops],
+	[CarrierName],
+	[BkrIOName],
+	[BkrDriverNo],
+	[BKDriver],
+	[CommPaid],
+	[LDNotesA],
+	[LDNotesB],
+	[LDNotesC],
+	[LDNotesD],
+	[LoadMo],
+	[LoadYR],
+	[Calc85],
+	[DvrDedPct],
+	[DvrDedResn],
+	
+	[CanRecover], 
+	[CreationSource], 
+
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	[UpdatedDate],
+	[CreatedByUserId],
+	[CreatedDate]
+
+) VALUES (
+	@ModuleID,
+
+	@LoadID,
+	@OfficeVendorNO,
+	@JRCIOfficeCode,
+	@LoadDate,
+	@DeliveryDate,
+	@CompletedLoad,
+	@CompletedDate,
+	@OfficeCode,
+	@CustomerNumber,
+	@CustomerName,
+	@CustPO,
+	@TrailerNumber,
+	@TrailerDue,
+	@DriverCode,
+	@DriverName,
+	@BrokerCode,
+	@BrokerName,
+	@JRCIOCode,
+	@IOCode,
+	@IOName,
+	@OverrideComm,
+	@DriverPct,
+	@FOB,
+	@LoadNotes,
+	@ComCheckSeq,
+	@ComCheckAmt,
+	@CodCheckSeq,
+	@CodCheckAmt,
+	@TarpMessage,
+	@DispatchCode,
+	@DispName,
+	@LoadStatus,
+	@DispOverride,
+	@RepNo,
+	@RepName,
+	@LastUpdate,
+	@XmissionSeq,
+	@LoadType,
+	@DriverComm,
+	@BrokerComm,
+	@LoadWeight,
+	@LoadPieces,
+	@LoadMileage,
+	@AdminExempt,
+	@TarpLoad,
+	@ProNox,
+	@XMissionSave,
+	@XMissionFile,
+	@XMissionDate,
+	@EntryDate,
+	@RepDlrM,
+	@RepPctM,
+	@RepOverride,
+	@RepDlrStd,
+	@RepPctStd,
+	@CorpTo,
+	@TrailerType,
+	@BrokerType,
+	@OfficePaid,
+	@PDCkNo,
+	@PDDate,
+	@PDAmt,
+	@ProJob,
+	@InvCommentA,
+	@InvCommentB,
+	@InvCommentC,
+	@InvCommentD,
+	@BkrInvNo,
+	@ReasonFor,
+	@BkrInvDate,
+	@IOAvail,
+	@IsPrinted,
+	@AcctNull,
+	@BkrFunds,
+	@OffFunds,
+	@OffOrgin,
+	@CNOfficeVendorNO,
+	@PUSEQ,
+	@PUCityST,
+	@DPCityST,
+	@DPSEQ,
+	@IsIODiv,
+	@OLPUDate,
+	@OLNoStops,
+	@CarrierName,
+	@BkrIOName,
+	@BkrDriverNo,
+	@BKDriver,
+	@CommPaid,
+	@LDNotesA,
+	@LDNotesB,
+	@LDNotesC,
+	@LDNotesD,
+	@LoadMo,
+	@LoadYR,
+	@Calc85,
+	@DvrDedPct,
+	@DvrDedResn,
+	
+	@CanRecover, 
+	@CreationSource, 
+
+	@ViewOrder ,
+
+	@CreatedByUserId ,
+	GetDate(),
+	@CreatedByUserId ,
+	GetDate()
+
+)
+SELECT SCOPE_IDENTITY()
+GO
+
+
+
+/* Following procedure is for Voiding the Load */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_VoidLoad]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_VoidLoad]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_VoidLoad]
+
+    @LoadID nvarchar(10)
+
+AS
+
+UPDATE {objectQualifier}tblOOLoadSheetHeader 
+
+SET 	[LoadStatus] = 'VOIDED' 
+
+WHERE 	[LoadId] = @LoadId 
+
+GO
+
+
+/* Following procedure is for Updating the LoadSheet for saving the CodCheckSeq Selections Details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateCodCheckSeq]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateCodCheckSeq]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateCodCheckSeq]
+
+    @LoadID nvarchar(10),
+	@CodCheckSeq nvarchar(18)
+AS
+
+UPDATE {objectQualifier}tblOOLoadSheetHeader
+
+SET 
+	[CodCheckSeq] = @CodCheckSeq
+
+WHERE
+	[LoadId] = @LoadId
+GO
+
+
+/* Following procedure is for Updating the LoadSheet for saving the BkrInvNo & CustPO Selections Details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateBkrInvNoCustPO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateBkrInvNoCustPO]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateBkrInvNoCustPO]
+
+    @LoadID nvarchar(10),
+	@BkrInvNo nvarchar(12),
+	@CustPO nvarchar(50)
+AS
+
+UPDATE {objectQualifier}tblOOLoadSheetHeader
+
+SET 
+	[BkrInvNo] = @BkrInvNo,
+	[CustPO] = @CustPO
+
+WHERE
+	[LoadId] = @LoadId
+GO
+
+
+/* Following procedure is for Updating the LoadSheet for saving the Xmission Selections Details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateXMissionSave]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateXMissionSave]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateXMissionSave]
+
+    @LoadID nvarchar(10),
+	@XMissionSave bit
+AS
+
+UPDATE {objectQualifier}tblOOLoadSheetHeader
+
+SET 
+	[XMissionSave] = @XMissionSave
+
+WHERE
+	[LoadId] = @LoadId
+GO
+
+
+
+/* Following procedure is for Updating the LoadSheet for saving the Xmission Selections Details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UnXmit]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UnXmit]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UnXmit]
+    @XMissionFile nvarchar(20)
+AS
+
+UPDATE {objectQualifier}tblOOLoadSheetHeader
+
+SET 
+	[XMissionFile] = '',
+    [LoadStatus] = 'WIP', 
+    [XMissionDate] = Null, 
+	[CompletedLoad] = 0, 
+    [CompletedDate] = Null 
+
+WHERE
+	[XMissionFile] = @XMissionFile
+GO
+
+
+
+
+/* Following procedure is for Update the LoadSheet Details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateLoadSheet]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateLoadSheet]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateLoadSheet]
+
+	@ItemID int,
+
+	@LoadID nvarchar(10),
+	@OfficeVendorNO nvarchar(7),
+	@JRCIOfficeCode nvarchar(9),
+	@LoadDate datetime,
+	@DeliveryDate datetime,
+	@CompletedLoad bit,
+	@CompletedDate datetime,
+	@OfficeCode nvarchar(3),
+	@CustomerNumber nvarchar(7),
+	@CustomerName nvarchar(40),
+	@CustPO nvarchar(50),
+	@TrailerNumber nvarchar(20),
+	@TrailerDue datetime,
+	
+		@Container1 nvarchar(20) ,
+		@Container1Due datetime ,
+		@Container2 nvarchar(20) ,
+		@Container2Due datetime ,
+	
+	@DriverCode nvarchar(4),
+	@DriverName nvarchar(30),
+	@BrokerCode nvarchar(7),
+	@BrokerName nvarchar(30),
+	@JRCIOCode nvarchar(9),
+	@IOCode nvarchar(7),
+	@IOName nvarchar(30),
+	@OverrideComm float,
+	@DriverPct float,
+	@FOB nvarchar(1),
+	@LoadNotes nvarchar(1),
+	@ComCheckSeq nvarchar(18),
+	@ComCheckAmt float,
+	@CodCheckSeq nvarchar(18),
+	@CodCheckAmt float,
+	@TarpMessage nvarchar(50),
+	@DispatchCode nvarchar(12),
+	@DispName nvarchar(30),
+	@LoadStatus nvarchar(8),
+	@DispOverride float,
+	@RepNo nvarchar(7),
+	@RepName nvarchar(30),
+	@LastUpdate datetime,
+	@XmissionSeq float,
+	@LoadType nvarchar(2),
+	@DriverComm float,
+	@BrokerComm float,
+	@LoadWeight nvarchar(10),
+	@LoadPieces nvarchar(10),
+	@LoadMileage float,
+	@AdminExempt nvarchar(1),
+	@TarpLoad nvarchar(1),
+	@ProNox nvarchar(4),
+	@XMissionSave bit, 
+	@XMissionFile nvarchar(20),
+	@XMissionDate datetime,
+	@EntryDate datetime,
+	@RepDlrM float,
+	@RepPctM float,
+	@RepOverride nvarchar(1),
+	@RepDlrStd float,
+	@RepPctStd float,
+	@CorpTo nvarchar(1),
+	@TrailerType nvarchar(2),
+	@BrokerType nvarchar(2),
+	@OfficePaid nvarchar(1),
+	@PDCkNo nvarchar(10),
+	@PDDate datetime,
+	@PDAmt float,
+	@ProJob nvarchar(50),
+	@InvCommentA nvarchar(50),
+	@InvCommentB nvarchar(50),
+	@InvCommentC nvarchar(50),
+	@InvCommentD nvarchar(50),
+	@BkrInvNo nvarchar(12),
+	@ReasonFor nvarchar(100),
+	@BkrInvDate datetime,
+	@IOAvail nvarchar(1),
+	@IsPrinted nvarchar(7),
+	@AcctNull nvarchar(1),
+	@BkrFunds nvarchar(2),
+	@OffFunds nvarchar(2),
+	@OffOrgin nvarchar(2),
+	@CNOfficeVendorNO nvarchar(7),
+	@PUSEQ float,
+	@ShowPUInfo bit,
+	@PUCityST nvarchar(35),
+	@DPCityST nvarchar(35),
+	@DPSEQ float,
+	@IsIODiv nvarchar(1),
+	@OLPUDate datetime,
+	@OLNoStops nvarchar(1),
+	@CarrierName nvarchar(30),
+	@BkrIOName nvarchar(30),
+	@BkrDriverNo nvarchar(4),
+	@BKDriver nvarchar(30),
+	@CommPaid bit,
+	@LDNotesA nvarchar(60),
+	@LDNotesB nvarchar(60),
+	@LDNotesC nvarchar(60),
+	@LDNotesD nvarchar(60),
+	@LoadMo float,
+	@LoadYR float,
+	@Calc85 nvarchar(1),
+	@DvrDedPct float,
+	@DvrDedResn nvarchar(20)  ,
+
+	@CanRecover nvarchar(12), 
+	
+	@ViewOrder int ,
+
+	@UpdatedByUserId int
+AS
+
+UPDATE {objectQualifier}tblOOLoadSheetHeader
+
+SET
+	[LoadID] = @LoadID,
+	[OfficeVendorNO] = @OfficeVendorNO,
+	[JRCIOfficeCode] = @JRCIOfficeCode,
+	[LoadDate] = @LoadDate,
+	[DeliveryDate] = @DeliveryDate,
+	[CompletedLoad] = @CompletedLoad,
+	[CompletedDate] = @CompletedDate,
+	[OfficeCode] = @OfficeCode,
+	[CustomerNumber] = @CustomerNumber,
+	[CustomerName] = @CustomerName,
+	[CustPO] = @CustPO,
+	[TrailerNumber] = @TrailerNumber,
+	[TrailerDue] = @TrailerDue,
+	
+		[Container1] = @Container1 ,
+		[Container1Due] = @Container1Due ,
+		[Container2] = @Container2 ,
+		[Container2Due] = @Container2Due ,
+	
+	[DriverCode] = @DriverCode,
+	[DriverName] = @DriverName,
+	[BrokerCode] = @BrokerCode,
+	[BrokerName] = @BrokerName,
+	[JRCIOCode] = @JRCIOCode,
+	[IOCode] = @IOCode,
+	[IOName] = @IOName,
+	[OverrideComm] = @OverrideComm,
+	[DriverPct] = @DriverPct,
+	[FOB] = @FOB,
+	[LoadNotes] = @LoadNotes,
+	[ComCheckSeq] = @ComCheckSeq,
+	[ComCheckAmt] = @ComCheckAmt,
+	[CodCheckSeq] = @CodCheckSeq,
+	[CodCheckAmt] = @CodCheckAmt,
+	[TarpMessage] = @TarpMessage,
+	[DispatchCode] = @DispatchCode,
+	[DispName] = @DispName,
+	[LoadStatus] = @LoadStatus,
+	[DispOverride] = @DispOverride,
+	[RepNo] = @RepNo,
+	[RepName] = @RepName,
+	[LastUpdate] = @LastUpdate,
+	[XmissionSeq] = @XmissionSeq,
+	[LoadType] = @LoadType,
+	[DriverComm] = @DriverComm,
+	[BrokerComm] = @BrokerComm,
+	[LoadWeight] = @LoadWeight,
+	[LoadPieces] = @LoadPieces,
+	[LoadMileage] = @LoadMileage,
+	[AdminExempt] = @AdminExempt,
+	[TarpLoad] = @TarpLoad,
+	[ProNox] = @ProNox,
+	[XMissionSave] = @XMissionSave, 
+	[XMissionFile] = @XMissionFile,
+	[XMissionDate] = @XMissionDate,
+	[EntryDate] = @EntryDate,
+	[RepDlrM] = @RepDlrM,
+	[RepPctM] = @RepPctM,
+	[RepOverride] = @RepOverride,
+	[RepDlrStd] = @RepDlrStd,
+	[RepPctStd] = @RepPctStd,
+	[CorpTo] = @CorpTo,
+	[TrailerType] = @TrailerType,
+	[BrokerType] = @BrokerType,
+	[OfficePaid] = @OfficePaid,
+	[PDCkNo] = @PDCkNo,
+	[PDDate] = @PDDate,
+	[PDAmt] = @PDAmt,
+	[ProJob] = @ProJob,
+	[InvCommentA] = @InvCommentA,
+	[InvCommentB] = @InvCommentB,
+	[InvCommentC] = @InvCommentC,
+	[InvCommentD] = @InvCommentD,
+	[BkrInvNo] = @BkrInvNo,
+	[ReasonFor] = @ReasonFor,
+	[BkrInvDate] = @BkrInvDate,
+	[IOAvail] = @IOAvail,
+	[IsPrinted] = @IsPrinted,
+	[AcctNull] = @AcctNull,
+	[BkrFunds] = @BkrFunds,
+	[OffFunds] = @OffFunds,
+	[OffOrgin] = @OffOrgin,
+	[CNOfficeVendorNO] = @CNOfficeVendorNO,
+	[PUSEQ] = @PUSEQ,
+	[ShowPUInfo] = @ShowPUInfo, 
+	[PUCityST] = @PUCityST,
+	[DPCityST] = @DPCityST,
+	[DPSEQ] = @DPSEQ,
+	[IsIODiv] = @IsIODiv,
+	[OLPUDate] = @OLPUDate,
+	[OLNoStops] = @OLNoStops,
+	[CarrierName] = @CarrierName,
+	[BkrIOName] = @BkrIOName,
+	[BkrDriverNo] = @BkrDriverNo,
+	[BKDriver] = @BKDriver,
+	[CommPaid] = @CommPaid,
+	[LDNotesA] = @LDNotesA,
+	[LDNotesB] = @LDNotesB,
+	[LDNotesC] = @LDNotesC,
+	[LDNotesD] = @LDNotesD,
+	[LoadMo] = @LoadMo,
+	[LoadYR] = @LoadYR,
+	[Calc85] = @Calc85,
+	[DvrDedPct] = @DvrDedPct,
+	[DvrDedResn] = @DvrDedResn,
+	
+	[CanRecover] = @CanRecover, 
+
+	[ViewOrder] = @ViewOrder ,
+
+	[UpdatedByUserId] = @UpdatedByUserId ,
+	[UpdatedDate] = GetDate()
+
+WHERE
+	[ItemID] = @ItemID
+GO
+
+
+
+/* Following procedure is for Fix the LoadSheet Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_FixLoadSheets]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_FixLoadSheets]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_FixLoadSheets]
+
+	@ModuleID int,
+	@UpdatedByUserId int
+AS
+
+UPDATE {objectQualifier}tblOOLoadSheetHeader SET	[ModuleID] = @ModuleID
+UPDATE {objectQualifier}tblOOLoadSheetHeader SET	[UpdatedByUserId] = @UpdatedByUserId
+UPDATE {objectQualifier}tblOOLoadSheetHeader SET	[UpdatedDate] = GetDate()
+
+GO
+
+
+
+/* Following procedure is for Delete the LoadSheet Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteLoadSheet]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteLoadSheet]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_DeleteLoadSheet]
+	@ItemId int
+
+AS
+
+DELETE
+FROM [{objectQualifier}tblOOLoadSheetHeader]
+WHERE ItemId = @ItemId
+GO
+
+
+
+
+/* Following procedure is for Get Details fot evaluating the LoadStatus*/
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_InfoForLoadStatus]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_InfoForLoadStatus]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_InfoForLoadStatus]
+
+	@LoadID nvarchar(10)
+	
+AS
+
+SELECT
+	x.[ItemID],	
+	x.[LoadID],	
+	x.[LoadDate],	
+	x.[LoadStatus],	
+	x.[LoadType],
+	
+	la.[BBaseLoad],	
+	la.[BCustBill],	
+	la.[GPPct],
+	
+	c.[CustomerStatus],
+	
+	'DriverStatus'= CASE WHEN ((sp.[Status]='Y') and (sp.[InactivateDate] >= x.[LoadDate])) THEN 'N' ELSE sp.[Status] END,
+	sp.[SafetyAuth],
+	
+	'BrokerStatus'=bk.[BStatus],	
+	
+	io.[JRCActive]
+
+
+FROM {objectQualifier}tblOOLoadSheetHeader as x
+	LEFT OUTER JOIN [{objectQualifier}tblLoadAcct] AS la on x.LoadId = la.LoadId
+	LEFT OUTER JOIN [{objectQualifier}ARD_SalesPersonMasterfile] AS sp on x.DriverCode = sp.DriverCode
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS io on x.JRCIOCode = io.JRCIOfficeCode
+	LEFT OUTER JOIN [{objectQualifier}ARD_BrokerMaster] AS bk on x.BrokerCode = bk.BrokerCode	
+	LEFT OUTER JOIN [{objectQualifier}AR1_CustomerMaster] AS c on x.CustomerNumber = c.CustomerNumber
+
+WHERE
+	x.[LoadID] = @LoadID
+	
+GO
+
+/* Following procedure is for Get Details fot evaluating the UnXmit */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_ForUnXmit]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_ForUnXmit]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_ForUnXmit]
+
+	@JRCIOfficeCode nvarchar(9),
+	@NoOfItems int,
+	@FromDate datetime,
+	@ToDate datetime
+	
+AS
+
+SELECT DISTINCT TOP (@NoOfItems)
+	[XmissionFile],
+	[XmissionDate]		
+
+FROM {objectQualifier}tblOOLoadSheetHeader
+
+WHERE ([JRCIOfficeCode] = @JRCIOfficeCode) 
+  AND (XmissionDate >= @FromDate) 
+  AND (XmissionDate <= @ToDate) 
+	
+ORDER BY XmissionDate DESC, XmissionFile DESC 
+	
+GO
+
+
+
+/* Following procedure is for Get All the LoadConfirm HeaderDetails */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetLoadConfirmHeader]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetLoadConfirmHeader]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetLoadConfirmHeader]
+
+	@ItemID int
+AS
+
+SELECT
+	x.[ItemID],
+	x.[LoadType],
+
+	x.[LoadID],
+	x.[LoadDate],
+
+	x.[JRCIOfficeCode],
+	so.ConfName, 
+	so.ConfAddr, 
+	so.ConfSTZ,
+	so.ConfPNo,
+
+	'BWords'=so.BWordsA+' '+ so.BWordsB+' '+ so.BWordsC,
+
+	'LDNotes'= (CASE WHEN (x.[LDNotesA] IS Null) THEN '' ELSE x.[LDNotesA] END)+
+			   (CASE WHEN (x.[LDNotesB] IS Null) THEN '' ELSE ' ' + x.[LDNotesB] END)+
+			   (CASE WHEN (x.[LDNotesC] IS Null) THEN '' ELSE ' ' + x.[LDNotesC] END)+
+			   (CASE WHEN (x.[LDNotesD] IS Null) THEN '' ELSE ' ' + x.[LDNotesD] END),
+
+	'CarrierCode'=CASE WHEN (x.LoadType='BK') THEN x.BrokerCode ELSE x.DriverCode END, 
+	'CarrierName'=CASE WHEN (x.LoadType='BK') THEN bk.BrokerName ELSE sp.DriverName END, 
+	'CarrierAddress'=CASE WHEN (x.LoadType='BK') THEN (CASE WHEN (bk.AddressLine1 IS Null) THEN '' ELSE bk.AddressLine1 END)+
+													  (CASE WHEN (bk.AddressLine2 IS Null) THEN '' ELSE ' '+bk.AddressLine2 END)+
+													  (CASE WHEN (bk.City IS Null) THEN '' ELSE ' '+bk.City END)+
+													  (CASE WHEN (bk.State IS Null) THEN '' ELSE ' '+bk.State END)+
+													  (CASE WHEN (bk.ZipCode IS Null) THEN '' ELSE ' - '+bk.ZipCode END) 
+												 ELSE (CASE WHEN (sp.AddressLine1 IS Null) THEN '' ELSE sp.AddressLine1 END)+
+													  (CASE WHEN (sp.AddressLine2 IS Null) THEN '' ELSE ' '+sp.AddressLine2 END)+
+													  (CASE WHEN (sp.AddressLine3 IS Null) THEN '' ELSE ' '+sp.AddressLine3 END)+
+													  (CASE WHEN (sp.City IS Null) THEN '' ELSE ' '+sp.City END)+' '+
+													  (CASE WHEN (sp.State IS Null) THEN '' ELSE ' '+sp.State END)+
+													  (CASE WHEN (sp.ZipCode IS Null) THEN '' ELSE ' - '+sp.ZipCode END) 
+												  END, 
+
+
+	'CarrierAdd1'=CASE WHEN (x.LoadType='BK') THEN bk.AddressLine1 ELSE sp.AddressLine1 END, 
+	
+	'CarrierAdd2'=CASE WHEN (x.LoadType='BK') THEN bk.AddressLine2 
+											  ELSE (CASE WHEN (sp.AddressLine2 IS Null) THEN '' ELSE sp.AddressLine2 END)+
+											       (CASE WHEN (sp.AddressLine3 IS Null) THEN '' ELSE ' '+sp.AddressLine3 END)
+											  END, 
+												  
+	'CarrierAdd3'=CASE WHEN (x.LoadType='BK') THEN (CASE WHEN (bk.City IS Null) THEN '' ELSE bk.City END)+' '+
+												   (CASE WHEN (bk.State IS Null) THEN '' ELSE ' '+bk.State END)+
+												   (CASE WHEN (bk.ZipCode IS Null) THEN '' ELSE ' - '+bk.ZipCode END) 
+											  ELSE (CASE WHEN (sp.City IS Null) THEN '' ELSE sp.City END)+' '+
+												   (CASE WHEN (sp.State IS Null) THEN '' ELSE ' '+sp.State END)+
+												   (CASE WHEN (sp.ZipCode IS Null) THEN '' ELSE ' - '+sp.ZipCode END) 
+											  END, 
+
+	'CarrierPhone'=CASE WHEN (x.LoadType='BK') THEN bk.PhoneNo ELSE sp.PhoneNo END, 
+	'CarrierExt'=CASE WHEN (x.LoadType='BK') THEN bk.Ext ELSE sp.Ext END, 
+	'CarrierCell'=CASE WHEN (x.LoadType='BK') THEN '' ELSE sp.CellPhone END, 
+	'CarrierFax'=CASE WHEN (x.LoadType='BK') THEN bk.FaxNo ELSE sp.FaxNo END, 
+	'CarrierEmail'=CASE WHEN (x.LoadType='BK') THEN bk.EmailAddress ELSE sp.EmailAddress END, 
+	
+	x.[ShowPUInfo], 
+
+	x.[TrailerNumber],
+	x.[TrailerDue],
+	
+		x.[Container1] ,
+		x.[Container1Due] ,
+		x.[Container2] ,
+		x.[Container2Due] ,
+		
+	x.[TrailerType],
+
+	x.[CustomerNumber],
+	c.CustomerName,
+	c.CustomerStatus,
+	c.CStatus,
+	
+	'TarpMessage'=CASE WHEN (x.TarpLoad='Y') THEN x.[TarpMessage] ELSE '' END, 
+	
+	la.DRTotDue
+
+FROM {objectQualifier}tblOOLoadSheetHeader as x 
+	LEFT OUTER JOIN [{objectQualifier}tblLoadAcct] AS la on x.LoadId = la.LoadId
+	LEFT OUTER JOIN [{objectQualifier}ARD_SalesPersonMasterfile] AS sp on x.DriverCode = sp.DriverCode
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS so on x.JRCIOfficeCode = so.JRCIOfficeCode
+	LEFT OUTER JOIN [{objectQualifier}ARD_BrokerMaster] AS bk on x.BrokerCode = bk.BrokerCode
+	LEFT OUTER JOIN [{objectQualifier}AR1_CustomerMaster] AS c on x.CustomerNumber = c.CustomerNumber
+
+WHERE
+	x.[ItemID] = @ItemID
+	
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Following procedure is for Get All the LoadSheet Details */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetLoadSheet]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetLoadSheet]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetLoadSheet]
+
+	@ItemID int
+AS
+
+SELECT
+	x.[ItemID],
+	x.[ModuleID],
+
+	x.[LoadID],
+	'OfficeVendorNO'=so.IOfficeCode,
+	x.[JRCIOfficeCode],
+	'JRCIOfficeName'=so.[IOName],
+	so.[JRCActive],
+	x.[LoadDate],
+	x.[DeliveryDate],
+	x.[CompletedLoad],
+	x.[CompletedDate],
+	x.[OfficeCode],
+	x.[CustomerNumber],
+	c.[CustomerName],
+	c.CStatus,
+	sp.SafetyAuth,
+	x.[CustPO],
+	x.[TrailerNumber],
+	x.[TrailerDue],
+	
+		x.[Container1] ,
+		x.[Container1Due] ,
+		x.[Container2] ,
+		x.[Container2Due] ,
+	
+	x.[DriverCode],
+	sp.[DriverName],
+	sp.[AccountNo],
+	x.[BrokerCode],
+	bk.[BrokerName],
+	x.[JRCIOCode],
+	x.[IOCode],
+	io.[IOName],
+	'OverrideComm' = CASE WHEN (x.OverrideComm > 0) THEN x.OverrideComm ELSE sp.CommRate END,
+	x.[DriverPct],
+	x.[FOB],
+	x.[LoadNotes],
+	x.[ComCheckSeq],
+	x.[ComCheckAmt],
+	x.[CodCheckSeq],
+	x.[CodCheckAmt],
+	x.[TarpMessage],
+	x.[DispatchCode],
+	x.[DispName],
+	x.[LoadStatus],
+	x.[DispOverride],
+	'RepNo' = CASE WHEN (x.RepNo = '') THEN c.RepNo ELSE x.RepNo END,
+	sr.[RepName],
+	x.[LastUpdate],
+	x.[XmissionSeq],
+	x.[LoadType],
+	x.[DriverComm],
+	x.[BrokerComm],
+	x.[LoadWeight],
+	x.[LoadPieces],
+	x.[LoadMileage],
+	x.[AdminExempt],
+	x.[TarpLoad],
+	'ProNox' = CASE WHEN (x.LoadType='BK') THEN bk.VendorRef ELSE x.DriverCode END,
+	x.[XMissionSave],
+	x.[XMissionFile],
+	x.[XMissionDate],
+	x.[EntryDate],
+	x.[RepDlrM],
+	x.[RepPctM],
+	x.[RepOverride],
+	x.[RepDlrStd],
+	x.[RepPctStd],
+	x.[CorpTo],
+	x.[TrailerType],
+	'BrokerType'=bk.BkrType, 
+	x.[OfficePaid],
+	x.[PDCkNo],
+	x.[PDDate],
+	x.[PDAmt],
+	x.[ProJob],
+	x.[InvCommentA],
+	x.[InvCommentB],
+	x.[InvCommentC],
+	x.[InvCommentD],
+	x.[BkrInvNo],
+	x.[ReasonFor],
+	x.[BkrInvDate],
+	x.[IOAvail],
+	x.[IsPrinted],
+	x.[AcctNull],
+	x.[BkrFunds],
+	x.[OffFunds],
+	x.[OffOrgin],
+	x.[CNOfficeVendorNO],
+	x.[PUSEQ],
+	x.[ShowPUInfo], 
+	x.[PUCityST],
+	x.[DPCityST],
+	x.[DPSEQ],
+	x.[IsIODiv],
+	x.[OLPUDate],
+	x.[OLNoStops],
+	x.[CarrierName],
+	x.[BkrIOName],
+	x.[BkrDriverNo],
+	x.[BKDriver],
+	x.[CommPaid],
+	x.[LDNotesA],
+	x.[LDNotesB],
+	x.[LDNotesC],
+	x.[LDNotesD],
+	x.[LoadMo],
+	x.[LoadYR],
+	x.[Calc85],
+	x.[DvrDedPct],
+	x.[DvrDedResn],
+	
+	x.[CanRecover], 
+	x.[CreationSource], 
+	
+	la.[BBaseLoad],	
+	la.[BCustBill],	
+	la.[DRTotDue],	
+	la.[GPPct],
+	'IORecovery' = la.IOAdmin1 + la.IOComm1, 
+
+	x.[ViewOrder],
+
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = CASE WHEN uu.DisplayName IS NULL THEN uu.FirstName + ' ' + uu.LastName ELSE uu.DisplayName END,
+	x.[UpdatedDate] ,
+	x.[CreatedByUserId],
+	'CreatedByUser' = CASE WHEN uc.DisplayName IS NULL THEN uc.FirstName + ' ' + uc.LastName ELSE uc.DisplayName END,
+	x.[CreatedDate]
+
+
+FROM {objectQualifier}tblOOLoadSheetHeader as x
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+	LEFT OUTER JOIN [{objectQualifier}tblLoadAcct] AS la on x.LoadId = la.LoadId
+
+	LEFT OUTER JOIN [{objectQualifier}ARD_SalesPersonMasterfile] AS sp on x.DriverCode = sp.DriverCode
+
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS so on x.JRCIOfficeCode = so.JRCIOfficeCode
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS io on x.JRCIOCode = io.JRCIOfficeCode
+
+	LEFT OUTER JOIN [{objectQualifier}ARD_BrokerMaster] AS bk on x.BrokerCode = bk.BrokerCode
+	LEFT OUTER JOIN [{objectQualifier}AR1_CustomerMaster] AS c on x.CustomerNumber = c.CustomerNumber
+	LEFT OUTER JOIN [{objectQualifier}ARD_SalesRepMasterfile] AS sr on c.RepNo = sr.RepNo
+
+WHERE
+	x.[ItemID] = @ItemID
+	
+GO
+
+
+
+/* Following procedure is for Get the LoadSheet Module */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetModuleLoadSheets]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetModuleLoadSheets]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetModuleLoadSheets]
+
+	@ModuleId int,
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	x.[LoadID],
+	x.[OfficeVendorNO],
+	x.[JRCIOfficeCode],
+	so.[JRCActive],
+	x.[LoadDate],
+	x.[DeliveryDate],
+	x.[CompletedLoad],
+	x.[CompletedDate],
+	x.[OfficeCode],
+	x.[CustomerNumber],
+	c.[CustomerName],
+	x.[CustPO],
+	x.[TrailerNumber],
+	x.[TrailerDue],
+	x.[DriverCode],
+	sp.[DriverName],
+	x.[BrokerCode],
+	bk.[BrokerName],
+	x.[JRCIOCode],
+	x.[IOCode],
+	io.[IOName],
+	'OverrideComm' = CASE WHEN (x.OverrideComm > 0) THEN x.OverrideComm ELSE sp.CommRate END,
+	x.[DriverPct],
+	x.[FOB],
+	x.[LoadNotes],
+	x.[ComCheckSeq],
+	x.[ComCheckAmt],
+	x.[CodCheckSeq],
+	x.[CodCheckAmt],
+	x.[TarpMessage],
+	x.[DispatchCode],
+	x.[DispName],
+	x.[LoadStatus],
+	x.[DispOverride],
+	x.[RepNo],
+	sr.[RepName],
+	x.[LastUpdate],
+	x.[XmissionSeq],
+	x.[LoadType],
+	x.[DriverComm],
+	x.[BrokerComm],
+	x.[LoadWeight],
+	x.[LoadPieces],
+	x.[LoadMileage],
+	x.[AdminExempt],
+	x.[TarpLoad],
+	x.[ProNox],
+	x.[XMissionSave], 
+	x.[XMissionFile],
+	x.[XMissionDate],
+	x.[EntryDate],
+	x.[RepDlrM],
+	x.[RepPctM],
+	x.[RepOverride],
+	x.[RepDlrStd],
+	x.[RepPctStd],
+	x.[CorpTo],
+	x.[TrailerType],
+	'BrokerType'=bk.BkrType, 
+	x.[OfficePaid],
+	x.[PDCkNo],
+	x.[PDDate],
+	x.[PDAmt],
+	x.[ProJob],
+	x.[InvCommentA],
+	x.[InvCommentB],
+	x.[InvCommentC],
+	x.[InvCommentD],
+	x.[BkrInvNo],
+	x.[ReasonFor],
+	x.[BkrInvDate],
+	x.[IOAvail],
+	x.[IsPrinted],
+	x.[AcctNull],
+	x.[BkrFunds],
+	x.[OffFunds],
+	x.[OffOrgin],
+	x.[CNOfficeVendorNO],
+	x.[PUSEQ],
+	x.[PUCityST],
+	x.[DPCityST],
+	x.[DPSEQ],
+	x.[IsIODiv],
+	x.[OLPUDate],
+	x.[OLNoStops],
+	x.[CarrierName],
+	x.[BkrIOName],
+	x.[BkrDriverNo],
+	x.[BKDriver],
+	x.[CommPaid],
+	x.[LDNotesA],
+	x.[LDNotesB],
+	x.[LDNotesC],
+	x.[LDNotesD],
+	x.[LoadMo],
+	x.[LoadYR],
+	x.[Calc85],
+	x.[DvrDedPct],
+	x.[DvrDedResn],
+
+	x.[ViewOrder],
+
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = CASE WHEN uu.DisplayName IS NULL THEN uu.FirstName + ' ' + uu.LastName ELSE uu.DisplayName END,
+	x.[UpdatedDate] ,
+	x.[CreatedByUserId],
+	'CreatedByUser' = CASE WHEN uc.DisplayName IS NULL THEN uc.FirstName + ' ' + uc.LastName ELSE uc.DisplayName END,
+	x.[CreatedDate]
+
+
+FROM {objectQualifier}tblOOLoadSheetHeader as x
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+
+	LEFT OUTER JOIN [{objectQualifier}ARD_SalesPersonMasterfile] AS sp on x.DriverCode = sp.DriverCode
+
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS so on x.JRCIOfficeCode = so.JRCIOfficeCode
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS io on x.JRCIOCode = io.JRCIOfficeCode
+
+	LEFT OUTER JOIN [{objectQualifier}ARD_BrokerMaster] AS bk on x.BrokerCode = bk.BrokerCode
+	LEFT OUTER JOIN [{objectQualifier}AR1_CustomerMaster] AS c on x.CustomerNumber = c.CustomerNumber
+	LEFT OUTER JOIN [{objectQualifier}ARD_SalesRepMasterfile] AS sr on c.RepNo = sr.RepNo
+
+
+WHERE x.[ModuleId] = @ModuleId
+ORDER BY x.LoadDate desc, x.UpdatedDate desc, x.ViewOrder
+GO
+
+
+
+/* Following procedure is for Get the LoadSheet Portal */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetPortalLoadSheets]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetPortalLoadSheets]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetPortalLoadSheets]
+
+	@PortalId int,
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	x.[LoadID],
+	x.[OfficeVendorNO],
+	x.[JRCIOfficeCode],
+	so.[JRCActive],
+	x.[LoadDate],
+	x.[DeliveryDate],
+	x.[CompletedLoad],
+	x.[CompletedDate],
+	x.[OfficeCode],
+	x.[CustomerNumber],
+	c.[CustomerName],
+	x.[CustPO],
+	x.[TrailerNumber],
+	x.[TrailerDue],
+	x.[DriverCode],
+	sp.[DriverName],
+	x.[BrokerCode],
+	bk.[BrokerName],
+	x.[JRCIOCode],
+	x.[IOCode],
+	io.[IOName],
+	'OverrideComm' = CASE WHEN (x.OverrideComm > 0) THEN x.OverrideComm ELSE sp.CommRate END,
+	x.[DriverPct],
+	x.[FOB],
+	x.[LoadNotes],
+	x.[ComCheckSeq],
+	x.[ComCheckAmt],
+	x.[CodCheckSeq],
+	x.[CodCheckAmt],
+	x.[TarpMessage],
+	x.[DispatchCode],
+	x.[DispName],
+	x.[LoadStatus],
+	x.[DispOverride],
+	x.[RepNo],
+	sr.[RepName],
+	x.[LastUpdate],
+	x.[XmissionSeq],
+	x.[LoadType],
+	x.[DriverComm],
+	x.[BrokerComm],
+	x.[LoadWeight],
+	x.[LoadPieces],
+	x.[LoadMileage],
+	x.[AdminExempt],
+	x.[TarpLoad],
+	x.[ProNox],
+	x.[XMissionSave], 
+	x.[XMissionFile],
+	x.[XMissionDate],
+	x.[EntryDate],
+	x.[RepDlrM],
+	x.[RepPctM],
+	x.[RepOverride],
+	x.[RepDlrStd],
+	x.[RepPctStd],
+	x.[CorpTo],
+	x.[TrailerType],
+	'BrokerType'=bk.BkrType, 
+	x.[OfficePaid],
+	x.[PDCkNo],
+	x.[PDDate],
+	x.[PDAmt],
+	x.[ProJob],
+	x.[InvCommentA],
+	x.[InvCommentB],
+	x.[InvCommentC],
+	x.[InvCommentD],
+	x.[BkrInvNo],
+	x.[ReasonFor],
+	x.[BkrInvDate],
+	x.[IOAvail],
+	x.[IsPrinted],
+	x.[AcctNull],
+	x.[BkrFunds],
+	x.[OffFunds],
+	x.[OffOrgin],
+	x.[CNOfficeVendorNO],
+	x.[PUSEQ],
+	x.[PUCityST],
+	x.[DPCityST],
+	x.[DPSEQ],
+	x.[IsIODiv],
+	x.[OLPUDate],
+	x.[OLNoStops],
+	x.[CarrierName],
+	x.[BkrIOName],
+	x.[BkrDriverNo],
+	x.[BKDriver],
+	x.[CommPaid],
+	x.[LDNotesA],
+	x.[LDNotesB],
+	x.[LDNotesC],
+	x.[LDNotesD],
+	x.[LoadMo],
+	x.[LoadYR],
+	x.[Calc85],
+	x.[DvrDedPct],
+	x.[DvrDedResn],
+
+	x.[ViewOrder],
+
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = CASE WHEN uu.DisplayName IS NULL THEN uu.FirstName + ' ' + uu.LastName ELSE uu.DisplayName END,
+	x.[UpdatedDate] ,
+	x.[CreatedByUserId],
+	'CreatedByUser' = CASE WHEN uc.DisplayName IS NULL THEN uc.FirstName + ' ' + uc.LastName ELSE uc.DisplayName END,
+	x.[CreatedDate]
+
+
+FROM {objectQualifier}tblOOLoadSheetHeader as x
+	JOIN [{objectQualifier}Modules] As m on x.ModuleId = m.ModuleId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+
+	LEFT OUTER JOIN [{objectQualifier}ARD_SalesPersonMasterfile] AS sp on x.DriverCode = sp.DriverCode
+
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS so on x.JRCIOfficeCode = so.JRCIOfficeCode
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS io on x.JRCIOCode = io.JRCIOfficeCode
+
+	LEFT OUTER JOIN [{objectQualifier}ARD_BrokerMaster] AS bk on x.BrokerCode = bk.BrokerCode
+	LEFT OUTER JOIN [{objectQualifier}AR1_CustomerMaster] AS c on x.CustomerNumber = c.CustomerNumber
+	LEFT OUTER JOIN [{objectQualifier}ARD_SalesRepMasterfile] AS sr on c.RepNo = sr.RepNo
+
+
+WHERE m.PortalId = @PortalId
+ORDER BY x.[ModuleId], x.LoadDate desc, x.UpdatedDate desc, x.ViewOrder
+GO
+
+
+
+/* Following procedure is for Get All the LoadSheet Details */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetAllLoadSheets]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetAllLoadSheets]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetAllLoadSheets]
+
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	x.[LoadID],
+	x.[OfficeVendorNO],
+	x.[JRCIOfficeCode],
+	so.[JRCActive],
+	x.[LoadDate],
+	x.[DeliveryDate],
+	x.[CompletedLoad],
+	x.[CompletedDate],
+	x.[OfficeCode],
+	x.[CustomerNumber],
+	c.[CustomerName],
+	x.[CustPO],
+	x.[TrailerNumber],
+	x.[TrailerDue],
+	x.[DriverCode],
+	sp.[DriverName],
+	x.[BrokerCode],
+	bk.[BrokerName],
+	x.[JRCIOCode],
+	x.[IOCode],
+	io.[IOName],
+	'OverrideComm' = CASE WHEN (x.OverrideComm > 0) THEN x.OverrideComm ELSE sp.CommRate END,
+	x.[DriverPct],
+	x.[FOB],
+	x.[LoadNotes],
+	x.[ComCheckSeq],
+	x.[ComCheckAmt],
+	x.[CodCheckSeq],
+	x.[CodCheckAmt],
+	x.[TarpMessage],
+	x.[DispatchCode],
+	x.[DispName],
+	x.[LoadStatus],
+	x.[DispOverride],
+	x.[RepNo],
+	sr.[RepName],
+	x.[LastUpdate],
+	x.[XmissionSeq],
+	x.[LoadType],
+	x.[DriverComm],
+	x.[BrokerComm],
+	x.[LoadWeight],
+	x.[LoadPieces],
+	x.[LoadMileage],
+	x.[AdminExempt],
+	x.[TarpLoad],
+	x.[ProNox],
+	x.[XMissionSave], 
+	x.[XMissionFile],
+	x.[XMissionDate],
+	x.[EntryDate],
+	x.[RepDlrM],
+	x.[RepPctM],
+	x.[RepOverride],
+	x.[RepDlrStd],
+	x.[RepPctStd],
+	x.[CorpTo],
+	x.[TrailerType],
+	'BrokerType'=bk.BkrType, 
+	x.[OfficePaid],
+	x.[PDCkNo],
+	x.[PDDate],
+	x.[PDAmt],
+	x.[ProJob],
+	x.[InvCommentA],
+	x.[InvCommentB],
+	x.[InvCommentC],
+	x.[InvCommentD],
+	x.[BkrInvNo],
+	x.[ReasonFor],
+	x.[BkrInvDate],
+	x.[IOAvail],
+	x.[IsPrinted],
+	x.[AcctNull],
+	x.[BkrFunds],
+	x.[OffFunds],
+	x.[OffOrgin],
+	x.[CNOfficeVendorNO],
+	x.[PUSEQ],
+	x.[PUCityST],
+	x.[DPCityST],
+	x.[DPSEQ],
+	x.[IsIODiv],
+	x.[OLPUDate],
+	x.[OLNoStops],
+	x.[CarrierName],
+	x.[BkrIOName],
+	x.[BkrDriverNo],
+	x.[BKDriver],
+	x.[CommPaid],
+	x.[LDNotesA],
+	x.[LDNotesB],
+	x.[LDNotesC],
+	x.[LDNotesD],
+	x.[LoadMo],
+	x.[LoadYR],
+	x.[Calc85],
+	x.[DvrDedPct],
+	x.[DvrDedResn],
+
+	x.[ViewOrder],
+
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = CASE WHEN uu.DisplayName IS NULL THEN uu.FirstName + ' ' + uu.LastName ELSE uu.DisplayName END,
+	x.[UpdatedDate] ,
+	x.[CreatedByUserId],
+	'CreatedByUser' = CASE WHEN uc.DisplayName IS NULL THEN uc.FirstName + ' ' + uc.LastName ELSE uc.DisplayName END,
+	x.[CreatedDate]
+
+
+FROM {objectQualifier}tblOOLoadSheetHeader as x
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+
+	LEFT OUTER JOIN [{objectQualifier}ARD_SalesPersonMasterfile] AS sp on x.DriverCode = sp.DriverCode
+
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS so on x.JRCIOfficeCode = so.JRCIOfficeCode
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS io on x.JRCIOCode = io.JRCIOfficeCode
+
+	LEFT OUTER JOIN [{objectQualifier}ARD_BrokerMaster] AS bk on x.BrokerCode = bk.BrokerCode
+	LEFT OUTER JOIN [{objectQualifier}AR1_CustomerMaster] AS c on x.CustomerNumber = c.CustomerNumber
+	LEFT OUTER JOIN [{objectQualifier}ARD_SalesRepMasterfile] AS sr on c.RepNo = sr.RepNo
+
+
+ORDER BY x.[ModuleId], x.LoadDate desc, x.UpdatedDate desc, x.ViewOrder
+GO
+
+
+
+
+/* Following procedure is for Get ItemId By LoadId (Both are Fields) */
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetItemIdByLoadId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetItemIdByLoadId]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetItemIdByLoadId]
+	@LoadId nvarchar(10)
+
+AS
+
+SELECT [ItemId]
+FROM  [{objectQualifier}tblOOLoadSheetHeader]
+WHERE  [LoadId] = @LoadId
+
+GO
+
+
+
+/* Following procedure is for Get LoadID By Item Id (Both are fields) */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetLoadIdByItemId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetLoadIdByItemId]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetLoadIdByItemId]
+	@ItemId int
+
+AS
+
+SELECT [LoadId]
+FROM  [{objectQualifier}tblOOLoadSheetHeader]
+WHERE  [ItemId] = @ItemId
+
+GO
+
+
+
+
+/* Following procedure is for Get the LoadId */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetLoadId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetLoadId]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetLoadId]
+	@JRCIOfficeCode nvarchar(9),
+	@LoadType nvarchar(2)
+
+AS
+
+SELECT 'LoadId' = CASE WHEN (@LoadType = 'BK') THEN ((Case When ([{objectQualifier}ARD_InterOffice].BKNo is Null) Then 'BK' Else [{objectQualifier}ARD_InterOffice].BKNo End) + (Case When (([{objectQualifier}ARD_InterOffice].BKLoadNo is Null) or ([{objectQualifier}ARD_InterOffice].BKLoadNo>99998)) Then '1' Else Convert(varchar, [{objectQualifier}ARD_InterOffice].BKLoadNo + 1) End)) WHEN ((@LoadType = 'AV') or (@LoadType = 'IO')) THEN ((Case When ([{objectQualifier}ARD_InterOffice].AVNo is Null) Then 'AV' Else [{objectQualifier}ARD_InterOffice].AVNo End) + (Case When (([{objectQualifier}ARD_InterOffice].AVLoadNo is Null) or ([{objectQualifier}ARD_InterOffice].AVLoadNo>99998)) Then '1' Else Convert(varchar, [{objectQualifier}ARD_InterOffice].AVLoadNo + 1) End)) ELSE ((Case When ([{objectQualifier}ARD_InterOffice].OONo is Null) Then 'OO' Else [{objectQualifier}ARD_InterOffice].OONo End) + (Case When (([{objectQualifier}ARD_InterOffice].OOLoadNo is Null) or ([{objectQualifier}ARD_InterOffice].OOLoadNo>99998)) Then '1' Else Convert(varchar, [{objectQualifier}ARD_InterOffice].OOLoadNo + 1) End)) End
+FROM  [{objectQualifier}ARD_InterOffice]
+WHERE  [{objectQualifier}ARD_InterOffice].JRCIOfficeCode = @JRCIOfficeCode
+
+GO
+
+
+
+/* Following procedure is for Get the New LoadID */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetNewLoadId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetNewLoadId]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetNewLoadId]
+	@JRCIOfficeCode nvarchar(9),
+	@LoadType nvarchar(2)
+
+AS
+
+if (@LoadType = 'BK')
+UPDATE  [{objectQualifier}ARD_InterOffice] SET  [{objectQualifier}ARD_InterOffice].BKLoadNo = (Case When (([{objectQualifier}ARD_InterOffice].BKLoadNo is Null) or ([{objectQualifier}ARD_InterOffice].BKLoadNo>99998)) Then 1 Else [{objectQualifier}ARD_InterOffice].BKLoadNo+1 End) WHERE  [{objectQualifier}ARD_InterOffice].JRCIOfficeCode = @JRCIOfficeCode
+else if ((@LoadType = 'AV') or (@LoadType = 'IO'))
+UPDATE  [{objectQualifier}ARD_InterOffice] SET  [{objectQualifier}ARD_InterOffice].AVLoadNo = (Case When (([{objectQualifier}ARD_InterOffice].AVLoadNo is Null) or ([{objectQualifier}ARD_InterOffice].AVLoadNo>99998)) Then 1 Else [{objectQualifier}ARD_InterOffice].AVLoadNo+1 End) WHERE  [{objectQualifier}ARD_InterOffice].JRCIOfficeCode = @JRCIOfficeCode
+else
+UPDATE  [{objectQualifier}ARD_InterOffice] SET  [{objectQualifier}ARD_InterOffice].OOLoadNo = (Case When (([{objectQualifier}ARD_InterOffice].OOLoadNo is Null) or ([{objectQualifier}ARD_InterOffice].OOLoadNo>99998)) Then 1 Else [{objectQualifier}ARD_InterOffice].OOLoadNo+1 End) WHERE  [{objectQualifier}ARD_InterOffice].JRCIOfficeCode = @JRCIOfficeCode
+
+SELECT 'LoadId' = CASE WHEN ([{objectQualifier}ARD_InterOffice].NoOffChar > 2)  THEN  
+(CASE WHEN (@LoadType = 'BK') THEN ((Case When ([{objectQualifier}ARD_InterOffice].BKNo is Null) Then 'BK' Else [{objectQualifier}ARD_InterOffice].BKNo End) + RIGHT('0000'+CAST([{objectQualifier}ARD_InterOffice].BKLoadNo AS varchar(4)), 4)) WHEN ((@LoadType = 'AV') or (@LoadType = 'IO')) THEN ((Case When ([{objectQualifier}ARD_InterOffice].AVNo is Null) Then 'AV' Else [{objectQualifier}ARD_InterOffice].AVNo End) + RIGHT('0000'+CAST([{objectQualifier}ARD_InterOffice].AVLoadNo AS varchar(4)), 4)) ELSE ((Case When ([{objectQualifier}ARD_InterOffice].OONo is Null) Then 'OO' Else [{objectQualifier}ARD_InterOffice].OONo End) + RIGHT('0000'+CAST([{objectQualifier}ARD_InterOffice].OOLoadNo AS varchar(4)), 4)) End)
+ELSE   
+(CASE WHEN (@LoadType = 'BK') THEN ((Case When ([{objectQualifier}ARD_InterOffice].BKNo is Null) Then 'BK' Else [{objectQualifier}ARD_InterOffice].BKNo End) + RIGHT('00000'+CAST([{objectQualifier}ARD_InterOffice].BKLoadNo AS varchar(5)), 5)) WHEN ((@LoadType = 'AV') or (@LoadType = 'IO')) THEN ((Case When ([{objectQualifier}ARD_InterOffice].AVNo is Null) Then 'AV' Else [{objectQualifier}ARD_InterOffice].AVNo End) + RIGHT('00000'+CAST([{objectQualifier}ARD_InterOffice].AVLoadNo AS varchar(5)), 5)) ELSE ((Case When ([{objectQualifier}ARD_InterOffice].OONo is Null) Then 'OO' Else [{objectQualifier}ARD_InterOffice].OONo End) + RIGHT('00000'+CAST([{objectQualifier}ARD_InterOffice].OOLoadNo AS varchar(5)), 5)) End)
+END
+
+FROM  [{objectQualifier}ARD_InterOffice]
+WHERE  [{objectQualifier}ARD_InterOffice].JRCIOfficeCode = @JRCIOfficeCode
+
+GO
+
+
+
+/* Following procedure is for Get the New LoadID */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetNewLoadId1]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetNewLoadId1]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetNewLoadId1]
+	@JRCIOfficeCode nvarchar(9),
+	@LoadType nvarchar(2)
+
+AS
+
+if (@LoadType = 'BK')
+UPDATE  [{objectQualifier}ARD_InterOffice] SET  [{objectQualifier}ARD_InterOffice].BKLoadNo = (Case When (([{objectQualifier}ARD_InterOffice].BKLoadNo is Null) or ([{objectQualifier}ARD_InterOffice].BKLoadNo>99998)) Then 1 Else [{objectQualifier}ARD_InterOffice].BKLoadNo+1 End) WHERE  [{objectQualifier}ARD_InterOffice].JRCIOfficeCode = @JRCIOfficeCode
+else if ((@LoadType = 'AV') or (@LoadType = 'IO'))
+UPDATE  [{objectQualifier}ARD_InterOffice] SET  [{objectQualifier}ARD_InterOffice].AVLoadNo = (Case When (([{objectQualifier}ARD_InterOffice].AVLoadNo is Null) or ([{objectQualifier}ARD_InterOffice].AVLoadNo>99998)) Then 1 Else [{objectQualifier}ARD_InterOffice].AVLoadNo+1 End) WHERE  [{objectQualifier}ARD_InterOffice].JRCIOfficeCode = @JRCIOfficeCode
+else
+UPDATE  [{objectQualifier}ARD_InterOffice] SET  [{objectQualifier}ARD_InterOffice].OOLoadNo = (Case When (([{objectQualifier}ARD_InterOffice].OOLoadNo is Null) or ([{objectQualifier}ARD_InterOffice].OOLoadNo>99998)) Then 1 Else [{objectQualifier}ARD_InterOffice].OOLoadNo+1 End) WHERE  [{objectQualifier}ARD_InterOffice].JRCIOfficeCode = @JRCIOfficeCode
+
+SELECT 'LoadId' = CASE WHEN (@LoadType = 'BK') THEN ((Case When ([{objectQualifier}ARD_InterOffice].BKNo is Null) Then 'BK' Else [{objectQualifier}ARD_InterOffice].BKNo End) + Convert(varchar, [{objectQualifier}ARD_InterOffice].BKLoadNo)) WHEN ((@LoadType = 'AV') or (@LoadType = 'IO')) THEN ((Case When ([{objectQualifier}ARD_InterOffice].AVNo is Null) Then 'AV' Else [{objectQualifier}ARD_InterOffice].AVNo End) + Convert(varchar, [{objectQualifier}ARD_InterOffice].AVLoadNo)) ELSE ((Case When ([{objectQualifier}ARD_InterOffice].OONo is Null) Then 'OO' Else [{objectQualifier}ARD_InterOffice].OONo End) + Convert(varchar, [{objectQualifier}ARD_InterOffice].OOLoadNo)) End
+FROM  [{objectQualifier}ARD_InterOffice]
+WHERE  [{objectQualifier}ARD_InterOffice].JRCIOfficeCode = @JRCIOfficeCode
+
+GO
+
+
+/* Following procedure is for Sort the LoadSheet Details */
+
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_SortLoadSheets]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_SortLoadSheets]
+GO
+
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}bhattji_SortLoadSheets]
+	@ModuleId	int
+
+AS
+
+DECLARE	@counter as int
+DECLARE	@PK as int
+SET		@counter = 10
+
+--Make Temp table to hold Primary Keys FROM the table you want to renumber
+SELECT	ItemId
+INTO		[#TempTable]
+FROM		[{objectQualifier}tblOOLoadSheetHeader] as x
+WHERE	x.ModuleId = @ModuleId
+ORDER BY	x.ViewOrder asc,  x.CreatedDate desc
+
+
+
+--Loop through each temptable record
+WHILE (SELECT COUNT(ItemId) FROM #TempTable) > 0
+BEGIN
+	SET		rowcount 1
+
+	SELECT	@PK = ItemId
+	FROM #TempTable
+
+	SET rowcount 0
+
+
+	--UPDATE the view order for matching record in [{objectQualifier}tblOOLoadSheetHeader]
+	UPDATE [{objectQualifier}tblOOLoadSheetHeader]
+	SET ViewOrder = @counter
+	WHERE [{objectQualifier}tblOOLoadSheetHeader].ItemId = @PK
+	AND [{objectQualifier}tblOOLoadSheetHeader].ModuleId = @ModuleId
+
+	SET @counter = @counter + 10
+
+	SET rowcount 1
+
+	DELETE FROM #TempTable
+	SET rowcount 0
+END
+
+SET rowcount 0
+
+DROP TABLE #TempTable
+
+SELECT * FROM [{objectQualifier}tblOOLoadSheetHeader] ORDER BY ViewOrder
+GO
+
+
+
+
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+/* LoadPU Table: Insert here the code to create tables and stored procs   */
+
+/* Insert here the code to create tables */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}tblOOLoadPU]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+begin
+
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadPU]  ALTER COLUMN [Miles] [float] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadPU]  ADD [ItemID] [int] IDENTITY (1, 1) NOT NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadPU]  ADD [ZipCode] [nvarchar](5) NULL
+
+end
+
+else
+
+CREATE TABLE {databaseOwner}[{objectQualifier}tblOOLoadPU] (
+	[ItemID] [int] IDENTITY (1, 1) NOT NULL ,
+
+	[Seq] [int] NULL ,
+	[LoadID] [nvarchar] (10)NOT NULL ,
+	[PUName] [nvarchar] (30)NULL ,
+	[PUAdd1] [nvarchar] (30)NULL ,
+	[PRONo] [nvarchar] (25)NULL ,
+	[PUCity] [nvarchar] (20)NULL ,
+	[PUState] [nvarchar] (2)NULL ,
+	[ZipCode] [nvarchar] (5)NULL ,
+	[PUTel] [nvarchar] (14)NULL ,
+	[PUContact] [nvarchar] (20)NULL ,
+	[PUDate] [datetime] NULL ,
+	[PUTime] [datetime] NULL ,
+	[Pieces] [nvarchar] (10)NULL ,
+	[Weight] [nvarchar] (10)NULL ,
+	[Miles] [float] NULL
+
+)
+GO
+
+
+
+
+
+/* Insert here the code to create stored procs   */
+
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+/* Following procedure is for Add the Load PickUp Details */
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddLoadPU]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddLoadPU]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddLoadPU]
+
+	@Seq int,
+    @LoadID nvarchar(10),
+	@PUName nvarchar(30),
+	@PUAdd1 nvarchar(30),
+	@PRONo nvarchar(25),
+	@PUCity nvarchar(20),
+	@PUState nvarchar(2),
+	@ZipCode nvarchar(5),
+	@PUTel nvarchar(14),
+	@PUContact nvarchar(20),
+	@PUDate datetime,
+	@PUTime datetime,
+	@Pieces nvarchar(10),
+	@Weight nvarchar(10),
+	@Miles float
+
+AS
+
+INSERT INTO {objectQualifier}tblOOLoadPU (
+
+	[Seq],
+	[LoadID],
+	[PUName],
+	[PUAdd1],
+	[PRONo],
+	[PUCity],
+	[PUState],
+	[ZipCode],
+	[PUTel],
+	[PUContact],
+	[PUDate],
+	[PUTime],
+	[Pieces],
+	[Weight],
+	[Miles]
+
+) VALUES (
+
+	@Seq,
+	@LoadID,
+	@PUName,
+	@PUAdd1,
+	@PRONo,
+	@PUCity,
+	@PUState,
+	@ZipCode,
+	@PUTel,
+	@PUContact,
+	@PUDate,
+	@PUTime,
+	@Pieces,
+	@Weight,
+	@Miles
+
+)
+
+
+SELECT SCOPE_IDENTITY()
+GO
+
+
+
+
+/* Following procedure is for Add the Load PickUp Details By LoadID*/
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddLoadPUByLoadId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddLoadPUByLoadId]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddLoadPUByLoadId]
+
+	@Seq int,
+    @LoadID nvarchar(10),
+	@PUName nvarchar(30),
+	@PUAdd1 nvarchar(30),
+	@PRONo nvarchar(25),
+	@PUCity nvarchar(20),
+	@PUState nvarchar(2),
+	@ZipCode nvarchar(5),
+	@PUTel nvarchar(14),
+	@PUContact nvarchar(20),
+	@PUDate datetime,
+	@PUTime datetime,
+	@Pieces nvarchar(10),
+	@Weight nvarchar(10),
+	@Miles float
+
+AS
+
+INSERT INTO {objectQualifier}tblOOLoadPU (
+
+	[Seq],
+	[LoadID],
+	[PUName],
+	[PUAdd1],
+	[PRONo],
+	[PUCity],
+	[PUState],
+	[ZipCode],
+	[PUTel],
+	[PUContact],
+	[PUDate],
+	[PUTime],
+	[Pieces],
+	[Weight],
+	[Miles]
+
+) VALUES (
+
+	@Seq,
+	@LoadID,
+	@PUName,
+	@PUAdd1,
+	@PRONo,
+	@PUCity,
+	@PUState,
+	@ZipCode,
+	@PUTel,
+	@PUContact,
+	@PUDate,
+	@PUTime,
+	@Pieces,
+	@Weight,
+	@Miles
+
+)
+
+
+SELECT @LoadId
+GO
+
+
+
+
+
+/* Following procedure is for Update the Load PickUp Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateLoadPU]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateLoadPU]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateLoadPU]
+	@ItemId int,
+
+	@Seq int,
+	@LoadID nvarchar(10),
+	@PUName nvarchar(30),
+	@PUAdd1 nvarchar(30),
+	@PRONo nvarchar(25),
+	@PUCity nvarchar(20),
+	@PUState nvarchar(2),
+	@ZipCode nvarchar(5),
+	@PUTel nvarchar(14),
+	@PUContact nvarchar(20),
+	@PUDate datetime,
+	@PUTime datetime,
+	@Pieces nvarchar(10),
+	@Weight nvarchar(10),
+	@Miles float
+
+AS
+
+UPDATE {objectQualifier}tblOOLoadPU
+
+SET
+	[Seq] = @Seq,
+	[PUName] = @PUName,
+	[PUAdd1] = @PUAdd1,
+	[PRONo] = @PRONo,
+	[PUCity] = @PUCity,
+	[PUState] = @PUState,
+	[ZipCode] = @ZipCode,
+	[PUTel] = @PUTel,
+	[PUContact] = @PUContact,
+	[PUDate] = @PUDate,
+	[PUTime] = @PUTime,
+	[Pieces] = @Pieces,
+	[Weight] = @Weight,
+	[Miles] = @Miles
+
+WHERE
+	[ItemId] = @ItemId
+GO
+
+
+
+
+/* Following procedure is for Update the Load PickUp By Load ID */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateLoadPUByLoadId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateLoadPUByLoadId]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateLoadPUByLoadID]
+
+	@Seq int,
+	@LoadID nvarchar(10),
+	@PUName nvarchar(30),
+	@PUAdd1 nvarchar(30),
+	@PRONo nvarchar(25),
+	@PUCity nvarchar(20),
+	@PUState nvarchar(2),
+	@ZipCode nvarchar(5),
+	@PUTel nvarchar(14),
+	@PUContact nvarchar(20),
+	@PUDate datetime,
+	@PUTime datetime,
+	@Pieces nvarchar(10),
+	@Weight nvarchar(10),
+	@Miles float
+
+AS
+
+UPDATE {objectQualifier}tblOOLoadPU
+
+SET
+	[Seq] = @Seq,
+	[PUName] = @PUName,
+	[PUAdd1] = @PUAdd1,
+	[PRONo] = @PRONo,
+	[PUCity] = @PUCity,
+	[PUState] = @PUState,
+	[ZipCode] = @ZipCode,
+	[PUTel] = @PUTel,
+	[PUContact] = @PUContact,
+	[PUDate] = @PUDate,
+	[PUTime] = @PUTime,
+	[Pieces] = @Pieces,
+	[Weight] = @Weight,
+	[Miles] = @Miles
+
+WHERE
+	[LoadID] = @LoadID
+GO
+
+
+
+
+/* Following procedure is for Delete the Load PickUp Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteLoadPU]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteLoadPU]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_DeleteLoadPU]
+	@ItemId int
+
+AS
+
+DELETE
+FROM [{objectQualifier}tblOOLoadPU]
+WHERE [ItemId] = @ItemId
+GO
+
+
+
+
+/* Following procedure is for Delete the Load PickUp Details By LoadID */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteLoadPULoadId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteLoadPULoadId]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_DeleteLoadPULoadId]
+	@LoadID nvarchar(10)
+
+AS
+
+DELETE
+FROM [{objectQualifier}tblOOLoadPU]
+WHERE LoadID = @LoadID
+GO
+
+
+
+
+
+/* Following procedure is for Get the Load PickUp Details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetLoadPU]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetLoadPU]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetLoadPU]
+	@ItemId int
+
+AS
+
+SELECT
+	[ItemId],
+
+	[Seq],
+	[LoadID],
+	[PUName],
+	[PUAdd1],
+	[PRONo],
+	[PUCity],
+	[PUState],
+	[ZipCode],
+	[PUTel],
+	[PUContact],
+	[PUDate],
+	[PUTime],
+	[Pieces],
+	[Weight],
+	[Miles]
+
+FROM {objectQualifier}tblOOLoadPU
+
+WHERE
+	[ItemId] = @ItemId
+GO
+
+
+
+
+/* Following procedure is for Get the Load PickUp Details By LoadID */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetLoadPUByLoadId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetLoadPUByLoadId]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetLoadPUByLoadId]
+
+	@LoadId nvarchar(10)
+AS
+
+SELECT
+	[ItemId],
+
+	[Seq],
+	[LoadID],
+	[PUName],
+	[PUAdd1],
+	[PRONo],
+	[PUCity],
+	[PUState],
+	[ZipCode],
+	[PUTel],
+	[PUContact],
+	[PUDate],
+	[PUTime],
+	[Pieces],
+	[Weight],
+	[Miles]
+
+FROM {objectQualifier}tblOOLoadPU
+
+WHERE
+	[LoadId] = @LoadId
+
+ORDER BY [Seq],[ItemId]
+
+GO
+
+
+
+
+/* Following procedure is for Get the Load PickUp Details By LoadID */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetFirstLoadPU]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetFirstLoadPU]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetFirstLoadPU]
+
+	@LoadId nvarchar(10)
+AS
+
+SELECT TOP 1
+	[ItemId],
+
+	[Seq],
+	[LoadID],
+	[PUName],
+	[PUAdd1],
+	[PRONo],
+	[PUCity],
+	[PUState],
+	[ZipCode],
+	[PUTel],
+	[PUContact],
+	[PUDate],
+	[PUTime],
+	[Pieces],
+	[Weight],
+	[Miles]
+
+FROM {objectQualifier}tblOOLoadPU
+
+WHERE
+	[LoadId] = @LoadId
+
+ORDER BY [Seq],[ItemId]
+
+GO
+
+
+/* Following procedure is for Get the Load PickUp Details By LoadID */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetPUCitySTByLoadId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetPUCitySTByLoadId]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetPUCitySTByLoadId]
+
+	@LoadId nvarchar(10)
+
+AS
+
+SELECT TOP 1 
+	'PUCityST' = CASE WHEN PUState IS NULL THEN [PUCity] ELSE PUCity+', '+PUState END
+
+FROM {objectQualifier}tblOOLoadPU
+
+WHERE
+	[LoadId] = @LoadId
+
+ORDER BY [Seq], [ItemId]
+
+GO
+
+
+
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              LoadDrops               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* LoadDrops: Insert here the code to create tables and stored procs   */
+
+/* Insert here the code to create tables */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}tblOOLoadDrop]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+begin
+
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadDrop]  ALTER COLUMN [BOLSeq] [nvarchar](30) NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadDrop]  ADD [ItemID] [int] IDENTITY (1, 1) NOT NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblOOLoadDrop]  ADD [ZipCode] [nvarchar](5) NULL
+
+end
+
+else
+
+CREATE TABLE {databaseOwner}[{objectQualifier}tblOOLoadDrop] (
+	[ItemID] [int] IDENTITY (1, 1) NOT NULL ,
+
+	[Seq] [int] NULL ,
+	[LoadID] [nvarchar] (10)NOT NULL ,
+	[DPName] [ntext]NULL ,
+	[DPAddr] [nvarchar] (30)NULL ,
+	[DPCity] [nvarchar] (25)NULL ,
+	[DPState] [nvarchar] (2)NULL ,
+	[ZipCode] [nvarchar] (5)NULL ,
+	[DPPhone] [nvarchar] (14)NULL ,
+	[DPDate] [datetime] NULL ,
+	[DPContact] [nvarchar] (25)NULL ,
+	[Jobno] [nvarchar] (20)NULL ,
+	[BillOLay] [nvarchar] (15)NULL ,
+	[BOLSeq] [nvarchar] (30)NULL ,
+	[Stime] [datetime] NULL ,
+	[Etime] [datetime] NULL
+
+)
+GO
+
+
+
+
+
+/* Insert here the code to create stored procs   */
+
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+
+/* Following procedure is for Add the Load Drop Details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddLoadDrop]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddLoadDrop]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddLoadDrop]
+
+	@Seq int,
+	@LoadID nvarchar(10),
+	@DPName ntext,
+	@DPAddr nvarchar(30),
+	@DPCity nvarchar(25),
+	@DPState nvarchar(2),
+	@ZipCode nvarchar(5),
+	@DPPhone nvarchar(14),
+	@DPDate datetime,
+	@DPContact nvarchar(25),
+	@Jobno nvarchar(20),
+	@BillOLay nvarchar(15),
+	@BOLSeq nvarchar(30),
+	@Stime datetime,
+	@Etime datetime
+
+AS
+
+INSERT INTO {objectQualifier}tblOOLoadDrop (
+
+	[Seq],
+	[LoadID],
+	[DPName],
+	[DPAddr],
+	[DPCity],
+	[DPState],
+	[ZipCode],
+	[DPPhone],
+	[DPDate],
+	[DPContact],
+	[Jobno],
+	[BillOLay],
+	[BOLSeq],
+	[Stime],
+	[Etime]
+
+) VALUES (
+
+	@Seq,
+	@LoadID,
+	@DPName,
+	@DPAddr,
+	@DPCity,
+	@DPState,
+	@ZipCode,
+	@DPPhone,
+	@DPDate,
+	@DPContact,
+	@Jobno,
+	@BillOLay,
+	@BOLSeq,
+	@Stime,
+	@Etime
+
+)
+
+
+SELECT SCOPE_IDENTITY()
+GO
+
+
+
+/* Following procedure is for Add the Load Drop Details By LoadID */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddLoadDropByLoadId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddLoadDropByLoadId]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddLoadDropByLoadId]
+
+	@Seq int,
+	@LoadID nvarchar(10),
+	@DPName ntext,
+	@DPAddr nvarchar(30),
+	@DPCity nvarchar(25),
+	@DPState nvarchar(2),
+	@ZipCode nvarchar(5),
+	@DPPhone nvarchar(14),
+	@DPDate datetime,
+	@DPContact nvarchar(25),
+	@Jobno nvarchar(20),
+	@BillOLay nvarchar(15),
+	@BOLSeq nvarchar(30),
+	@Stime datetime,
+	@Etime datetime
+
+AS
+
+INSERT INTO {objectQualifier}tblOOLoadDrop (
+
+	[Seq],
+	[LoadID],
+	[DPName],
+	[DPAddr],
+	[DPCity],
+	[DPState],
+	[ZipCode],
+	[DPPhone],
+	[DPDate],
+	[DPContact],
+	[Jobno],
+	[BillOLay],
+	[BOLSeq],
+	[Stime],
+	[Etime]
+
+) VALUES (
+
+	@Seq,
+	@LoadID,
+	@DPName,
+	@DPAddr,
+	@DPCity,
+	@DPState,
+	@ZipCode,
+	@DPPhone,
+	@DPDate,
+	@DPContact,
+	@Jobno,
+	@BillOLay,
+	@BOLSeq,
+	@Stime,
+	@Etime
+
+)
+
+
+SELECT @LoadId
+GO
+
+
+
+/* Following procedure is for Update the Load Drop Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateLoadDrop]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateLoadDrop]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateLoadDrop]
+	@ItemId int,
+
+	@Seq int,
+	@LoadID nvarchar(10),
+	@DPName ntext,
+	@DPAddr nvarchar(30),
+	@DPCity nvarchar(25),
+	@DPState nvarchar(2),
+	@ZipCode nvarchar(5),
+	@DPPhone nvarchar(14),
+	@DPDate datetime,
+	@DPContact nvarchar(25),
+	@Jobno nvarchar(20),
+	@BillOLay nvarchar(15),
+	@BOLSeq nvarchar(30),
+	@Stime datetime,
+	@Etime datetime
+
+AS
+
+UPDATE {objectQualifier}tblOOLoadDrop
+
+SET
+	[Seq] = @Seq,
+	[DPName] = @DPName,
+	[DPAddr] = @DPAddr,
+	[DPCity] = @DPCity,
+	[DPState] = @DPState,
+	[ZipCode] = @ZipCode,
+	[DPPhone] = @DPPhone,
+	[DPDate] = @DPDate,
+	[DPContact] = @DPContact,
+	[Jobno] = @Jobno,
+	[BillOLay] = @BillOLay,
+	[BOLSeq] = @BOLSeq,
+	[Stime] = @Stime,
+	[Etime] = @Etime
+
+WHERE
+	[ItemId] = @ItemId
+GO
+
+
+
+
+/* Following procedure is for Update the Load Drop Details By LoadID */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateLoadDropByLoadID]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateLoadDropByLoadID]
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateLoadDropByLoadID]
+
+	@Seq int,
+	@LoadID nvarchar(10),
+	@DPName ntext,
+	@DPAddr nvarchar(30),
+	@DPCity nvarchar(25),
+	@DPState nvarchar(2),
+	@ZipCode nvarchar(5),
+	@DPPhone nvarchar(14),
+	@DPDate datetime,
+	@DPContact nvarchar(25),
+	@Jobno nvarchar(20),
+	@BillOLay nvarchar(15),
+	@BOLSeq nvarchar(30),
+	@Stime datetime,
+	@Etime datetime
+
+AS
+
+UPDATE {objectQualifier}tblOOLoadDrop
+
+SET
+	[Seq] = @Seq,
+	[DPName] = @DPName,
+	[DPAddr] = @DPAddr,
+	[DPCity] = @DPCity,
+	[DPState] = @DPState,
+	[ZipCode] = @ZipCode,
+	[DPPhone] = @DPPhone,
+	[DPDate] = @DPDate,
+	[DPContact] = @DPContact,
+	[Jobno] = @Jobno,
+	[BillOLay] = @BillOLay,
+	[BOLSeq] = @BOLSeq,
+	[Stime] = @Stime,
+	[Etime] = @Etime
+
+WHERE
+	[LoadID] = @LoadID
+GO
+
+
+
+/* Following procedure is for Delete the Load Drop Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteLoadDrop]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteLoadDrop]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_DeleteLoadDrop]
+	@ItemId int
+
+AS
+
+DELETE
+FROM [{objectQualifier}tblOOLoadDrop]
+WHERE ItemId = @ItemId
+GO
+
+
+
+/* Following procedure is for Delete the Load Drop Details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteLoadDropByLoadId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteLoadDropByLoadId]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_DeleteLoadDropByLoadId]
+	@LoadID nvarchar(10)
+
+AS
+
+DELETE
+FROM [{objectQualifier}tblOOLoadDrop]
+WHERE LoadID = @LoadID
+GO
+
+
+
+/* Following procedure is for Get the Load Drop Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetLoadDrop]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetLoadDrop]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetLoadDrop]
+
+	@ItemId int
+
+AS
+
+SELECT
+	[ItemId],
+
+	[Seq],
+	[LoadID],
+	[DPName],
+	[DPAddr],
+	[DPCity],
+	[DPState],
+	[ZipCode],
+	[DPPhone],
+	[DPDate],
+	[DPContact],
+	[Jobno],
+	[BillOLay],
+	[BOLSeq],
+	[Stime],
+	[Etime]
+
+FROM {objectQualifier}tblOOLoadDrop
+
+WHERE
+	[ItemId] = @ItemId
+GO
+
+
+
+
+/* Following procedure is for Get the Load Drop Details By LoadID */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetLoadDropByLoadID]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetLoadDropByLoadID]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetLoadDropByLoadId]
+
+	@LoadId nvarchar(10)
+
+AS
+
+SELECT
+	[ItemId],
+
+	[Seq],
+	[LoadID],
+	[DPName],
+	[DPAddr],
+	[DPCity],
+	[DPState],
+	[ZipCode],
+	[DPPhone],
+	[DPDate],
+	[DPContact],
+	[Jobno],
+	[BillOLay],
+	[BOLSeq],
+	[Stime],
+	[Etime]
+
+FROM {objectQualifier}tblOOLoadDrop
+
+WHERE
+	[LoadId] = @LoadId
+
+ORDER BY [Seq],[ItemId]
+
+GO
+
+
+
+
+/* Following procedure is for Get the Load Drop Details By LoadID */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetLastLoadDP]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetLastLoadDP]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetLastLoadDP]
+
+	@LoadId nvarchar(10)
+
+AS
+
+SELECT TOP 1 
+	[ItemId],
+
+	[Seq],
+	[LoadID],
+	[DPName],
+	[DPAddr],
+	[DPCity],
+	[DPState],
+	[ZipCode],
+	[DPPhone],
+	[DPDate],
+	[DPContact],
+	[Jobno],
+	[BillOLay],
+	[BOLSeq],
+	[Stime],
+	[Etime]
+
+FROM {objectQualifier}tblOOLoadDrop
+
+WHERE
+	[LoadId] = @LoadId
+
+ORDER BY [Seq] desc, [ItemId] desc
+
+GO
+
+
+
+/* Following procedure is for Get the Load Drop Details By LoadID */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetDPCitySTByLoadId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetDPCitySTByLoadId]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetDPCitySTByLoadId]
+
+	@LoadId nvarchar(10)
+
+AS
+
+SELECT TOP 1 
+	'DPCityST' = CASE WHEN DPState IS NULL THEN [DPCity] ELSE DPCity+', '+DPState END
+
+FROM {objectQualifier}tblOOLoadDrop
+
+WHERE
+	[LoadId] = @LoadId
+
+ORDER BY Seq desc, ItemId desc
+
+GO
+
+
+
+
+/* Following procedure is for Get the User IOs */
+
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetUserIOs]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetUserIOs]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetUserIOs]
+	@Username nvarchar(20)
+
+AS
+
+SELECT
+	[{objectQualifier}ARD_InterOffice].[JRCIOfficeCode],
+	[{objectQualifier}ARD_InterOffice].[JRCActive],
+	[{objectQualifier}ARD_InterOffice].[IOfficeCode],
+	[{objectQualifier}ARD_InterOffice].[IOName],
+	
+	[{objectQualifier}ARD_InterOffice].[APCodeFM],
+	[{objectQualifier}ARD_InterOffice].[AbvrNameFM],
+	[{objectQualifier}ARD_InterOffice].[CommRateFM],
+	[{objectQualifier}ARD_InterOffice].[BKCommRateFM],
+	
+	[{objectQualifier}ARD_InterOffice].[City],
+	[{objectQualifier}ARD_InterOffice].[State],
+	[{objectQualifier}ARD_InterOffice].[BrokerOnly],
+	[{objectQualifier}ARD_InterOffice].[ItemId],
+	[{objectQualifier}ARD_DispatchMasterfile].[ItemId],
+	[{objectQualifier}ARD_DispatchMasterfile].[DispatchCode],
+	[{objectQualifier}bhattji_DispatcherIO].[DispatcherId],
+	[{objectQualifier}bhattji_DispatcherIO].[InterOfficeId]
+
+
+FROM [{objectQualifier}bhattji_DispatcherIO]
+	 JOIN [{objectQualifier}ARD_InterOffice] ON [{objectQualifier}ARD_InterOffice].ItemId = [{objectQualifier}bhattji_DispatcherIO].InterOfficeId
+	 JOIN [{objectQualifier}ARD_DispatchMasterfile] ON [{objectQualifier}ARD_DispatchMasterfile].ItemId = [{objectQualifier}bhattji_DispatcherIO].DispatcherId
+
+WHERE
+	 [{objectQualifier}ARD_DispatchMasterfile].DispatchCode = @Username
+
+ORDER BY [{objectQualifier}ARD_InterOffice].[IOName], [{objectQualifier}ARD_InterOffice].[JRCIOfficeCode]
+
+GO
+
+
+/* Following procedure is for Get the User default IO */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetUserDefaultIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetUserDefaultIO]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetUserDefaultIO]
+	@Username nvarchar(20)
+
+AS
+
+SELECT [Office]
+FROM [{objectQualifier}ARD_DispatchMasterfile]
+WHERE [{objectQualifier}ARD_DispatchMasterfile].DispatchCode = @Username
+
+GO
+
+
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              LoadAccts               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create/drop tables and stored procs   */
+
+/* Insert here the code to drop stored procs if exists  */
+
+
+
+
+/* Insert here the code to drop tables  */
+
+
+/* Insert here the code to create tables and stored procs   */
+
+/* Insert here the code to alter tables if exists else create new tables */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}tblLoadAcct]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+begin
+
+ALTER TABLE {databaseOwner}[{objectQualifier}tblLoadAcct]  ALTER COLUMN [IOOffN1] [nvarchar] (40) NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblLoadAcct]  ALTER COLUMN [IOOffN2] [nvarchar] (40) NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblLoadAcct]  ALTER COLUMN [IOOffN3] [nvarchar] (40) NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblLoadAcct]  ALTER COLUMN [IOOffN4] [nvarchar] (40) NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}tblLoadAcct]  ADD [OverrideCode] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblLoadAcct]  ADD [OverriddenBy] [nvarchar] (12) NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}tblLoadAcct]  ADD [FixedDiscount] [bit] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblLoadAcct]  ADD [AdjustJrcTotal] [bit] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblLoadAcct]  ADD [RepFixed] [bit] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}tblLoadAcct]  ADD [ItemID] [int] IDENTITY (1, 1) NOT NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblLoadAcct]  ADD [ModuleId] [int] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}tblLoadAcct]  ADD [ViewOrder] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblLoadAcct]  ADD [UpdatedByUserId] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblLoadAcct]  ADD [UpdatedDate] [datetime] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblLoadAcct]  ADD [CreatedByUserId] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}tblLoadAcct]  ADD [CreatedDate] [datetime] NULL
+
+end
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}tblLoadAcct]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+begin
+
+
+UPDATE {databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]  SET [ModuleId] = 371,[UpdatedByUserId] = 1,[UpdatedDate] = GetDate(),[CreatedByUserId] = 1,[CreatedDate] = GetDate()
+
+UPDATE {databaseOwner}[{objectQualifier}tblLoadAcct]  SET [BKFixed] = 'Y' WHERE [DRCommBase] > 0 
+
+
+end
+
+else
+
+CREATE TABLE {databaseOwner}[{objectQualifier}tblLoadAcct] (
+	[ItemID] [int] IDENTITY (1, 1) NOT NULL ,
+	[ModuleID] [int] NULL ,
+
+	[LoadID] [nvarchar] (10) NULL ,
+	[BBaseLoad] [decimal](18, 2) NULL ,
+	[FixedDiscount] [bit] NULL,
+	[DiscountPCT] [float] NULL ,
+	[DiscountDlr] [decimal](18, 2) NULL ,
+	[BDeten] [float] NULL ,
+	[BTolls] [float] NULL ,
+	[BFuel] [float] NULL ,
+	[BDrop] [float] NULL ,
+	[BRecon] [float] NULL ,
+	[BTarp] [float] NULL ,
+	[BLumper] [float] NULL ,
+	[BUnload] [float] NULL ,
+	[BAdminMisc] [float] NULL ,
+	[BCustBill] [decimal](18, 3) NULL ,
+	[DRCommBase] [decimal](18, 2) NULL ,
+	[DRRebur] [float] NULL ,
+	[DRPermits] [float] NULL ,
+	[DRTolls] [float] NULL ,
+	[DRMisc] [float] NULL ,
+	[DRTotDue] [float] NULL ,
+	[APCommTot] [float] NULL ,
+	[CalcMI] [float] NULL ,
+	[CalcRate] [float] NULL ,
+	[CalcTot] [decimal](18, 2) NULL ,
+	[JRCIOOffC1] [nvarchar] (9) NULL ,
+	[JRCIOOffC2] [nvarchar] (9) NULL ,
+	[IOOffC1] [nvarchar] (7) NULL ,
+	[IOOffC2] [nvarchar] (7) NULL ,
+	[IOOffC3] [nvarchar] (7) NULL ,
+	[IOOffC4] [nvarchar] (7) NULL ,
+	[IOOffN1] [nvarchar] (40) NULL ,
+	[IOOffN2] [nvarchar] (40) NULL ,
+	[IOOffN3] [nvarchar] (40) NULL ,
+	[IOOffN4] [nvarchar] (40) NULL ,
+	[IOComm1] [float] NULL ,
+	[IOComm2] [float] NULL ,
+	[IOComm3] [float] NULL ,
+	[IOComm4] [float] NULL ,
+	[IOOffL1] [nvarchar] (10) NULL ,
+	[IOOffL2] [nvarchar] (10) NULL ,
+	[IOOffL3] [nvarchar] (10) NULL ,
+	[IOOffL4] [nvarchar] (10) NULL ,
+	[IOCommTot] [float] NULL ,
+	[IOAdmin1] [float] NULL ,
+	[IOAdmin2] [float] NULL ,
+	[IOAdmin3] [float] NULL ,
+	[IOAdmin4] [float] NULL ,
+	[IOAdminTot] [float] NULL ,
+	[ExPermits] [float] NULL ,
+	[ExTrailer] [float] NULL ,
+	[ExMisc] [float] NULL ,
+	[ExTot] [float] NULL ,
+	[AdminExempt] [nvarchar] (1) NULL ,
+	[JRCOnePct] [decimal](18, 3) NULL ,
+	[JRCOffComm] [decimal](18, 3) NULL ,
+	[JRCTotal] [decimal](18, 3) NULL ,
+	[BINC3] [nvarchar] (1) NULL ,
+	[BINC4] [nvarchar] (1) NULL ,
+	[BINC5] [nvarchar] (1) NULL ,
+	[BINC6] [nvarchar] (1) NULL ,
+	[BINC7] [nvarchar] (1) NULL ,
+	[BINC8] [nvarchar] (1) NULL ,
+	[BINC9] [nvarchar] (1) NULL ,
+	[BINC10] [nvarchar] (1) NULL ,
+	[BINC11] [nvarchar] (1) NULL ,
+	[JRCOffPct] [float] NULL ,
+	[JRCBkrPct] [float] NULL ,
+	[BkrPct] [float] NULL ,
+	[BkrDlr] [float] NULL ,
+	[IODlr] [float] NULL ,
+	[IOPct] [float] NULL ,
+	[DCPCT] [float] NULL ,
+	[ONEPCT] [float] NULL ,
+	[RepFixed] [bit] NULL ,
+	[RepPct] [float] NULL ,
+	[RepDlr] [float] NULL ,
+	[DispPct] [float] NULL ,
+	[DispDlr] [float] NULL ,
+	[IOXPct1] [float] NULL ,
+	[IOXPct2] [float] NULL ,
+	[IOXPct3] [float] NULL ,
+	[IOXPct4] [float] NULL ,
+	[JRCAdminP] [float] NULL ,
+	[APOffC1] [nvarchar] (7) NULL ,
+	[APOffC2] [nvarchar] (7) NULL ,
+	[APOffC3] [nvarchar] (7) NULL ,
+	[APOffC4] [nvarchar] (7) NULL ,
+	[APOffN1] [nvarchar] (20) NULL ,
+	[APOffN2] [nvarchar] (20) NULL ,
+	[APOffN3] [nvarchar] (20) NULL ,
+	[APOffN4] [nvarchar] (20) NULL ,
+	[APComm1] [float] NULL ,
+	[APComm2] [float] NULL ,
+	[APComm3] [float] NULL ,
+	[APComm4] [float] NULL ,
+	[APCPct1] [float] NULL ,
+	[APCPct2] [float] NULL ,
+	[APCPct3] [float] NULL ,
+	[APCPct4] [float] NULL ,
+	[AllowORide] [nvarchar] (1) NULL ,
+	[BType] [nvarchar] (2) NULL ,
+	[OCommPlus] [float] NULL ,
+	[OCommNeg] [float] NULL ,
+	[AlumaPct] [float] NULL ,
+	[AlumaDlrDisc] [float] NULL ,
+	[BKFixed] [nvarchar] (1) NULL ,
+	[IOFixed] [nvarchar] (1) NULL ,
+	[GPPct] [float] NULL ,
+	[TPName] [nvarchar] (30) NULL ,
+	[TPAmt] [float] NULL ,
+	[TPDesc] [nvarchar] (50) NULL ,
+	[TPPaidDate] [smalldatetime] NULL ,
+	[TPCkNo] [nvarchar] (10) NULL ,
+	[JRC5050] [nvarchar] (1) NULL ,
+	[Calc85] [nvarchar] (1) NULL ,
+	[DvrDedPct] [float] NULL ,
+	[DvrDedResn] [nvarchar] (20) NULL,
+	
+	[OverrideCode] [int] NULL,
+	[OverriddenBy] [nvarchar] (12) NULL,
+	[AdjustJrcTotal] [bit] NULL,
+
+	[ViewOrder] [int] NULL ,
+	[UpdatedByUserId] [int]  NULL ,
+	[UpdatedDate] [datetime] NULL ,
+	[CreatedByUserId] [int]  NULL ,
+	[CreatedDate] [datetime] NULL
+
+) ON [PRIMARY]
+GO
+
+
+
+
+
+/* Insert here the code to create stored procs   */
+
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+/* Following procedure is for Add the Load Account Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddLoadAcct]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddLoadAcct]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddLoadAcct]
+
+	@ModuleID int ,
+
+	@LoadID nvarchar(10),
+	@BBaseLoad decimal(18, 2),
+	@FixedDiscount bit,
+	@DiscountPCT float,
+	@DiscountDlr decimal(18, 2),
+	@BDeten float,
+	@BTolls float,
+	@BFuel float,
+	@BDrop float,
+	@BRecon float,
+	@BTarp float,
+	@BLumper float,
+	@BUnload float,
+	@BAdminMisc float,
+	@BCustBill decimal(18, 3),
+	@DRCommBase decimal(18, 2),
+	@DRRebur float,
+	@DRPermits float,
+	@DRTolls float,
+	@DRMisc float,
+	@DRTotDue float,
+	@APCommTot float,
+	@CalcMI float,
+	@CalcRate float,
+	@CalcTot decimal(18, 2),
+	@JRCIOOffC1 nvarchar(9),
+	@JRCIOOffC2 nvarchar(9),
+	@IOOffC1 nvarchar(7),
+	@IOOffC2 nvarchar(7),
+	@IOOffC3 nvarchar(7),
+	@IOOffC4 nvarchar(7),
+	@IOOffN1 nvarchar(40),
+	@IOOffN2 nvarchar(40),
+	@IOOffN3 nvarchar(40),
+	@IOOffN4 nvarchar(40),
+	@IOComm1 float,
+	@IOComm2 float,
+	@IOComm3 float,
+	@IOComm4 float,
+	@IOOffL1 nvarchar(10),
+	@IOOffL2 nvarchar(10),
+	@IOOffL3 nvarchar(10),
+	@IOOffL4 nvarchar(10),
+	@IOCommTot float,
+	@IOAdmin1 float,
+	@IOAdmin2 float,
+	@IOAdmin3 float,
+	@IOAdmin4 float,
+	@IOAdminTot float,
+	@ExPermits float,
+	@ExTrailer float,
+	@ExMisc float,
+	@ExTot float,
+	@AdminExempt nvarchar(1),
+	@JRCOnePct decimal(18, 3),
+	@JRCOffComm decimal(18, 3),
+	@JRCTotal decimal(18, 3),
+	@BINC3 nvarchar(1),
+	@BINC4 nvarchar(1),
+	@BINC5 nvarchar(1),
+	@BINC6 nvarchar(1),
+	@BINC7 nvarchar(1),
+	@BINC8 nvarchar(1),
+	@BINC9 nvarchar(1),
+	@BINC10 nvarchar(1),
+	@BINC11 nvarchar(1),
+	@JRCOffPct float,
+	@JRCBkrPct float,
+	@BkrPct float,
+	@BkrDlr float,
+	@IODlr float,
+	@IOPct float,
+	@DCPCT float,
+	@ONEPCT float,
+	@RepFixed bit,
+	@RepPct float,
+	@RepDlr float,
+	@DispPct float,
+	@DispDlr float,
+	@IOXPct1 float,
+	@IOXPct2 float,
+	@IOXPct3 float,
+	@IOXPct4 float,
+	@JRCAdminP float,
+	@APOffC1 nvarchar(7),
+	@APOffC2 nvarchar(7),
+	@APOffC3 nvarchar(7),
+	@APOffC4 nvarchar(7),
+	@APOffN1 nvarchar(20),
+	@APOffN2 nvarchar(20),
+	@APOffN3 nvarchar(20),
+	@APOffN4 nvarchar(20),
+	@APComm1 float,
+	@APComm2 float,
+	@APComm3 float,
+	@APComm4 float,
+	@APCPct1 float,
+	@APCPct2 float,
+	@APCPct3 float,
+	@APCPct4 float,
+	@AllowORide nvarchar(1),
+	@BType nvarchar(2),
+	@OCommPlus float,
+	@OCommNeg float,
+	@AlumaPct float,
+	@AlumaDlrDisc float,
+	@BKFixed nvarchar(1),
+	@IOFixed nvarchar(1),
+	@GPPct float,
+	@TPName nvarchar(30),
+	@TPAmt float,
+	@TPDesc nvarchar(50),
+	@TPPaidDate smalldatetime,
+	@TPCkNo nvarchar(10),
+	@JRC5050 nvarchar(1),
+	@Calc85 nvarchar(1),
+	@DvrDedPct float,
+	@DvrDedResn nvarchar(20),
+		
+	@OverrideCode int,
+	@OverriddenBy nvarchar(12),
+	@AdjustJrcTotal bit,
+
+	@ViewOrder int ,
+
+	@CreatedByUserId int
+
+AS
+
+INSERT INTO {objectQualifier}tblLoadAcct (
+	[ModuleID],
+
+	[LoadID],
+	[BBaseLoad],
+	[FixedDiscount],
+	[DiscountPCT],
+	[DiscountDlr],
+	[BDeten],
+	[BTolls],
+	[BFuel],
+	[BDrop],
+	[BRecon],
+	[BTarp],
+	[BLumper],
+	[BUnload],
+	[BAdminMisc],
+	[BCustBill],
+	[DRCommBase],
+	[DRRebur],
+	[DRPermits],
+	[DRTolls],
+	[DRMisc],
+	[DRTotDue],
+	[APCommTot],
+	[CalcMI],
+	[CalcRate],
+	[CalcTot],
+	[JRCIOOffC1],
+	[JRCIOOffC2],
+	[IOOffC1],
+	[IOOffC2],
+	[IOOffC3],
+	[IOOffC4],
+	[IOOffN1],
+	[IOOffN2],
+	[IOOffN3],
+	[IOOffN4],
+	[IOComm1],
+	[IOComm2],
+	[IOComm3],
+	[IOComm4],
+	[IOOffL1],
+	[IOOffL2],
+	[IOOffL3],
+	[IOOffL4],
+	[IOCommTot],
+	[IOAdmin1],
+	[IOAdmin2],
+	[IOAdmin3],
+	[IOAdmin4],
+	[IOAdminTot],
+	[ExPermits],
+	[ExTrailer],
+	[ExMisc],
+	[ExTot],
+	[AdminExempt],
+	[JRCOnePct],
+	[JRCOffComm],
+	[JRCTotal],
+	[BINC3],
+	[BINC4],
+	[BINC5],
+	[BINC6],
+	[BINC7],
+	[BINC8],
+	[BINC9],
+	[BINC10],
+	[BINC11],
+	[JRCOffPct],
+	[JRCBkrPct],
+	[BkrPct],
+	[BkrDlr],
+	[IODlr],
+	[IOPct],
+	[DCPCT],
+	[ONEPCT],
+	[RepFixed],
+	[RepPct],
+	[RepDlr],
+	[DispPct],
+	[DispDlr],
+	[IOXPct1],
+	[IOXPct2],
+	[IOXPct3],
+	[IOXPct4],
+	[JRCAdminP],
+	[APOffC1],
+	[APOffC2],
+	[APOffC3],
+	[APOffC4],
+	[APOffN1],
+	[APOffN2],
+	[APOffN3],
+	[APOffN4],
+	[APComm1],
+	[APComm2],
+	[APComm3],
+	[APComm4],
+	[APCPct1],
+	[APCPct2],
+	[APCPct3],
+	[APCPct4],
+	[AllowORide],
+	[BType],
+	[OCommPlus],
+	[OCommNeg],
+	[AlumaPct],
+	[AlumaDlrDisc],
+	[BKFixed],
+	[IOFixed],
+	[GPPct],
+	[TPName],
+	[TPAmt],
+	[TPDesc],
+	[TPPaidDate],
+	[TPCkNo],
+	[JRC5050],
+	[Calc85],
+	[DvrDedPct],
+	[DvrDedResn],
+		
+	[OverrideCode],
+	[OverriddenBy],
+	[AdjustJrcTotal],
+
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	[UpdatedDate],
+	[CreatedByUserId],
+	[CreatedDate]
+) VALUES (
+	@ModuleID,
+
+	@LoadID,
+	@BBaseLoad,
+	@FixedDiscount,
+	@DiscountPCT,
+	@DiscountDlr,
+	@BDeten,
+	@BTolls,
+	@BFuel,
+	@BDrop,
+	@BRecon,
+	@BTarp,
+	@BLumper,
+	@BUnload,
+	@BAdminMisc,
+	@BCustBill,
+	@DRCommBase,
+	@DRRebur,
+	@DRPermits,
+	@DRTolls,
+	@DRMisc,
+	@DRTotDue,
+	@APCommTot,
+	@CalcMI,
+	@CalcRate,
+	@CalcTot,
+	@JRCIOOffC1,
+	@JRCIOOffC2,
+	@IOOffC1,
+	@IOOffC2,
+	@IOOffC3,
+	@IOOffC4,
+	@IOOffN1,
+	@IOOffN2,
+	@IOOffN3,
+	@IOOffN4,
+	@IOComm1,
+	@IOComm2,
+	@IOComm3,
+	@IOComm4,
+	@IOOffL1,
+	@IOOffL2,
+	@IOOffL3,
+	@IOOffL4,
+	@IOCommTot,
+	@IOAdmin1,
+	@IOAdmin2,
+	@IOAdmin3,
+	@IOAdmin4,
+	@IOAdminTot,
+	@ExPermits,
+	@ExTrailer,
+	@ExMisc,
+	@ExTot,
+	@AdminExempt,
+	@JRCOnePct,
+	@JRCOffComm,
+	@JRCTotal,
+	@BINC3,
+	@BINC4,
+	@BINC5,
+	@BINC6,
+	@BINC7,
+	@BINC8,
+	@BINC9,
+	@BINC10,
+	@BINC11,
+	@JRCOffPct,
+	@JRCBkrPct,
+	@BkrPct,
+	@BkrDlr,
+	@IODlr,
+	@IOPct,
+	@DCPCT,
+	@ONEPCT,
+	@RepFixed,
+	@RepPct,
+	@RepDlr,
+	@DispPct,
+	@DispDlr,
+	@IOXPct1,
+	@IOXPct2,
+	@IOXPct3,
+	@IOXPct4,
+	@JRCAdminP,
+	@APOffC1,
+	@APOffC2,
+	@APOffC3,
+	@APOffC4,
+	@APOffN1,
+	@APOffN2,
+	@APOffN3,
+	@APOffN4,
+	@APComm1,
+	@APComm2,
+	@APComm3,
+	@APComm4,
+	@APCPct1,
+	@APCPct2,
+	@APCPct3,
+	@APCPct4,
+	@AllowORide,
+	@BType,
+	@OCommPlus,
+	@OCommNeg,
+	@AlumaPct,
+	@AlumaDlrDisc,
+	@BKFixed,
+	@IOFixed,
+	@GPPct,
+	@TPName,
+	@TPAmt,
+	@TPDesc,
+	@TPPaidDate,
+	@TPCkNo,
+	@JRC5050,
+	@Calc85,
+	@DvrDedPct,
+	@DvrDedResn,
+
+	@OverrideCode,
+	@OverriddenBy,
+	@AdjustJrcTotal,
+	
+	@ViewOrder ,
+
+	@CreatedByUserId ,
+	GetDate(),
+	@CreatedByUserId ,
+	GetDate()
+)
+SELECT SCOPE_IDENTITY()
+GO
+
+
+
+
+/* Following procedure is for Update the Load Account Details */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateLoadAcct]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateLoadAcct]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateLoadAcct]
+
+	@ItemID int,
+
+
+	@LoadID nvarchar(10),
+	@BBaseLoad decimal(18, 2),
+	@FixedDiscount bit, 
+	@DiscountPCT float,
+	@DiscountDlr decimal(18, 2),
+	@BDeten float,
+	@BTolls float,
+	@BFuel float,
+	@BDrop float,
+	@BRecon float,
+	@BTarp float,
+	@BLumper float,
+	@BUnload float,
+	@BAdminMisc float,
+	@BCustBill decimal(18, 3),
+	@DRCommBase decimal(18, 2),
+	@DRRebur float,
+	@DRPermits float,
+	@DRTolls float,
+	@DRMisc float,
+	@DRTotDue float,
+	@APCommTot float,
+	@CalcMI float,
+	@CalcRate float,
+	@CalcTot decimal(18, 2),
+	@JRCIOOffC1 nvarchar(9),
+	@JRCIOOffC2 nvarchar(9),
+	@IOOffC1 nvarchar(7),
+	@IOOffC2 nvarchar(7),
+	@IOOffC3 nvarchar(7),
+	@IOOffC4 nvarchar(7),
+	@IOOffN1 nvarchar(40),
+	@IOOffN2 nvarchar(40),
+	@IOOffN3 nvarchar(40),
+	@IOOffN4 nvarchar(40),
+	@IOComm1 float,
+	@IOComm2 float,
+	@IOComm3 float,
+	@IOComm4 float,
+	@IOOffL1 nvarchar(10),
+	@IOOffL2 nvarchar(10),
+	@IOOffL3 nvarchar(10),
+	@IOOffL4 nvarchar(10),
+	@IOCommTot float,
+	@IOAdmin1 float,
+	@IOAdmin2 float,
+	@IOAdmin3 float,
+	@IOAdmin4 float,
+	@IOAdminTot float,
+	@ExPermits float,
+	@ExTrailer float,
+	@ExMisc float,
+	@ExTot float,
+	@AdminExempt nvarchar(1),
+	@JRCOnePct decimal(18, 3),
+	@JRCOffComm decimal(18, 3),
+	@JRCTotal decimal(18, 3),
+	@BINC3 nvarchar(1),
+	@BINC4 nvarchar(1),
+	@BINC5 nvarchar(1),
+	@BINC6 nvarchar(1),
+	@BINC7 nvarchar(1),
+	@BINC8 nvarchar(1),
+	@BINC9 nvarchar(1),
+	@BINC10 nvarchar(1),
+	@BINC11 nvarchar(1),
+	@JRCOffPct float,
+	@JRCBkrPct float,
+	@BkrPct float,
+	@BkrDlr float,
+	@IODlr float,
+	@IOPct float,
+	@DCPCT float,
+	@ONEPCT float,
+	@RepFixed bit,
+	@RepPct float,
+	@RepDlr float,
+	@DispPct float,
+	@DispDlr float,
+	@IOXPct1 float,
+	@IOXPct2 float,
+	@IOXPct3 float,
+	@IOXPct4 float,
+	@JRCAdminP float,
+	@APOffC1 nvarchar(7),
+	@APOffC2 nvarchar(7),
+	@APOffC3 nvarchar(7),
+	@APOffC4 nvarchar(7),
+	@APOffN1 nvarchar(20),
+	@APOffN2 nvarchar(20),
+	@APOffN3 nvarchar(20),
+	@APOffN4 nvarchar(20),
+	@APComm1 float,
+	@APComm2 float,
+	@APComm3 float,
+	@APComm4 float,
+	@APCPct1 float,
+	@APCPct2 float,
+	@APCPct3 float,
+	@APCPct4 float,
+	@AllowORide nvarchar(1),
+	@BType nvarchar(2),
+	@OCommPlus float,
+	@OCommNeg float,
+	@AlumaPct float,
+	@AlumaDlrDisc float,
+	@BKFixed nvarchar(1),
+	@IOFixed nvarchar(1),
+	@GPPct float,
+	@TPName nvarchar(30),
+	@TPAmt float,
+	@TPDesc nvarchar(50),
+	@TPPaidDate smalldatetime,
+	@TPCkNo nvarchar(10),
+	@JRC5050 nvarchar(1),
+	@Calc85 nvarchar(1),
+	@DvrDedPct float,
+	@DvrDedResn nvarchar(20),
+	
+	@OverrideCode int,
+	@OverriddenBy nvarchar(12),
+	@AdjustJrcTotal bit,
+
+	@ViewOrder int ,
+
+	@UpdatedByUserId int
+AS
+
+UPDATE {objectQualifier}tblLoadAcct
+
+SET
+
+	[LoadID] = @LoadID,
+	[BBaseLoad] = @BBaseLoad,
+	[FixedDiscount] = @FixedDiscount, 
+	[DiscountPCT] = @DiscountPCT,
+	[DiscountDlr] = @DiscountDlr,
+	[BDeten] = @BDeten,
+	[BTolls] = @BTolls,
+	[BFuel] = @BFuel,
+	[BDrop] = @BDrop,
+	[BRecon] = @BRecon,
+	[BTarp] = @BTarp,
+	[BLumper] = @BLumper,
+	[BUnload] = @BUnload,
+	[BAdminMisc] = @BAdminMisc,
+	[BCustBill] = @BCustBill,
+	[DRCommBase] = @DRCommBase,
+	[DRRebur] = @DRRebur,
+	[DRPermits] = @DRPermits,
+	[DRTolls] = @DRTolls,
+	[DRMisc] = @DRMisc,
+	[DRTotDue] = @DRTotDue,
+	[APCommTot] = @APCommTot,
+	[CalcMI] = @CalcMI,
+	[CalcRate] = @CalcRate,
+	[CalcTot] = @CalcTot,
+	[JRCIOOffC1] = @JRCIOOffC1,
+	[JRCIOOffC2] = @JRCIOOffC2,
+	[IOOffC1] = @IOOffC1,
+	[IOOffC2] = @IOOffC2,
+	[IOOffC3] = @IOOffC3,
+	[IOOffC4] = @IOOffC4,
+	[IOOffN1] = @IOOffN1,
+	[IOOffN2] = @IOOffN2,
+	[IOOffN3] = @IOOffN3,
+	[IOOffN4] = @IOOffN4,
+	[IOComm1] = @IOComm1,
+	[IOComm2] = @IOComm2,
+	[IOComm3] = @IOComm3,
+	[IOComm4] = @IOComm4,
+	[IOOffL1] = @IOOffL1,
+	[IOOffL2] = @IOOffL2,
+	[IOOffL3] = @IOOffL3,
+	[IOOffL4] = @IOOffL4,
+	[IOCommTot] = @IOCommTot,
+	[IOAdmin1] = @IOAdmin1,
+	[IOAdmin2] = @IOAdmin2,
+	[IOAdmin3] = @IOAdmin3,
+	[IOAdmin4] = @IOAdmin4,
+	[IOAdminTot] = @IOAdminTot,
+	[ExPermits] = @ExPermits,
+	[ExTrailer] = @ExTrailer,
+	[ExMisc] = @ExMisc,
+	[ExTot] = @ExTot,
+	[AdminExempt] = @AdminExempt,
+	[JRCOnePct] = @JRCOnePct,
+	[JRCOffComm] = @JRCOffComm,
+	[JRCTotal] = @JRCTotal,
+	[BINC3] = @BINC3,
+	[BINC4] = @BINC4,
+	[BINC5] = @BINC5,
+	[BINC6] = @BINC6,
+	[BINC7] = @BINC7,
+	[BINC8] = @BINC8,
+	[BINC9] = @BINC9,
+	[BINC10] = @BINC10,
+	[BINC11] = @BINC11,
+	[JRCOffPct] = @JRCOffPct,
+	[JRCBkrPct] = @JRCBkrPct,
+	[BkrPct] = @BkrPct,
+	[BkrDlr] = @BkrDlr,
+	[IODlr] = @IODlr,
+	[IOPct] = @IOPct,
+	[DCPCT] = @DCPCT,
+	[ONEPCT] = @ONEPCT,
+	[RepFixed] = @RepFixed,
+	[RepPct] = @RepPct,
+	[RepDlr] = @RepDlr,
+	[DispPct] = @DispPct,
+	[DispDlr] = @DispDlr,
+	[IOXPct1] = @IOXPct1,
+	[IOXPct2] = @IOXPct2,
+	[IOXPct3] = @IOXPct3,
+	[IOXPct4] = @IOXPct4,
+	[JRCAdminP] = @JRCAdminP,
+	[APOffC1] = @APOffC1,
+	[APOffC2] = @APOffC2,
+	[APOffC3] = @APOffC3,
+	[APOffC4] = @APOffC4,
+	[APOffN1] = @APOffN1,
+	[APOffN2] = @APOffN2,
+	[APOffN3] = @APOffN3,
+	[APOffN4] = @APOffN4,
+	[APComm1] = @APComm1,
+	[APComm2] = @APComm2,
+	[APComm3] = @APComm3,
+	[APComm4] = @APComm4,
+	[APCPct1] = @APCPct1,
+	[APCPct2] = @APCPct2,
+	[APCPct3] = @APCPct3,
+	[APCPct4] = @APCPct4,
+	[AllowORide] = @AllowORide,
+	[BType] = @BType,
+	[OCommPlus] = @OCommPlus,
+	[OCommNeg] = @OCommNeg,
+	[AlumaPct] = @AlumaPct,
+	[AlumaDlrDisc] = @AlumaDlrDisc,
+	[BKFixed] = @BKFixed,
+	[IOFixed] = @IOFixed,
+	[GPPct] = @GPPct,
+	[TPName] = @TPName,
+	[TPAmt] = @TPAmt,
+	[TPDesc] = @TPDesc,
+	[TPPaidDate] = @TPPaidDate,
+	[TPCkNo] = @TPCkNo,
+	[JRC5050] = @JRC5050,
+	[Calc85] = @Calc85,
+	[DvrDedPct] = @DvrDedPct,
+	[DvrDedResn] = @DvrDedResn,
+	
+	[OverrideCode] = @OverrideCode,
+	[OverriddenBy] = @OverriddenBy,
+	[AdjustJrcTotal] = @AdjustJrcTotal,
+
+	[ViewOrder] = @ViewOrder ,
+
+	[UpdatedByUserId] = @UpdatedByUserId ,
+	[UpdatedDate] = GetDate()
+WHERE
+	[ItemID] = @ItemID
+GO
+
+
+
+
+/* Following procedure is for Update the Load IOOffL1 Details */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateIOOffL1]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateIOOffL1]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateIOOffL1] 
+	@LoadID nvarchar(10),
+	@IOOffL1 nvarchar(10) 
+AS
+
+UPDATE {objectQualifier}tblLoadAcct
+
+SET 	[IOOffL1] = @IOOffL1 
+
+WHERE 	[LoadID] = @LoadID
+
+GO
+
+
+
+
+/* Following procedure is for Update the Load Account Details */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateRepDetails]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateRepDetails]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateRepDetails]
+
+	@ItemID int,
+
+	@RepPct float,
+	@RepDlr float
+AS
+
+UPDATE {objectQualifier}tblLoadAcct
+
+SET
+	[RepPct] = @RepPct,
+	[RepDlr] = @RepDlr
+	
+WHERE
+	[ItemID] = @ItemID
+GO
+
+
+/* Following procedure is for Update the Load Account Details */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateBrokerDetails]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateBrokerDetails]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateBrokerDetails]
+
+	@LoadID nvarchar(7),
+
+	@BkrPct float,
+	@BKFixed nvarchar(1)
+AS
+
+UPDATE {objectQualifier}tblLoadAcct
+
+SET
+	[BkrPct] = @BkrPct,
+	[BKFixed] = @BKFixed
+	
+WHERE
+	[LoadID] = @LoadID
+GO
+
+
+/* Following procedure is for Fix the Load Account Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_FixLoadAccts]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_FixLoadAccts]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_FixLoadAccts]
+
+	@ModuleID int,
+	@UpdatedByUserId int
+AS
+
+UPDATE {objectQualifier}tblLoadAcct SET	[ModuleID] = @ModuleID
+UPDATE {objectQualifier}tblLoadAcct SET	[UpdatedByUserId] = @UpdatedByUserId
+UPDATE {objectQualifier}tblLoadAcct SET	[UpdatedDate] = GetDate()
+
+GO
+
+
+
+/* Following procedure is for Delete the Load Account */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteLoadAcct]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteLoadAcct]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_DeleteLoadAcct]
+	@ItemId int
+
+AS
+
+DELETE
+FROM [{objectQualifier}tblLoadAcct]
+WHERE ItemId = @ItemId
+GO
+
+
+
+
+/* Following procedure is for Get the Load Account ID */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetLoadAcctId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetLoadAcctId]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetLoadAcctId]
+
+	@LoadId nvarchar(7)
+AS
+
+SELECT [ItemID]
+FROM [{objectQualifier}tblLoadAcct]
+WHERE [LoadID] = @LoadID
+
+GO
+
+
+
+
+/* Following procedure is for Get the Load Account */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetLoadAcct]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetLoadAcct]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetLoadAcct]
+
+	@ItemID int
+AS
+
+SELECT
+	x.[ItemID],
+	x.[ModuleID],
+
+	x.[LoadID],
+	[BBaseLoad],
+	[FixedDiscount], 
+	[DiscountPCT],
+	[DiscountDlr],
+	[BDeten],
+	[BTolls],
+	[BFuel],
+	[BDrop],
+	[BRecon],
+	[BTarp],
+	[BLumper],
+	[BUnload],
+	[BAdminMisc],
+	[BCustBill],
+	[DRCommBase],
+	[DRRebur],
+	[DRPermits],
+	[DRTolls],
+	[DRMisc],
+	[DRTotDue],
+	[APCommTot],
+	[CalcMI],
+	[CalcRate],
+	[CalcTot],
+	[JRCIOOffC1],
+	[JRCIOOffC2],
+	[IOOffC1],
+	[IOOffC2],
+	'IOOffC3'= CASE WHEN (x.IOAdmin4 > 0) THEN x.IOOffC3 ELSE so.APCodeFM END,
+	[IOOffC4],
+	[IOOffN1],
+	[IOOffN2],
+	'IOOffN3'= CASE WHEN (x.IOAdmin4 > 0) THEN x.IOOffN3 ELSE so.AbvrNameFM END,
+	[IOOffN4],
+	[IOComm1],
+	[IOComm2],
+	[IOComm3],
+	[IOComm4],
+	[IOOffL1],
+	[IOOffL2],
+	[IOOffL3],
+	[IOOffL4],
+	[IOCommTot],
+	[IOAdmin1],
+	[IOAdmin2],
+	'IOAdmin3'=CASE WHEN (x.IOAdmin3 > 0) THEN x.IOAdmin3 WHEN (ls.LoadType='OO') THEN so.CommRateFM ELSE so.BKCommRateFM END,
+	[IOAdmin4],
+	[IOAdminTot],
+	[ExPermits],
+	[ExTrailer],
+	[ExMisc],
+	[ExTot],
+	'AdminExempt' = CASE WHEN (ls.LoadType='OO') THEN sp.[AdminExempt] WHEN (ls.LoadType='BK') THEN bk.[AdminExempt] ELSE x.[AdminExempt] END,
+	[JRCOnePct],
+	[JRCOffComm],
+	[JRCTotal],
+	[BINC3],
+	[BINC4],
+	[BINC5],
+	[BINC6],
+	[BINC7],
+	[BINC8],
+	[BINC9],
+	[BINC10],
+	[BINC11],
+	'JRCOffPct' = CASE WHEN (x.JRCOffPct > 0) THEN x.JRCOffPct ELSE so.OfficePct END,
+	'JRCBkrPct' = CASE WHEN (x.JRCBkrPct > 0) THEN x.JRCBkrPct ELSE so.BKOfficePct END,
+	'BkrPct'=CASE WHEN (x.BkrPct > 0) THEN x.BkrPct ELSE bk.CommRate END,
+	[BkrDlr],
+	[IODlr],
+	'IOPct' = CASE WHEN (x.IOPct > 0) THEN x.IOPct ELSE CAST(so.CommRate AS float) END,
+	[DCPCT],
+	[ONEPCT],
+	[RepFixed],
+	'RepPct' = CASE WHEN ((x.RepPct > 0) OR (x.OverrideCode > 0)) THEN x.RepPct ELSE c.RepPct END,
+	'RepDlr' = CASE WHEN ((x.RepDlr > 0) OR (x.OverrideCode > 0)) THEN x.RepDlr ELSE c.RepDlr END,
+	'RepPctC' = c.RepPct,
+	'RepDlrC' = c.RepDlr,
+	[DispPct],
+	[DispDlr],
+	[IOXPct1],
+	[IOXPct2],
+	[IOXPct3],
+	[IOXPct4],
+	x.[JRCAdminP],
+	[APOffC1],
+	[APOffC2],
+	[APOffC3],
+	[APOffC4],
+	[APOffN1],
+	[APOffN2],
+	[APOffN3],
+	[APOffN4],
+	[APComm1],
+	[APComm2],
+	[APComm3],
+	[APComm4],
+	[APCPct1],
+	[APCPct2],
+	[APCPct3],
+	[APCPct4],
+	x.[AllowORide],
+	[BType],
+	[OCommPlus],
+	[OCommNeg],
+	x.[AlumaPct],
+	[AlumaDlrDisc],
+	[BKFixed],
+	[IOFixed],
+	[GPPct],
+	[TPName],
+	x.[TPAmt],
+	[TPDesc],
+	[TPPaidDate],
+	[TPCkNo],
+	[JRC5050],
+	x.[Calc85],
+	sp.[DvrDedPct],
+	sp.[DvrDedResn], 
+	
+	'OfficeOverride' = CASE WHEN ((dm.OfficeOverride IS NULL) OR (dm.OfficeOverride ='')) THEN so.IOfficeCode ELSE dm.OfficeOverride END, 
+	
+	ls.JRCIOfficeCode,
+	ls.CreationSource, 
+	
+	ls.ComCheckSeq,
+	ls.ComCheckAmt,
+	ls.CodCheckSeq,
+	ls.CodCheckAmt,
+	
+	ls.LoadType,
+	ls.DriverCode,
+	sp.DriverName,
+	'CommRate' = CASE WHEN (ls.OverrideComm > 0) THEN ls.OverrideComm ELSE sp.CommRate END,
+	ls.JRCIOCode,
+	ls.IOCode,
+	io.IOName,
+
+	'OfficeVendorNO'=so.IOfficeCode,
+	so.SubOffComm,
+
+	ls.BrokerCode,
+	bk.BrokerName,
+	bk.BStatus,
+	ls.CustomerNumber, 
+	'RepNoC' = c.RepNo,
+	ls.RepNo,
+	sr.RepName,
+	
+	sr.SecPinA,
+	sr.SecPinB,
+	x.OverrideCode, 
+	x.OverriddenBy, 
+	x.AdjustJrcTotal, 	
+	
+	c.CustomerName,
+	c.CustomerStatus,
+
+	x.[ViewOrder],
+
+	x.[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate] ,
+	x.[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+
+
+FROM {objectQualifier}tblLoadAcct as x
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+	LEFT OUTER JOIN [{objectQualifier}tblOOLoadSheetHeader] AS ls on x.LoadId = ls.LoadId 
+	LEFT OUTER JOIN [{objectQualifier}ARD_DispatchMasterfile] AS dm on ls.DispatchCode = dm.DispatchCode 
+	LEFT OUTER JOIN [{objectQualifier}ARD_SalesPersonMasterfile] AS sp on ls.DriverCode = sp.DriverCode
+
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS so on ls.JRCIOfficeCode = so.JRCIOfficeCode
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS io on ls.JRCIOCode = io.JRCIOfficeCode
+
+	LEFT OUTER JOIN [{objectQualifier}ARD_BrokerMaster] AS bk on ls.BrokerCode = bk.BrokerCode
+	LEFT OUTER JOIN [{objectQualifier}AR1_CustomerMaster] AS c on ls.CustomerNumber = c.CustomerNumber
+	LEFT OUTER JOIN [{objectQualifier}ARD_SalesRepMasterfile] AS sr on ls.RepNo = sr.RepNo
+
+
+WHERE
+	x.[ItemID] = @ItemID
+GO
+
+
+
+
+/* Following procedure is for Get the Load Account Module */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetModuleLoadAccts]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetModuleLoadAccts]
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetModuleLoadAccts]
+
+	@ModuleId int ,
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+ 	[ItemID],
+	x.[ModuleID],
+
+
+	[LoadID],
+	[BBaseLoad],
+	[DiscountPCT],
+	[DiscountDlr],
+	[BDeten],
+	[BTolls],
+	[BFuel],
+	[BDrop],
+	[BRecon],
+	[BTarp],
+	[BLumper],
+	[BUnload],
+	[BAdminMisc],
+	[BCustBill],
+	[DRCommBase],
+	[DRRebur],
+	[DRPermits],
+	[DRTolls],
+	[DRMisc],
+	[DRTotDue],
+	[APCommTot],
+	[CalcMI],
+	[CalcRate],
+	[CalcTot],
+	[JRCIOOffC1],
+	[JRCIOOffC2],
+	[IOOffC1],
+	[IOOffC2],
+	[IOOffC3],
+	[IOOffC4],
+	[IOOffN1],
+	[IOOffN2],
+	[IOOffN3],
+	[IOOffN4],
+	[IOComm1],
+	[IOComm2],
+	[IOComm3],
+	[IOComm4],
+	[IOOffL1],
+	[IOOffL2],
+	[IOOffL3],
+	[IOOffL4],
+	[IOCommTot],
+	[IOAdmin1],
+	[IOAdmin2],
+	[IOAdmin3],
+	[IOAdmin4],
+	[IOAdminTot],
+	[ExPermits],
+	[ExTrailer],
+	[ExMisc],
+	[ExTot],
+	[AdminExempt],
+	[JRCOnePct],
+	[JRCOffComm],
+	[JRCTotal],
+	[BINC3],
+	[BINC4],
+	[BINC5],
+	[BINC6],
+	[BINC7],
+	[BINC8],
+	[BINC9],
+	[BINC10],
+	[BINC11],
+	[JRCOffPct],
+	[JRCBkrPct],
+	[BkrPct],
+	[BkrDlr],
+	[IODlr],
+	[IOPct],
+	[DCPCT],
+	[ONEPCT],
+	[RepFixed],
+	[RepPct],
+	[RepDlr],
+	[DispPct],
+	[DispDlr],
+	[IOXPct1],
+	[IOXPct2],
+	[IOXPct3],
+	[IOXPct4],
+	[JRCAdminP],
+	[APOffC1],
+	[APOffC2],
+	[APOffC3],
+	[APOffC4],
+	[APOffN1],
+	[APOffN2],
+	[APOffN3],
+	[APOffN4],
+	[APComm1],
+	[APComm2],
+	[APComm3],
+	[APComm4],
+	[APCPct1],
+	[APCPct2],
+	[APCPct3],
+	[APCPct4],
+	[AllowORide],
+	[BType],
+	[OCommPlus],
+	[OCommNeg],
+	[AlumaPct],
+	[AlumaDlrDisc],
+	[BKFixed],
+	[IOFixed],
+	[GPPct],
+	[TPName],
+	[TPAmt],
+	[TPDesc],
+	[TPPaidDate],
+	[TPCkNo],
+	[JRC5050],
+	[Calc85],
+	[DvrDedPct],
+	[DvrDedResn],
+
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+    	x.[UpdatedDate] ,
+	[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}tblLoadAcct as x
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+
+
+WHERE x.[ModuleId] = @ModuleId
+ORDER BY [ViewOrder], x.[CreatedDate] desc
+GO
+
+
+
+
+/* Following procedure is for Get the Load Account Portal */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetPortalLoadAccts]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetPortalLoadAccts]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetPortalLoadAccts]
+
+	@PortalId int ,
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	[ItemID],
+    x.[ModuleID],
+
+	[LoadID],
+	[BBaseLoad],
+	[DiscountPCT],
+	[DiscountDlr],
+	[BDeten],
+	[BTolls],
+	[BFuel],
+	[BDrop],
+	[BRecon],
+	[BTarp],
+	[BLumper],
+	[BUnload],
+	[BAdminMisc],
+	[BCustBill],
+	[DRCommBase],
+	[DRRebur],
+	[DRPermits],
+	[DRTolls],
+	[DRMisc],
+	[DRTotDue],
+	[APCommTot],
+	[CalcMI],
+	[CalcRate],
+	[CalcTot],
+	[JRCIOOffC1],
+	[JRCIOOffC2],
+	[IOOffC1],
+	[IOOffC2],
+	[IOOffC3],
+	[IOOffC4],
+	[IOOffN1],
+	[IOOffN2],
+	[IOOffN3],
+	[IOOffN4],
+	[IOComm1],
+	[IOComm2],
+	[IOComm3],
+	[IOComm4],
+	[IOOffL1],
+	[IOOffL2],
+	[IOOffL3],
+	[IOOffL4],
+	[IOCommTot],
+	[IOAdmin1],
+	[IOAdmin2],
+	[IOAdmin3],
+	[IOAdmin4],
+	[IOAdminTot],
+	[ExPermits],
+	[ExTrailer],
+	[ExMisc],
+	[ExTot],
+	[AdminExempt],
+	[JRCOnePct],
+	[JRCOffComm],
+	[JRCTotal],
+	[BINC3],
+	[BINC4],
+	[BINC5],
+	[BINC6],
+	[BINC7],
+	[BINC8],
+	[BINC9],
+	[BINC10],
+	[BINC11],
+	[JRCOffPct],
+	[JRCBkrPct],
+	[BkrPct],
+	[BkrDlr],
+	[IODlr],
+	[IOPct],
+	[DCPCT],
+	[ONEPCT],
+	[RepFixed],
+	[RepPct],
+	[RepDlr],
+	[DispPct],
+	[DispDlr],
+	[IOXPct1],
+	[IOXPct2],
+	[IOXPct3],
+	[IOXPct4],
+	[JRCAdminP],
+	[APOffC1],
+	[APOffC2],
+	[APOffC3],
+	[APOffC4],
+	[APOffN1],
+	[APOffN2],
+	[APOffN3],
+	[APOffN4],
+	[APComm1],
+	[APComm2],
+	[APComm3],
+	[APComm4],
+	[APCPct1],
+	[APCPct2],
+	[APCPct3],
+	[APCPct4],
+	[AllowORide],
+	[BType],
+	[OCommPlus],
+	[OCommNeg],
+	[AlumaPct],
+	[AlumaDlrDisc],
+	[BKFixed],
+	[IOFixed],
+	[GPPct],
+	[TPName],
+	[TPAmt],
+	[TPDesc],
+	[TPPaidDate],
+	[TPCkNo],
+	[JRC5050],
+	[Calc85],
+	[DvrDedPct],
+	[DvrDedResn],
+
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate] ,
+	[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}tblLoadAcct as x
+	INNER JOIN [{objectQualifier}Modules] As m on x.ModuleId = m.ModuleId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+
+
+WHERE m.PortalId = @PortalId
+ORDER BY x.[ModuleId], x.ViewOrder, x.CreatedDate desc
+GO
+
+
+
+
+/* Following procedure is for Get All the Load Account */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetAllLoadAccts]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetAllLoadAccts]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetAllLoadAccts]
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	[ItemID],
+	x.[ModuleID],
+
+	[LoadID],
+	[BBaseLoad],
+	[DiscountPCT],
+	[DiscountDlr],
+	[BDeten],
+	[BTolls],
+	[BFuel],
+	[BDrop],
+	[BRecon],
+	[BTarp],
+	[BLumper],
+	[BUnload],
+	[BAdminMisc],
+	[BCustBill],
+	[DRCommBase],
+	[DRRebur],
+	[DRPermits],
+	[DRTolls],
+	[DRMisc],
+	[DRTotDue],
+	[APCommTot],
+	[CalcMI],
+	[CalcRate],
+	[CalcTot],
+	[JRCIOOffC1],
+	[JRCIOOffC2],
+	[IOOffC1],
+	[IOOffC2],
+	[IOOffC3],
+	[IOOffC4],
+	[IOOffN1],
+	[IOOffN2],
+	[IOOffN3],
+	[IOOffN4],
+	[IOComm1],
+	[IOComm2],
+	[IOComm3],
+	[IOComm4],
+	[IOOffL1],
+	[IOOffL2],
+	[IOOffL3],
+	[IOOffL4],
+	[IOCommTot],
+	[IOAdmin1],
+	[IOAdmin2],
+	[IOAdmin3],
+	[IOAdmin4],
+	[IOAdminTot],
+	[ExPermits],
+	[ExTrailer],
+	[ExMisc],
+	[ExTot],
+	[AdminExempt],
+	[JRCOnePct],
+	[JRCOffComm],
+	[JRCTotal],
+	[BINC3],
+	[BINC4],
+	[BINC5],
+	[BINC6],
+	[BINC7],
+	[BINC8],
+	[BINC9],
+	[BINC10],
+	[BINC11],
+	[JRCOffPct],
+	[JRCBkrPct],
+	[BkrPct],
+	[BkrDlr],
+	[IODlr],
+	[IOPct],
+	[DCPCT],
+	[ONEPCT],
+	[RepFixed],
+	[RepPct],
+	[RepDlr],
+	[DispPct],
+	[DispDlr],
+	[IOXPct1],
+	[IOXPct2],
+	[IOXPct3],
+	[IOXPct4],
+	[JRCAdminP],
+	[APOffC1],
+	[APOffC2],
+	[APOffC3],
+	[APOffC4],
+	[APOffN1],
+	[APOffN2],
+	[APOffN3],
+	[APOffN4],
+	[APComm1],
+	[APComm2],
+	[APComm3],
+	[APComm4],
+	[APCPct1],
+	[APCPct2],
+	[APCPct3],
+	[APCPct4],
+	[AllowORide],
+	[BType],
+	[OCommPlus],
+	[OCommNeg],
+	[AlumaPct],
+	[AlumaDlrDisc],
+	[BKFixed],
+	[IOFixed],
+	[GPPct],
+	[TPName],
+	[TPAmt],
+	[TPDesc],
+	[TPPaidDate],
+	[TPCkNo],
+	[JRC5050],
+	[Calc85],
+	[DvrDedPct],
+	[DvrDedResn],
+
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate] ,
+	[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}tblLoadAcct as x
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+
+
+ORDER BY x.[ModuleId], x.ViewOrder, x.CreatedDate desc
+
+GO
+
+
+
+/* Following procedure is for Sort the Load Account */
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_SortLoadAccts]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_SortLoadAccts]
+GO
+
+
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}bhattji_SortLoadAccts]
+	@ModuleId	int
+
+AS
+
+DECLARE	@counter as int
+DECLARE	@PK as int
+SET		@counter = 10
+
+--Make Temp table to hold Primary Keys FROM the table you want to renumber
+SELECT	ItemId
+INTO		[#TempTable]
+FROM		[{objectQualifier}tblLoadAcct] as x
+WHERE	x.ModuleId = @ModuleId
+ORDER BY	x.ViewOrder asc,  x.CreatedDate desc
+
+
+
+--Loop through each temptable record
+WHILE (SELECT COUNT(ItemId) FROM #TempTable) > 0
+BEGIN
+	SET		rowcount 1
+
+	SELECT	@PK = ItemId
+	FROM #TempTable
+
+	SET rowcount 0
+
+
+	--UPDATE the view order for matching record in [{objectQualifier}tblLoadAcct]
+	UPDATE [{objectQualifier}tblLoadAcct]
+	SET ViewOrder = @counter
+	WHERE [{objectQualifier}tblLoadAcct].ItemId = @PK
+	AND [{objectQualifier}tblLoadAcct].ModuleId = @ModuleId
+
+	SET @counter = @counter + 10
+
+	SET rowcount 1
+
+	DELETE FROM #TempTable
+	SET rowcount 0
+END
+
+SET rowcount 0
+
+DROP TABLE #TempTable
+
+SELECT * FROM [{objectQualifier}tblLoadAcct] ORDER BY ViewOrder
+GO
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}tblOOLoadSheetHeader]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+and exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}ARD_InterOffice]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+and exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}ARD_SalesPersonMasterfile]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+and exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AssignSalesPersonIO]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+EXEC {databaseOwner}[{objectQualifier}bhattji_AssignSalesPersonIO]
+GO
+
+
+
+
+/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****                 StateCodes                       *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create/drop tables and stored procs   */
+
+/* Insert here the code to drop stored procs if exists  */
+
+/* Insert here the code to add ZipCode table */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_StateCodes]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}bhattji_StateCodes]
+GO
+
+
+CREATE TABLE {databaseOwner}[{objectQualifier}bhattji_StateCodes] (
+
+	[ItemId] [int] IDENTITY (1, 1) NOT NULL ,
+	[StateCode] [nvarchar] (2) NOT NULL,
+	[State] [nvarchar] (25) NULL
+
+) ON [PRIMARY]
+GO
+
+
+
+/* Following procedure is for Add the StateCode */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddStateCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddStateCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddStateCode]
+
+	@StateCode nvarchar (2) ,
+	@State nvarchar (25)
+AS
+
+IF (SELECT COUNT(*) FROM {objectQualifier}bhattji_StateCodes WHERE StateCode = @StateCode) < 1
+BEGIN
+	INSERT INTO {objectQualifier}bhattji_StateCodes (
+
+		[StateCode] ,
+		[State]
+
+	) VALUES (
+
+		@StateCode ,
+		@State
+
+	)
+	SELECT SCOPE_IDENTITY()
+END
+GO
+
+
+/* Insert here the code to populate tables  */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_StateCodes]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+EXEC {databaseOwner}[{objectQualifier}bhattji_AddStateCode] 'StateCode','State'
+GO
+
+
+
+/* Following procedure is for Update the StateCode */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateStateCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateStateCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateStateCode]
+
+	@ItemId int  ,
+	@StateCode nvarchar (2) ,
+	@State nvarchar (25)
+AS
+
+UPDATE {objectQualifier}bhattji_StateCodes
+
+SET
+	[StateCode] = @StateCode ,
+	[State] = @State
+
+WHERE
+	[ItemId] = @ItemId
+GO
+
+
+
+
+/* Following procedure is for Delete the StateCode */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteStateCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteStateCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_DeleteStateCode]
+
+	@ItemId int
+
+AS
+
+DELETE
+FROM [{objectQualifier}bhattji_StateCodes]
+WHERE ItemId = @ItemId
+GO
+
+
+
+/* Following procedure is for Get the StateCode */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetStateCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetStateCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetStateCode]
+
+	@ItemId int
+
+AS
+
+SELECT
+	x.[ItemId] ,
+	x.[StateCode] ,
+	x.[State]
+
+FROM [{objectQualifier}bhattji_StateCodes] AS x
+
+WHERE x.[ItemId] = @ItemId
+GO
+
+
+
+/* Following procedure is for Get the StateCodes */
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetStateCodes]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetStateCodes]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetStateCodes]
+
+AS
+
+SELECT
+	x.[ItemId] ,
+	x.[StateCode] ,
+	x.[State]
+
+FROM [{objectQualifier}bhattji_StateCodes] AS x 
+
+ORDER BY x.[State] 
+GO
+
+
+
+
+
+
+
+
+/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****                 ZipCodes                         *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create/drop tables and stored procs   */
+
+/* Insert here the code to drop stored procs if exists  */
+
+/* Insert here the code to add ZipCode table */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_ZipCodes]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table {databaseOwner}[{objectQualifier}bhattji_ZipCodes]
+GO
+
+
+CREATE TABLE {databaseOwner}[{objectQualifier}bhattji_ZipCodes] (
+
+	[ItemId] [int] IDENTITY (1, 1) NOT NULL ,
+	[ZipCode] [nvarchar] (5) NOT NULL,
+	[Area] [nvarchar] (25) NULL,
+	[City] [nvarchar] (25) NULL,
+	[StateCode] [nvarchar] (2) NULL
+
+) ON [PRIMARY]
+GO
+
+
+
+/* Following procedure is for Add ZipCode */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddZipCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddZipCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddZipCode]
+
+	@ZipCode nvarchar (5) ,
+	@Area nvarchar (25) ,
+	@City nvarchar (25) ,
+	@StateCode nvarchar (2)
+AS
+
+IF (SELECT COUNT(*) FROM {objectQualifier}bhattji_ZipCodes WHERE ZipCode = @ZipCode) < 1
+BEGIN
+	INSERT INTO {objectQualifier}bhattji_ZipCodes (
+
+		[ZipCode] ,
+		[Area] ,
+		[City] ,
+		[StateCode]
+
+	) VALUES (
+
+		@ZipCode ,
+		@Area ,
+		@City ,
+		@StateCode
+
+	)
+	SELECT SCOPE_IDENTITY()
+END
+GO
+
+
+/* Insert here the code to populate tables  */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_ZipCodes]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+EXEC {databaseOwner}[{objectQualifier}bhattji_AddZipCode] 'ZipCode','Area','City','StateCode'
+GO
+
+
+
+/* Following procedure is for Update ZipCode */
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateZipCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateZipCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateZipCode]
+
+	@ItemId int ,
+	@ZipCode nvarchar (5) ,
+	@Area nvarchar (25) ,
+	@City nvarchar (25) ,
+	@StateCode nvarchar (2)
+AS
+
+UPDATE {objectQualifier}bhattji_ZipCodes
+
+SET
+	[ZipCode] = @ZipCode ,
+	[Area] = @Area ,
+	[City] = @City ,
+	[StateCode] = @StateCode
+
+WHERE
+	[ItemId] = @ItemId
+GO
+
+
+
+
+/* Following procedure is for Delete ZipCode */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteZipCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteZipCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_DeleteZipCode]
+
+	@ItemId int
+
+AS
+
+DELETE
+FROM [{objectQualifier}bhattji_ZipCodes]
+WHERE ItemId = @ItemId
+GO
+
+
+
+
+/* Following procedure is for Get ZipCode By ZipCode */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetZipCodeByZipCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetZipCodeByZipCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetZipCodeByZipCode]
+
+	@ZipCode nvarchar(5)
+
+AS
+
+SELECT
+	x.[ItemId] ,
+	x.[ZipCode] ,
+	x.[Area] ,
+	x.[City] ,
+	x.[StateCode] ,
+	sc.[State]
+
+FROM [{objectQualifier}bhattji_ZipCodes] AS x
+	LEFT OUTER JOIN [{objectQualifier}bhattji_StateCodes] AS sc on x.StateCode = sc.StateCode
+
+WHERE x.[ZipCode] = @ZipCode
+GO
+
+
+
+/* Following procedure is for Get ZipCode */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetZipCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetZipCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetZipCode]
+
+	@ItemId int
+
+AS
+
+SELECT
+	x.[ItemId] ,
+	x.[ZipCode] ,
+	x.[Area] ,
+	x.[City] ,
+	x.[StateCode] ,
+	sc.[State]
+
+FROM [{objectQualifier}bhattji_ZipCodes] AS x
+	LEFT OUTER JOIN [{objectQualifier}bhattji_StateCodes] AS sc on x.StateCode = sc.StateCode
+
+WHERE x.[ItemId] = @ItemId
+GO
+
+
+
+/* Following procedure is for Get ZipCodes */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetZipCodes]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetZipCodes]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetZipCodes]
+
+AS
+
+SELECT
+	x.[ItemId] ,
+	x.[ZipCode] ,
+	x.[Area] ,
+	x.[City] ,
+	x.[StateCode] ,
+	sc.[State]
+
+FROM [{objectQualifier}bhattji_ZipCodes] AS x
+	LEFT OUTER JOIN [{objectQualifier}bhattji_StateCodes] AS sc on x.StateCode = sc.StateCode
+GO
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetCityList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetCityList]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetCityList]
+	@SearchText nvarchar(25), 
+	@NoOfItems int 
+
+AS
+
+SELECT DISTINCT TOP (@NoOfItems) 
+	[City]
+
+FROM [{objectQualifier}bhattji_ZipCodes]
+
+WHERE City LIKE  @SearchText + '%'
+
+ORDER BY City
+
+GO
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetCityNames]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetCityNames]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetCityNames]
+	@SearchText nvarchar(25), 
+	@NoOfItems int 
+
+AS
+
+SELECT DISTINCT TOP (@NoOfItems) 
+	[City], 
+	[StateCode], 
+	[ZipCode]
+
+FROM [{objectQualifier}bhattji_ZipCodes]
+
+WHERE City LIKE  @SearchText + '%'
+
+ORDER BY City, StateCode, ZipCode
+
+GO
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetStateZipCodeByCity]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetStateZipCodeByCity]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetStateZipCodeByCity]
+	@City nvarchar(25)
+
+AS
+
+SELECT TOP 1 
+	[StateCode], 
+	[ZipCode]
+
+FROM [{objectQualifier}bhattji_ZipCodes]
+
+WHERE City = @City
+
+GO
+
+
+
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+
+
+
+
+

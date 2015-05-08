@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="bhattji.Modules.SalesReps">
+</Property><Property Name="Solution File" Value="C:\DNN\JRC45\DesktopModules\Khyati_Jigo\JRC_CS\bhattji_SalesReps\bhattji.Modules.SalesReps.sln">
+</Property><Property Name="Date" Value="Monday, March 10, 2008">
+</Property><Property Name="Time" Value="15:49 PM">
+</Property></Properties><Event ErrorLevel="0" Project="bhattji.Modules.SalesReps" Source="bhattji.Modules.SalesReps.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="bhattji.Modules.SalesReps" Source="bhattji.Modules.SalesReps.csproj" Description="Converted">
+</Event><Event ErrorLevel="2" Project="bhattji.Modules.SalesReps" Source="bhattji.Modules.SalesReps.csproj" Description="">
+</Event><Event ErrorLevel="0" Project="" Source="bhattji.Modules.SalesReps.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="bhattji.Modules.SalesReps.sln" Description="Converted">
+</Event></UpgradeLog>

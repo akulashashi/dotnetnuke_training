@@ -1,0 +1,15 @@
+C:\DNN\JRC45\bin\bhattji.Modules.SalesReps.dll
+C:\DNN\JRC45\bin\bhattji.Modules.SalesReps.pdb
+C:\DNN\JRC45\bin\bhattji.SalesReps.xml
+C:\DNN\JRC45\DesktopModules\bhattji_SalesReps\obj\Debug\ResolveAssemblyReference.cache
+C:\DNN\JRC45\DesktopModules\bhattji_SalesReps\obj\Debug\bhattji.Modules.SalesReps.Details.resources
+C:\DNN\JRC45\DesktopModules\bhattji_SalesReps\obj\Debug\bhattji.Modules.SalesReps.EditItem.resources
+C:\DNN\JRC45\DesktopModules\bhattji_SalesReps\obj\Debug\bhattji.Modules.SalesReps.Edits.resources
+C:\DNN\JRC45\DesktopModules\bhattji_SalesReps\obj\Debug\bhattji.Modules.SalesReps.Thumb.resources
+C:\DNN\JRC45\DesktopModules\bhattji_SalesReps\obj\Debug\bhattji.Modules.SalesReps.Settings.resources
+C:\DNN\JRC45\DesktopModules\bhattji_SalesReps\obj\Debug\bhattji.Modules.SalesReps.ViewList.resources
+C:\DNN\JRC45\DesktopModules\bhattji_SalesReps\obj\Debug\bhattji.Modules.SalesReps.Views.resources
+C:\DNN\JRC45\DesktopModules\bhattji_SalesReps\obj\Debug\bhattji.SalesReps.vbproj.GenerateResource.Cache
+C:\DNN\JRC45\DesktopModules\bhattji_SalesReps\obj\Debug\bhattji.Modules.SalesReps.dll
+C:\DNN\JRC45\DesktopModules\bhattji_SalesReps\obj\Debug\bhattji.SalesReps.xml
+C:\DNN\JRC45\DesktopModules\bhattji_SalesReps\obj\Debug\bhattji.Modules.SalesReps.pdb

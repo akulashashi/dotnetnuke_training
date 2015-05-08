@@ -1,0 +1,7 @@
+E:\DNN\DNN600\bin\bhattji.Modules.YouTubeVideos.dll
+E:\DNN\DNN600\bin\bhattji.Modules.YouTubeVideos.pdb
+E:\DNN\DNN600\DesktopModules\bhattji_YouTubeVideos\obj\Release\bhattji.Modules.YouTubeVideos.Settings.resources
+E:\DNN\DNN600\DesktopModules\bhattji_YouTubeVideos\obj\Release\bhattji.Modules.YouTubeVideos.Views.resources
+E:\DNN\DNN600\DesktopModules\bhattji_YouTubeVideos\obj\Release\bhattji.Modules.YouTubeVideos.dll
+E:\DNN\DNN600\DesktopModules\bhattji_YouTubeVideos\obj\Release\bhattji.Modules.YouTubeVideos.pdb
+E:\DNN\DNN600\DesktopModules\bhattji_YouTubeVideos\obj\Release\bhattji.Modules.YouTubeVideos.csproj.GenerateResource.Cache

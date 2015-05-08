@@ -1,0 +1,302 @@
+﻿Imports System
+
+Namespace bhattji.Modules.myObjectNames
+
+	''' -----------------------------------------------------------------------------
+	''' <summary>
+	'''		The LoadSheetInfo Class the business object representing a single
+	'''		LoadSheet object, as used by the myObjectNames module.
+	''' </summary>
+	''' <remarks></remarks>
+	''' <history>
+	'''		[MyGeneration]	17/12/2010 11:20:29 AM	Code file automatically generated from WDC by MyGeneration v1.3.0.3
+	''' </history>
+	''' -----------------------------------------------------------------------------
+	<Serializable()> _
+	Public Class LoadSheetInfo 
+	
+#Region " Private fields "
+		
+		Private _Container1 As String
+		Private _Container1Due As Date
+		Private _Container2 As String
+		Private _Container2Due As Date
+		
+#End Region
+		
+#Region " Constructors "
+		
+		Public Sub New()
+			' default object initialization
+		end sub
+	
+		Public Sub New(ByVal Container1 As String, ByVal Container1Due As Date, ByVal Container2 As String, ByVal Container2Due As Date)
+			_Container1 = Container1
+			_Container1Due = Container1Due
+			_Container2 = Container2
+			_Container2Due = Container2Due
+		End Sub
+		
+#End Region
+
+
+
+#Region " Properties "
+
+		Public Property Container1() As String
+			Get	
+				Return _Container1
+			End Get
+			Set(ByVal Value As String)
+				_Container1 = Value				
+			End Set
+		End Property
+
+		Public Property Container1Due() As Date
+			Get	
+				Return _Container1Due
+			End Get
+			Set(ByVal Value As Date)
+				_Container1Due = Value				
+			End Set
+		End Property
+
+		Public Property Container2() As String
+			Get	
+				Return _Container2
+			End Get
+			Set(ByVal Value As String)
+				_Container2 = Value				
+			End Set
+		End Property
+
+		Public Property Container2Due() As Date
+			Get	
+				Return _Container2Due
+			End Get
+			Set(ByVal Value As Date)
+				_Container2Due = Value				
+			End Set
+		End Property
+
+#End Region
+
+#Region " IHydratable "
+		_Container1 = Convert.ToString(Null.SetNull(dr("Container1"), Container1))
+		_Container1Due = Convert.ToDateTime(Null.SetNull(dr("Container1Due"), Container1Due))
+		_Container2 = Convert.ToString(Null.SetNull(dr("Container2"), Container2))
+		_Container2Due = Convert.ToDateTime(Null.SetNull(dr("Container2Due"), Container2Due))
+	
+#End Region
+
+#Region " Public Methods "
+
+	Public Function AddLoadSheet(ByVal objLoadSheet As LoadSheetInfo) as Integer
+		With objLoadSheet
+			Return CType(DataProvider.Instance().LoadSheet(GetNull(.Container1), GetNull(.Container1Due), GetNull(.Container2), GetNull(.Container2Due)), Integer)
+		End With
+	End Function
+
+	Public Sub UpdateLoadSheet(ByVal objLoadSheet As LoadSheetInfo) 
+		With objLoadSheet	
+			DataProvider.Instance().LoadSheet(GetNull(.Container1), GetNull(.Container1Due), GetNull(.Container2), GetNull(.Container2Due)) 
+		End With
+	End Sub
+		
+#End Region
+
+
+
+
+#Region "Assign TextBox From Values, for Page_Load Event "
+		txtContainer1.Text = .Container1 'nvarchar
+		If Not Null.IsNull(.Container1Due) Then txtContainer1Due.Text = .Container1Due.ToShortDateString 'datetime
+		txtContainer2.Text = .Container2 'nvarchar
+		If Not Null.IsNull(.Container2Due) Then txtContainer2Due.Text = .Container2Due.ToShortDateString 'datetime
+	
+#End Region
+
+
+#Region "Assign Values From TextBox, for Update Event"
+		.Container1 = txtContainer1.Text
+		Try
+		.Container1Due = Date.Parse(txtContainer1Due.Text)
+		Catch
+		End Try
+		.Container2 = txtContainer2.Text
+		Try
+		.Container2Due = Date.Parse(txtContainer2Due.Text)
+		Catch
+		End Try
+
+#End Region
+
+	
+#Region "Object Declaration" 'For Edit.ascx.vb
+
+		Protected WithEvents txtContainer1 As System.Web.UI.WebControls.TextBox
+		Protected WithEvents txtContainer1Due As System.Web.UI.WebControls.TextBox
+		Protected WithEvents txtContainer2 As System.Web.UI.WebControls.TextBox
+		Protected WithEvents txtContainer2Due As System.Web.UI.WebControls.TextBox
+	
+		
+#End Region	
+
+#Region "HTML RowCells" 'For Edit HTML
+
+		<tr><td class="SubHead" nowrap><dnn:label id="plContainer1" controlname="txtContainer1" suffix=":" CssClass="SubHead" runat="server" /></td><td class="Normal"><asp:textbox id="txtContainer1"  CssClass="NormalTextBox" runat="server" /></td></tr> 
+		<tr><td class="SubHead" nowrap><dnn:label id="plContainer1Due" controlname="txtContainer1Due" suffix=":" CssClass="SubHead" runat="server"/></td><td class="Normal"><asp:textbox id="txtContainer1Due" CssClass="NormalTextBox" runat="server" /><asp:hyperlink id="hypContainer1Due" runat="server"  ImageUrl="~/images/calendar.png" style="cursor:hand"/><act:CalendarExtender ID="calContainer1Due" runat="server" TargetControlID="txtContainer1Due" PopupButtonID="hypContainer1Due" Format="d" /></td></tr> 
+		<tr><td class="SubHead" nowrap><dnn:label id="plContainer2" controlname="txtContainer2" suffix=":" CssClass="SubHead" runat="server" /></td><td class="Normal"><asp:textbox id="txtContainer2"  CssClass="NormalTextBox" runat="server" /></td></tr> 
+		<tr><td class="SubHead" nowrap><dnn:label id="plContainer2Due" controlname="txtContainer2Due" suffix=":" CssClass="SubHead" runat="server"/></td><td class="Normal"><asp:textbox id="txtContainer2Due" CssClass="NormalTextBox" runat="server" /><asp:hyperlink id="hypContainer2Due" runat="server"  ImageUrl="~/images/calendar.png" style="cursor:hand"/><act:CalendarExtender ID="calContainer2Due" runat="server" TargetControlID="txtContainer2Due" PopupButtonID="hypContainer2Due" Format="d" /></td></tr> 
+	
+
+#End Region	
+
+
+#Region "Localisation XML Values" 'For Edit HTML
+
+		<data name="plContainer1.Text"><value>Container1</value></data><data name="plContainer1.Help"><value>Enter the Container1</value></data>
+		<data name="plContainer1Due.Text"><value>Container1Due</value></data><data name="plContainer1Due.Help"><value>Enter the Container1Due</value></data>
+		<data name="plContainer2.Text"><value>Container2</value></data><data name="plContainer2.Help"><value>Enter the Container2</value></data>
+		<data name="plContainer2Due.Text"><value>Container2Due</value></data><data name="plContainer2Due.Help"><value>Enter the Container2Due</value></data>
+	
+
+#End Region
+
+#Region "Assign Labels From Values, for Page_Load Event " 'For Details.ascx.vb
+
+		lblContainer1.Text = objLoadSheet.Container1
+		If Not Null.IsNull(objLoadSheet.Container1Due) Then lblContainer1Due.Text = objLoadSheet.Container1Due.ToShortDateString
+		lblContainer2.Text = objLoadSheet.Container2
+		If Not Null.IsNull(objLoadSheet.Container2Due) Then lblContainer2Due.Text = objLoadSheet.Container2Due.ToShortDateString
+	
+
+#End Region
+
+
+
+#Region "Object Declaration" 'For Details.ascx.vb
+
+		Protected WithEvents lblContainer1 As System.Web.UI.WebControls.Label
+		Protected WithEvents lblContainer1Due As System.Web.UI.WebControls.Label
+		Protected WithEvents lblContainer2 As System.Web.UI.WebControls.Label
+		Protected WithEvents lblContainer2Due As System.Web.UI.WebControls.Label
+	
+
+#End Region
+
+
+#Region "HTML RowCells" 'For Detail HTML
+
+
+		<tr><td class="SubHead" nowrap><asp:label id="plContainer1" resourcekey="lblContainer1" CssClass="SubHead" runat="server" /></td><td class="Normal"><asp:label id="lblContainer1" CssClass="Normal" runat="server" /></td></tr> 
+		<tr><td class="SubHead" nowrap><asp:label id="plContainer1Due" resourcekey="lblContainer1Due" CssClass="SubHead" runat="server"/></td><td class="Normal"><asp:label id="lblContainer1Due" CssClass="Normal" runat="server" /><asp:hyperlink id="cmdCalendarContainer1Due" ImageUrl="~/images/calendar.png" resourcekey="Calendar" CssClass="CommandButton" Runat="server" /></td></tr> 
+		<tr><td class="SubHead" nowrap><asp:label id="plContainer2" resourcekey="lblContainer2" CssClass="SubHead" runat="server" /></td><td class="Normal"><asp:label id="lblContainer2" CssClass="Normal" runat="server" /></td></tr> 
+		<tr><td class="SubHead" nowrap><asp:label id="plContainer2Due" resourcekey="lblContainer2Due" CssClass="SubHead" runat="server"/></td><td class="Normal"><asp:label id="lblContainer2Due" CssClass="Normal" runat="server" /><asp:hyperlink id="cmdCalendarContainer2Due" ImageUrl="~/images/calendar.png" resourcekey="Calendar" CssClass="CommandButton" Runat="server" /></td></tr> 
+	
+
+#End Region
+
+#Region "Localisation XML Values" 'For Detail HTML
+
+		<data name="lblContainer1.Text"><value>Container1</value></data> 
+		<data name="lblContainer1Due.Text"><value>Container1Due</value></data> 
+		<data name="lblContainer2.Text"><value>Container2</value></data> 
+		<data name="lblContainer2Due.Text"><value>Container2Due</value></data> 
+	
+
+#End Region
+
+#Region "Export XML Values"
+
+		strXML &= "<Container1>" & XMLEncode(.Container1) & "</Container1>"
+		strXML &= "<Container1Due>" & XMLEncode(.Container1Due.ToString) & "</Container1Due>"
+		strXML &= "<Container2>" & XMLEncode(.Container2) & "</Container2>"
+		strXML &= "<Container2Due>" & XMLEncode(.Container2Due.ToString) & "</Container2Due>"
+	
+		
+#End Region
+
+#Region "Import XML Values"
+
+		Try
+		.Container1 = xmlLoadSheet.Item("Container1").InnerText
+		Catch
+		End Try
+		Try
+		.Container1Due = Date.Parse(xmlLoadSheet.Item("Container1Due").InnerText)
+		Catch
+		End Try
+		Try
+		.Container2 = xmlLoadSheet.Item("Container2").InnerText
+		Catch
+		End Try
+		Try
+		.Container2Due = Date.Parse(xmlLoadSheet.Item("Container2Due").InnerText)
+		Catch
+		End Try
+
+
+#End Region
+
+#Region "Creating Fields"
+
+		[Container1][nvarchar](20) NULL ,
+		[Container1Due][datetime] NULL ,
+		[Container2][nvarchar](20) NULL ,
+		[Container2Due][datetime] NULL ,
+
+#End Region
+
+#Region "Fields Declaration"
+
+		@Container1 nvarchar(20) ,
+		@Container1Due datetime ,
+		@Container2 nvarchar(20) ,
+		@Container2Due datetime ,
+
+
+#End Region
+
+#Region "Insert Into - Add"
+
+		[Container1] ,
+		[Container1Due] ,
+		[Container2] ,
+		[Container2Due] ,
+		
+
+#End Region
+
+#Region "Values"
+
+		@Container1 ,
+		@Container1Due ,
+		@Container2 ,
+		@Container2Due ,
+		
+
+#End Region
+
+#Region "Assigning Fields - Update"
+
+		[Container1] = @Container1 ,
+		[Container1Due] = @Container1Due ,
+		[Container2] = @Container2 ,
+		[Container2Due] = @Container2Due ,
+		
+
+#Region "Retrieve Fields - Get"
+
+		x.[Container1] ,
+		x.[Container1Due] ,
+		x.[Container2] ,
+		x.[Container2Due] ,
+		
+
+#End Region
+
+	
+End Class
+	
+End Namespace

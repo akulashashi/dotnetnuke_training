@@ -1,0 +1,14 @@
+﻿<h3>ChristocTheme</h3>
+	Christoc.com <br />
+	<a href="mailto:Themes@christoc.com">Themes@christoc.com</a><br />
+	<a href=http://www.christoc.com>http://www.christoc.com</a><br />
+<hr/>
+	<h3>About the ChristocTheme</h3>
+
+	<h4>Version 00.00.01</h4><br />
+	Initial release of the theme
+	<h5>Bug Fixes</h5>
+	<ul>
+			<li>None, first release</li>
+	</ul>
+</div>

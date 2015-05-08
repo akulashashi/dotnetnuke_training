@@ -1,0 +1,15 @@
+C:\DNN\JRC45\bin\bhattji.Modules.Customers.dll
+C:\DNN\JRC45\bin\bhattji.Modules.Customers.pdb
+C:\DNN\JRC45\bin\bhattji.Customers.xml
+C:\DNN\JRC45\DesktopModules\bhattji_Customers\obj\Release\ResolveAssemblyReference.cache
+C:\DNN\JRC45\DesktopModules\bhattji_Customers\obj\Release\bhattji.Modules.Customers.Details.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Customers\obj\Release\bhattji.Modules.Customers.EditItem.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Customers\obj\Release\bhattji.Modules.Customers.Edits.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Customers\obj\Release\bhattji.Modules.Customers.Thumb.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Customers\obj\Release\bhattji.Modules.Customers.Settings.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Customers\obj\Release\bhattji.Modules.Customers.ViewList.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Customers\obj\Release\bhattji.Modules.Customers.Views.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Customers\obj\Release\bhattji.Customers.vbproj.GenerateResource.Cache
+C:\DNN\JRC45\DesktopModules\bhattji_Customers\obj\Release\bhattji.Modules.Customers.dll
+C:\DNN\JRC45\DesktopModules\bhattji_Customers\obj\Release\bhattji.Customers.xml
+C:\DNN\JRC45\DesktopModules\bhattji_Customers\obj\Release\bhattji.Modules.Customers.pdb

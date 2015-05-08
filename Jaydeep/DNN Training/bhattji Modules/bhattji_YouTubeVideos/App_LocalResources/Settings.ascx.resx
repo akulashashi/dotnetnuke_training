@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Audio.Text" xml:space="preserve">
+    <value>Audio</value>
+  </data>
+  <data name="AutoPlay.Text" xml:space="preserve">
+    <value>Do you want to autoplay the Media on startup?</value>
+  </data>
+  <data name="Height.Text" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="Image.Text" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="Loop.Text" xml:space="preserve">
+    <value>Do you wish to loop the Media play?</value>
+  </data>
+  <data name="Muted.Text" xml:space="preserve">
+    <value>Do you wish to mute the Media?</value>
+  </data>
+  <data name="plAutoPlay.Help" xml:space="preserve">
+    <value>Specifies whether or not to start playing the video as soon as it can do so without stopping</value>
+  </data>
+  <data name="plAutoPlay.Text" xml:space="preserve">
+    <value>AutoPlay</value>
+  </data>
+  <data name="plLoop.Help" xml:space="preserve">
+    <value>Specifies whether to keep re-playing the video once it has finished.</value>
+  </data>
+  <data name="plLoop.Text" xml:space="preserve">
+    <value>Loop</value>
+  </data>
+  <data name="plMediaSrc.Help" xml:space="preserve">
+    <value>Specifies the You Tube Video Id. You may visit the YouTube.com and get the Id from there</value>
+  </data>
+  <data name="plMediaSrc.Text" xml:space="preserve">
+    <value>You Tube Video Id</value>
+  </data>
+  <data name="plMuted.Help" xml:space="preserve">
+    <value>Controls the default state of the media's audio output. If present, this attribute results in the audio output being muted (i.e. there is no sound) upon loading. This attribute will override the users' preferences. The user can then choose to turn on the sound if he/she so wishes. This helps users from being annoyed by loud sounds coming from the video as soon as the page/video starts loading. Users often close their browser when this happens. The 'mute' attribute aims to overcome this issue by having the media start off silently instead of loudly.</value>
+  </data>
+  <data name="plMuted.Text" xml:space="preserve">
+    <value>Muted</value>
+  </data>
+  <data name="plPlayer.Help" xml:space="preserve">
+    <value>Select the Media to be render for HTML5</value>
+  </data>
+  <data name="plPlayer.Text" xml:space="preserve">
+    <value>Player</value>
+  </data>
+  <data name="plRattleImage.Help" xml:space="preserve">
+    <value>Do you want the Image to be rattled?</value>
+  </data>
+  <data name="plRattleImage.Text" xml:space="preserve">
+    <value>Rattle Image</value>
+  </data>
+  <data name="plShowControls.Help" xml:space="preserve">
+    <value>Specifies whether or not to display video controls (such as a play/pause button etc).</value>
+  </data>
+  <data name="plShowControls.Text" xml:space="preserve">
+    <value>Show Controls</value>
+  </data>
+  <data name="RattleImage.Text" xml:space="preserve">
+    <value>Do you want the Image to be rattled?</value>
+  </data>
+  <data name="ShowControls.Text" xml:space="preserve">
+    <value>Show Controls for the Media?</value>
+  </data>
+  <data name="Video.Text" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="Width.Text" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="plPosterSrc.Help" xml:space="preserve">
+    <value>Specifies an image to use while the video is unavailable (i.e. it hasn't loaded yet). This is typically an image of one of the first frames of the video. If supplied, the value must be a valid URL of an image.</value>
+  </data>
+  <data name="plPosterSrc.Text" xml:space="preserve">
+    <value>Poster Image</value>
+  </data>
+  <data name="plDescription.Help" xml:space="preserve">
+    <value>Enter the description of the Media, which will be displayed when the user moves mouse over the Media</value>
+  </data>
+  <data name="plDescription.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="NewWindow.Text" xml:space="preserve">
+    <value>Open the Url in New Browser Window?</value>
+  </data>
+  <data name="plNavURL.Help" xml:space="preserve">
+    <value>Specify the URL, clicking it the User will be directed to the Link on the Web or the Page on your site. You may choose to open a New Browser window.</value>
+  </data>
+  <data name="plNavURL.Text" xml:space="preserve">
+    <value>Navigation URL</value>
+  </data>
+  <data name="plNewWindow.Help" xml:space="preserve">
+    <value>Open the Url in New Browser Window?</value>
+  </data>
+  <data name="plNewWindow.Text" xml:space="preserve">
+    <value>New Window</value>
+  </data>
+  <data name="plHeight.Help" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="plHeight.Text" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="plWidth.Help" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="plWidth.Text" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="plEndTime.Help" xml:space="preserve">
+    <value>Enter the End Time of the Video in seconds. Please note, it must be greater than Start Time</value>
+  </data>
+  <data name="plEndTime.Text" xml:space="preserve">
+    <value>EndTime</value>
+  </data>
+  <data name="plStartTime.Help" xml:space="preserve">
+    <value>Enter the Start Time of the Video in seconds</value>
+  </data>
+  <data name="plStartTime.Text" xml:space="preserve">
+    <value>StartTime</value>
+  </data>
+</root>

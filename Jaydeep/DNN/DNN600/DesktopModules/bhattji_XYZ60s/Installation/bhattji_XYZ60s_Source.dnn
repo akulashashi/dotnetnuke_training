@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<dotnetnuke version="3.0" type="Module">
+    <folders>
+        <folder>
+            <name>bhattji.XYZ60s</name>
+            <friendlyname>bhattji.XYZ60s</friendlyname>
+            <foldername>bhattji.XYZ60s</foldername>
+            <modulename>bhattji.XYZ60s</modulename>
+            <description>Description</description>
+            <version>01.00.00</version>
+            <businesscontrollerclass>bhattji.Modules.XYZ60s.XYZ60sController, bhattji.Modules.XYZ60s</businesscontrollerclass>
+            <resourcefile>source.bhattji</resourcefile>
+            <modules>
+                <module>
+                    <friendlyname>bhattji.XYZ60s</friendlyname>
+                    <cachetime>0</cachetime>
+                    <controls>
+                        <control>
+                            <title>XYZ60s</title>
+                            <src>Views.ascx</src>
+                            <type>View</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Views</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>Edit</key>
+                            <title>Edit XYZ60s</title>
+                            <src>Edits.ascx</src>
+                            <type>Edit</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Edits</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>Settings</key>
+                            <title>XYZ60s Settings</title>
+                            <src>Settings.ascx</src>
+                            <type>Edit</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Settings</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>Reports</key>
+                            <title>XYZ60 Reports</title>
+                            <src>Reports.ascx</src>
+                            <type>View</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Reports</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>ItemDetails</key>
+                            <title>XYZ60 Details</title>
+                            <src>Details.ascx</src>
+                            <type>View</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Details</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                        <control>
+                            <key>ItemRatings</key>
+                            <title>XYZ60 Ratings</title>
+                            <src>Ratings.ascx</src>
+                            <type>View</type>
+                            <helpurl>http://www.bhattji.com/modulehelp/?ctl=Ratings</helpurl>
+                            <supportspartialrendering>true</supportspartialrendering>
+                        </control>
+                    </controls>
+                </module>
+            </modules>
+            <files>
+                <file>
+                    <name>bhattji.Modules.XYZ60s.dll</name>
+                </file>
+                <file>
+                    <name>01.00.00.SqlDataProvider</name>
+                </file>
+                <file>
+                    <name>Uninstall.SqlDataProvider</name>
+                </file>
+            </files>
+        </folder>
+    </folders>
+</dotnetnuke>

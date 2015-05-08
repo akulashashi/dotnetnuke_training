@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="ResMimeType">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="Version">
+		<value>1.0.0.0</value>
+	</resheader>
+	<resheader name="Reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="Writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	
+
+		<data name="plLoadID.Text"><value>LoadID</value></data><data name="plLoadID.Help"><value>Enter the LoadID</value></data>
+		<data name="plOfficeVendorNO.Text"><value>OfficeVendorNO</value></data><data name="plOfficeVendorNO.Help"><value>Enter the OfficeVendorNO</value></data>
+		<data name="plJRCIOfficeCode.Text"><value>JRCIOfficeCode</value></data><data name="plJRCIOfficeCode.Help"><value>Enter the JRCIOfficeCode</value></data>
+		<data name="plLoadDate.Text"><value>LoadDate</value></data><data name="plLoadDate.Help"><value>Enter the LoadDate</value></data>
+		<data name="plDeliveryDate.Text"><value>DeliveryDate</value></data><data name="plDeliveryDate.Help"><value>Enter the DeliveryDate</value></data>
+		<data name="plCompletedLoad.Text"><value>CompletedLoad</value></data><data name="plCompletedLoad.Help"><value>Enter the CompletedLoad</value></data>
+		<data name="plCompletedDate.Text"><value>CompletedDate</value></data><data name="plCompletedDate.Help"><value>Enter the CompletedDate</value></data>
+		<data name="plOfficeCode.Text"><value>OfficeCode</value></data><data name="plOfficeCode.Help"><value>Enter the OfficeCode</value></data>
+		<data name="plCustomerNumber.Text"><value>CustomerNumber</value></data><data name="plCustomerNumber.Help"><value>Enter the CustomerNumber</value></data>
+		<data name="plCustomerName.Text"><value>CustomerName</value></data><data name="plCustomerName.Help"><value>Enter the CustomerName</value></data>
+		<data name="plCustPO.Text"><value>CustPO</value></data><data name="plCustPO.Help"><value>Enter the CustPO</value></data>
+		<data name="plTrailerNumber.Text"><value>TrailerNumber</value></data><data name="plTrailerNumber.Help"><value>Enter the TrailerNumber</value></data>
+		<data name="plDriverCode.Text"><value>DriverCode</value></data><data name="plDriverCode.Help"><value>Enter the DriverCode</value></data>
+		<data name="plDriverName.Text"><value>DriverName</value></data><data name="plDriverName.Help"><value>Enter the DriverName</value></data>
+		<data name="plBrokerCode.Text"><value>BrokerCode</value></data><data name="plBrokerCode.Help"><value>Enter the BrokerCode</value></data>
+		<data name="plBrokerName.Text"><value>BrokerName</value></data><data name="plBrokerName.Help"><value>Enter the BrokerName</value></data>
+		<data name="plJRCIOCode.Text"><value>JRCIOCode</value></data><data name="plJRCIOCode.Help"><value>Enter the JRCIOCode</value></data>
+		<data name="plIOCode.Text"><value>IOCode</value></data><data name="plIOCode.Help"><value>Enter the IOCode</value></data>
+		<data name="plIOName.Text"><value>IOName</value></data><data name="plIOName.Help"><value>Enter the IOName</value></data>
+		<data name="plOverrideComm.Text"><value>OverrideComm</value></data><data name="plOverrideComm.Help"><value>Enter the OverrideComm</value></data>
+		<data name="plDriverPct.Text"><value>DriverPct</value></data><data name="plDriverPct.Help"><value>Enter the DriverPct</value></data>
+		<data name="plFOB.Text"><value>FOB</value></data><data name="plFOB.Help"><value>Enter the FOB</value></data>
+		<data name="plLoadNotes.Text"><value>LoadNotes</value></data><data name="plLoadNotes.Help"><value>Enter the LoadNotes</value></data>
+		<data name="plComCheckSeq.Text"><value>ComCheckSeq</value></data><data name="plComCheckSeq.Help"><value>Enter the ComCheckSeq</value></data>
+		<data name="plComCheckAmt.Text"><value>ComCheckAmt</value></data><data name="plComCheckAmt.Help"><value>Enter the ComCheckAmt</value></data>
+		<data name="plTarpMessage.Text"><value>TarpMessage</value></data><data name="plTarpMessage.Help"><value>Enter the TarpMessage</value></data>
+		<data name="plDispatchCode.Text"><value>DispatchCode</value></data><data name="plDispatchCode.Help"><value>Enter the DispatchCode</value></data>
+		<data name="plDispName.Text"><value>DispName</value></data><data name="plDispName.Help"><value>Enter the DispName</value></data>
+		<data name="plLoadStatus.Text"><value>LoadStatus</value></data><data name="plLoadStatus.Help"><value>Enter the LoadStatus</value></data>
+		<data name="plDispOverride.Text"><value>DispOverride</value></data><data name="plDispOverride.Help"><value>Enter the DispOverride</value></data>
+		<data name="plRepNo.Text"><value>RepNo</value></data><data name="plRepNo.Help"><value>Enter the RepNo</value></data>
+		<data name="plRepName.Text"><value>RepName</value></data><data name="plRepName.Help"><value>Enter the RepName</value></data>
+		<data name="plLastUpdate.Text"><value>LastUpdate</value></data><data name="plLastUpdate.Help"><value>Enter the LastUpdate</value></data>
+		<data name="plXmissionSeq.Text"><value>XmissionSeq</value></data><data name="plXmissionSeq.Help"><value>Enter the XmissionSeq</value></data>
+		<data name="plLoadType.Text"><value>LoadType</value></data><data name="plLoadType.Help"><value>Enter the LoadType</value></data>
+		<data name="plDriverComm.Text"><value>DriverComm</value></data><data name="plDriverComm.Help"><value>Enter the DriverComm</value></data>
+		<data name="plBrokerComm.Text"><value>BrokerComm</value></data><data name="plBrokerComm.Help"><value>Enter the BrokerComm</value></data>
+		<data name="plLoadWeight.Text"><value>LoadWeight</value></data><data name="plLoadWeight.Help"><value>Enter the LoadWeight</value></data>
+		<data name="plLoadPieces.Text"><value>LoadPieces</value></data><data name="plLoadPieces.Help"><value>Enter the LoadPieces</value></data>
+		<data name="plLoadMileage.Text"><value>LoadMileage</value></data><data name="plLoadMileage.Help"><value>Enter the LoadMileage</value></data>
+		<data name="plAdminExempt.Text"><value>AdminExempt</value></data><data name="plAdminExempt.Help"><value>Enter the AdminExempt</value></data>
+		<data name="plTarpLoad.Text"><value>TarpLoad</value></data><data name="plTarpLoad.Help"><value>Enter the TarpLoad</value></data>
+		<data name="plProNox.Text"><value>ProNox</value></data><data name="plProNox.Help"><value>Enter the ProNox</value></data>
+		<data name="plXMissionFile.Text"><value>XMissionFile</value></data><data name="plXMissionFile.Help"><value>Enter the XMissionFile</value></data>
+		<data name="plXMissionDate.Text"><value>XMissionDate</value></data><data name="plXMissionDate.Help"><value>Enter the XMissionDate</value></data>
+		<data name="plEntryDate.Text"><value>EntryDate</value></data><data name="plEntryDate.Help"><value>Enter the EntryDate</value></data>
+		<data name="plRepDlrM.Text"><value>RepDlrM</value></data><data name="plRepDlrM.Help"><value>Enter the RepDlrM</value></data>
+		<data name="plRepPctM.Text"><value>RepPctM</value></data><data name="plRepPctM.Help"><value>Enter the RepPctM</value></data>
+		<data name="plRepOverride.Text"><value>RepOverride</value></data><data name="plRepOverride.Help"><value>Enter the RepOverride</value></data>
+		<data name="plRepDlrStd.Text"><value>RepDlrStd</value></data><data name="plRepDlrStd.Help"><value>Enter the RepDlrStd</value></data>
+		<data name="plRepPctStd.Text"><value>RepPctStd</value></data><data name="plRepPctStd.Help"><value>Enter the RepPctStd</value></data>
+		<data name="plCorpTo.Text"><value>CorpTo</value></data><data name="plCorpTo.Help"><value>Enter the CorpTo</value></data>
+		<data name="plTrailerType.Text"><value>TrailerType</value></data><data name="plTrailerType.Help"><value>Enter the TrailerType</value></data>
+		<data name="plBrokerType.Text"><value>BrokerType</value></data><data name="plBrokerType.Help"><value>Enter the BrokerType</value></data>
+		<data name="plOfficePaid.Text"><value>OfficePaid</value></data><data name="plOfficePaid.Help"><value>Enter the OfficePaid</value></data>
+		<data name="plPDCkNo.Text"><value>PDCkNo</value></data><data name="plPDCkNo.Help"><value>Enter the PDCkNo</value></data>
+		<data name="plPDDate.Text"><value>PDDate</value></data><data name="plPDDate.Help"><value>Enter the PDDate</value></data>
+		<data name="plPDAmt.Text"><value>PDAmt</value></data><data name="plPDAmt.Help"><value>Enter the PDAmt</value></data>
+		<data name="plProJob.Text"><value>ProJob</value></data><data name="plProJob.Help"><value>Enter the ProJob</value></data>
+		<data name="plInvCommentA.Text"><value>InvCommentA</value></data><data name="plInvCommentA.Help"><value>Enter the InvCommentA</value></data>
+		<data name="plInvCommentB.Text"><value>InvCommentB</value></data><data name="plInvCommentB.Help"><value>Enter the InvCommentB</value></data>
+		<data name="plInvCommentC.Text"><value>InvCommentC</value></data><data name="plInvCommentC.Help"><value>Enter the InvCommentC</value></data>
+		<data name="plInvCommentD.Text"><value>InvCommentD</value></data><data name="plInvCommentD.Help"><value>Enter the InvCommentD</value></data>
+		<data name="plBkrInvNo.Text"><value>BkrInvNo</value></data><data name="plBkrInvNo.Help"><value>Enter the BkrInvNo</value></data>
+		<data name="plReasonFor.Text"><value>ReasonFor</value></data><data name="plReasonFor.Help"><value>Enter the ReasonFor</value></data>
+		<data name="plBkrInvDate.Text"><value>BkrInvDate</value></data><data name="plBkrInvDate.Help"><value>Enter the BkrInvDate</value></data>
+		<data name="plIOAvail.Text"><value>IOAvail</value></data><data name="plIOAvail.Help"><value>Enter the IOAvail</value></data>
+		<data name="plIsPrinted.Text"><value>IsPrinted</value></data><data name="plIsPrinted.Help"><value>Enter the IsPrinted</value></data>
+		<data name="plAcctNull.Text"><value>AcctNull</value></data><data name="plAcctNull.Help"><value>Enter the AcctNull</value></data>
+		<data name="plBkrFunds.Text"><value>BkrFunds</value></data><data name="plBkrFunds.Help"><value>Enter the BkrFunds</value></data>
+		<data name="plOffFunds.Text"><value>OffFunds</value></data><data name="plOffFunds.Help"><value>Enter the OffFunds</value></data>
+		<data name="plOffOrgin.Text"><value>OffOrgin</value></data><data name="plOffOrgin.Help"><value>Enter the OffOrgin</value></data>
+		<data name="plCNOfficeVendorNO.Text"><value>CNOfficeVendorNO</value></data><data name="plCNOfficeVendorNO.Help"><value>Enter the CNOfficeVendorNO</value></data>
+		<data name="plPUSEQ.Text"><value>PUSEQ</value></data><data name="plPUSEQ.Help"><value>Enter the PUSEQ</value></data>
+		<data name="plPUCityST.Text"><value>PUCityST</value></data><data name="plPUCityST.Help"><value>Enter the PUCityST</value></data>
+		<data name="plDPCityST.Text"><value>DPCityST</value></data><data name="plDPCityST.Help"><value>Enter the DPCityST</value></data>
+		<data name="plDPSEQ.Text"><value>DPSEQ</value></data><data name="plDPSEQ.Help"><value>Enter the DPSEQ</value></data>
+		<data name="plIsIODiv.Text"><value>IsIODiv</value></data><data name="plIsIODiv.Help"><value>Enter the IsIODiv</value></data>
+		<data name="plOLPUDate.Text"><value>OLPUDate</value></data><data name="plOLPUDate.Help"><value>Enter the OLPUDate</value></data>
+		<data name="plOLNoStops.Text"><value>OLNoStops</value></data><data name="plOLNoStops.Help"><value>Enter the OLNoStops</value></data>
+		<data name="plCarrierName.Text"><value>CarrierName</value></data><data name="plCarrierName.Help"><value>Enter the CarrierName</value></data>
+		<data name="plBkrIOName.Text"><value>BkrIOName</value></data><data name="plBkrIOName.Help"><value>Enter the BkrIOName</value></data>
+		<data name="plBkrDriverNo.Text"><value>BkrDriverNo</value></data><data name="plBkrDriverNo.Help"><value>Enter the BkrDriverNo</value></data>
+		<data name="plBKDriver.Text"><value>BKDriver</value></data><data name="plBKDriver.Help"><value>Enter the BKDriver</value></data>
+		<data name="plCommPaid.Text"><value>CommPaid</value></data><data name="plCommPaid.Help"><value>Enter the CommPaid</value></data>
+		<data name="plLDNotesA.Text"><value>LDNotesA</value></data><data name="plLDNotesA.Help"><value>Enter the LDNotesA</value></data>
+		<data name="plLDNotesB.Text"><value>LDNotesB</value></data><data name="plLDNotesB.Help"><value>Enter the LDNotesB</value></data>
+		<data name="plLDNotesC.Text"><value>LDNotesC</value></data><data name="plLDNotesC.Help"><value>Enter the LDNotesC</value></data>
+		<data name="plLDNotesD.Text"><value>LDNotesD</value></data><data name="plLDNotesD.Help"><value>Enter the LDNotesD</value></data>
+		<data name="plLoadMo.Text"><value>LoadMo</value></data><data name="plLoadMo.Help"><value>Enter the LoadMo</value></data>
+		<data name="plLoadYR.Text"><value>LoadYR</value></data><data name="plLoadYR.Help"><value>Enter the LoadYR</value></data>
+		<data name="plCalc85.Text"><value>Calc85</value></data><data name="plCalc85.Help"><value>Enter the Calc85</value></data>
+		<data name="plDvrDedPct.Text"><value>DvrDedPct</value></data><data name="plDvrDedPct.Help"><value>Enter the DvrDedPct</value></data>
+		<data name="plDvrDedResn.Text"><value>DvrDedResn</value></data><data name="plDvrDedResn.Help"><value>Enter the DvrDedResn</value></data>
+		
+		
+	    <data name="plSeqLoadDrop.Text"><value>Seq</value></data><data name="plSeqLoadDrop.Help"><value>Enter the Seq</value></data>
+	
+		<data name="plDPName.Text"><value>DPName</value></data><data name="plDPName.Help"><value>Enter the DPName</value></data>
+		<data name="plDPAddr.Text"><value>DPAddr</value></data><data name="plDPAddr.Help"><value>Enter the DPAddr</value></data>
+		<data name="plDPCity.Text"><value>DPCity</value></data><data name="plDPCity.Help"><value>Enter the DPCity</value></data>
+		<data name="plDPState.Text"><value>DPState</value></data><data name="plDPState.Help"><value>Enter the DPState</value></data>
+		<data name="plDPPhone.Text"><value>DPPhone</value></data><data name="plDPPhone.Help"><value>Enter the DPPhone</value></data>
+		<data name="plDPDate.Text"><value>DPDate</value></data><data name="plDPDate.Help"><value>Enter the DPDate</value></data>
+		<data name="plDPContact.Text"><value>DPContact</value></data><data name="plDPContact.Help"><value>Enter the DPContact</value></data>
+		<data name="plJobno.Text"><value>Jobno</value></data><data name="plJobno.Help"><value>Enter the Jobno</value></data>
+		<data name="plBillOLay.Text"><value>BillOLay</value></data><data name="plBillOLay.Help"><value>Enter the BillOLay</value></data>
+		<data name="plBOLSeq.Text"><value>BOLSeq</value></data><data name="plBOLSeq.Help"><value>Enter the BOLSeq</value></data>
+		<data name="plStime.Text"><value>Stime</value></data><data name="plStime.Help"><value>Enter the Stime</value></data>
+		<data name="plEtime.Text"><value>Etime</value></data><data name="plEtime.Help"><value>Enter the Etime</value></data>	
+		
+	
+   		<data name="plSeq.Text"><value>Seq</value></data><data name="plSeq.Help"><value>Enter the Seq</value></data>
+		<data name="plPUName.Text"><value>PUName</value></data><data name="plPUName.Help"><value>Enter the PUName</value></data>
+		<data name="plPUAdd1.Text"><value>PUAdd1</value></data><data name="plPUAdd1.Help"><value>Enter the PUAdd1</value></data>
+		<data name="plPRONo.Text"><value>PRONo</value></data><data name="plPRONo.Help"><value>Enter the PRONo</value></data>
+		<data name="plPUCity.Text"><value>PUCity</value></data><data name="plPUCity.Help"><value>Enter the PUCity</value></data>
+		<data name="plPUState.Text"><value>PUState</value></data><data name="plPUState.Help"><value>Enter the PUState</value></data>
+		<data name="plPUTel.Text"><value>PUTel</value></data><data name="plPUTel.Help"><value>Enter the PUTel</value></data>
+		<data name="plPUContact.Text"><value>PUContact</value></data><data name="plPUContact.Help"><value>Enter the PUContact</value></data>
+		<data name="plPUDate.Text"><value>PUDate</value></data><data name="plPUDate.Help"><value>Enter the PUDate</value></data>
+		<data name="plPUTime.Text"><value>PUTime</value></data><data name="plPUTime.Help"><value>Enter the PUTime</value></data>
+		<data name="plPieces.Text"><value>Pieces</value></data><data name="plPieces.Help"><value>Enter the Pieces</value></data>
+		<data name="plWeight.Text"><value>Weight</value></data><data name="plWeight.Help"><value>Enter the Weight</value></data>
+		<data name="plMiles.Text"><value>Miles</value></data><data name="plMiles.Help"><value>Enter the Miles</value></data>
+
+	
+	
+	
+	<data name="RepeatAdd.Text">
+		<value>Repeat Add Item ?</value>
+	</data>
+	<data name="plViewOrder.Text">
+		<value>ViewOrder</value>
+	</data>
+	<data name="plViewOrder.Help">
+		<value>Enter the ViewOrder</value>
+	</data>
+</root>

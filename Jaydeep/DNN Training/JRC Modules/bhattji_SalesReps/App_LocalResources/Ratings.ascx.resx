@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="ResMimeType">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="Version">
+		<value>1.0.0.0</value>
+	</resheader>
+	<resheader name="Reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="Writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="ReadMore.Text">
+		<value>read more ...</value>
+	</data>
+	<data name="DemoText.Text">
+		<value> See live Demo ...</value>
+	</data>
+	<data name="plTitle.Help">
+		<value>Enter a Title for the Announcment.  Depending on the Skin, this title will appear in bold.</value>
+	</data>
+	<data name="Close.Text">
+		<value>Close</value>
+	</data>
+	<data name="plMediaAlign.Text">
+		<value>Image Align</value>
+	</data>
+	<data name="plMediaWidth.Text">
+		<value>Image Width</value>
+	</data>
+	<data name="plMediaHeight.Text">
+		<value>Image Height</value>
+	</data>
+	<data name="plDescription.Text">
+		<value>Description</value>
+	</data>
+	<data name="plDescription.Help">
+		<value>Enter a description of the XYZ45</value>
+	</data>
+	<data name="plURL.Text">
+		<value>Link</value>
+	</data>
+	<data name="plURL.Help">
+		<value>The Announcment can optionally link to an external URL, a Page within this site or to a File within this site.</value>
+	</data>
+	<data name="plExpiryDate.Text">
+		<value>ExpiryDate</value>
+	</data>
+	<data name="plExpiryDate.Help">
+		<value>Enter an Expiry Date for the XYZ45.  The XYZ45 will no longer display after this date.  Good for limited sales or offerings.</value>
+	</data>
+	<data name="Title.ErrorMessage">
+		<value>You Must Enter A Title For The XYZ45</value>
+	</data>
+	<data name="Description.ErrorMessage">
+		<value>You Must Enter A Description Of The XYZ45</value>
+	</data>
+	<data name="ExpiryDate.ErrorMessage">
+		<value>&lt;br&gt;You have entered an invalid date!</value>
+	</data>
+	<data name="plViewOrder.Text">
+		<value>View Order</value>
+	</data>
+	<data name="plViewOrder.Help">
+		<value>Enter the View Order for the XYZ45.</value>
+	</data>
+	<data name="AddDate.Text">
+		<value>Add Date?</value>
+	</data>
+	<data name="plNotify.Text">
+		<value>Notify Users</value>
+	</data>
+	<data name="Notify.Text">
+		<value>Notify?</value>
+	</data>
+	<data name="plSendMethod.Text">
+		<value>Send Method</value>
+	</data>
+	<data name="plSendMethod.Help">
+		<value>Select the method for this email to be sent.</value>
+	</data>
+	<data name="SendTo.Text">
+		<value>TO: One Message Per Email Address ( Personalized )</value>
+	</data>
+	<data name="SendBCC.Text">
+		<value>BCC: One Email To Blind Distribution List ( Not Personalized )</value>
+	</data>
+	<data name="plRoles.Text">
+		<value>Notify Roles</value>
+	</data>
+	<data name="ViewOrder.ErrorMessage">
+		<value>&lt;br&gt;View order must be an integer value.</value>
+	</data>
+	<data name="ModuleHelp.Text">
+		<value>&lt;h1&gt;About the XYZ45s Module&lt;/h1&gt;&lt;p&gt;The XYZ45s Module produces a list of simple text XYZ45s consisting of a title and brief description.  Options include a read more link to a file, page or other site, XYZ45 PublishDate date and expiration date. Link click tracking and logging are also available. XYZ45s are ordered from newest to oldest, unless a view order is specified.&lt;/p&gt;&lt;h1&gt;Add an XYZ45&lt;/h1&gt;&lt;ol&gt;&lt;li&gt;Add an &lt;b&gt;XYZ45s&lt;/b&gt; module, or go to an existing &lt;b&gt;XYZ45s&lt;/b&gt; module.&lt;li&gt;Click &lt;b&gt;Add New XYZ45&lt;/b&gt;. 
+&lt;li&gt; At &lt;b&gt;Title&lt;/b&gt;, enter a title for the XYZ45.&lt;li&gt;At &lt;b&gt;Add Date&lt;/b&gt; (optional), remove the tick if you do not want the current day and date to be displayed beside the title.&lt;li&gt;At &lt;b&gt;Description&lt;/b&gt;, enter a description of the XYZ45.&lt;li&gt;At &lt;b&gt;Link Type&lt;/b&gt; (optional), select &lt;b&gt;URL&lt;/b&gt;, &lt;b&gt;Page&lt;/b&gt; or &lt;b&gt;File&lt;/b&gt; and then at &lt;b&gt;Link&lt;/b&gt; select or enter the required link, page or file.
+&lt;li&gt;At &lt;b&gt;Track Number Of Times This Link Is Clicked?&lt;/b&gt; (optional), check the box if required.&lt;li&gt;At &lt;b&gt;Log The User, Date, And Time For Every Link Click&lt;/b&gt; (optional), check the box if required.&lt;li&gt;At &lt;b&gt;ExpiryDate&lt;/b&gt; (optional) click Calendar and select the expiry date for the XYZ45.&lt;li&gt;At &lt;b&gt;View Order&lt;/b&gt; (optional), enter the View Order for the XYZ45.
+&lt;li&gt;Click &lt;b&gt;Update&lt;/b&gt;.&lt;/ol&gt;</value>
+	</data>
+	<data name="ControlTitle_edit.Text">
+		<value>Edit XYZ45s</value>
+	</data>
+</root>

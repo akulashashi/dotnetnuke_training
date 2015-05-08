@@ -1,0 +1,165 @@
+/* ================================
+    CSS STYLES FOR Module YouTubeVideos
+   ================================
+*/
+
+/* text style used for WaterMark on Textboxes */
+.WaterMarked,.WaterMarked TD
+{
+    color:Silver;
+    font-size:smaller;    
+}
+/* text style used for rendered Numeric and Readonly Textboxes */
+.DisplayNone
+{
+	display:none;
+}
+.NumericTextBox
+{
+    text-align: right;
+}
+.ReadOnlyTextBox
+{
+    border: none;
+    font-weight:bold;
+    background-color: inherit;
+}
+/* text style used for most text rendered by modules */
+.bhattjiRed,.bhattjiRed TD, A.bhattjiRed:link, A.bhattjiRed:visited, A.bhattjiRed:active, A.bhattjiRed:link TD, A.bhattjiRed:visited TD, A.bhattjiRed:active TD
+{
+    font-family: Tahoma, Arial, Helvetica;
+    font-size: 12px;
+    font-weight: normal;
+    color: red;
+}
+.bhattjiRedBold,.bhattjiRedBold TD, A.bhattjiRedBold:link, A.bhattjiRedBold:visited, A.bhattjiRedBold:active, A.bhattjiRedBold:link TD, A.bhattjiRedBold:visited TD, A.bhattjiRedBold:active TD
+{
+    font-family: Tahoma, Arial, Helvetica;
+    font-size: 12px;
+    font-weight: bold;
+    color: red;
+}
+
+.bhattjiGreen,.bhattjiGreen TD, A.bhattjiGreen:link, A.bhattjiGreen:visited, A.bhattjiGreen:active, A.bhattjiGreen:link TD, A.bhattjiGreen:visited TD, A.bhattjiGreen:active TD
+{
+    font-family: Tahoma, Arial, Helvetica;
+    font-size: 12px;
+    font-weight: normal;
+    color: green;
+}
+
+/* text style used for rendered text which requires emphasis */
+.bhattjiGreenBold,.bhattjiGreenBold TD, A.bhattjiGreenBold:link, A.bhattjiGreenBold:visited, A.bhattjiGreenBold:active, A.bhattjiGreenBold:link TD, A.bhattjiGreenBold:visited TD, A.bhattjiGreenBold:active TD
+{
+    font-family: Tahoma, Arial, Helvetica;
+    font-size: 12px;
+    font-weight: bold;
+    color: green;
+}
+
+.bhattjiBlue,.bhattjiBlue TD, A.bhattjiBlue:link, A.bhattjiBlue:visited, A.bhattjiBlue:active, A.bhattjiBlue:link TD, A.bhattjiBlue:visited TD, A.bhattjiBlue:active TD
+{
+    font-family: Tahoma, Arial, Helvetica;
+    font-size: 12px;
+    font-weight: normal;
+    color: blue;
+}
+
+/* text style used for rendered text which requires emphasis */
+.bhattjiBlueBold,.bhattjiBlueBold TD, A.bhattjiBlueBold:link, A.bhattjiBlueBold:visited, A.bhattjiBlueBold:active, A.bhattjiBlueBold:link TD, A.bhattjiBlueBold:visited TD, A.bhattjiBlueBold:active TD
+{
+    font-family: Tahoma, Arial, Helvetica;
+    font-size: 12px;
+    font-weight: bold;
+    color: blue;
+}
+
+.bhattjiNavy,.bhattjiNavy TD, A.bhattjiNavy:link, A.bhattjiNavy:visited, A.bhattjiNavy:active, A.bhattjiNavy:link TD, A.bhattjiNavy:visited TD, A.bhattjiNavy:active TD
+{
+    font-family: Tahoma, Arial, Helvetica;
+    font-size: 12px;
+    font-weight: normal;
+    color: navy;
+}
+
+/* text style used for rendered text which requires emphasis */
+.bhattjiNavyBold,.bhattjiNavyBold TD, A.bhattjiNavyBold:link, A.bhattjiNavyBold:visited, A.bhattjiNavyBold:active, A.bhattjiNavyBold:link TD, A.bhattjiNavyBold:visited TD, A.bhattjiNavyBold:active TD
+{
+    font-family: Tahoma, Arial, Helvetica;
+    font-size: 12px;
+    font-weight: bold;
+    color: navy;
+}
+
+
+
+/* Css Classes for the SubModal Modal WebPage Dialogs */
+/**
+ * POPUP CONTAINER STYLES
+ */
+#popupMask {
+	position: absolute;
+	z-index: 200;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: .4;
+	filter: alpha(opacity=40);
+	/* this hack is so it works in IE
+	 * I find setting the color in the css gives me more flexibility 
+	 * than the PNG solution.
+	 */
+	background-color:transparent !important;
+	background-color: #333333;
+	/* this hack is for opera support
+	 * you can uncomment the background-image if you don't care about opera.
+	 * this gives you the flexibility to use any bg color that you want, instead of the png
+	 */
+	background-image: url("maskBG.png") !important; /*// For browsers Moz, Opera, etc.*/
+	background-image:none;
+	background-repeat: repeat;
+	display:none;
+}
+#popupContainer {
+	position: absolute;
+	z-index: 201;
+	top: 0px;
+	left: 0px;
+	display:none;
+	padding: 0px;
+}
+#popupInner {
+	border: 2px solid #000000;
+	background-color: #ffffff;
+}
+
+#popupFrame {
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 202;
+}
+#popupTitleBar {
+	background-color: #486CAE;
+	color: #ffffff;
+	font-weight: bold;
+	height: 1.3em;
+	padding: 5px;
+	border-bottom: 2px solid #000000;
+	border-top: 1px solid #78A3F2;
+	border-left: 1px solid #78A3F2;
+	border-right: 1px solid #204095;
+	position: relative;
+	z-index: 203;
+}
+#popupTitle {
+	float:left;
+	font-size: 1.1em;
+}
+#popupControls {
+	float: right;
+	cursor: pointer;
+	cursor: hand;
+}

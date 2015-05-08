@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="ResMimeType">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="Version">
+		<value>1.0.0.0</value>
+	</resheader>
+	<resheader name="Reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="Writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3300.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	
+  <data name="plTitle.Text">
+    <value>InterOffice name or title</value>
+  </data>
+  <data name="plTitle.Help">
+    <value>Enter the desired InterOffice name or title.  This will display in the Pay Pal cart next to &lt;b&gt;Payment For&lt;/b&gt;.</value>
+  </data>
+  <data name="plServiceId.Text">
+    <value>Subscription Role</value>
+  </data>
+  <data name="plServiceId.Help">
+    <value>For Subscription based InterOffices or services, this setting allows you to define a n existing DNN security role to upgrade the user to upon succesful completion of the Pay Pal transaction.</value>
+  </data>
+  <data name="plOptionName.Text">
+    <value>Pay Pal Option Name</value>
+  </data>
+  <data name="plOptionName.Help">
+    <value>Allows you to define the InterOffice Option Name to display in the customers PayPal checkout&lt;br&gt;This displays under the InterOffice name or  title.&lt;br&gt;&lt;br&gt;For example you might have and option to describe the color of an item, in which case you would set Option Name equal to &lt;b&gt;&lt;em&gt;Color&lt;/em&gt;&lt;/b&gt; and the customers Pay Pal checkout would display a line item similar to - &lt;b&gt;Color:&lt;/b&gt; &lt;em&gt;option desc&lt;/em&gt;</value>
+  </data>
+  <data name="plOptionText.Text">
+    <value>Pay Pal Option Desc</value>
+  </data>
+  <data name="plOptionText.Help">
+    <value>Allows you to define a descrption of the InterOffice option text to be displayed next to the InterOffice Name in the customers PayPal checkout.  &lt;br&gt;This displays under the InterOffice name / title next to the InterOffice Option Name .&lt;br&gt; &lt;br&gt;For example you might have and option to describe the color of an item, in which case you would set Option Name equal to &lt;b&gt;&lt;em&gt;Color&lt;/em&gt;&lt;/b&gt; and the customers Pay Pal checkout would display a line item similar to - &lt;b&gt;Color:&lt;/b&gt; &lt;em&gt;option desc&lt;/em&gt;</value>
+  </data>
+  
+  
+  <data name="plOption1Name.Text">
+    <value>Pay Pal Option1 Name</value>
+  </data>
+  <data name="plOption1Name.Help">
+    <value>Allows you to define the InterOffice Option1 Name to display in the customers PayPal checkout&lt;br&gt;This displays under the InterOffice name or  title.&lt;br&gt;&lt;br&gt;For example you might have and Option1 to describe the color of an item, in which case you would set Option1 Name equal to &lt;b&gt;&lt;em&gt;Color&lt;/em&gt;&lt;/b&gt; and the customers Pay Pal checkout would display a line item similar to - &lt;b&gt;Color:&lt;/b&gt; &lt;em&gt;Option1 desc&lt;/em&gt;</value>
+  </data>
+  <data name="plOption1Text.Text">
+    <value>Pay Pal Option1 Desc</value>
+  </data>
+  <data name="plOption1Text.Help">
+    <value>Allows you to define a descrption of the InterOffice Option1 text to be displayed next to the InterOffice Name in the customers PayPal checkout.  &lt;br&gt;This displays under the InterOffice name / title next to the InterOffice Option1 Name .&lt;br&gt; &lt;br&gt;For example you might have and Option1 to describe the color of an item, in which case you would set Option1 Name equal to &lt;b&gt;&lt;em&gt;Color&lt;/em&gt;&lt;/b&gt; and the customers Pay Pal checkout would display a line item similar to - &lt;b&gt;Color:&lt;/b&gt; &lt;em&gt;Option1 desc&lt;/em&gt;</value>
+  </data>
+  
+  <data name="plPrice.Text">
+    <value>Selling Price</value>
+  </data>
+  <data name="plPrice.Help">
+    <value>Enter the desired selling Price of the InterOffice</value>
+  </data>
+  <data name="plListPrice.Text">
+    <value>List Price</value>
+  </data>
+  <data name="plListPrice.Help">
+    <value>Enter the List Price of the InterOffice item if desired.</value>
+  </data>
+  <data name="plShipping.Text">
+    <value>Shipping</value>
+  </data>
+  <data name="plShipping.Help">
+    <value>Enter the Shipping cost associated with this item.</value>
+  </data>
+  <data name="plMediaSrc.Text">
+    <value>InterOffice Image</value>
+  </data>
+  <data name="plMediaSrc.Help">
+    <value>&lt;p&gt;Allows you to upload or specify the &lt;em&gt;location&lt;/em&gt; of a InterOffice image file. &lt;br&gt;
+  &lt;br&gt;
+This can be set to &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt; None&lt;/li&gt;
+  &lt;li&gt;URL of an external site page&lt;/li&gt;
+  &lt;li&gt;File within your DNN portal.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Optionally, you may also upload a new file by: &lt;br&gt;
+&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Selecting the desired upload folder location&lt;/li&gt;
+  &lt;li&gt;Click on the &lt;strong&gt;Upload New File &lt;/strong&gt; link.      &lt;/li&gt;
+  &lt;li&gt;Click on the &lt;strong&gt;Browse&lt;/strong&gt; button and select the desired file        &lt;/li&gt;
+  &lt;li&gt;Click on the &lt;strong&gt;Upload Selected File&lt;/strong&gt; link&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</value>
+  </data>
+  <data name="plMediaAlign.Text">
+    <value>Alignment</value>
+  </data>
+  <data name="plMediaAlign.Help">
+    <value>Select the desired alignment of the InterOffice image</value>
+  </data>
+  <data name="plMediaWidth.Text">
+    <value>Image Width</value>
+  </data>
+  <data name="plMediaWidth.Help">
+    <value>Enter the desired width of the InterOffice image in the details view</value>
+  </data>
+  <data name="plMediaHeight.Text">
+    <value>Image Height</value>
+  </data>
+  <data name="plMediaHeight.Help">
+    <value>Enter the desired height of the InterOffice image in the details view</value>
+  </data>
+  <data name="plDescription.Text">
+    <value>Description</value>
+  </data>
+  <data name="plDescription.Help">
+    <value>Enter a Description of the InterOffice.&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; This will display in the online catalog in the listing view as well as the detailed view, but does not transfer to Pay Pal checkout.</value>
+  </data>
+  <data name="plMediaSrcD.Text">
+    <value>Image Src</value>
+  </data>
+  <data name="plMediaSrcD.Help">
+    <value>Enter the Image Src</value>
+  </data>
+  <data name="plMediaAlignD.Text">
+    <value>Align</value>
+  </data>
+  <data name="plMediaAlignD.Help">
+    <value>Enter the Align</value>
+  </data>
+  <data name="plMediaWidthD.Text">
+    <value>Width</value>
+  </data>
+  <data name="plMediaWidthD.Help">
+    <value>Enter the Width</value>
+  </data>
+  <data name="plMediaHeightD.Text">
+    <value>Height</value>
+  </data>
+  <data name="plMediaHeightD.Help">
+    <value>Enter the Height</value>
+  </data>
+  <data name="plDetails.Text">
+    <value>Details</value>
+  </data>
+  <data name="plDetails.Help">
+    <value>Enter a Detailed Description of the InterOffice. &lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; This will display in the online catalog in the detailed view, but does not transfer to Pay Pal checkout.</value>
+  </data>
+  <data name="plDemoUrl.Text">
+    <value>Demo Url</value>
+  </data>
+  <data name="plDemoUrl.Help">
+    <value>Allows you to to provide a link to a demo</value>
+  </data>
+  <data name="plNavURL.Text">
+    <value>Read More link</value>
+  </data>
+  <data name="plNavURL.Help">
+    <value>Enter the More Info link type and source file</value>
+  </data>
+  <data name="plPublishDate.Text">
+    <value>PublishDate Date</value>
+  </data>
+  <data name="plPublishDate.Help">
+    <value>Allows for scheduled display of the InterOffice in the future. For example, a special limted offering or sale period.</value>
+  </data>
+  <data name="plExpiryDate.Text">
+    <value>Expire Date</value>
+  </data>
+  <data name="plExpiryDate.Help">
+    <value>Allows for you to enter an expiration date for the InterOffice display.  For example a sale item or limited offering.</value>
+  </data>
+  <data name="plViewOrder.Text">
+    <value>View Order</value>
+  </data>
+  <data name="plViewOrder.Help">
+    <value>Enter the desired display View Order.&lt;br&gt;You can enter a number that will correspond to the item's position in the listing view.  Any items that &lt;b&gt;do not&lt;/b&gt; have a value defined here will be listed at the top or before all those that do. </value>
+  </data>
+  <data name="plSendMethod.Text">
+    <value>Notify Method</value>
+  </data>
+  <data name="plSendMethod.Help">
+    <value>Allows notification of the </value>
+  </data>
+  <data name="plRoles.Text">
+    <value>Notified Roles</value>
+  </data>
+  <data name="plRoles.Help">
+    <value>Select the security roles to be notified.</value>
+  </data>
+	
+	
+</root>

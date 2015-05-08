@@ -1,0 +1,419 @@
+/* ================================
+    CSS STYLES FOR Module Broker
+   ================================
+*/
+/*.GridFooter {color: #FFFFFF;font-weight:bold;font-size:11px;background:black;}*/
+
+.alloc_amt {color:#000000;font-size:9px;}
+.alloc_lab {color:#000000;font-size:10px;font-weight:bolder;}
+.alloc_tab {padding-left:8px;padding-right:8px;}
+.custbilldol {color:#000000;font-size:11px;}
+.custbilllab {color:#000000;font-size:11px;font-weight:bolder;}
+.emaildrop {font-size:9px;}
+.fixed  {font-size:9px;color:#ffffff !Important;}
+.fixed_blue  {font-size:9px;color:black !Important;}
+.update {z-index:999;vertical-align:middle;align:center;}
+
+.topikons a:link {color:#ffffff;font-family:tahoma;font-size:10px !Important;}
+.topikons a:visited {color:#ffffff;font-family:tahoma;font-size:10px !Important;}
+.topikons a:active {color:#ffffff;font-family:tahoma;font-size:10px !Important;}
+.topikons a:hover {color:#ffffff;font-family:tahoma;font-size:10px !Important;}
+
+.update {z-index:999;}
+
+CssClass="custbilldol"
+
+.style1 {color: #FFFFFF;font-weight:bold;font-size:11px;background:black;}
+.style2 {font-size: 11px}
+.style3 {font-size: 10px;color:black;}
+
+.CommandButton {font-size:17px !Important;font-weight:bold !Important;}
+
+.jrcheadingtd
+{	padding:5px;
+	background-image: url(../../images/top-tile.gif); 
+}
+.DisplayNone
+{
+	display:none;
+}
+.jrcskintable
+{
+
+}
+.RequiredBox
+{
+	color:White;
+    background-color: Red;
+}
+.NumericTextBox
+{
+    text-align: right;
+}
+.ReadOnlyTextBox
+{
+    border: none;
+    font-weight:bolder;
+	font-size:12px;
+    background-color: inherit;
+}
+input,textarea 
+{
+	font-size:11px;
+	font-family: Tahoma;
+	color:#333333;
+}
+
+.jrctoplefttd
+{
+
+	background-image: url(../../images/top-left.gif); 
+	width:10px;
+	height:30px;
+}
+
+.jrctitletd
+{	
+	background-image: url(../../images/top-tile.gif); 
+	height:30px;
+}
+
+.jrctitletext 
+{
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: bold;
+	color: #ffffff;
+	padding-top: 2px;
+	padding-bottom: 3px;
+	background-color: #3578AF;
+	background-image: none;
+	background-repeat: repeat;
+	background-attachment: scroll;
+	background-position: 0% 0%;
+}
+
+.NormalTextBox 
+{
+	background-color: #FAFCFE;
+	border: 1px solid #162F49;
+}
+
+.NormalTextBox:hover 
+{
+	background-color: #EAF1F9;
+}
+
+.main_title {
+	color: #fff;
+	font-weight: bold;
+	font-size: 11px;
+}
+
+.SubHead 
+{
+	color: #000000;
+}
+
+.SubHead a 
+{
+	color: white;
+}
+
+.Subhead a:hover 
+{
+	color: #CCCCCC;
+}
+
+.boxdisplay 
+{
+	background-color: #E5F5F9;
+	background-image: url(http://www.webdesignconnecticut.com/images/tablebg.gif);
+	background-repeat: repeat-x;
+	border: 1px solid #455A14;
+}
+
+.boxdisplay .SubHead 
+{
+	color: #21496D;
+}
+
+
+.jrctopslide
+{
+
+	background-image: url(../../images/top-tile.gif); 
+	height:30px;
+}
+
+.jrctoprighttd
+{
+
+	background-image: url(../../images/top-right.gif); 
+	width:10px;
+	height:30px;
+}
+
+.jrcleftslidetd
+{
+	background-image: url(../../images/left-tile.gif);
+
+	width:10px;
+}
+
+.jrcrightslidetd
+{
+	background-image: url(../../images/right-tile.gif);
+	width:10px;
+}
+
+.jrcbottomlefttd
+{
+
+	background-image: url(../../images/bottom-left.gif); 
+	width:10px;
+	height:10px;
+}
+
+.jrcbottomslide
+{
+
+	background-image: url(../../images/bottom-tile.gif); 
+	height:10px;
+}
+
+.jrcbottomrighttd
+{
+
+	background-image: url(../../images/bottom-right.gif); 
+	width:10px;
+	height:10px;
+}
+
+/*Reorder List*/
+.dragHandle {
+	/*position:relative;*/
+	width:10px;
+	height:15px;
+	background-color:Blue;
+	background-image:url(../../images/bg-menu-main.png);
+	cursor:move;
+	border:outset thin white;
+}
+
+.reorderListDemo li {
+	list-style:none;
+	margin:2px;
+	background-image:url(../../images/bg_nav.gif);
+	background-repeat:repeat-x;
+	color:#FFFFFF;
+}
+
+.reorderListDemo li a {color:#FFF !important; font-weight:bold;}
+
+.reorderCue {
+	border:dashed thin black;
+	width:100%;
+	height:25px;
+}
+
+.itemArea 
+{
+	/*position:relative;*/
+	margin-left:15px;
+	font-family:Arial, Verdana, sans-serif;
+	font-size:1em;
+	text-align:left;
+}
+
+.UpdateProgressClass {
+	position:absolute;
+	top: 0px;
+	left: 0px;
+    width:1440px;
+    height: 1200px;
+    text-align:center;  
+	vertical-align:middle;
+	z-index:1000;
+	/* 
+     * this hack is for opera support
+	 * you can uncomment the background-image if you don't care about opera.
+	 * this gives you the flexibility to use any bg color that you want, instead of the png
+	 */
+	background-image: url("img/maskBG.png"); /*// !important For browsers Moz, Opera, etc.*/
+	/*
+	display:none;
+    background-image:none;
+	background-repeat: repeat;
+    */
+	/* this hack is so it works in IE
+	 * I find setting the color in the css gives me more flexibility 
+	 * than the PNG solution.
+	 */
+	 /*
+	opacity: 0.4;
+	filter: alpha(opacity=40);
+	background-color:transparent !important;
+	background-color: #333333;
+    */
+}
+
+
+
+
+
+
+/* chris 1/21/10 updates */
+
+td.menu32 {
+	width: 32px;
+	text-align: center;
+}
+
+td.menu10 {
+	width: 5px;
+	text-align: center;
+	font-size: 1px;
+	line-height: 1px;
+}
+
+td.col110 {
+	width: 110px;
+}
+
+.col80 {
+	width: 80px;
+	float: left;
+}
+
+.col50 {
+	width: 50px;
+	float: left;
+}
+
+.col50per {
+	width: 49%;
+	float: left;
+	white-space: nowrap;
+}
+
+.col75per {
+	width: 74%;
+	float: left;
+	white-space: nowrap;
+}
+
+.col60per {
+	width: 60%;
+	float: left;
+}
+
+.col40per {
+	width: 39%;
+	float: left;
+}
+
+.col33per {
+	width: 33%;
+	float: left;
+	white-space: nowrap;
+}
+
+.col25per {
+	width: 25%;
+	float: left;
+	white-space: nowrap;
+}
+
+.col25 {
+	width: 63px;
+	float: left;
+	white-space: nowrap;
+}
+
+.nr {
+	white-space: nowrap;
+}
+
+.fleft {
+	float: left;
+	width: 100%;
+}
+
+#acctcolumn {
+	width: 65px;
+	border: 1px solid #CCC;
+	padding-left: 1px;
+	padding-right: 1px;
+	background: url(img/acctsummarybg.png) repeat-x;
+	float: right;
+}
+
+.acctitem {
+	width: 100%;
+	height: 25px;
+	color: #000;
+	line-height: 9px;
+	float: left;
+}
+
+.nowrap {
+	white-space: nowrap;
+	height: 20px;
+	margin-bottom: 3px;
+	float: left;
+	width: 120px;
+}
+
+.nowrap-l {
+	white-space: nowrap;
+	float: left;
+	width: 110px;
+	height: 20px;
+	margin-bottom: 3px;
+}
+
+td.fixed_blue {
+	width: 10px;
+}
+
+.alignc {
+	text-align: center;
+	margin-top: 3px;
+}
+
+/* AutoComplete Classes */
+/*
+Css Class that will be used to style the completion list flyout. 
+*/
+.CompletionListCssClass
+{
+	font-family: Tahoma, Arial, Helvetica;
+	font-size: 10px;
+	font-weight: normal;
+	padding-left: 5px;
+	width:350px;
+}
+
+/*
+Css Class that will be used to style an item in the AutoComplete list flyout. 
+*/
+.CompletionListItemCssClass
+{
+	list-style-type: none;
+	background-color:White;
+	padding-left: 5px;
+	width:350px;
+}
+
+/*
+Css Class that will be used to style a highlighted item in the AutoComplete list flyout. 
+*/
+.CompletionListHighlightedItemCssClass 
+{
+	list-style-type:none;
+	background-color:Yellow;
+	padding-left: 5px;
+	width:350px;
+}
+.bighead {font-family:tahoma!Important;font-size:25px!Important;font-weight:bold!Important;}

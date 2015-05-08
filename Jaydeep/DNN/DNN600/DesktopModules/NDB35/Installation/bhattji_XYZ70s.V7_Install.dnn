@@ -1,0 +1,75 @@
+﻿<dotnetnuke type="Package" version="5.0">
+	<packages>
+		<package name="bhattji.XYZ70s" type="Module" version="01.00.00">
+			<friendlyName>bhattji.XYZ70s</friendlyName>
+			<description>A short Description about bhattji's XYZ70s Module</description>
+			<owner>
+				<name>Jaydeep Bhatt</name>
+				<organization>Vision Consultants</organization>
+				<url>http://www.bhattji.com</url>
+				<email>support@bhattji.com</email>
+			</owner>
+			<license src="license.txt" />
+			<releaseNotes src="releasenotes.txt" />
+            <iconFile>DesktopModules/bhattji.XYZ70s/vision.ico</iconFile>
+            <dependencies>
+                <dependency type="CoreVersion">06.00.00</dependency>
+            </dependencies>
+			<components>
+				<component type="Module">
+					<desktopModule>
+						<moduleName>bhattji.XYZ70s</moduleName>
+						<foldername>bhattji.XYZ70s</foldername>
+						<businessControllerClass>bhattji.Modules.XYZ70s.XYZ70sController, bhattji.Modules.XYZ70s</businessControllerClass>
+						<supportedFeatures />
+						<moduleDefinitions>
+							<moduleDefinition>
+								<friendlyName>bhattji.XYZ70s</friendlyName>
+								<defaultCacheTime>0</defaultCacheTime>
+								<moduleControls>
+									<moduleControl>
+										<controlKey />
+										<controlSrc>DesktopModules/bhattji.XYZ70s/Views.ascx</controlSrc>
+										<supportsPartialRendering>False</supportsPartialRendering>
+										<controlTitle>XYZ70s</controlTitle>
+										<controlType>View</controlType>
+										<iconFile />
+										<helpUrl>http://www.bhattji.com/modulehelp/?ctl=Views</helpUrl>
+										<viewOrder>0</viewOrder>
+									</moduleControl>
+									<moduleControl>
+										<controlKey>Settings</controlKey>
+										<controlSrc>DesktopModules/bhattji.XYZ70s/Settings.ascx</controlSrc>
+										<supportsPartialRendering>False</supportsPartialRendering>
+										<controlTitle>XYZ70s Settings</controlTitle>
+										<controlType>Edit</controlType>
+										<iconFile />
+										<helpUrl>http://www.bhattji.com/modulehelp/?ctl=Settings</helpUrl>
+										<viewOrder>0</viewOrder>
+                                        <supportsPopUps>True</supportsPopUps>
+									</moduleControl>
+								</moduleControls>
+							</moduleDefinition>
+						</moduleDefinitions>
+					</desktopModule>
+				</component>
+				<component type="Assembly">
+					<assemblies>
+						<assembly>
+							<path>bin</path>
+							<name>bhattji.Modules.XYZ70s.dll</name>
+						</assembly>
+					</assemblies>
+				</component>
+				<component type="ResourceFile">
+					<resourceFiles>
+						<basePath>DesktopModules\bhattji.XYZ70s</basePath>
+						<resourceFile>
+							<name>install.bhattji.zip</name>
+						</resourceFile>
+					</resourceFiles>
+				</component>
+			</components>
+		</package>
+	</packages>
+</dotnetnuke>

@@ -1,0 +1,302 @@
+Imports System
+
+Namespace bhattji.Modules.myObjectNames
+
+	''' -----------------------------------------------------------------------------
+	''' <summary>
+	'''		The TerminatedInfo Class the business object representing a single
+	'''		Terminated object, as used by the myObjectNames module.
+	''' </summary>
+	''' <remarks></remarks>
+	''' <history>
+	'''		[MyGeneration]	30/11/2010 3:15:28 PM	Code file automatically generated from WDC by MyGeneration v1.3.0.3
+	''' </history>
+	''' -----------------------------------------------------------------------------
+	<Serializable()> _
+	Public Class TerminatedInfo 
+	
+#Region " Private fields "
+		
+		Private _Terminated As Boolean
+		Private _Term_Staff As String
+		Private _Term_Date As Date
+		Private _Term_Reason As String
+		
+#End Region
+		
+#Region " Constructors "
+		
+		Public Sub New()
+			' default object initialization
+		end sub
+	
+		Public Sub New(ByVal Terminated As Boolean, ByVal Term_Staff As String, ByVal Term_Date As Date, ByVal Term_Reason As String)
+			_Terminated = Terminated
+			_Term_Staff = Term_Staff
+			_Term_Date = Term_Date
+			_Term_Reason = Term_Reason
+		End Sub
+		
+#End Region
+
+
+
+#Region " Properties "
+
+		Public Property Terminated() As Boolean
+			Get	
+				Return _Terminated
+			End Get
+			Set(ByVal Value As Boolean)
+				_Terminated = Value				
+			End Set
+		End Property
+
+		Public Property Term_Staff() As String
+			Get	
+				Return _Term_Staff
+			End Get
+			Set(ByVal Value As String)
+				_Term_Staff = Value				
+			End Set
+		End Property
+
+		Public Property Term_Date() As Date
+			Get	
+				Return _Term_Date
+			End Get
+			Set(ByVal Value As Date)
+				_Term_Date = Value				
+			End Set
+		End Property
+
+		Public Property Term_Reason() As String
+			Get	
+				Return _Term_Reason
+			End Get
+			Set(ByVal Value As String)
+				_Term_Reason = Value				
+			End Set
+		End Property
+
+#End Region
+
+#Region " IHydratable "
+		_Terminated = Convert.ToBoolean(Null.SetNull(dr("Terminated"), Terminated))
+		_Term_Staff = Convert.ToString(Null.SetNull(dr("Term_Staff"), Term_Staff))
+		_Term_Date = Convert.ToDateTime(Null.SetNull(dr("Term_Date"), Term_Date))
+		_Term_Reason = Convert.ToString(Null.SetNull(dr("Term_Reason"), Term_Reason))
+	
+#End Region
+
+#Region " Public Methods "
+
+	Public Function AddTerminated(ByVal objTerminated As TerminatedInfo) as Integer
+		With objTerminated
+			Return CType(DataProvider.Instance().Terminated(GetNull(.Terminated), GetNull(.Term_Staff), GetNull(.Term_Date), GetNull(.Term_Reason)), Integer)
+		End With
+	End Function
+
+	Public Sub UpdateTerminated(ByVal objTerminated As TerminatedInfo) 
+		With objTerminated	
+			DataProvider.Instance().Terminated(GetNull(.Terminated), GetNull(.Term_Staff), GetNull(.Term_Date), GetNull(.Term_Reason)) 
+		End With
+	End Sub
+		
+#End Region
+
+
+
+
+#Region "Assign TextBox From Values, for Page_Load Event "
+		chkTerminated.Checked = .Terminated 'bit
+		txtTerm_Staff.Text = .Term_Staff 'nvarchar
+		If Not Null.IsNull(.Term_Date) Then txtTerm_Date.Text = .Term_Date.ToShortDateString 'datetime
+		txtTerm_Reason.Text = .Term_Reason 'nvarchar
+	
+#End Region
+
+
+#Region "Assign Values From TextBox, for Update Event"
+		Try
+		.Terminated = chkTerminated.Checked
+		Catch
+		End Try
+		.Term_Staff = txtTerm_Staff.Text
+		Try
+		.Term_Date = Date.Parse(txtTerm_Date.Text)
+		Catch
+		End Try
+		.Term_Reason = txtTerm_Reason.Text
+
+#End Region
+
+	
+#Region "Object Declaration" 'For Edit.ascx.vb
+
+		Protected WithEvents chkTerminated As System.Web.UI.WebControls.CheckBox
+		Protected WithEvents txtTerm_Staff As System.Web.UI.WebControls.TextBox
+		Protected WithEvents txtTerm_Date As System.Web.UI.WebControls.TextBox
+		Protected WithEvents txtTerm_Reason As System.Web.UI.WebControls.TextBox
+	
+		
+#End Region	
+
+#Region "HTML RowCells" 'For Edit HTML
+
+		<tr><td class="SubHead" nowrap><dnn:label id="plTerminated" controlname="chkTerminated" suffix=":" CssClass="SubHead" runat="server" /></td><td class="Normal"><asp:checkbox id="chkTerminated"  resourcekey="Terminated" CssClass="NormalTextBox" runat="server" /></td></tr> 
+		<tr><td class="SubHead" nowrap><dnn:label id="plTerm_Staff" controlname="txtTerm_Staff" suffix=":" CssClass="SubHead" runat="server" /></td><td class="Normal"><asp:textbox id="txtTerm_Staff"  CssClass="NormalTextBox" runat="server" /></td></tr> 
+		<tr><td class="SubHead" nowrap><dnn:label id="plTerm_Date" controlname="txtTerm_Date" suffix=":" CssClass="SubHead" runat="server"/></td><td class="Normal"><asp:textbox id="txtTerm_Date" CssClass="NormalTextBox" runat="server" /><asp:hyperlink id="hypTerm_Date" runat="server"  ImageUrl="~/images/calendar.png" style="cursor:hand"/><act:CalendarExtender ID="calTerm_Date" runat="server" TargetControlID="txtTerm_Date" PopupButtonID="hypTerm_Date" Format="d" /></td></tr> 
+		<tr><td class="SubHead" nowrap><dnn:label id="plTerm_Reason" controlname="txtTerm_Reason" suffix=":" CssClass="SubHead" runat="server" /></td><td class="Normal"><asp:textbox id="txtTerm_Reason"  CssClass="NormalTextBox" runat="server" /></td></tr> 
+	
+
+#End Region	
+
+
+#Region "Localisation XML Values" 'For Edit HTML
+
+		<data name="plTerminated.Text"><value>Terminated</value></data><data name="plTerminated.Help"><value>Select the Terminated ?</value></data><data name="Terminated.Text"><value>Select the Terminated ?</value></data>
+		<data name="plTerm_Staff.Text"><value>Term_Staff</value></data><data name="plTerm_Staff.Help"><value>Enter the Term_Staff</value></data>
+		<data name="plTerm_Date.Text"><value>Term_Date</value></data><data name="plTerm_Date.Help"><value>Enter the Term_Date</value></data>
+		<data name="plTerm_Reason.Text"><value>Term_Reason</value></data><data name="plTerm_Reason.Help"><value>Enter the Term_Reason</value></data>
+	
+
+#End Region
+
+#Region "Assign Labels From Values, for Page_Load Event " 'For Details.ascx.vb
+
+		If objTerminated.Terminated Then hypTerminatedobjTerminated.ImageUrl = ResolveUrl("~/images/FileManager/DNNExplorer_OK.gif") Else hypTerminated.ImageUrl = ResloveUrl("~/images/FileManager/DNNExplorer_Cancel.gif")
+		lblTerm_Staff.Text = objTerminated.Term_Staff
+		If Not Null.IsNull(objTerminated.Term_Date) Then lblTerm_Date.Text = objTerminated.Term_Date.ToShortDateString
+		lblTerm_Reason.Text = objTerminated.Term_Reason
+	
+
+#End Region
+
+
+
+#Region "Object Declaration" 'For Details.ascx.vb
+
+		Protected WithEvents hypTerminated As System.Web.UI.WebControls.Hyperlink
+		Protected WithEvents lblTerm_Staff As System.Web.UI.WebControls.Label
+		Protected WithEvents lblTerm_Date As System.Web.UI.WebControls.Label
+		Protected WithEvents lblTerm_Reason As System.Web.UI.WebControls.Label
+	
+
+#End Region
+
+
+#Region "HTML RowCells" 'For Detail HTML
+
+
+		<tr><td class="SubHead" nowrap><asp:label id="plTerminated" resourcekey="lblTerminated" CssClass="SubHead" runat="server" /></td><td class="Normal"><asp:hyperlink id="hypTerminated"  resourcekey="hypTerminated" CssClass="Normal" runat="server" /></td></tr> 
+		<tr><td class="SubHead" nowrap><asp:label id="plTerm_Staff" resourcekey="lblTerm_Staff" CssClass="SubHead" runat="server" /></td><td class="Normal"><asp:label id="lblTerm_Staff" CssClass="Normal" runat="server" /></td></tr> 
+		<tr><td class="SubHead" nowrap><asp:label id="plTerm_Date" resourcekey="lblTerm_Date" CssClass="SubHead" runat="server"/></td><td class="Normal"><asp:label id="lblTerm_Date" CssClass="Normal" runat="server" /><asp:hyperlink id="cmdCalendarTerm_Date" ImageUrl="~/images/calendar.png" resourcekey="Calendar" CssClass="CommandButton" Runat="server" /></td></tr> 
+		<tr><td class="SubHead" nowrap><asp:label id="plTerm_Reason" resourcekey="lblTerm_Reason" CssClass="SubHead" runat="server" /></td><td class="Normal"><asp:label id="lblTerm_Reason" CssClass="Normal" runat="server" /></td></tr> 
+	
+
+#End Region
+
+#Region "Localisation XML Values" 'For Detail HTML
+
+		<data name="lblTerminated.Text"><value>Terminated</value></data> 
+		<data name="lblTerm_Staff.Text"><value>Term_Staff</value></data> 
+		<data name="lblTerm_Date.Text"><value>Term_Date</value></data> 
+		<data name="lblTerm_Reason.Text"><value>Term_Reason</value></data> 
+	
+
+#End Region
+
+#Region "Export XML Values"
+
+		strXML &= "<Terminated>" & XMLEncode(.Terminated.ToString) & "</Terminated>"
+		strXML &= "<Term_Staff>" & XMLEncode(.Term_Staff) & "</Term_Staff>"
+		strXML &= "<Term_Date>" & XMLEncode(.Term_Date.ToString) & "</Term_Date>"
+		strXML &= "<Term_Reason>" & XMLEncode(.Term_Reason) & "</Term_Reason>"
+	
+		
+#End Region
+
+#Region "Import XML Values"
+
+		Try
+		.Terminated = Boolean.Parse(xmlTerminated.Item("Terminated").InnerText)
+		Catch
+		End Try
+		Try
+		.Term_Staff = xmlTerminated.Item("Term_Staff").InnerText
+		Catch
+		End Try
+		Try
+		.Term_Date = Date.Parse(xmlTerminated.Item("Term_Date").InnerText)
+		Catch
+		End Try
+		Try
+		.Term_Reason = xmlTerminated.Item("Term_Reason").InnerText
+		Catch
+		End Try
+
+
+#End Region
+
+#Region "Creating Fields"
+
+		[Terminated][bit] NULL ,
+		[Term_Staff][nvarchar](12) NULL ,
+		[Term_Date][datetime] NULL ,
+		[Term_Reason][nvarchar](50) NULL ,
+
+#End Region
+
+#Region "Fields Declaration"
+
+		@Terminated bit ,
+		@Term_Staff nvarchar(12) ,
+		@Term_Date datetime ,
+		@Term_Reason nvarchar(50) ,
+
+
+#End Region
+
+#Region "Insert Into - Add"
+
+		[Terminated] ,
+		[Term_Staff] ,
+		[Term_Date] ,
+		[Term_Reason] ,
+		
+
+#End Region
+
+#Region "Values"
+
+		@Terminated ,
+		@Term_Staff ,
+		@Term_Date ,
+		@Term_Reason ,
+		
+
+#End Region
+
+#Region "Assigning Fields - Update"
+
+		[Terminated] = @Terminated ,
+		[Term_Staff] = @Term_Staff ,
+		[Term_Date] = @Term_Date ,
+		[Term_Reason] = @Term_Reason ,
+		
+
+#Region "Retrieve Fields - Get"
+
+		x.[Terminated] ,
+		x.[Term_Staff] ,
+		x.[Term_Date] ,
+		x.[Term_Reason] ,
+		
+
+#End Region
+
+	
+End Class
+	
+End Namespace

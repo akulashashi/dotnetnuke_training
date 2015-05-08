@@ -1,0 +1,1970 @@
+﻿/************************************************************/
+/*****              SQLDataProvider                     *****/
+/*****              InterOffices               *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/* Insert here the code to create tables and stored procs   */
+
+/* Insert here the code to create tables */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}ARD_InterOffice]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+begin
+
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ALTER COLUMN [Xfer] [float] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ALTER COLUMN [Day0] [float] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ALTER COLUMN [Day7] [float] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ALTER COLUMN [Day15] [float] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ALTER COLUMN [Day30] [float] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ALTER COLUMN [OOLoadNo] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ALTER COLUMN [NoOffChar] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ALTER COLUMN [BKLoadNo] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ALTER COLUMN [AVLoadNo] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ALTER COLUMN [CountryCode] [nvarchar](15) NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ALTER COLUMN [AbvrName] [nvarchar](30) NULL
+
+
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ADD [ItemID] [int] IDENTITY (1, 1) NOT NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ADD [ModuleId] [int] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ADD [HasProbDrivers] [bit] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ADD [CopyAddress] [bit] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ADD [ShowOnWeb] [bit] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ADD [CorpOff] [bit] NULL
+
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ADD [ViewOrder] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ADD [UpdatedByUserId] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ADD [UpdatedDate] [datetime] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ADD [CreatedByUserId] [int] NULL
+ALTER TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice]  ADD [CreatedDate] [datetime] NULL
+end
+
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}ARD_InterOffice]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+begin
+
+UPDATE {databaseOwner}[{objectQualifier}ARD_InterOffice]  SET [ModuleId] = 371
+
+UPDATE {databaseOwner}[{objectQualifier}ARD_InterOffice]  SET [UpdatedByUserId] = 1
+UPDATE {databaseOwner}[{objectQualifier}ARD_InterOffice]  SET [UpdatedDate] = GetDate()
+UPDATE {databaseOwner}[{objectQualifier}ARD_InterOffice]  SET [CreatedByUserId] = 1
+UPDATE {databaseOwner}[{objectQualifier}ARD_InterOffice]  SET [CreatedDate] = GetDate()
+
+end
+
+else
+
+CREATE TABLE {databaseOwner}[{objectQualifier}ARD_InterOffice] (
+	[ItemID] [int] IDENTITY (1, 1) NOT NULL ,
+	[ModuleID] [int] NULL ,
+
+	[JRCIOfficeCode] [nvarchar] (9) NULL ,
+	[IOfficeCode] [nvarchar] (7) NULL ,
+	[IOName] [nvarchar] (30) NULL ,
+	[AbvrName] [nvarchar] (30) NULL ,
+	[AddressLine1] [nvarchar] (30) NULL ,
+	[AddressLine2] [nvarchar] (30) NULL ,
+	[City] [nvarchar] (20) NULL ,
+	[State] [nvarchar] (2) NULL ,
+	[ZipCode] [nvarchar] (10) NULL ,
+	[CountryCode] [nvarchar] (15) NULL ,
+	[PhoneNo] [nvarchar] (17) NULL ,
+	[Ext] [nvarchar] (5) NULL ,
+	[EmailAddress] [nvarchar] (40) NULL ,
+	
+	[HasProbDrivers] [bit] NULL ,
+	
+	[CommRate] [nvarchar] (2) NULL ,
+	[AdminExempt] [nvarchar] (1) NULL ,
+	[Status] [nvarchar] (1) NULL ,
+	[LoadType] [nvarchar] (2) NULL ,
+	[Division] [nvarchar] (3) NULL ,
+	[FaxNo] [nvarchar] (17) NULL ,
+	[OfficeOR] [nvarchar] (1) NULL ,
+	[OfficeORAcct] [nvarchar] (7) NULL ,
+	[OfficeORPct] [float] NULL ,
+	[OfficeCodeNo] [nvarchar] (3) NULL ,
+	[LogOnPW] [nvarchar] (10) NULL ,
+	[OfficName] [nvarchar] (7) NULL ,
+	[OfficeAddr] [nvarchar] (50) NULL ,
+	[OfficeAbrv] [nvarchar] (30) NULL ,
+	[TempFile1] [nvarchar] (50) NULL ,
+	[OONo] [nvarchar] (3) NULL ,
+	[BKNo] [nvarchar] (3) NULL ,
+	[AVNo] [nvarchar] (3) NULL ,
+	[UseDispatch] [nvarchar] (1) NULL ,
+	[OfficePct] [float] NULL ,
+	[LoadAcct] [nvarchar] (7) NULL ,
+	[DiscAcct] [nvarchar] (7) NULL ,
+	[DetenAcct] [nvarchar] (7) NULL ,
+	[TollsAcct] [nvarchar] (7) NULL ,
+	[FuelAcct] [nvarchar] (7) NULL ,
+	[DropAcct] [nvarchar] (7) NULL ,
+	[ReconAcct] [nvarchar] (7) NULL ,
+	[TarpAcct] [nvarchar] (7) NULL ,
+	[LumperAcct] [nvarchar] (7) NULL ,
+	[UnloadAcct] [nvarchar] (7) NULL ,
+	[AdminMiscAcct] [nvarchar] (7) NULL ,
+	[BKOfficePct] [float] NULL ,
+	[LastXferDate] [datetime] NULL ,
+	[LastXmission] [nvarchar] (13) NULL ,
+	[Xfer] [float] NULL ,
+	[NoOffChar] [int] NULL ,
+	[AllowORide] [nvarchar] (1) NULL ,
+	[JRCAdminP] [float] NULL ,
+	[Reminder] [nvarchar] (200) NULL ,
+	[DefDispNo] [nvarchar] (7) NULL ,
+	[DefDispName] [nvarchar] (20) NULL ,
+	[LoadAcctB] [nvarchar] (7) NULL ,
+	[DiscAcctB] [nvarchar] (7) NULL ,
+	[DetenAcctB] [nvarchar] (7) NULL ,
+	[TollsAcctB] [nvarchar] (7) NULL ,
+	[FuelAcctB] [nvarchar] (7) NULL ,
+	[DropAcctB] [nvarchar] (7) NULL ,
+	[ReconAcctB] [nvarchar] (7) NULL ,
+	[TarpAcctB] [nvarchar] (7) NULL ,
+	[LumperAcctB] [nvarchar] (7) NULL ,
+	[UnloadAcctB] [nvarchar] (7) NULL ,
+	[AdminMiscAcctB] [nvarchar] (7) NULL ,
+	[ConfName] [nvarchar] (30) NULL ,
+	[ConfAddr] [nvarchar] (30) NULL ,
+	[ConfSTZ] [nvarchar] (30) NULL ,
+	[ConfPNo] [nvarchar] (55) NULL ,
+	[BWordsA] [nvarchar] (250) NULL ,
+	[BWordsB] [nvarchar] (250) NULL ,
+	[BWordsC] [nvarchar] (250) NULL ,
+	[PASplit] [nvarchar] (1) NULL ,
+	[CommAdj] [nvarchar] (1) NULL ,
+	[MultiSing] [nvarchar] (1) NULL ,
+	[BrokerOnly] [nvarchar] (1) NULL ,
+	[AutoLoadSeq] [nvarchar] (1) NULL ,
+	[WhatDivision] [nvarchar] (4) NULL ,
+	[IntraOComm] [nvarchar] (1) NULL ,
+	[InitQForCust] [nvarchar] (1) NULL ,
+	[Day0] [float] NULL ,
+	[Day7] [float] NULL ,
+	[Day15] [float] NULL ,
+	[Day30] [float] NULL ,
+	[AlumaPct] [float] NULL ,
+	[Lastcorpbu] [datetime] NULL ,
+	[XMissionSeq] [nvarchar] (1) NULL ,
+	[CNOfficName] [nvarchar] (7) NULL ,
+	[OffOrgin] [nvarchar] (2) NULL ,
+	[DoABU] [nvarchar] (1) NULL ,
+	[TSL] [nvarchar] (1) NULL ,
+	[TPBCalc] [nvarchar] (1) NULL ,
+	[LastCustUpd] [datetime] NULL ,
+	[LastUpdTime] [datetime] NULL ,
+	[APCodeFM] [nvarchar] (7) NULL ,
+	[AbvrNameFM] [nvarchar] (20) NULL ,
+	[CommRateFM] [float] NULL ,
+	[BKCommRateFM] [float] NULL ,
+	[SubOffComm] [nvarchar] (1) NULL ,
+	[UserOn] [int] NULL ,
+	[MgrCode] [nvarchar] (7) NULL ,
+	[MgrName] [nvarchar] (20) NULL ,
+	[CommRatex] [float] NULL ,
+	[BKCommRate] [float] NULL ,
+	[MGRSplit] [nvarchar] (1) NULL ,
+	[IODiv] [nvarchar] (3) NULL ,
+	[LogDisp] [nvarchar] (10) NULL ,
+	[LogDispName] [nvarchar] (30) NULL ,
+	[LogonOffice] [nvarchar] (7) NULL ,
+	[JRCOfficeNo] [nvarchar] (9) NULL ,
+	[AllowCDed] [nvarchar] (1) NULL ,
+	[DvrDAcct1] [nvarchar] (7) NULL ,
+	[DvrDAcct2] [nvarchar] (7) NULL ,
+	[OOLoadNo] [int] NULL ,
+	[BKLoadNo] [int] NULL ,
+	[AVLoadNo] [int] NULL ,
+	[JRCActive] [nvarchar] (1) NULL ,
+	[CopyAddress] [bit] NULL ,
+	[ShowOnWeb] [bit] NULL ,
+	[CorpOff] [bit] NULL ,
+
+	[ViewOrder] [int] NULL ,
+
+	[UpdatedByUserId] [int]  NULL ,
+	[UpdatedDate] [datetime] NULL ,
+	[CreatedByUserId] [int]  NULL ,
+	[CreatedDate] [datetime] NULL
+
+) ON [PRIMARY]
+GO
+
+/* Insert here the code to create stored procs   */
+
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_NULLS ON
+GO
+
+
+
+/* Following procedure is for Add the InterOffice Details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddInterOffice]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddInterOffice]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddInterOffice]
+
+	@ModuleID int,
+	@JRCIOfficeCode nvarchar(9),
+	@IOfficeCode nvarchar(7),
+	@IOName nvarchar(30),
+	@AbvrName nvarchar(30),
+	@AddressLine1 nvarchar(30),
+	@AddressLine2 nvarchar(30),
+	@City nvarchar(20),
+	@State nvarchar(2),
+	@ZipCode nvarchar(10),
+	@CountryCode nvarchar(15),
+	@PhoneNo nvarchar(17),
+	@Ext nvarchar(5),
+	@EmailAddress nvarchar(40),
+	
+	@HasProbDrivers bit,
+	
+	@CommRate nvarchar(2),
+	@AdminExempt nvarchar(1),
+	@Status nvarchar(1),
+	@LoadType nvarchar(2),
+	@Division nvarchar(3),
+	@FaxNo nvarchar(17),
+	@OfficeOR nvarchar(1),
+	@OfficeORAcct nvarchar(7),
+	@OfficeORPct float,
+	@OfficeCodeNo nvarchar(3),
+	@LogOnPW nvarchar(10),
+	@OfficName nvarchar(7),
+	@OfficeAddr nvarchar(50),
+	@OfficeAbrv nvarchar(30),
+	@TempFile1 nvarchar(50),
+	@OONo nvarchar(3),
+	@BKNo nvarchar(3),
+	@AVNo nvarchar(3),
+	@UseDispatch nvarchar(1),
+	@OfficePct float,
+	@LoadAcct nvarchar(7),
+	@DiscAcct nvarchar(7),
+	@DetenAcct nvarchar(7),
+	@TollsAcct nvarchar(7),
+	@FuelAcct nvarchar(7),
+	@DropAcct nvarchar(7),
+	@ReconAcct nvarchar(7),
+	@TarpAcct nvarchar(7),
+	@LumperAcct nvarchar(7),
+	@UnloadAcct nvarchar(7),
+	@AdminMiscAcct nvarchar(7),
+	@BKOfficePct float,
+	@LastXferDate datetime,
+	@LastXmission nvarchar(13),
+	@Xfer float,
+	@NoOffChar int,
+	@AllowORide nvarchar(1),
+	@JRCAdminP float,
+	@Reminder nvarchar(200),
+	@DefDispNo nvarchar(7),
+	@DefDispName nvarchar(20),
+	@LoadAcctB nvarchar(7),
+	@DiscAcctB nvarchar(7),
+	@DetenAcctB nvarchar(7),
+	@TollsAcctB nvarchar(7),
+	@FuelAcctB nvarchar(7),
+	@DropAcctB nvarchar(7),
+	@ReconAcctB nvarchar(7),
+	@TarpAcctB nvarchar(7),
+	@LumperAcctB nvarchar(7),
+	@UnloadAcctB nvarchar(7),
+	@AdminMiscAcctB nvarchar(7),
+	@ConfName nvarchar(30),
+	@ConfAddr nvarchar(30),
+	@ConfSTZ nvarchar(30),
+	@ConfPNo nvarchar(55),
+	@BWordsA nvarchar(250),
+	@BWordsB nvarchar(250),
+	@BWordsC nvarchar(250),
+	@PASplit nvarchar(1),
+	@CommAdj nvarchar(1),
+	@MultiSing nvarchar(1),
+	@BrokerOnly nvarchar(1),
+	@AutoLoadSeq nvarchar(1),
+	@WhatDivision nvarchar(4),
+	@IntraOComm nvarchar(1),
+	@InitQForCust nvarchar(1),
+	@Day0 float,
+	@Day7 float,
+	@Day15 float,
+	@Day30 float,
+	@AlumaPct float,
+	@Lastcorpbu datetime,
+	@XMissionSeq nvarchar(1),
+	@CNOfficName nvarchar(7),
+	@OffOrgin nvarchar(2),
+	@DoABU nvarchar(1),
+	@TSL nvarchar(1),
+	@TPBCalc nvarchar(1),
+	@LastCustUpd datetime,
+	@LastUpdTime datetime,
+	@APCodeFM nvarchar(7),
+	@AbvrNameFM nvarchar(20),
+	@CommRateFM float,
+	@BKCommRateFM float,
+	@SubOffComm nvarchar(1),
+	@UserOn int,
+	@MgrCode nvarchar(7),
+	@MgrName nvarchar(20),
+	@CommRatex float,
+	@BKCommRate float,
+	@MGRSplit nvarchar(1),
+	@IODiv nvarchar(3),
+	@LogDisp nvarchar(10),
+	@LogDispName nvarchar(30),
+	@LogonOffice nvarchar(7),
+	@JRCOfficeNo nvarchar(9),
+	@AllowCDed nvarchar(1),
+	@DvrDAcct1 nvarchar(7),
+	@DvrDAcct2 nvarchar(7),
+	@OOLoadNo int,
+	@BKLoadNo int,
+	@AVLoadNo int,
+	@JRCActive nvarchar(1),
+	@CopyAddress bit,
+	@ShowOnWeb bit,
+	@CorpOff bit,
+
+	@ViewOrder int,
+	@CreatedByUserId int
+
+AS
+
+INSERT INTO {objectQualifier}ARD_InterOffice (
+	[ModuleID],
+	[JRCIOfficeCode],
+	[IOfficeCode],
+	[IOName],
+	[AbvrName],
+	[AddressLine1],
+	[AddressLine2],
+	[City],
+	[State],
+	[ZipCode],
+	[CountryCode],
+	[PhoneNo],
+	[Ext],
+	[EmailAddress],
+	
+	[HasProbDrivers],
+	
+	[CommRate],
+	[AdminExempt],
+	[Status],
+	[LoadType],
+	[Division],
+	[FaxNo],
+	[OfficeOR],
+	[OfficeORAcct],
+	[OfficeORPct],
+	[OfficeCodeNo],
+	[LogOnPW],
+	[OfficName],
+	[OfficeAddr],
+	[OfficeAbrv],
+	[TempFile1],
+	[OONo],
+	[BKNo],
+	[AVNo],
+	[UseDispatch],
+	[OfficePct],
+	[LoadAcct],
+	[DiscAcct],
+	[DetenAcct],
+	[TollsAcct],
+	[FuelAcct],
+	[DropAcct],
+	[ReconAcct],
+	[TarpAcct],
+	[LumperAcct],
+	[UnloadAcct],
+	[AdminMiscAcct],
+	[BKOfficePct],
+	[LastXferDate],
+	[LastXmission],
+	[Xfer],
+	[NoOffChar],
+	[AllowORide],
+	[JRCAdminP],
+	[Reminder],
+	[DefDispNo],
+	[DefDispName],
+	[LoadAcctB],
+	[DiscAcctB],
+	[DetenAcctB],
+	[TollsAcctB],
+	[FuelAcctB],
+	[DropAcctB],
+	[ReconAcctB],
+	[TarpAcctB],
+	[LumperAcctB],
+	[UnloadAcctB],
+	[AdminMiscAcctB],
+	[ConfName],
+	[ConfAddr],
+	[ConfSTZ],
+	[ConfPNo],
+	[BWordsA],
+	[BWordsB],
+	[BWordsC],
+	[PASplit],
+	[CommAdj],
+	[MultiSing],
+	[BrokerOnly],
+	[AutoLoadSeq],
+	[WhatDivision],
+	[IntraOComm],
+	[InitQForCust],
+	[Day0],
+	[Day7],
+	[Day15],
+	[Day30],
+	[AlumaPct],
+	[Lastcorpbu],
+	[XMissionSeq],
+	[CNOfficName],
+	[OffOrgin],
+	[DoABU],
+	[TSL],
+	[TPBCalc],
+	[LastCustUpd],
+	[LastUpdTime],
+	[APCodeFM],
+	[AbvrNameFM],
+	[CommRateFM],
+	[BKCommRateFM],
+	[SubOffComm],
+	[UserOn],
+	[MgrCode],
+	[MgrName],
+	[CommRatex],
+	[BKCommRate],
+	[MGRSplit],
+	[IODiv],
+	[LogDisp],
+	[LogDispName],
+	[LogonOffice],
+	[JRCOfficeNo],
+	[AllowCDed],
+	[DvrDAcct1],
+	[DvrDAcct2],
+	[OOLoadNo],
+	[BKLoadNo],
+	[AVLoadNo],
+	[JRCActive],
+	[CopyAddress],
+	[ShowOnWeb],
+	[CorpOff],
+
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	[UpdatedDate],
+	[CreatedByUserId],
+	[CreatedDate]
+
+) VALUES (
+
+	@ModuleID,
+	@JRCIOfficeCode,
+	@IOfficeCode,
+	@IOName,
+	@AbvrName,
+	@AddressLine1,
+	@AddressLine2,
+	@City,
+	@State,
+	@ZipCode,
+	@CountryCode,
+	@PhoneNo,
+	@Ext,
+	@EmailAddress,
+	
+	@HasProbDrivers,
+	
+	@CommRate,
+	@AdminExempt,
+	@Status,
+	@LoadType,
+	@Division,
+	@FaxNo,
+	@OfficeOR,
+	@OfficeORAcct,
+	@OfficeORPct,
+	@OfficeCodeNo,
+	@LogOnPW,
+	@OfficName,
+	@OfficeAddr,
+	@OfficeAbrv,
+	@TempFile1,
+	@OONo,
+	@BKNo,
+	@AVNo,
+	@UseDispatch,
+	@OfficePct,
+	@LoadAcct,
+	@DiscAcct,
+	@DetenAcct,
+	@TollsAcct,
+	@FuelAcct,
+	@DropAcct,
+	@ReconAcct,
+	@TarpAcct,
+	@LumperAcct,
+	@UnloadAcct,
+	@AdminMiscAcct,
+	@BKOfficePct,
+	@LastXferDate,
+	@LastXmission,
+	@Xfer,
+	@NoOffChar,
+	@AllowORide,
+	@JRCAdminP,
+	@Reminder,
+	@DefDispNo,
+	@DefDispName,
+	@LoadAcctB,
+	@DiscAcctB,
+	@DetenAcctB,
+	@TollsAcctB,
+	@FuelAcctB,
+	@DropAcctB,
+	@ReconAcctB,
+	@TarpAcctB,
+	@LumperAcctB,
+	@UnloadAcctB,
+	@AdminMiscAcctB,
+	@ConfName,
+	@ConfAddr,
+	@ConfSTZ,
+	@ConfPNo,
+	@BWordsA,
+	@BWordsB,
+	@BWordsC,
+	@PASplit,
+	@CommAdj,
+	@MultiSing,
+	@BrokerOnly,
+	@AutoLoadSeq,
+	@WhatDivision,
+	@IntraOComm,
+	@InitQForCust,
+	@Day0,
+	@Day7,
+	@Day15,
+	@Day30,
+	@AlumaPct,
+	@Lastcorpbu,
+	@XMissionSeq,
+	@CNOfficName,
+	@OffOrgin,
+	@DoABU,
+	@TSL,
+	@TPBCalc,
+	@LastCustUpd,
+	@LastUpdTime,
+	@APCodeFM,
+	@AbvrNameFM,
+	@CommRateFM,
+	@BKCommRateFM,
+	@SubOffComm,
+	@UserOn,
+	@MgrCode,
+	@MgrName,
+	@CommRatex,
+	@BKCommRate,
+	@MGRSplit,
+	@IODiv,
+	@LogDisp,
+	@LogDispName,
+	@LogonOffice,
+	@JRCOfficeNo,
+	@AllowCDed,
+	@DvrDAcct1,
+	@DvrDAcct2,
+	@OOLoadNo,
+	@BKLoadNo,
+	@AVLoadNo,
+	@JRCActive,
+	@CopyAddress, 
+	@ShowOnWeb, 
+	@CorpOff, 
+
+	@ViewOrder,
+
+	@CreatedByUserId ,
+	GetDate(),
+	@CreatedByUserId ,
+	GetDate()
+)
+
+
+SELECT SCOPE_IDENTITY()
+GO
+
+
+
+/* Following procedure is for Update the InterOffice Details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateInterOffice]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateInterOffice]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateInterOffice]
+
+	@ItemID int,
+	@JRCIOfficeCode nvarchar(9),
+	@IOfficeCode nvarchar(7),
+	@IOName nvarchar(30),
+	@AbvrName nvarchar(30),
+	@AddressLine1 nvarchar(30),
+	@AddressLine2 nvarchar(30),
+	@City nvarchar(20),
+	@State nvarchar(2),
+	@ZipCode nvarchar(10),
+	@CountryCode nvarchar(15),
+	@PhoneNo nvarchar(17),
+	@Ext nvarchar(5),
+	@EmailAddress nvarchar(40),
+	
+	@HasProbDrivers bit,
+	
+	@CommRate nvarchar(2),
+	@AdminExempt nvarchar(1),
+	@Status nvarchar(1),
+	@LoadType nvarchar(2),
+	@Division nvarchar(3),
+	@FaxNo nvarchar(17),
+	@OfficeOR nvarchar(1),
+	@OfficeORAcct nvarchar(7),
+	@OfficeORPct float,
+	@OfficeCodeNo nvarchar(3),
+	@LogOnPW nvarchar(10),
+	@OfficName nvarchar(7),
+	@OfficeAddr nvarchar(50),
+	@OfficeAbrv nvarchar(30),
+	@TempFile1 nvarchar(50),
+	@OONo nvarchar(3),
+	@BKNo nvarchar(3),
+	@AVNo nvarchar(3),
+	@UseDispatch nvarchar(1),
+	@OfficePct float,
+	@LoadAcct nvarchar(7),
+	@DiscAcct nvarchar(7),
+	@DetenAcct nvarchar(7),
+	@TollsAcct nvarchar(7),
+	@FuelAcct nvarchar(7),
+	@DropAcct nvarchar(7),
+	@ReconAcct nvarchar(7),
+	@TarpAcct nvarchar(7),
+	@LumperAcct nvarchar(7),
+	@UnloadAcct nvarchar(7),
+	@AdminMiscAcct nvarchar(7),
+	@BKOfficePct float,
+	@LastXferDate datetime,
+	@LastXmission nvarchar(13),
+	@Xfer float,
+	@NoOffChar int,
+	@AllowORide nvarchar(1),
+	@JRCAdminP float,
+	@Reminder nvarchar(200),
+	@DefDispNo nvarchar(7),
+	@DefDispName nvarchar(20),
+	@LoadAcctB nvarchar(7),
+	@DiscAcctB nvarchar(7),
+	@DetenAcctB nvarchar(7),
+	@TollsAcctB nvarchar(7),
+	@FuelAcctB nvarchar(7),
+	@DropAcctB nvarchar(7),
+	@ReconAcctB nvarchar(7),
+	@TarpAcctB nvarchar(7),
+	@LumperAcctB nvarchar(7),
+	@UnloadAcctB nvarchar(7),
+	@AdminMiscAcctB nvarchar(7),
+	@ConfName nvarchar(30),
+	@ConfAddr nvarchar(30),
+	@ConfSTZ nvarchar(30),
+	@ConfPNo nvarchar(55),
+	@BWordsA nvarchar(250),
+	@BWordsB nvarchar(250),
+	@BWordsC nvarchar(250),
+	@PASplit nvarchar(1),
+	@CommAdj nvarchar(1),
+	@MultiSing nvarchar(1),
+	@BrokerOnly nvarchar(1),
+	@AutoLoadSeq nvarchar(1),
+	@WhatDivision nvarchar(4),
+	@IntraOComm nvarchar(1),
+	@InitQForCust nvarchar(1),
+	@Day0 float,
+	@Day7 float,
+	@Day15 float,
+	@Day30 float,
+	@AlumaPct float,
+	@Lastcorpbu datetime,
+	@XMissionSeq nvarchar(1),
+	@CNOfficName nvarchar(7),
+	@OffOrgin nvarchar(2),
+	@DoABU nvarchar(1),
+	@TSL nvarchar(1),
+	@TPBCalc nvarchar(1),
+	@LastCustUpd datetime,
+	@LastUpdTime datetime,
+	@APCodeFM nvarchar(7),
+	@AbvrNameFM nvarchar(20),
+	@CommRateFM float,
+	@BKCommRateFM float,
+	@SubOffComm nvarchar(1),
+	@UserOn int,
+	@MgrCode nvarchar(7),
+	@MgrName nvarchar(20),
+	@CommRatex float,
+	@BKCommRate float,
+	@MGRSplit nvarchar(1),
+	@IODiv nvarchar(3),
+	@LogDisp nvarchar(10),
+	@LogDispName nvarchar(30),
+	@LogonOffice nvarchar(7),
+	@JRCOfficeNo nvarchar(9),
+	@AllowCDed nvarchar(1),
+	@DvrDAcct1 nvarchar(7),
+	@DvrDAcct2 nvarchar(7),
+	@OOLoadNo int,
+	@BKLoadNo int,
+	@AVLoadNo int,
+	@JRCActive nvarchar(1),
+	@CopyAddress bit, 
+	@ShowOnWeb bit, 
+	@CorpOff bit, 
+
+	@ViewOrder int,
+
+	@UpdatedByUserId int
+AS
+
+UPDATE {objectQualifier}ARD_InterOffice
+
+SET
+	[JRCIOfficeCode] = @JRCIOfficeCode,
+	[IOfficeCode] = @IOfficeCode,
+	[IOName] = @IOName,
+	[AbvrName] = @AbvrName,
+	[AddressLine1] = @AddressLine1,
+	[AddressLine2] = @AddressLine2,
+	[City] = @City,
+	[State] = @State,
+	[ZipCode] = @ZipCode,
+	[CountryCode] = @CountryCode,
+	[PhoneNo] = @PhoneNo,
+	[Ext] = @Ext,
+	[EmailAddress] = @EmailAddress,
+	
+	[HasProbDrivers] = @HasProbDrivers,
+	
+	[CommRate] = @CommRate,
+	[AdminExempt] = @AdminExempt,
+	[Status] = @Status,
+	[LoadType] = @LoadType,
+	[Division] = @Division,
+	[FaxNo] = @FaxNo,
+	[OfficeOR] = @OfficeOR,
+	[OfficeORAcct] = @OfficeORAcct,
+	[OfficeORPct] = @OfficeORPct,
+	[OfficeCodeNo] = @OfficeCodeNo,
+	[LogOnPW] = @LogOnPW,
+	[OfficName] = @OfficName,
+	[OfficeAddr] = @OfficeAddr,
+	[OfficeAbrv] = @OfficeAbrv,
+	[TempFile1] = @TempFile1,
+	[OONo] = @OONo,
+	[BKNo] = @BKNo,
+	[AVNo] = @AVNo,
+	[UseDispatch] = @UseDispatch,
+	[OfficePct] = @OfficePct,
+	[LoadAcct] = @LoadAcct,
+	[DiscAcct] = @DiscAcct,
+	[DetenAcct] = @DetenAcct,
+	[TollsAcct] = @TollsAcct,
+	[FuelAcct] = @FuelAcct,
+	[DropAcct] = @DropAcct,
+	[ReconAcct] = @ReconAcct,
+	[TarpAcct] = @TarpAcct,
+	[LumperAcct] = @LumperAcct,
+	[UnloadAcct] = @UnloadAcct,
+	[AdminMiscAcct] = @AdminMiscAcct,
+	[BKOfficePct] = @BKOfficePct,
+	[LastXferDate] = @LastXferDate,
+	[LastXmission] = @LastXmission,
+	[Xfer] = @Xfer,
+	[NoOffChar] = @NoOffChar,
+	[AllowORide] = @AllowORide,
+	[JRCAdminP] = @JRCAdminP,
+	[Reminder] = @Reminder,
+	[DefDispNo] = @DefDispNo,
+	[DefDispName] = @DefDispName,
+	[LoadAcctB] = @LoadAcctB,
+	[DiscAcctB] = @DiscAcctB,
+	[DetenAcctB] = @DetenAcctB,
+	[TollsAcctB] = @TollsAcctB,
+	[FuelAcctB] = @FuelAcctB,
+	[DropAcctB] = @DropAcctB,
+	[ReconAcctB] = @ReconAcctB,
+	[TarpAcctB] = @TarpAcctB,
+	[LumperAcctB] = @LumperAcctB,
+	[UnloadAcctB] = @UnloadAcctB,
+	[AdminMiscAcctB] = @AdminMiscAcctB,
+	[ConfName] = @ConfName,
+	[ConfAddr] = @ConfAddr,
+	[ConfSTZ] = @ConfSTZ,
+	[ConfPNo] = @ConfPNo,
+	[BWordsA] = @BWordsA,
+	[BWordsB] = @BWordsB,
+	[BWordsC] = @BWordsC,
+	[PASplit] = @PASplit,
+	[CommAdj] = @CommAdj,
+	[MultiSing] = @MultiSing,
+	[BrokerOnly] = @BrokerOnly,
+	[AutoLoadSeq] = @AutoLoadSeq,
+	[WhatDivision] = @WhatDivision,
+	[IntraOComm] = @IntraOComm,
+	[InitQForCust] = @InitQForCust,
+	[Day0] = @Day0,
+	[Day7] = @Day7,
+	[Day15] = @Day15,
+	[Day30] = @Day30,
+	[AlumaPct] = @AlumaPct,
+	[Lastcorpbu] = @Lastcorpbu,
+	[XMissionSeq] = @XMissionSeq,
+	[CNOfficName] = @CNOfficName,
+	[OffOrgin] = @OffOrgin,
+	[DoABU] = @DoABU,
+	[TSL] = @TSL,
+	[TPBCalc] = @TPBCalc,
+	[LastCustUpd] = @LastCustUpd,
+	[LastUpdTime] = @LastUpdTime,
+	[APCodeFM] = @APCodeFM,
+	[AbvrNameFM] = @AbvrNameFM,
+	[CommRateFM] = @CommRateFM,
+	[BKCommRateFM] = @BKCommRateFM,
+	[SubOffComm] = @SubOffComm,
+	[UserOn] = @UserOn,
+	[MgrCode] = @MgrCode,
+	[MgrName] = @MgrName,
+	[CommRatex] = @CommRatex,
+	[BKCommRate] = @BKCommRate,
+	[MGRSplit] = @MGRSplit,
+	[IODiv] = @IODiv,
+	[LogDisp] = @LogDisp,
+	[LogDispName] = @LogDispName,
+	[LogonOffice] = @LogonOffice,
+	[JRCOfficeNo] = @JRCOfficeNo,
+	[AllowCDed] = @AllowCDed,
+	[DvrDAcct1] = @DvrDAcct1,
+	[DvrDAcct2] = @DvrDAcct2,
+	[OOLoadNo] = @OOLoadNo,
+	[BKLoadNo] = @BKLoadNo,
+	[AVLoadNo] = @AVLoadNo,
+	[JRCActive] = @JRCActive,
+	[CopyAddress] = @CopyAddress, 
+	[ShowOnWeb] = @ShowOnWeb, 
+	[CorpOff] = @CorpOff, 
+
+	[ViewOrder] = @ViewOrder,
+
+	[UpdatedByUserId] = @UpdatedByUserId ,
+	[UpdatedDate] = GetDate()
+
+WHERE
+	[ItemID] = @ItemID
+GO
+
+
+
+
+
+
+
+
+
+/* Following procedure is for Update the InterOffice for HasProbDriver Details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateInterOffice4HasProbDriver]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateInterOffice4HasProbDriver]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateInterOffice4HasProbDriver]
+
+	@JRCIOfficeCode nvarchar(9),	
+	@HasProbDrivers bit 
+AS
+
+UPDATE {objectQualifier}ARD_InterOffice
+SET [HasProbDrivers] = @HasProbDrivers
+WHERE [JRCIOfficeCode] = @JRCIOfficeCode
+GO
+
+
+
+
+/* Following procedure is to Get No Of ProbDrivers By JRCIOfficeCode */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetNoOfProbDrivers]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetNoOfProbDrivers]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetNoOfProbDrivers]
+	@JRCIOfficeCode nvarchar(9)
+
+As
+
+SELECT Count(*) 
+FROM [{objectQualifier}ARD_SalesPersonMasterfile]
+WHERE ([OfficeOwner] = @JRCIOfficeCode) AND (ProbDriver=1) 
+GO
+
+
+
+/* Following procedure is for Fix the InterOffice Details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_FixInterOffices]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_FixInterOffices]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_FixInterOffices]
+
+	@ModuleID int,
+	@UpdatedByUserId int
+AS
+
+UPDATE {objectQualifier}AR1_InterOfficeMaster SET	[ModuleID] = @ModuleID
+UPDATE {objectQualifier}AR1_InterOfficeMaster SET	[UpdatedByUserId] = @UpdatedByUserId
+UPDATE {objectQualifier}AR1_InterOfficeMaster SET	[UpdatedDate] = GetDate()
+
+GO
+
+
+
+/* Following procedure is for Delete the InterOffice Details */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_DeleteInterOffice]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_DeleteInterOffice]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_DeleteInterOffice]
+	@ItemId int
+
+AS
+
+DELETE
+FROM [{objectQualifier}ARD_InterOffice]
+WHERE ItemId = @ItemId
+GO
+
+/* Following procedure is for Add none JRCIOfficeCode if it "000000000" */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_AddNoInterOffice]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_AddNoInterOffice]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_AddNoInterOffice]
+AS
+if ((SELECT Count(*) FROM {databaseOwner}[{objectQualifier}ARD_InterOffice] WHERE JRCIOfficeCode = '000000000')>0)
+UPDATE {objectQualifier}ARD_InterOffice
+
+SET
+	[JRCIOfficeCode] = '000000000',
+	[IOfficeCode] = '0000000',
+	[IOName] = 'N/A',
+	[AbvrName] = 'Default',
+	[CommRate] = '0',
+	[AdminExempt] = 'N',
+	[Status] = 'N',
+	[LoadType] = 'IO',
+	[Division]= 'jrc',
+	[OfficeOR] = 'N',
+	[OfficeORAcct] = '0000000',
+	[OfficeORPct] = '0',
+	[OfficName] = '0000000',
+	[UseDispatch] = 'Y',
+	[Xfer] = '1',
+	[AllowORide] = 'N',
+	[JRCAdminP] = '1',
+	[ConfName] = 'JRC Transportation',
+	[BWordsA] = 'The Carrier Must Call JRC Transportation @ 1-888-888-8888 Upon Completion of Delivery',
+	[BWordsB] = 'NO Advances Are To Be Issued To JRC Carriers or Drivers EXCEPT Via The JRC Corporate Office, Thomaston, Connecticut',
+	[BWordsC] = 'By Signing This Document The Carrier Agrees to all Terms and Conditions According to the Broker / JRC Contracts',
+	[PASplit] = 'N',
+	[CommAdj] = 'N',
+	[MultiSing] = 'Y',
+	[BrokerOnly] = 'N',
+	[AutoLoadSeq] = 'Y',
+	[WhatDivision] = 'JRC',
+	[IntraOComm] = 'Y',
+	[InitQForCust] = 'N',
+	[DoABU] = 'N',
+	[TSL] = 'L',
+	[TPBCalc] = 'M',
+	[SubOffComm] = 'N',
+	[MGRSplit] = 'N',
+	[JRCOfficeNo] = '000000000',
+	[AllowCDed] = 'N',
+	[OOLoadNo] = '1',
+	[BKLoadNo] = '1',
+	[AVLoadNo] = '1',
+	[JRCActive] = 'N'
+	
+WHERE
+	[JRCIOfficeCode] = '000000000'
+
+else
+
+INSERT INTO {objectQualifier}ARD_InterOffice(
+	[JRCIOfficeCode],
+	[IOfficeCode],
+	[IOName],
+	[AbvrName],
+	[CommRate],
+	[AdminExempt],
+	[Status],
+	[LoadType],
+	[Division],
+	[OfficeOR],
+	[OfficeORAcct],
+	[OfficeORPct],
+	[OfficName],
+	[UseDispatch],
+	[Xfer],
+	[AllowORide],
+	[JRCAdminP],
+	[ConfName],
+	[BWordsA],
+	[BWordsB],
+	[BWordsC],
+	[PASplit],
+	[CommAdj],
+	[MultiSing],
+	[BrokerOnly],
+	[AutoLoadSeq],
+	[WhatDivision],
+	[IntraOComm],
+	[InitQForCust],
+	[DoABU],
+	[TSL],
+	[TPBCalc],
+	[SubOffComm],
+	[MGRSplit],
+	[JRCOfficeNo],
+	[AllowCDed],
+	[OOLoadNo],
+	[BKLoadNo],
+	[AVLoadNo],
+	[JRCActive],
+	
+	)VALUES(
+	
+	'000000000',
+	'0000000',
+	'N/A',
+	'Default',
+	'0',
+	'N',
+	'N',
+	'IO',
+	'jrc',
+	'N',
+	'0000000',
+	'0',
+	'0000000',
+	'Y',
+	'1',
+	'N',
+	'1',
+	'JRC Transportation',
+	'The Carrier Must Call JRC Transportation @ 1-888-888-8888 Upon Completion of Delivery',
+	'NO Advances Are To Be Issued To JRC Carriers or Drivers EXCEPT Via The JRC Corporate Office, Thomaston, Connecticut',
+	'By Signing This Document The Carrier Agrees to all Terms and Conditions According to the Broker / JRC Contracts',
+	'N',
+	'N',
+	'Y',
+	'N',
+	'Y',
+	'JRC',
+	'Y',
+	'N',
+	'N',
+	'L',
+	'M',
+	'N',
+	'N',
+	'000000000',
+	'N',
+	'1',
+	'1',
+	'1',
+	'N'
+	)
+
+Go
+
+
+/* Following procedure is for Update the InterOffice Xmission Details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_UpdateInterOfficeXmission]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_UpdateInterOfficeXmission]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_UpdateInterOfficeXmission]
+
+	@JRCIOfficeCode nvarchar(9),
+	@Xfer float,
+	@LastXferDate datetime,
+	@LastXmission nvarchar(13)
+
+
+AS
+
+UPDATE {objectQualifier}ARD_InterOffice
+
+SET 
+	[Xfer] = @Xfer, 
+	[LastXferDate] = @LastXferDate ,
+	[LastXmission] = @LastXmission
+
+WHERE
+
+	[JRCIOfficeCode] = @JRCIOfficeCode
+
+GO
+
+
+/* Following procedure is for Get the InterOffice Id */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetInterOfficeId]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetInterOfficeId]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetInterOfficeId]
+
+	@JRCIOfficeCode nvarchar(9)
+
+AS
+
+SELECT [ItemID]
+FROM [{objectQualifier}ARD_InterOffice]
+WHERE [JRCIOfficeCode] = @JRCIOfficeCode
+
+GO
+
+/* Following procedure is for Get the InterOffice Id */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetInterOfficeOOCode]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetInterOfficeOOCode]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetInterOfficeOOCode]
+
+	@JRCIOfficeCode nvarchar(9)
+
+AS
+
+SELECT [OONo]
+FROM [{objectQualifier}ARD_InterOffice]
+WHERE [JRCIOfficeCode] = @JRCIOfficeCode
+
+GO
+
+
+/* Following procedure is to find out if the Office is Brokeronly */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_IsBrokerOnly]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_IsBrokerOnly]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_IsBrokerOnly]
+
+	@JRCIOfficeCode nvarchar(9)
+
+AS
+
+SELECT [BrokerOnly]
+FROM [{objectQualifier}ARD_InterOffice]
+WHERE [JRCIOfficeCode] = @JRCIOfficeCode
+
+GO
+
+
+
+
+/* Following procedure is for Get the IO Name */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetIOName]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetIOName]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetIOName]
+
+	@JRCIOfficeCode nvarchar(9)
+
+AS
+
+SELECT [IOName]
+FROM [{objectQualifier}ARD_InterOffice]
+WHERE [JRCIOfficeCode] = @JRCIOfficeCode
+
+GO
+
+
+
+/* Following procedure is for Get Allow Ded(Field Name) */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetAllowCDed]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetAllowCDed]
+GO
+
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetAllowCDed]
+
+	@JRCIOfficeCode nvarchar(9)
+
+AS
+
+SELECT [AllowCDed]
+FROM [{objectQualifier}ARD_InterOffice]
+WHERE [JRCIOfficeCode] = @JRCIOfficeCode
+
+GO
+
+
+/* Following procedure is for Get the InterOffice Details */
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetInterOffice]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetInterOffice]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetInterOffice]
+
+	@ItemID int
+AS
+
+SELECT
+	[ItemID],
+	x.[ModuleID],
+
+	[JRCIOfficeCode],
+	[IOfficeCode],
+	[IOName],
+	[AbvrName],
+	[AddressLine1],
+	[AddressLine2],
+	[City],
+	[State],
+	[ZipCode],
+	[CountryCode],
+	[PhoneNo],
+	[Ext],
+	[EmailAddress],
+	
+	[HasProbDrivers],
+	
+	[CommRate],
+	[AdminExempt],
+	[Status],
+	[LoadType],
+	[Division],
+	[FaxNo],
+	[OfficeOR],
+	[OfficeORAcct],
+	[OfficeORPct],
+	[OfficeCodeNo],
+	[LogOnPW],
+	[OfficName],
+	[OfficeAddr],
+	[OfficeAbrv],
+	[TempFile1],
+	[OONo],
+	[BKNo],
+	[AVNo],
+	[UseDispatch],
+	[OfficePct],
+	[LoadAcct],
+	[DiscAcct],
+	[DetenAcct],
+	[TollsAcct],
+	[FuelAcct],
+	[DropAcct],
+	[ReconAcct],
+	[TarpAcct],
+	[LumperAcct],
+	[UnloadAcct],
+	[AdminMiscAcct],
+	[BKOfficePct],
+	[LastXferDate],
+	[LastXmission],
+	[Xfer],
+	[NoOffChar],
+	[AllowORide],
+	[JRCAdminP],
+	[Reminder],
+	[DefDispNo],
+	[DefDispName],
+	[LoadAcctB],
+	[DiscAcctB],
+	[DetenAcctB],
+	[TollsAcctB],
+	[FuelAcctB],
+	[DropAcctB],
+	[ReconAcctB],
+	[TarpAcctB],
+	[LumperAcctB],
+	[UnloadAcctB],
+	[AdminMiscAcctB],
+	[ConfName],
+	[ConfAddr],
+	[ConfSTZ],
+	[ConfPNo],
+	[BWordsA],
+	[BWordsB],
+	[BWordsC],
+	[PASplit],
+	[CommAdj],
+	[MultiSing],
+	[BrokerOnly],
+	[AutoLoadSeq],
+	[WhatDivision],
+	[IntraOComm],
+	[InitQForCust],
+	[Day0],
+	[Day7],
+	[Day15],
+	[Day30],
+	[AlumaPct],
+	[Lastcorpbu],
+	[XMissionSeq],
+	[CNOfficName],
+	[OffOrgin],
+	[DoABU],
+	[TSL],
+	[TPBCalc],
+	[LastCustUpd],
+	[LastUpdTime],
+	[APCodeFM],
+	[AbvrNameFM],
+	[CommRateFM],
+	[BKCommRateFM],
+	[SubOffComm],
+	[UserOn],
+	[MgrCode],
+	[MgrName],
+	[CommRatex],
+	[BKCommRate],
+	[MGRSplit],
+	[IODiv],
+	[LogDisp],
+	[LogDispName],
+	[LogonOffice],
+	[JRCOfficeNo],
+	[AllowCDed],
+	[DvrDAcct1],
+	[DvrDAcct2],
+	[OOLoadNo],
+	[BKLoadNo],
+	[AVLoadNo],
+	[JRCActive],
+	[CopyAddress], 
+	[ShowOnWeb], 
+	[CorpOff], 
+
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate] ,
+	[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}ARD_InterOffice AS x
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+
+WHERE
+	[ItemID] = @ItemID
+GO
+
+
+
+/* Following procedure is for Get the InterOffice Module */
+
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetModuleInterOffices]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetModuleInterOffices]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetModuleInterOffices]
+
+	@ModuleId int,
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	[JRCIOfficeCode],
+	[IOfficeCode],
+	[IOName],
+	[AbvrName],
+	[AddressLine1],
+	[AddressLine2],
+	[City],
+	[State],
+	[ZipCode],
+	[CountryCode],
+	[PhoneNo],
+	[Ext],
+	[EmailAddress],
+	
+	[HasProbDrivers],
+	
+	[CommRate],
+	[AdminExempt],
+	[Status],
+	[LoadType],
+	[Division],
+	[FaxNo],
+	[OfficeOR],
+	[OfficeORAcct],
+	[OfficeORPct],
+	[OfficeCodeNo],
+	[LogOnPW],
+	[OfficName],
+	[OfficeAddr],
+	[OfficeAbrv],
+	[TempFile1],
+	[OONo],
+	[BKNo],
+	[AVNo],
+	[UseDispatch],
+	[OfficePct],
+	[LoadAcct],
+	[DiscAcct],
+	[DetenAcct],
+	[TollsAcct],
+	[FuelAcct],
+	[DropAcct],
+	[ReconAcct],
+	[TarpAcct],
+	[LumperAcct],
+	[UnloadAcct],
+	[AdminMiscAcct],
+	[BKOfficePct],
+	[LastXferDate],
+	[LastXmission],
+	[Xfer],
+	[NoOffChar],
+	[AllowORide],
+	[JRCAdminP],
+	[Reminder],
+	[DefDispNo],
+	[DefDispName],
+	[LoadAcctB],
+	[DiscAcctB],
+	[DetenAcctB],
+	[TollsAcctB],
+	[FuelAcctB],
+	[DropAcctB],
+	[ReconAcctB],
+	[TarpAcctB],
+	[LumperAcctB],
+	[UnloadAcctB],
+	[AdminMiscAcctB],
+	[ConfName],
+	[ConfAddr],
+	[ConfSTZ],
+	[ConfPNo],
+	[BWordsA],
+	[BWordsB],
+	[BWordsC],
+	[PASplit],
+	[CommAdj],
+	[MultiSing],
+	[BrokerOnly],
+	[AutoLoadSeq],
+	[WhatDivision],
+	[IntraOComm],
+	[InitQForCust],
+	[Day0],
+	[Day7],
+	[Day15],
+	[Day30],
+	[AlumaPct],
+	[Lastcorpbu],
+	[XMissionSeq],
+	[CNOfficName],
+	[OffOrgin],
+	[DoABU],
+	[TSL],
+	[TPBCalc],
+	[LastCustUpd],
+	[LastUpdTime],
+	[APCodeFM],
+	[AbvrNameFM],
+	[CommRateFM],
+	[BKCommRateFM],
+	[SubOffComm],
+	[UserOn],
+	[MgrCode],
+	[MgrName],
+	[CommRatex],
+	[BKCommRate],
+	[MGRSplit],
+	[IODiv],
+	[LogDisp],
+	[LogDispName],
+	[LogonOffice],
+	[JRCOfficeNo],
+	[AllowCDed],
+	[DvrDAcct1],
+	[DvrDAcct2],
+	[OOLoadNo],
+	[BKLoadNo],
+	[AVLoadNo],
+	[JRCActive],
+	[CopyAddress], 
+	[ShowOnWeb], 
+	[CorpOff], 
+
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+    x.[UpdatedDate] ,
+	[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}ARD_InterOffice AS x
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+
+WHERE x.[ModuleId] = @ModuleId
+ORDER BY x.[IOName], [ViewOrder], x.[CreatedDate] desc
+GO
+
+
+
+/* Following procedure is for Get the InterOffice Portal */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetPortalInterOffices]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetPortalInterOffices]
+GO
+
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetPortalInterOffices]
+
+	@PortalId int,
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	[JRCIOfficeCode],
+	[IOfficeCode],
+	[IOName],
+	[AbvrName],
+	[AddressLine1],
+	[AddressLine2],
+	[City],
+	[State],
+	[ZipCode],
+	[CountryCode],
+	[PhoneNo],
+	[Ext],
+	[EmailAddress],
+	
+	[HasProbDrivers],
+	
+	[CommRate],
+	[AdminExempt],
+	[Status],
+	[LoadType],
+	[Division],
+	[FaxNo],
+	[OfficeOR],
+	[OfficeORAcct],
+	[OfficeORPct],
+	[OfficeCodeNo],
+	[LogOnPW],
+	[OfficName],
+	[OfficeAddr],
+	[OfficeAbrv],
+	[TempFile1],
+	[OONo],
+	[BKNo],
+	[AVNo],
+	[UseDispatch],
+	[OfficePct],
+	[LoadAcct],
+	[DiscAcct],
+	[DetenAcct],
+	[TollsAcct],
+	[FuelAcct],
+	[DropAcct],
+	[ReconAcct],
+	[TarpAcct],
+	[LumperAcct],
+	[UnloadAcct],
+	[AdminMiscAcct],
+	[BKOfficePct],
+	[LastXferDate],
+	[LastXmission],
+	[Xfer],
+	[NoOffChar],
+	[AllowORide],
+	[JRCAdminP],
+	[Reminder],
+	[DefDispNo],
+	[DefDispName],
+	[LoadAcctB],
+	[DiscAcctB],
+	[DetenAcctB],
+	[TollsAcctB],
+	[FuelAcctB],
+	[DropAcctB],
+	[ReconAcctB],
+	[TarpAcctB],
+	[LumperAcctB],
+	[UnloadAcctB],
+	[AdminMiscAcctB],
+	[ConfName],
+	[ConfAddr],
+	[ConfSTZ],
+	[ConfPNo],
+	[BWordsA],
+	[BWordsB],
+	[BWordsC],
+	[PASplit],
+	[CommAdj],
+	[MultiSing],
+	[BrokerOnly],
+	[AutoLoadSeq],
+	[WhatDivision],
+	[IntraOComm],
+	[InitQForCust],
+	[Day0],
+	[Day7],
+	[Day15],
+	[Day30],
+	[AlumaPct],
+	[Lastcorpbu],
+	[XMissionSeq],
+	[CNOfficName],
+	[OffOrgin],
+	[DoABU],
+	[TSL],
+	[TPBCalc],
+	[LastCustUpd],
+	[LastUpdTime],
+	[APCodeFM],
+	[AbvrNameFM],
+	[CommRateFM],
+	[BKCommRateFM],
+	[SubOffComm],
+	[UserOn],
+	[MgrCode],
+	[MgrName],
+	[CommRatex],
+	[BKCommRate],
+	[MGRSplit],
+	[IODiv],
+	[LogDisp],
+	[LogDispName],
+	[LogonOffice],
+	[JRCOfficeNo],
+	[AllowCDed],
+	[DvrDAcct1],
+	[DvrDAcct2],
+	[OOLoadNo],
+	[BKLoadNo],
+	[AVLoadNo],
+	[JRCActive],
+	[CopyAddress], 
+	[ShowOnWeb], 
+	[CorpOff], 
+
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate] ,
+	[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}ARD_InterOffice AS x
+	INNER JOIN [{objectQualifier}Modules] As m on x.ModuleId = m.ModuleId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+
+WHERE m.PortalId = @PortalId
+ORDER BY x.[IOName], x.[ModuleId], x.ViewOrder, x.CreatedDate desc
+GO
+
+
+
+/* Following procedure is for Get the All InterOffice */
+
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetAllInterOffices]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetAllInterOffices]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetAllInterOffices]
+
+	@NoOfItems int
+
+AS
+
+SELECT TOP (@NoOfItems)
+	x.[ItemID],
+	x.[ModuleID],
+
+	[JRCIOfficeCode],
+	[IOfficeCode],
+	[IOName],
+	[AbvrName],
+	[AddressLine1],
+	[AddressLine2],
+	[City],
+	[State],
+	[ZipCode],
+	[CountryCode],
+	[PhoneNo],
+	[Ext],
+	[EmailAddress],
+	
+	[HasProbDrivers],
+	
+	[CommRate],
+	[AdminExempt],
+	[Status],
+	[LoadType],
+	[Division],
+	[FaxNo],
+	[OfficeOR],
+	[OfficeORAcct],
+	[OfficeORPct],
+	[OfficeCodeNo],
+	[LogOnPW],
+	[OfficName],
+	[OfficeAddr],
+	[OfficeAbrv],
+	[TempFile1],
+	[OONo],
+	[BKNo],
+	[AVNo],
+	[UseDispatch],
+	[OfficePct],
+	[LoadAcct],
+	[DiscAcct],
+	[DetenAcct],
+	[TollsAcct],
+	[FuelAcct],
+	[DropAcct],
+	[ReconAcct],
+	[TarpAcct],
+	[LumperAcct],
+	[UnloadAcct],
+	[AdminMiscAcct],
+	[BKOfficePct],
+	[LastXferDate],
+	[LastXmission],
+	[Xfer],
+	[NoOffChar],
+	[AllowORide],
+	[JRCAdminP],
+	[Reminder],
+	[DefDispNo],
+	[DefDispName],
+	[LoadAcctB],
+	[DiscAcctB],
+	[DetenAcctB],
+	[TollsAcctB],
+	[FuelAcctB],
+	[DropAcctB],
+	[ReconAcctB],
+	[TarpAcctB],
+	[LumperAcctB],
+	[UnloadAcctB],
+	[AdminMiscAcctB],
+	[ConfName],
+	[ConfAddr],
+	[ConfSTZ],
+	[ConfPNo],
+	[BWordsA],
+	[BWordsB],
+	[BWordsC],
+	[PASplit],
+	[CommAdj],
+	[MultiSing],
+	[BrokerOnly],
+	[AutoLoadSeq],
+	[WhatDivision],
+	[IntraOComm],
+	[InitQForCust],
+	[Day0],
+	[Day7],
+	[Day15],
+	[Day30],
+	[AlumaPct],
+	[Lastcorpbu],
+	[XMissionSeq],
+	[CNOfficName],
+	[OffOrgin],
+	[DoABU],
+	[TSL],
+	[TPBCalc],
+	[LastCustUpd],
+	[LastUpdTime],
+	[APCodeFM],
+	[AbvrNameFM],
+	[CommRateFM],
+	[BKCommRateFM],
+	[SubOffComm],
+	[UserOn],
+	[MgrCode],
+	[MgrName],
+	[CommRatex],
+	[BKCommRate],
+	[MGRSplit],
+	[IODiv],
+	[LogDisp],
+	[LogDispName],
+	[LogonOffice],
+	[JRCOfficeNo],
+	[AllowCDed],
+	[DvrDAcct1],
+	[DvrDAcct2],
+	[OOLoadNo],
+	[BKLoadNo],
+	[AVLoadNo],
+	[JRCActive],
+	[CopyAddress], 
+	[ShowOnWeb], 
+	[CorpOff], 
+
+	[ViewOrder],
+
+	[UpdatedByUserId],
+	'UpdatedByUser' = uu.FirstName + ' ' + uu.LastName,
+	x.[UpdatedDate] ,
+	[CreatedByUserId],
+	'CreatedByUser' = uc.FirstName + ' ' + uc.LastName,
+	x.[CreatedDate]
+
+FROM {objectQualifier}ARD_InterOffice AS x
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uu on x.UpdatedByUserId = uu.UserId
+	LEFT OUTER JOIN [{objectQualifier}Users] AS uc on x.CreatedByUserId = uc.UserId
+
+ORDER BY x.[IOName], x.[ModuleId], x.ViewOrder, x.CreatedDate desc
+
+GO
+
+
+
+/* Following procedure is for Sort the InterOffice Details */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_SortInterOffices]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_SortInterOffices]
+GO
+
+
+CREATE  PROCEDURE {databaseOwner}[{objectQualifier}bhattji_SortInterOffices]
+	@ModuleId	int
+
+AS
+
+DECLARE	@counter as int
+DECLARE	@PK as int
+SET		@counter = 10
+
+--Make Temp table to hold Primary Keys FROM the table you want to renumber
+SELECT	ItemId
+INTO		[#TempTable]
+FROM		[{objectQualifier}ARD_InterOffice] as x
+WHERE	x.ModuleId = @ModuleId
+ORDER BY	x.ViewOrder asc,  x.CreatedDate desc
+
+
+
+--Loop through each temptable record
+WHILE (SELECT COUNT(ItemId) FROM #TempTable) > 0
+BEGIN
+	SET		rowcount 1
+
+	SELECT	@PK = ItemId
+	FROM #TempTable
+
+	SET rowcount 0
+
+
+	--UPDATE the view order for matching record in [{objectQualifier}ARD_InterOffice]
+	UPDATE [{objectQualifier}ARD_InterOffice]
+	SET ViewOrder = @counter
+	WHERE [{objectQualifier}ARD_InterOffice].ItemId = @PK
+	AND [{objectQualifier}ARD_InterOffice].ModuleId = @ModuleId
+
+	SET @counter = @counter + 10
+
+	SET rowcount 1
+
+	DELETE FROM #TempTable
+	SET rowcount 0
+END
+
+SET rowcount 0
+
+DROP TABLE #TempTable
+
+SELECT * FROM [{objectQualifier}ARD_InterOffice] ORDER BY ViewOrder
+GO
+
+
+
+
+SET QUOTED_IDENTIFIER OFF
+GO
+SET ANSI_NULLS ON
+GO
+

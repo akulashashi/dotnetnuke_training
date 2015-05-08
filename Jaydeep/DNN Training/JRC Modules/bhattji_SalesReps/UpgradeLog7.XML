@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="bhattji.Modules.SalesReps">
+</Property><Property Name="Solution File" Value="C:\DNN\JRC45\DesktopModules\bhattji_SalesReps\bhattji.Modules.SalesReps.sln">
+</Property><Property Name="Date" Value="Thursday, March 13, 2008">
+</Property><Property Name="Time" Value="14:54 PM">
+</Property><Property Name="Log Number" Value="7">
+</Property></Properties><Event ErrorLevel="0" Project="bhattji.Modules.SalesReps" Source="bhattji.Modules.SalesReps.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="bhattji.Modules.SalesReps" Source="bhattji.Modules.SalesReps.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="bhattji.Modules.SalesReps.sln" Description="The solution file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="" Source="bhattji.Modules.SalesReps.sln" Description="No Conversion Required">
+</Event></UpgradeLog>

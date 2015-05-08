@@ -1,0 +1,17 @@
+E:\DNN\DNN620\DesktopModules\bhattji_Html5Medias\obj\Release\ResolveAssemblyReference.cache
+E:\DNN\DNN620\DesktopModules\bhattji_Html5Medias\obj\Release\bhattji.Modules.Html5Medias.Thumb.resources
+E:\DNN\DNN620\DesktopModules\bhattji_Html5Medias\obj\Release\bhattji.Modules.Html5Medias.Settings.resources
+E:\DNN\DNN620\DesktopModules\bhattji_Html5Medias\obj\Release\bhattji.Modules.Html5Medias.Views.resources
+E:\DNN\DNN620\DesktopModules\bhattji_Html5Medias\obj\Release\ResGen.read.1.tlog
+E:\DNN\DNN620\DesktopModules\bhattji_Html5Medias\obj\Release\ResGen.write.1.tlog
+E:\DNN\DNN620\bin\bhattji.Modules.Html5Medias.dll
+E:\DNN\DNN620\bin\bhattji.Modules.Html5Medias.pdb
+E:\DNN\DNN620\DesktopModules\bhattji_Html5Medias\obj\Release\bhattji.Modules.Html5Medias.dll
+E:\DNN\DNN620\DesktopModules\bhattji_Html5Medias\obj\Release\bhattji.Modules.Html5Medias.pdb
+E:\DNN\DNN600\bin\bhattji.Modules.Html5Medias.dll
+E:\DNN\DNN600\bin\bhattji.Modules.Html5Medias.pdb
+E:\DNN\DNN600\DesktopModules\bhattji_Html5Medias\obj\Release\bhattji.Modules.Html5Medias.Settings.resources
+E:\DNN\DNN600\DesktopModules\bhattji_Html5Medias\obj\Release\bhattji.Modules.Html5Medias.Views.resources
+E:\DNN\DNN600\DesktopModules\bhattji_Html5Medias\obj\Release\bhattji.Modules.Html5Medias.dll
+E:\DNN\DNN600\DesktopModules\bhattji_Html5Medias\obj\Release\bhattji.Modules.Html5Medias.pdb
+E:\DNN\DNN600\DesktopModules\bhattji_Html5Medias\obj\Release\bhattji.Modules.Html5Medias.csproj.GenerateResource.Cache

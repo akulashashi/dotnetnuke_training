@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<dotnetnuke version="3.0" type="Module">
+	<folders>
+		<folder>
+			<name>bhattji.SalesReps</name>
+			<friendlyname>bhattji.SalesReps</friendlyname>
+			<foldername>bhattji.SalesReps</foldername>
+			<modulename>bhattji.SalesReps</modulename>
+			<description>Description</description>
+			<version>01.00.00</version>
+			<businesscontrollerclass>bhattji.Modules.SalesReps.Business.SalesRepsController, bhattji.Modules.SalesReps</businesscontrollerclass>
+			<resourcefile>install.bhattji</resourcefile>
+			<modules>
+				<module>
+					<friendlyname>bhattji.SalesReps</friendlyname>
+					<cachetime>0</cachetime>
+					<controls>
+						<control>
+							<title>SalesReps</title>
+							<src>Views.ascx</src>
+							<type>View</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+						<control>
+							<key>ItemDetails</key>
+							<title>SalesRep Details</title>
+							<src>Details.ascx</src>
+							<type>View</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+						
+						<control>
+							<key>Edit</key>
+							<title>Edit SalesReps</title>
+							<src>Edits.ascx</src>
+							<type>Edit</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+						<control>
+							<key>Settings</key>
+							<title>SalesReps Settings</title>
+							<src>Settings.ascx</src>
+							<type>Edit</type>
+							<helpurl>http://www.bhattji.com</helpurl>
+						</control>
+					</controls>
+				</module>
+			</modules>
+			<files>
+				<file>
+					<name>bhattji.Modules.SalesReps.dll</name>
+				</file>
+				<file>
+					<name>01.00.00.SqlDataProvider</name>
+				</file>
+				<file>
+					<name>Uninstall.SqlDataProvider</name>
+				</file>								
+			</files>
+		</folder>
+	</folders>
+</dotnetnuke>

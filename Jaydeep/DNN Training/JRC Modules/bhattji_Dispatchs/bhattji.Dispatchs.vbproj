@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{08CD850C-7E79-4DE0-A715-2A6D4876E760}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>bhattji.Modules.Dispatchs</AssemblyName>
+    <SignAssembly>false</SignAssembly>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DocumentationFile>bhattji.Dispatchs.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DocumentationFile>bhattji.Dispatchs.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=1.0.10618.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AJAXExtensionsToolbox, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DotNetNuke, Version=4.5.0.127, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DotNetNuke.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=1.0.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="DotNetNuke" />
+    <Import Include="DotNetNuke.Common" />
+    <Import Include="DotNetNuke.Common.Utilities" />
+    <Import Include="DotNetNuke.Data" />
+    <Import Include="DotNetNuke.Entities" />
+    <Import Include="DotNetNuke.Entities.Tabs" />
+    <Import Include="DotNetNuke.Framework" />
+    <Import Include="DotNetNuke.Modules" />
+    <Import Include="DotNetNuke.Security" />
+    <Import Include="DotNetNuke.Services" />
+    <Import Include="DotNetNuke.Services.Exceptions" />
+    <Import Include="DotNetNuke.Services.Localization" />
+    <Import Include="DotNetNuke.UI" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\DispatchIOInfo.vb" />
+    <Compile Include="Components\OptionsInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\ItemInfo.vb" />
+    <Compile Include="Details.ascx.designer.vb">
+      <DependentUpon>Details.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Details.ascx.vb">
+      <DependentUpon>Details.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditItem.ascx.designer.vb">
+      <DependentUpon>EditItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="EditItem.ascx.vb">
+      <DependentUpon>EditItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Edits.ascx.designer.vb">
+      <DependentUpon>Edits.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Edits.ascx.vb">
+      <DependentUpon>Edits.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="img\Thumb.aspx.designer.vb">
+      <DependentUpon>Thumb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="img\Thumb.aspx.vb">
+      <DependentUpon>Thumb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="Settings.ascx.designer.vb">
+      <DependentUpon>Settings.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.ascx.vb">
+      <DependentUpon>Settings.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewList.ascx.designer.vb">
+      <DependentUpon>ViewList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewList.ascx.vb">
+      <DependentUpon>ViewList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views.ascx.designer.vb">
+      <DependentUpon>Views.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views.ascx.vb">
+      <DependentUpon>Views.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Details.ascx" />
+    <Content Include="EditItem.ascx" />
+    <Content Include="Edits.ascx" />
+    <Content Include="img\Thumb.aspx" />
+    <Content Include="module.css" />
+    <Content Include="Settings.ascx" />
+    <Content Include="ViewList.ascx" />
+    <Content Include="Views.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\Details.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\EditItem.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\Edits.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\Settings.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\ViewList.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\Views.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="img\maskBG.png" />
+    <Content Include="js\JbRattleImage.js" />
+    <Content Include="js\JB_ActiveContent.js" />
+    <EmbeddedResource Include="Details.ascx.resx">
+      <DependentUpon>Details.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditItem.ascx.resx">
+      <DependentUpon>EditItem.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edits.ascx.resx">
+      <DependentUpon>Edits.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="img\Thumb.aspx.resx">
+      <DependentUpon>Thumb.aspx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.ascx.resx">
+      <DependentUpon>Settings.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewList.ascx.resx">
+      <DependentUpon>ViewList.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views.ascx.resx">
+      <DependentUpon>Views.ascx.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Providers\DataProviders\SqlDataProvider\01.00.00.SqlDataProvider" />
+    <None Include="Providers\DataProviders\SqlDataProvider\Uninstall.SqlDataProvider" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" Condition="" />
+  <Import Project="Installation\bhattjiModule.build" Condition="Exists('$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets')" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2464</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://JRC45/DesktopModules/bhattji_Dispatchs</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://JRC45</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

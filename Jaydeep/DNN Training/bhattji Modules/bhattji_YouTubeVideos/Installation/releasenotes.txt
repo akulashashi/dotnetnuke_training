@@ -1,0 +1,12 @@
+﻿RELEASE NOTES for the bhattji's YouTubeVideos Module Version for DNN5+<br/>
+ <p><strong>bhattji's YouTubeVideos Module RELEASE NOTES</strong></p>
+
+        Copyright&copy; 2009, 2010, <a href="http://www.bhattji.com">bhattji.com</a>, All rights reserved.
+ <p>     
+ Before Installing, please note:</p>
+ <ol>
+    <li><b>THIS IS Blah blah blah</b><br />
+Even more Blah ... Listen to Jaydeep Bhatt. Blah Blah Blah... </li>
+        <li><b>BACKUP BEFORE YOU INSTALL</b><br />
+        As a matter of precaution you should always backup your existing environment before attempting to install a new module</li>
+</ol>

@@ -1,0 +1,15 @@
+C:\DNN\JRC45\bin\bhattji.Modules.BkrSalesPersons.dll
+C:\DNN\JRC45\bin\bhattji.Modules.BkrSalesPersons.pdb
+C:\DNN\JRC45\bin\bhattji.SalesPersons.xml
+C:\DNN\JRC45\DesktopModules\bhattji_BkrSalesPersons\obj\Debug\ResolveAssemblyReference.cache
+C:\DNN\JRC45\DesktopModules\bhattji_BkrSalesPersons\obj\Debug\bhattji.Modules.BkrSalesPersons.Details.resources
+C:\DNN\JRC45\DesktopModules\bhattji_BkrSalesPersons\obj\Debug\bhattji.Modules.BkrSalesPersons.EditItem.resources
+C:\DNN\JRC45\DesktopModules\bhattji_BkrSalesPersons\obj\Debug\bhattji.Modules.BkrSalesPersons.Edits.resources
+C:\DNN\JRC45\DesktopModules\bhattji_BkrSalesPersons\obj\Debug\bhattji.Modules.BkrSalesPersons.Thumb.resources
+C:\DNN\JRC45\DesktopModules\bhattji_BkrSalesPersons\obj\Debug\bhattji.Modules.BkrSalesPersons.Settings.resources
+C:\DNN\JRC45\DesktopModules\bhattji_BkrSalesPersons\obj\Debug\bhattji.Modules.BkrSalesPersons.ViewList.resources
+C:\DNN\JRC45\DesktopModules\bhattji_BkrSalesPersons\obj\Debug\bhattji.Modules.BkrSalesPersons.Views.resources
+C:\DNN\JRC45\DesktopModules\bhattji_BkrSalesPersons\obj\Debug\bhattji.BkrSalesPersons.vbproj.GenerateResource.Cache
+C:\DNN\JRC45\DesktopModules\bhattji_BkrSalesPersons\obj\Debug\bhattji.Modules.BkrSalesPersons.dll
+C:\DNN\JRC45\DesktopModules\bhattji_BkrSalesPersons\obj\Debug\bhattji.SalesPersons.xml
+C:\DNN\JRC45\DesktopModules\bhattji_BkrSalesPersons\obj\Debug\bhattji.Modules.BkrSalesPersons.pdb

@@ -1,0 +1,8 @@
+E:\DNN\DNN700\DesktopModules\bhattji_MyLogins\obj\Release\bhattji.Modules.MyLogins.Thumb.resources
+E:\DNN\DNN700\DesktopModules\bhattji_MyLogins\obj\Release\bhattji.Modules.MyLogins.Settings.resources
+E:\DNN\DNN700\DesktopModules\bhattji_MyLogins\obj\Release\bhattji.Modules.MyLogins.Views.resources
+E:\DNN\DNN700\DesktopModules\bhattji_MyLogins\obj\Release\bhattji.Modules.MyLogins.csproj.GenerateResource.Cache
+E:\DNN\DNN700\bin\bhattji.Modules.MyLogins.dll
+E:\DNN\DNN700\bin\bhattji.Modules.MyLogins.pdb
+E:\DNN\DNN700\DesktopModules\bhattji_MyLogins\obj\Release\bhattji.Modules.MyLogins.dll
+E:\DNN\DNN700\DesktopModules\bhattji_MyLogins\obj\Release\bhattji.Modules.MyLogins.pdb

@@ -1,0 +1,7 @@
+E:\DNN\DNN600\bin\bhattji.Modules.Trackings.dll
+E:\DNN\DNN600\bin\bhattji.Modules.Trackings.pdb
+E:\DNN\DNN600\DesktopModules\bhattji_Trackings\obj\Release\bhattji.Modules.Trackings.Settings.resources
+E:\DNN\DNN600\DesktopModules\bhattji_Trackings\obj\Release\bhattji.Modules.Trackings.Views.resources
+E:\DNN\DNN600\DesktopModules\bhattji_Trackings\obj\Release\bhattji.Modules.Trackings.csproj.GenerateResource.Cache
+E:\DNN\DNN600\DesktopModules\bhattji_Trackings\obj\Release\bhattji.Modules.Trackings.dll
+E:\DNN\DNN600\DesktopModules\bhattji_Trackings\obj\Release\bhattji.Modules.Trackings.pdb

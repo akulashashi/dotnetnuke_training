@@ -1,0 +1,864 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plItemId.Text" xml:space="preserve">
+    <value>ItemId</value>
+  </data>
+  <data name="plItemId.Help" xml:space="preserve">
+    <value>Enter the ItemId</value>
+  </data>
+  <data name="plLoadID.Text" xml:space="preserve">
+    <value>LoadID</value>
+  </data>
+  <data name="plLoadID.Help" xml:space="preserve">
+    <value>Enter the LoadID</value>
+  </data>
+  <data name="plBBaseLoad.Text" xml:space="preserve">
+    <value>Base load amount</value>
+  </data>
+  <data name="plBBaseLoad.Help" xml:space="preserve">
+    <value>Enter the BBaseLoad</value>
+  </data>
+  <data name="plDiscountPCT.Text" xml:space="preserve">
+    <value>Discount </value>
+  </data>
+  <data name="plDiscountPCT.Help" xml:space="preserve">
+    <value>Enter the DiscountPCT</value>
+  </data>
+  <data name="plDiscountDlr.Text" xml:space="preserve">
+    <value>DiscountDlr</value>
+  </data>
+  <data name="plDiscountDlr.Help" xml:space="preserve">
+    <value>Enter the DiscountDlr</value>
+  </data>
+  <data name="plBDeten.Text" xml:space="preserve">
+    <value>Deten</value>
+  </data>
+  <data name="plBDeten.Help" xml:space="preserve">
+    <value>Enter the BDeten</value>
+  </data>
+  <data name="plBTolls.Text" xml:space="preserve">
+    <value>Tolls</value>
+  </data>
+  <data name="plBTolls.Help" xml:space="preserve">
+    <value>Enter the BTolls</value>
+  </data>
+  <data name="plBFuel.Text" xml:space="preserve">
+    <value>Fuel</value>
+  </data>
+  <data name="plBFuel.Help" xml:space="preserve">
+    <value>Enter the BFuel</value>
+  </data>
+  <data name="plBDrop.Text" xml:space="preserve">
+    <value>Drop</value>
+  </data>
+  <data name="plBDrop.Help" xml:space="preserve">
+    <value>Enter the BDrop</value>
+  </data>
+  <data name="plBRecon.Text" xml:space="preserve">
+    <value>Recon</value>
+  </data>
+  <data name="plBRecon.Help" xml:space="preserve">
+    <value>Enter the BRecon</value>
+  </data>
+  <data name="plBTarp.Text" xml:space="preserve">
+    <value>Tarp</value>
+  </data>
+  <data name="plBTarp.Help" xml:space="preserve">
+    <value>Enter the BTarp</value>
+  </data>
+  <data name="plBLumper.Text" xml:space="preserve">
+    <value>Lumper</value>
+  </data>
+  <data name="plBLumper.Help" xml:space="preserve">
+    <value>Enter the BLumper</value>
+  </data>
+  <data name="plBUnload.Text" xml:space="preserve">
+    <value>Unload</value>
+  </data>
+  <data name="plBUnload.Help" xml:space="preserve">
+    <value>Enter the BUnload</value>
+  </data>
+  <data name="plBAdminMisc.Text" xml:space="preserve">
+    <value>Admin Misc</value>
+  </data>
+  <data name="plBAdminMisc.Help" xml:space="preserve">
+    <value>Enter the BAdminMisc</value>
+  </data>
+  <data name="plBCustBill.Text" xml:space="preserve">
+    <value>Customer Billing</value>
+  </data>
+  <data name="plBCustBill.Help" xml:space="preserve">
+    <value>Enter the BCustBill</value>
+  </data>
+  <data name="plDRCommBase.Text" xml:space="preserve">
+    <value>DRCommBase</value>
+  </data>
+  <data name="plDRCommBase.Help" xml:space="preserve">
+    <value>Enter the DRCommBase</value>
+  </data>
+  <data name="plDRRebur.Text" xml:space="preserve">
+    <value>DRRebur</value>
+  </data>
+  <data name="plDRRebur.Help" xml:space="preserve">
+    <value>Enter the DRRebur</value>
+  </data>
+  <data name="plDRPermits.Text" xml:space="preserve">
+    <value>DRPermits</value>
+  </data>
+  <data name="plDRPermits.Help" xml:space="preserve">
+    <value>Enter the DRPermits</value>
+  </data>
+  <data name="plDRTolls.Text" xml:space="preserve">
+    <value>DRTolls</value>
+  </data>
+  <data name="plDRTolls.Help" xml:space="preserve">
+    <value>Enter the DRTolls</value>
+  </data>
+  <data name="plDRMisc.Text" xml:space="preserve">
+    <value>DRMisc</value>
+  </data>
+  <data name="plDRMisc.Help" xml:space="preserve">
+    <value>Enter the DRMisc</value>
+  </data>
+  <data name="plDRTotDue.Text" xml:space="preserve">
+    <value>DRTotDue</value>
+  </data>
+  <data name="plDRTotDue.Help" xml:space="preserve">
+    <value>Enter the DRTotDue</value>
+  </data>
+  <data name="plAPCommTot.Text" xml:space="preserve">
+    <value>APCommTot</value>
+  </data>
+  <data name="plAPCommTot.Help" xml:space="preserve">
+    <value>Enter the APCommTot</value>
+  </data>
+  <data name="plCalcMI.Text" xml:space="preserve">
+    <value>Miles</value>
+  </data>
+  <data name="plCalcMI.Help" xml:space="preserve">
+    <value>Enter the CalcMI</value>
+  </data>
+  <data name="plCalcRate.Text" xml:space="preserve">
+    <value>Rate</value>
+  </data>
+  <data name="plCalcRate.Help" xml:space="preserve">
+    <value>Enter the CalcRate</value>
+  </data>
+  <data name="plCalcTot.Text" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="plCalcTot.Help" xml:space="preserve">
+    <value>Enter the CalcTot</value>
+  </data>
+  <data name="plJRCIOOffC1.Text" xml:space="preserve">
+    <value>JRCIOOffC1</value>
+  </data>
+  <data name="plJRCIOOffC1.Help" xml:space="preserve">
+    <value>Enter the JRCIOOffC1</value>
+  </data>
+  <data name="plJRCIOOffC2.Text" xml:space="preserve">
+    <value>JRCIOOffC2</value>
+  </data>
+  <data name="plJRCIOOffC2.Help" xml:space="preserve">
+    <value>Enter the JRCIOOffC2</value>
+  </data>
+  <data name="plIOOffC1.Text" xml:space="preserve">
+    <value>IOOffC1</value>
+  </data>
+  <data name="plIOOffC1.Help" xml:space="preserve">
+    <value>Enter the IOOffC1</value>
+  </data>
+  <data name="plIOOffC2.Text" xml:space="preserve">
+    <value>IOOffC2</value>
+  </data>
+  <data name="plIOOffC2.Help" xml:space="preserve">
+    <value>Enter the IOOffC2</value>
+  </data>
+  <data name="plIOOffC3.Text" xml:space="preserve">
+    <value>IOOffC3</value>
+  </data>
+  <data name="plIOOffC3.Help" xml:space="preserve">
+    <value>Enter the IOOffC3</value>
+  </data>
+  <data name="plIOOffC4.Text" xml:space="preserve">
+    <value>IOOffC4</value>
+  </data>
+  <data name="plIOOffC4.Help" xml:space="preserve">
+    <value>Enter the IOOffC4</value>
+  </data>
+  <data name="plIOOffN1.Text" xml:space="preserve">
+    <value>IOOffN1</value>
+  </data>
+  <data name="plIOOffN1.Help" xml:space="preserve">
+    <value>Enter the IOOffN1</value>
+  </data>
+  <data name="plIOOffN2.Text" xml:space="preserve">
+    <value>IOOffN2</value>
+  </data>
+  <data name="plIOOffN2.Help" xml:space="preserve">
+    <value>Enter the IOOffN2</value>
+  </data>
+  <data name="plIOOffN3.Text" xml:space="preserve">
+    <value>IOOffN3</value>
+  </data>
+  <data name="plIOOffN3.Help" xml:space="preserve">
+    <value>Enter the IOOffN3</value>
+  </data>
+  <data name="plIOOffN4.Text" xml:space="preserve">
+    <value>IOOffN4</value>
+  </data>
+  <data name="plIOOffN4.Help" xml:space="preserve">
+    <value>Enter the IOOffN4</value>
+  </data>
+  <data name="plIOComm1.Text" xml:space="preserve">
+    <value>IOComm1</value>
+  </data>
+  <data name="plIOComm1.Help" xml:space="preserve">
+    <value>Enter the IOComm1</value>
+  </data>
+  <data name="plIOComm2.Text" xml:space="preserve">
+    <value>IOComm2</value>
+  </data>
+  <data name="plIOComm2.Help" xml:space="preserve">
+    <value>Enter the IOComm2</value>
+  </data>
+  <data name="plIOComm3.Text" xml:space="preserve">
+    <value>IOComm3</value>
+  </data>
+  <data name="plIOComm3.Help" xml:space="preserve">
+    <value>Enter the IOComm3</value>
+  </data>
+  <data name="plIOComm4.Text" xml:space="preserve">
+    <value>IOComm4</value>
+  </data>
+  <data name="plIOComm4.Help" xml:space="preserve">
+    <value>Enter the IOComm4</value>
+  </data>
+  <data name="plIOOffL1.Text" xml:space="preserve">
+    <value>IOOffL1</value>
+  </data>
+  <data name="plIOOffL1.Help" xml:space="preserve">
+    <value>Enter the IOOffL1</value>
+  </data>
+  <data name="plIOOffL2.Text" xml:space="preserve">
+    <value>IOOffL2</value>
+  </data>
+  <data name="plIOOffL2.Help" xml:space="preserve">
+    <value>Enter the IOOffL2</value>
+  </data>
+  <data name="plIOOffL3.Text" xml:space="preserve">
+    <value>IOOffL3</value>
+  </data>
+  <data name="plIOOffL3.Help" xml:space="preserve">
+    <value>Enter the IOOffL3</value>
+  </data>
+  <data name="plIOOffL4.Text" xml:space="preserve">
+    <value>IOOffL4</value>
+  </data>
+  <data name="plIOOffL4.Help" xml:space="preserve">
+    <value>Enter the IOOffL4</value>
+  </data>
+  <data name="plIOCommTot.Text" xml:space="preserve">
+    <value>IOCommTot</value>
+  </data>
+  <data name="plIOCommTot.Help" xml:space="preserve">
+    <value>Enter the IOCommTot</value>
+  </data>
+  <data name="plIOAdmin1.Text" xml:space="preserve">
+    <value>IOAdmin1</value>
+  </data>
+  <data name="plIOAdmin1.Help" xml:space="preserve">
+    <value>Enter the IOAdmin1</value>
+  </data>
+  <data name="plIOAdmin2.Text" xml:space="preserve">
+    <value>IOAdmin2</value>
+  </data>
+  <data name="plIOAdmin2.Help" xml:space="preserve">
+    <value>Enter the IOAdmin2</value>
+  </data>
+  <data name="plIOAdmin3.Text" xml:space="preserve">
+    <value>IOAdmin3</value>
+  </data>
+  <data name="plIOAdmin3.Help" xml:space="preserve">
+    <value>Enter the IOAdmin3</value>
+  </data>
+  <data name="plIOAdmin4.Text" xml:space="preserve">
+    <value>IOAdmin4</value>
+  </data>
+  <data name="plIOAdmin4.Help" xml:space="preserve">
+    <value>Enter the IOAdmin4</value>
+  </data>
+  <data name="plIOAdminTot.Text" xml:space="preserve">
+    <value>IOAdminTot</value>
+  </data>
+  <data name="plIOAdminTot.Help" xml:space="preserve">
+    <value>Enter the IOAdminTot</value>
+  </data>
+  <data name="plExPermits.Text" xml:space="preserve">
+    <value>ExPermits</value>
+  </data>
+  <data name="plExPermits.Help" xml:space="preserve">
+    <value>Enter the ExPermits</value>
+  </data>
+  <data name="plExTrailer.Text" xml:space="preserve">
+    <value>ExTrailer</value>
+  </data>
+  <data name="plExTrailer.Help" xml:space="preserve">
+    <value>Enter the ExTrailer</value>
+  </data>
+  <data name="plExMisc.Text" xml:space="preserve">
+    <value>ExMisc</value>
+  </data>
+  <data name="plExMisc.Help" xml:space="preserve">
+    <value>Enter the ExMisc</value>
+  </data>
+  <data name="plExTot.Text" xml:space="preserve">
+    <value>ExTot</value>
+  </data>
+  <data name="plExTot.Help" xml:space="preserve">
+    <value>Enter the ExTot</value>
+  </data>
+  <data name="plAdminExempt.Text" xml:space="preserve">
+    <value>Admin Exempt?</value>
+  </data>
+  <data name="plAdminExempt.Help" xml:space="preserve">
+    <value>Enter the AdminExempt</value>
+  </data>
+  <data name="plJRCOnePct.Text" xml:space="preserve">
+    <value>JRCOnePct</value>
+  </data>
+  <data name="plJRCOnePct.Help" xml:space="preserve">
+    <value>Enter the JRCOnePct</value>
+  </data>
+  <data name="plJRCOffComm.Text" xml:space="preserve">
+    <value>JRCOffComm</value>
+  </data>
+  <data name="plJRCOffComm.Help" xml:space="preserve">
+    <value>Enter the JRCOffComm</value>
+  </data>
+  <data name="plJRCTotal.Text" xml:space="preserve">
+    <value>JRCTotal</value>
+  </data>
+  <data name="plJRCTotal.Help" xml:space="preserve">
+    <value>Enter the JRCTotal</value>
+  </data>
+  <data name="plBINC3.Text" xml:space="preserve">
+    <value>BINC3</value>
+  </data>
+  <data name="plBINC3.Help" xml:space="preserve">
+    <value>Enter the BINC3</value>
+  </data>
+  <data name="plBINC4.Text" xml:space="preserve">
+    <value>BINC4</value>
+  </data>
+  <data name="plBINC4.Help" xml:space="preserve">
+    <value>Enter the BINC4</value>
+  </data>
+  <data name="plBINC5.Text" xml:space="preserve">
+    <value>BINC5</value>
+  </data>
+  <data name="plBINC5.Help" xml:space="preserve">
+    <value>Enter the BINC5</value>
+  </data>
+  <data name="plBINC6.Text" xml:space="preserve">
+    <value>BINC6</value>
+  </data>
+  <data name="plBINC6.Help" xml:space="preserve">
+    <value>Enter the BINC6</value>
+  </data>
+  <data name="plBINC7.Text" xml:space="preserve">
+    <value>BINC7</value>
+  </data>
+  <data name="plBINC7.Help" xml:space="preserve">
+    <value>Enter the BINC7</value>
+  </data>
+  <data name="plBINC8.Text" xml:space="preserve">
+    <value>BINC8</value>
+  </data>
+  <data name="plBINC8.Help" xml:space="preserve">
+    <value>Enter the BINC8</value>
+  </data>
+  <data name="plBINC9.Text" xml:space="preserve">
+    <value>BINC9</value>
+  </data>
+  <data name="plBINC9.Help" xml:space="preserve">
+    <value>Enter the BINC9</value>
+  </data>
+  <data name="plBINC10.Text" xml:space="preserve">
+    <value>BINC10</value>
+  </data>
+  <data name="plBINC10.Help" xml:space="preserve">
+    <value>Enter the BINC10</value>
+  </data>
+  <data name="plBINC11.Text" xml:space="preserve">
+    <value>BINC11</value>
+  </data>
+  <data name="plBINC11.Help" xml:space="preserve">
+    <value>Enter the BINC11</value>
+  </data>
+  <data name="plJRCOffPct.Text" xml:space="preserve">
+    <value>JRCOffPct</value>
+  </data>
+  <data name="plJRCOffPct.Help" xml:space="preserve">
+    <value>Enter the JRCOffPct</value>
+  </data>
+  <data name="plJRCBkrPct.Text" xml:space="preserve">
+    <value>JRCBkrPct</value>
+  </data>
+  <data name="plJRCBkrPct.Help" xml:space="preserve">
+    <value>Enter the JRCBkrPct</value>
+  </data>
+  <data name="plBkrPct.Text" xml:space="preserve">
+    <value>BkrPct</value>
+  </data>
+  <data name="plBkrPct.Help" xml:space="preserve">
+    <value>Enter the BkrPct</value>
+  </data>
+  <data name="plBkrDlr.Text" xml:space="preserve">
+    <value>BkrDlr</value>
+  </data>
+  <data name="plBkrDlr.Help" xml:space="preserve">
+    <value>Enter the BkrDlr</value>
+  </data>
+  <data name="plIODlr.Text" xml:space="preserve">
+    <value>IODlr</value>
+  </data>
+  <data name="plIODlr.Help" xml:space="preserve">
+    <value>Enter the IODlr</value>
+  </data>
+  <data name="plIOPct.Text" xml:space="preserve">
+    <value>IOPct</value>
+  </data>
+  <data name="plIOPct.Help" xml:space="preserve">
+    <value>Enter the IOPct</value>
+  </data>
+  <data name="plDCPCT.Text" xml:space="preserve">
+    <value>DCPCT</value>
+  </data>
+  <data name="plDCPCT.Help" xml:space="preserve">
+    <value>Enter the DCPCT</value>
+  </data>
+  <data name="plONEPCT.Text" xml:space="preserve">
+    <value>ONEPCT</value>
+  </data>
+  <data name="plONEPCT.Help" xml:space="preserve">
+    <value>Enter the ONEPCT</value>
+  </data>
+  <data name="plRepPct.Text" xml:space="preserve">
+    <value>RepPct</value>
+  </data>
+  <data name="plRepPct.Help" xml:space="preserve">
+    <value>Enter the RepPct</value>
+  </data>
+  <data name="plRepDlr.Text" xml:space="preserve">
+    <value>RepDlr</value>
+  </data>
+  <data name="plRepDlr.Help" xml:space="preserve">
+    <value>Enter the RepDlr</value>
+  </data>
+  <data name="plDispPct.Text" xml:space="preserve">
+    <value>DispPct</value>
+  </data>
+  <data name="plDispPct.Help" xml:space="preserve">
+    <value>Enter the DispPct</value>
+  </data>
+  <data name="plDispDlr.Text" xml:space="preserve">
+    <value>DispDlr</value>
+  </data>
+  <data name="plDispDlr.Help" xml:space="preserve">
+    <value>Enter the DispDlr</value>
+  </data>
+  <data name="plIOXPct1.Text" xml:space="preserve">
+    <value>IOXPct1</value>
+  </data>
+  <data name="plIOXPct1.Help" xml:space="preserve">
+    <value>Enter the IOXPct1</value>
+  </data>
+  <data name="plIOXPct2.Text" xml:space="preserve">
+    <value>IOXPct2</value>
+  </data>
+  <data name="plIOXPct2.Help" xml:space="preserve">
+    <value>Enter the IOXPct2</value>
+  </data>
+  <data name="plIOXPct3.Text" xml:space="preserve">
+    <value>IOXPct3</value>
+  </data>
+  <data name="plIOXPct3.Help" xml:space="preserve">
+    <value>Enter the IOXPct3</value>
+  </data>
+  <data name="plIOXPct4.Text" xml:space="preserve">
+    <value>IOXPct4</value>
+  </data>
+  <data name="plIOXPct4.Help" xml:space="preserve">
+    <value>Enter the IOXPct4</value>
+  </data>
+  <data name="plJRCAdminP.Text" xml:space="preserve">
+    <value>JRCAdminP</value>
+  </data>
+  <data name="plJRCAdminP.Help" xml:space="preserve">
+    <value>Enter the JRCAdminP</value>
+  </data>
+  <data name="plAPOffC1.Text" xml:space="preserve">
+    <value>APOffC1</value>
+  </data>
+  <data name="plAPOffC1.Help" xml:space="preserve">
+    <value>Enter the APOffC1</value>
+  </data>
+  <data name="plAPOffC2.Text" xml:space="preserve">
+    <value>APOffC2</value>
+  </data>
+  <data name="plAPOffC2.Help" xml:space="preserve">
+    <value>Enter the APOffC2</value>
+  </data>
+  <data name="plAPOffC3.Text" xml:space="preserve">
+    <value>APOffC3</value>
+  </data>
+  <data name="plAPOffC3.Help" xml:space="preserve">
+    <value>Enter the APOffC3</value>
+  </data>
+  <data name="plAPOffC4.Text" xml:space="preserve">
+    <value>APOffC4</value>
+  </data>
+  <data name="plAPOffC4.Help" xml:space="preserve">
+    <value>Enter the APOffC4</value>
+  </data>
+  <data name="plAPOffN1.Text" xml:space="preserve">
+    <value>APOffN1</value>
+  </data>
+  <data name="plAPOffN1.Help" xml:space="preserve">
+    <value>Enter the APOffN1</value>
+  </data>
+  <data name="plAPOffN2.Text" xml:space="preserve">
+    <value>APOffN2</value>
+  </data>
+  <data name="plAPOffN2.Help" xml:space="preserve">
+    <value>Enter the APOffN2</value>
+  </data>
+  <data name="plAPOffN3.Text" xml:space="preserve">
+    <value>APOffN3</value>
+  </data>
+  <data name="plAPOffN3.Help" xml:space="preserve">
+    <value>Enter the APOffN3</value>
+  </data>
+  <data name="plAPOffN4.Text" xml:space="preserve">
+    <value>APOffN4</value>
+  </data>
+  <data name="plAPOffN4.Help" xml:space="preserve">
+    <value>Enter the APOffN4</value>
+  </data>
+  <data name="plAPComm1.Text" xml:space="preserve">
+    <value>APComm1</value>
+  </data>
+  <data name="plAPComm1.Help" xml:space="preserve">
+    <value>Enter the APComm1</value>
+  </data>
+  <data name="plAPComm2.Text" xml:space="preserve">
+    <value>APComm2</value>
+  </data>
+  <data name="plAPComm2.Help" xml:space="preserve">
+    <value>Enter the APComm2</value>
+  </data>
+  <data name="plAPComm3.Text" xml:space="preserve">
+    <value>APComm3</value>
+  </data>
+  <data name="plAPComm3.Help" xml:space="preserve">
+    <value>Enter the APComm3</value>
+  </data>
+  <data name="plAPComm4.Text" xml:space="preserve">
+    <value>APComm4</value>
+  </data>
+  <data name="plAPComm4.Help" xml:space="preserve">
+    <value>Enter the APComm4</value>
+  </data>
+  <data name="plAPCPct1.Text" xml:space="preserve">
+    <value>APCPct1</value>
+  </data>
+  <data name="plAPCPct1.Help" xml:space="preserve">
+    <value>Enter the APCPct1</value>
+  </data>
+  <data name="plAPCPct2.Text" xml:space="preserve">
+    <value>APCPct2</value>
+  </data>
+  <data name="plAPCPct2.Help" xml:space="preserve">
+    <value>Enter the APCPct2</value>
+  </data>
+  <data name="plAPCPct3.Text" xml:space="preserve">
+    <value>APCPct3</value>
+  </data>
+  <data name="plAPCPct3.Help" xml:space="preserve">
+    <value>Enter the APCPct3</value>
+  </data>
+  <data name="plAPCPct4.Text" xml:space="preserve">
+    <value>APCPct4</value>
+  </data>
+  <data name="plAPCPct4.Help" xml:space="preserve">
+    <value>Enter the APCPct4</value>
+  </data>
+  <data name="plAllowORide.Text" xml:space="preserve">
+    <value>AllowORide</value>
+  </data>
+  <data name="plAllowORide.Help" xml:space="preserve">
+    <value>Enter the AllowORide</value>
+  </data>
+  <data name="plBType.Text" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="plBType.Help" xml:space="preserve">
+    <value>Enter the BType</value>
+  </data>
+  <data name="plOCommPlus.Text" xml:space="preserve">
+    <value>OCommPlus</value>
+  </data>
+  <data name="plOCommPlus.Help" xml:space="preserve">
+    <value>Enter the OCommPlus</value>
+  </data>
+  <data name="plOCommNeg.Text" xml:space="preserve">
+    <value>OCommNeg</value>
+  </data>
+  <data name="plOCommNeg.Help" xml:space="preserve">
+    <value>Enter the OCommNeg</value>
+  </data>
+  <data name="plAlumaPct.Text" xml:space="preserve">
+    <value>AlumaPct</value>
+  </data>
+  <data name="plAlumaPct.Help" xml:space="preserve">
+    <value>Enter the AlumaPct</value>
+  </data>
+  <data name="plAlumaDlrDisc.Text" xml:space="preserve">
+    <value>AlumaDlrDisc</value>
+  </data>
+  <data name="plAlumaDlrDisc.Help" xml:space="preserve">
+    <value>Enter the AlumaDlrDisc</value>
+  </data>
+  <data name="plBKFixed.Text" xml:space="preserve">
+    <value>BKFixed</value>
+  </data>
+  <data name="plBKFixed.Help" xml:space="preserve">
+    <value>Enter the BKFixed</value>
+  </data>
+  <data name="plIOFixed.Text" xml:space="preserve">
+    <value>IOFixed</value>
+  </data>
+  <data name="plIOFixed.Help" xml:space="preserve">
+    <value>Enter the IOFixed</value>
+  </data>
+  <data name="plGPPct.Text" xml:space="preserve">
+    <value>GPPct</value>
+  </data>
+  <data name="plGPPct.Help" xml:space="preserve">
+    <value>Enter the GPPct</value>
+  </data>
+  <data name="plTPName.Text" xml:space="preserve">
+    <value>TPName</value>
+  </data>
+  <data name="plTPName.Help" xml:space="preserve">
+    <value>Enter the TPName</value>
+  </data>
+  <data name="plTPAmt.Text" xml:space="preserve">
+    <value>TPAmt</value>
+  </data>
+  <data name="plTPAmt.Help" xml:space="preserve">
+    <value>Enter the TPAmt</value>
+  </data>
+  <data name="plTPDesc.Text" xml:space="preserve">
+    <value>TPDesc</value>
+  </data>
+  <data name="plTPDesc.Help" xml:space="preserve">
+    <value>Enter the TPDesc</value>
+  </data>
+  <data name="plTPPaidDate.Text" xml:space="preserve">
+    <value>TPPaidDate</value>
+  </data>
+  <data name="plTPPaidDate.Help" xml:space="preserve">
+    <value>Enter the TPPaidDate</value>
+  </data>
+  <data name="plTPCkNo.Text" xml:space="preserve">
+    <value>TPCkNo</value>
+  </data>
+  <data name="plTPCkNo.Help" xml:space="preserve">
+    <value>Enter the TPCkNo</value>
+  </data>
+  <data name="plJRC5050.Text" xml:space="preserve">
+    <value>JRC5050</value>
+  </data>
+  <data name="plJRC5050.Help" xml:space="preserve">
+    <value>Enter the JRC5050</value>
+  </data>
+  <data name="plCalc85.Text" xml:space="preserve">
+    <value>Calc85?</value>
+  </data>
+  <data name="plCalc85.Help" xml:space="preserve">
+    <value>Enter the Calc85</value>
+  </data>
+  <data name="plDvrDedPct.Text" xml:space="preserve">
+    <value>DvrDedPct</value>
+  </data>
+  <data name="plDvrDedPct.Help" xml:space="preserve">
+    <value>Enter the DvrDedPct</value>
+  </data>
+  <data name="plDvrDedResn.Text" xml:space="preserve">
+    <value>DvrDedResn</value>
+  </data>
+  <data name="plDvrDedResn.Help" xml:space="preserve">
+    <value>Enter the DvrDedResn</value>
+  </data>
+  <data name="RepeatAdd.Text" xml:space="preserve">
+    <value>Repeat Add Item ?</value>
+  </data>
+  <data name="plViewOrder.Text" xml:space="preserve">
+    <value>ViewOrder</value>
+  </data>
+  <data name="plViewOrder.Help" xml:space="preserve">
+    <value>Enter the ViewOrder</value>
+  </data>
+  <data name="Calculate.Text" xml:space="preserve">
+    <value>Calculate</value>
+  </data>
+  <data name="print_Confirm.Text" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="print_this.Text" xml:space="preserve">
+    <value>Load</value>
+  </data>
+  <data name="chkBKFixed.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="chkOOFixed.Text" xml:space="preserve">
+    <value>Fixed $ ?</value>
+  </data>
+  <data name="update_and_edit.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="MessageNotSent.Text" xml:space="preserve">
+    <value>Message could not be Sent</value>
+  </data>
+  <data name="MessageSent.Text" xml:space="preserve">
+    <value>Message succesfully Sent</value>
+  </data>
+  <data name="chkSubOffComm.Help" xml:space="preserve">
+    <value>Check/Uncheck Sub Office Commission</value>
+  </data>
+  <data name="chkSubOffComm.Text" xml:space="preserve">
+    <value>Sub Office Commission</value>
+  </data>
+  <data name="cancel_load.Text" xml:space="preserve">
+    <value>Cancel and Refresh</value>
+  </data>
+</root>

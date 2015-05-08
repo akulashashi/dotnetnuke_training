@@ -1,0 +1,121 @@
+﻿<dotnetnuke type="Package" version="5.0">
+	<packages>
+		<package name="bhattji.XYZ60s" type="Module" version="01.00.00">
+			<friendlyName>bhattji.XYZ60s</friendlyName>
+			<description>A short Description about bhattji's XYZ60s Module</description>
+			<owner>
+				<name>Jaydeep Bhatt</name>
+				<organization>Vision Consultants</organization>
+				<url>http://www.bhattji.com</url>
+				<email>support@bhattji.com</email>
+			</owner>
+			<license src="license.txt" />
+			<releaseNotes src="releasenotes.txt" />
+            <iconFile>DesktopModules/bhattji.XYZ60s/vision.ico</iconFile>
+            <dependencies>
+                <dependency type="CoreVersion">06.00.00</dependency>
+            </dependencies>
+			<components>
+				<component type="Script">
+					<scripts>
+						<basePath>DesktopModules\bhattji.XYZ60s</basePath>
+						<script type="Install">
+							<name>01.00.00.SqlDataProvider</name>
+							<version>01.00.00</version>
+						</script>
+						<script type="UnInstall">
+							<name>Uninstall.SqlDataProvider</name>
+                            <version>01.00.00</version>
+						</script>
+					</scripts>
+				</component>
+				<component type="Module">
+					<desktopModule>
+						<moduleName>bhattji.XYZ60s</moduleName>
+						<foldername>bhattji.XYZ60s</foldername>
+						<businessControllerClass>bhattji.Modules.XYZ60s.XYZ60sController, bhattji.Modules.XYZ60s</businessControllerClass>
+						<supportedFeatures />
+						<moduleDefinitions>
+							<moduleDefinition>
+								<friendlyName>bhattji.XYZ60s</friendlyName>
+								<defaultCacheTime>0</defaultCacheTime>
+								<moduleControls>
+									<moduleControl>
+										<controlKey />
+										<controlSrc>DesktopModules/bhattji.XYZ60s/Views.ascx</controlSrc>
+										<supportsPartialRendering>False</supportsPartialRendering>
+										<controlTitle>XYZ60s</controlTitle>
+										<controlType>View</controlType>
+										<iconFile />
+										<helpUrl>http://www.bhattji.com/modulehelp/?ctl=Views</helpUrl>
+										<viewOrder>0</viewOrder>
+									</moduleControl>
+									<moduleControl>
+										<controlKey>ItemDetails</controlKey>
+										<controlSrc>DesktopModules/bhattji.XYZ60s/Details.ascx</controlSrc>
+										<supportsPartialRendering>False</supportsPartialRendering>
+										<controlTitle>XYZ60 Details</controlTitle>
+										<controlType>View</controlType>
+										<iconFile />
+										<helpUrl>http://www.bhattji.com/modulehelp/?ctl=Details</helpUrl>
+										<viewOrder>0</viewOrder>
+                                        <supportsPopUps>True</supportsPopUps>
+									</moduleControl>
+									<moduleControl>
+										<controlKey>ItemRatings</controlKey>
+										<controlSrc>DesktopModules/bhattji.XYZ60s/Ratings.ascx</controlSrc>
+										<supportsPartialRendering>False</supportsPartialRendering>
+										<controlTitle>XYZ60 Ratings</controlTitle>
+										<controlType>View</controlType>
+										<iconFile />
+										<helpUrl>http://www.bhattji.com/modulehelp/?ctl=Ratings</helpUrl>
+										<viewOrder>0</viewOrder>
+									</moduleControl>
+                                    <supportsPopUps>True</supportsPopUps>
+									<moduleControl>
+										<controlKey>Edit</controlKey>
+										<controlSrc>DesktopModules/bhattji.XYZ60s/Edits.ascx</controlSrc>
+										<supportsPartialRendering>False</supportsPartialRendering>
+										<controlTitle>Edit XYZ60</controlTitle>
+										<controlType>Edit</controlType>
+										<iconFile />
+										<helpUrl>http://www.bhattji.com/modulehelp/?ctl=Edits</helpUrl>
+										<viewOrder>0</viewOrder>
+                                        <supportsPopUps>True</supportsPopUps>
+									</moduleControl>
+									<moduleControl>
+										<controlKey>Settings</controlKey>
+										<controlSrc>DesktopModules/bhattji.XYZ60s/Settings.ascx</controlSrc>
+										<supportsPartialRendering>False</supportsPartialRendering>
+										<controlTitle>XYZ60s Settings</controlTitle>
+										<controlType>Edit</controlType>
+										<iconFile />
+										<helpUrl>http://www.bhattji.com/modulehelp/?ctl=Settings</helpUrl>
+										<viewOrder>0</viewOrder>
+                                        <supportsPopUps>True</supportsPopUps>
+									</moduleControl>
+								</moduleControls>
+							</moduleDefinition>
+						</moduleDefinitions>
+					</desktopModule>
+				</component>
+				<component type="Assembly">
+					<assemblies>
+						<assembly>
+							<path>bin</path>
+							<name>bhattji.Modules.XYZ60s.dll</name>
+						</assembly>
+					</assemblies>
+				</component>
+				<component type="ResourceFile">
+					<resourceFiles>
+						<basePath>DesktopModules\bhattji.XYZ60s</basePath>
+						<resourceFile>
+							<name>install.bhattji.zip</name>
+						</resourceFile>
+					</resourceFiles>
+				</component>
+			</components>
+		</package>
+	</packages>
+</dotnetnuke>

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+<!--        
+		<Major>01</Major>
+		<Minor>00</Minor>
+		<Build>00</Build>
+-->
+        <ProjectName>YouTubeVideos</ProjectName>
+        <!--<DNNDirectory>E:\DNN\DNN600</DNNDirectory>-->
+        <DNNDirectory>$(MSBuildProjectDirectory)\..\..</DNNDirectory>
+        <!--<ModuleFolder>$(DNNDirectory)\DesktopModules\bhattji_XYZ60s</ModuleFolder>
+        <ModuleFolder>$(MSBuildProjectDirectory)</ModuleFolder>-->
+        <!--<PackageDirectory>$(ModuleFolder)\Installation</PackageDirectory>-->
+        <PackageDirectory>$(MSBuildProjectDirectory)\Installation</PackageDirectory>
+		<PackageSerialNo></PackageSerialNo>
+        <InstallV6ZipFileName>$(PackageDirectory)\bhattji_$(PackageSerialNo)$(ProjectName).V6.$(Version)_Install.zip</InstallV6ZipFileName>
+        <SourceV6ZipFileName>$(PackageDirectory)\bhattji_$(PackageSerialNo)$(ProjectName).V6.$(Version)_Source.zip</SourceV6ZipFileName>
+	</PropertyGroup>
+	<Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+	<Target Name="AfterBuild" DependsOnTargets="DeployModule"></Target>
+	<Target Name="DeployModule" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+<!--
+		<CreateItem Include="$(MSBuildProjectDirectory)\$(OutputPath)$(AssemblyName).dll">
+			<Output TaskParameter="Include" ItemName="ModuleAssemblies" />
+		</CreateItem>
+-->
+        <!-- Read the Version no from DNN file -->
+        <XmlRead Prefix="n"
+                 Namespace="http://schemas.microsoft.com/developer/msbuild/2003"
+                 XPath="dotnetnuke/packages/package[1]/@version"
+                 XmlFileName="$(PackageDirectory)\bhattji_$(ProjectName).V6_Install.dnn">
+            <Output TaskParameter="Value" PropertyName="Version" />
+        </XmlRead>
+		<!-- Copy Files to DotNetNuke Installation -->
+		<Copy SourceFiles="$(MSBuildProjectDirectory)\$(OutputPath)$(AssemblyName).dll" DestinationFolder="$(MSBuildProjectDirectory)\bin\" SkipUnchangedFiles="false" ContinueOnError="true" />
+		<CreateItem Include="bhattji.Modules.$(ProjectName).*">
+			<Output TaskParameter="Include" ItemName="ProjectSourceFiles" />
+		</CreateItem>
+		<CreateItem Include="Reports\*.*" Exclude="Reports\Copy*.*">
+			<Output TaskParameter="Include" ItemName="ReportFiles" />
+		</CreateItem>
+        
+		<!-- Zip the interenal resouce files for Install Version -->
+        <Zip Files="@(Content);@(ReportFiles)" ZipFileName="$(PackageDirectory)\install.bhattji" Flatten="False" />
+		<!-- Zip the interenal resouce files for Source Version -->
+		<Zip Files="@(Content);@(ReportFiles);@(Compile);@(ProjectSourceFiles)" ZipFileName="$(PackageDirectory)\source.bhattji" Flatten="False" />
+		
+        <!-- Zip the Install Version 
+        <Zip Files="bin\$(AssemblyName).dll;@(SqlDataProviderFiles);Installation\install.bhattji;Installation\bhattji_$(ProjectName)_Install.dnn" ZipFileName="$(PackageDirectory)\bhattji_$(PackageSerialNo)$(ProjectName).$(Major).$(Minor).$(Build)_Install.zip" Flatten="False" />
+        -->
+        <Zip Files="bin\$(AssemblyName).dll;Installation\install.bhattji;Installation\bhattji_$(ProjectName)_Install.dnn" ZipFileName="$(PackageDirectory)\bhattji_$(PackageSerialNo)$(ProjectName).$(Version)_Install.zip" Flatten="False" />
+        <!-- Zip the Source Version 
+        <Zip Files="bin\$(AssemblyName).dll;@(SqlDataProviderFiles);Installation\source.bhattji;Installation\bhattji_$(ProjectName)_Source.dnn" ZipFileName="$(PackageDirectory)\bhattji_$(PackageSerialNo)$(ProjectName).$(Major).$(Minor).$(Build)_Source.zip" Flatten="False" />
+        -->
+        <Zip Files="bin\$(AssemblyName).dll;Installation\source.bhattji;Installation\bhattji_$(ProjectName)_Source.dnn" ZipFileName="$(PackageDirectory)\bhattji_$(PackageSerialNo)$(ProjectName).$(Version)_Source.zip" Flatten="False" />
+
+        <!-- Copy Files to DotNetNuke root for DNN 5 -->
+		<Copy SourceFiles="Installation\bhattji_$(ProjectName).V6_Install.dnn;Installation\bhattji_$(ProjectName).V6_Source.dnn;Installation\license.txt;Installation\releasenotes.txt" DestinationFolder="$(MSBuildProjectDirectory)\" SkipUnchangedFiles="false" ContinueOnError="true" />
+
+		<CreateItem Include="Installation\install.bhattji;Installation\source.bhattji">
+			<Output TaskParameter="Include" ItemName="Resource5Files" />
+		</CreateItem>
+		<Copy SourceFiles="@(Resource5Files)"
+			  DestinationFiles="@(Resource5Files->'$(MSBuildProjectDirectory)\%(RecursiveDir)\%(Filename)%(Extension).zip')" />
+
+
+		<CreateItem Include="license.txt;releasenotes.txt">
+			<Output TaskParameter="Include" ItemName="Install5Files" />
+		</CreateItem>
+
+		<!-- Zip the Install Version 5 
+        <Zip Files="bin\$(AssemblyName).dll;bhattji_$(ProjectName).V6_Install.dnn;install.bhattji.zip;@(Install5Files)" ZipFileName="$(PackageDirectory)\bhattji_$(PackageSerialNo)$(ProjectName).V6.$(Major).$(Minor).$(Build)_Install.zip" Flatten="False" />
+        -->
+        <Zip Files="bin\$(AssemblyName).dll;bhattji_$(ProjectName).V6_Install.dnn;install.bhattji.zip;@(Install5Files)" ZipFileName="$(InstallV6ZipFileName)" Flatten="False" />
+        <!-- Zip the Source Version 5 
+        <Zip Files="bin\$(AssemblyName).dll;bhattji_$(ProjectName).V6_Source.dnn;source.bhattji.zip;@(Install5Files)" ZipFileName="$(PackageDirectory)\bhattji_$(PackageSerialNo)$(ProjectName).V6.$(Major).$(Minor).$(Build)_Source.zip" Flatten="False" />
+        -->
+        <Zip Files="bin\$(AssemblyName).dll;bhattji_$(ProjectName).V6_Source.dnn;source.bhattji.zip;@(Install5Files)" ZipFileName="$(SourceV6ZipFileName)" Flatten="False" />
+
+
+
+
+        <!-- Copy Files to DotNetNuke Installation 
+        <Copy SourceFiles="$(PackageDirectory)\bhattji_$(PackageSerialNo)$(ProjectName).$(Major).$(Minor).$(Build)_Install.zip" DestinationFolder="$(DNNDirectory)\Install\Module\" SkipUnchangedFiles="false" ContinueOnError="true" />
+        -->
+        <Copy SourceFiles="$(InstallV6ZipFileName)" DestinationFolder="$(DNNDirectory)\Install\Module\" SkipUnchangedFiles="false" ContinueOnError="true" />
+        <!-- Delete the interenal resouce files -->
+		<Delete Files="$(PackageDirectory)\install.bhattji;
+					   $(PackageDirectory)\source.bhattji;
+					   install.bhattji.zip;
+					   source.bhattji.zip;
+					   bhattji_$(ProjectName).V6_Install.dnn;
+					   bhattji_$(ProjectName).V6_Source.dnn;
+					   @(Install5Files)"
+		/>
+
+	</Target>
+</Project>

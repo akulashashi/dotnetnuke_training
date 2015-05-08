@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plLoadID.Text" xml:space="preserve">
+    <value>LoadID</value>
+  </data>
+  <data name="plLoadID.Help" xml:space="preserve">
+    <value>Database field: LoadID</value>
+  </data>
+  <data name="plOfficeVendorNO.Text" xml:space="preserve">
+    <value>OfficeVendorNO</value>
+  </data>
+  <data name="plOfficeVendorNO.Help" xml:space="preserve">
+    <value>Database field: OfficeVendorNO</value>
+  </data>
+  <data name="plJRCIOfficeCode.Text" xml:space="preserve">
+    <value>JRCIOfficeCode</value>
+  </data>
+  <data name="plJRCIOfficeCode.Help" xml:space="preserve">
+    <value>Database field: JRCIOfficeCode</value>
+  </data>
+  <data name="plLoadDate.Text" xml:space="preserve">
+    <value>LoadDate</value>
+  </data>
+  <data name="plLoadDate.Help" xml:space="preserve">
+    <value>Database field:  LoadDate</value>
+  </data>
+  <data name="plDeliveryDate.Text" xml:space="preserve">
+    <value>DeliveryDate</value>
+  </data>
+  <data name="plDeliveryDate.Help" xml:space="preserve">
+    <value>Database field: DeliveryDate</value>
+  </data>
+  <data name="plCompletedLoad.Text" xml:space="preserve">
+    <value>CompletedLoad</value>
+  </data>
+  <data name="plCompletedLoad.Help" xml:space="preserve">
+    <value>Database field: CompletedLoad</value>
+  </data>
+  <data name="plCompletedDate.Text" xml:space="preserve">
+    <value>CompletedDate</value>
+  </data>
+  <data name="plCompletedDate.Help" xml:space="preserve">
+    <value>Database field: CompletedDate</value>
+  </data>
+  <data name="plOfficeCode.Text" xml:space="preserve">
+    <value>OfficeCode</value>
+  </data>
+  <data name="plOfficeCode.Help" xml:space="preserve">
+    <value>Database field: OfficeCode</value>
+  </data>
+  <data name="plCustomerNumber.Text" xml:space="preserve">
+    <value>Search Customers</value>
+  </data>
+  <data name="plCustomerNumber.Help" xml:space="preserve">
+    <value>Database field: CustomerNumber</value>
+  </data>
+  <data name="plCustomerName.Text" xml:space="preserve">
+    <value>CustomerName</value>
+  </data>
+  <data name="plCustomerName.Help" xml:space="preserve">
+    <value>Database field: CustomerName</value>
+  </data>
+  <data name="plCustPO.Text" xml:space="preserve">
+    <value>CustPO</value>
+  </data>
+  <data name="plCustPO.Help" xml:space="preserve">
+    <value>Database field: CustPO</value>
+  </data>
+  <data name="plTrailerNumber.Text" xml:space="preserve">
+    <value>TrailerNumber</value>
+  </data>
+  <data name="plTrailerNumber.Help" xml:space="preserve">
+    <value>Database field: TrailerNumber</value>
+  </data>
+  <data name="plDriverCode.Text" xml:space="preserve">
+    <value>DriverCode</value>
+  </data>
+  <data name="plDriverCode.Help" xml:space="preserve">
+    <value>Database field: DriverCode</value>
+  </data>
+  <data name="plDriverName.Text" xml:space="preserve">
+    <value>DriverName</value>
+  </data>
+  <data name="plDriverName.Help" xml:space="preserve">
+    <value>Database field: DriverName</value>
+  </data>
+  <data name="plBrokerCode.Text" xml:space="preserve">
+    <value>BrokerCode</value>
+  </data>
+  <data name="plBrokerCode.Help" xml:space="preserve">
+    <value>Database field: BrokerCode</value>
+  </data>
+  <data name="plBrokerName.Text" xml:space="preserve">
+    <value>BrokerName</value>
+  </data>
+  <data name="plBrokerName.Help" xml:space="preserve">
+    <value>Database field: BrokerName</value>
+  </data>
+  <data name="plJRCIOCode.Text" xml:space="preserve">
+    <value>JRCIOCode</value>
+  </data>
+  <data name="plJRCIOCode.Help" xml:space="preserve">
+    <value>Database field: JRCIOCode</value>
+  </data>
+  <data name="plIOCode.Text" xml:space="preserve">
+    <value>IOCode</value>
+  </data>
+  <data name="plIOCode.Help" xml:space="preserve">
+    <value>Database field: IOCode</value>
+  </data>
+  <data name="plIOName.Text" xml:space="preserve">
+    <value>IOName</value>
+  </data>
+  <data name="plIOName.Help" xml:space="preserve">
+    <value>Database field: IOName</value>
+  </data>
+  <data name="plOverrideComm.Text" xml:space="preserve">
+    <value>OverrideComm</value>
+  </data>
+  <data name="plOverrideComm.Help" xml:space="preserve">
+    <value>Database field: OverrideComm</value>
+  </data>
+  <data name="plDriverPct.Text" xml:space="preserve">
+    <value>DriverPct</value>
+  </data>
+  <data name="plDriverPct.Help" xml:space="preserve">
+    <value>Database field: DriverPct</value>
+  </data>
+  <data name="plFOB.Text" xml:space="preserve">
+    <value>FOB</value>
+  </data>
+  <data name="plFOB.Help" xml:space="preserve">
+    <value>Database field: FOB</value>
+  </data>
+  <data name="plLoadNotes.Text" xml:space="preserve">
+    <value>LoadNotes</value>
+  </data>
+  <data name="plLoadNotes.Help" xml:space="preserve">
+    <value>Database field:  LoadNotes</value>
+  </data>
+  <data name="plComCheckSeq.Text" xml:space="preserve">
+    <value>ComCheckSeq</value>
+  </data>
+  <data name="plComCheckSeq.Help" xml:space="preserve">
+    <value>Database field: ComCheckSeq</value>
+  </data>
+  <data name="plComCheckAmt.Text" xml:space="preserve">
+    <value>ComCheckAmt</value>
+  </data>
+  <data name="plComCheckAmt.Help" xml:space="preserve">
+    <value>Database field: ComCheckAmt</value>
+  </data>
+  <data name="plTarpMessage.Text" xml:space="preserve">
+    <value>TarpMessage</value>
+  </data>
+  <data name="plTarpMessage.Help" xml:space="preserve">
+    <value>Database field: TarpMessage</value>
+  </data>
+  <data name="plDispatchCode.Text" xml:space="preserve">
+    <value>DispatchCode</value>
+  </data>
+  <data name="plDispatchCode.Help" xml:space="preserve">
+    <value>Database field: DispatchCode</value>
+  </data>
+  <data name="plDispName.Text" xml:space="preserve">
+    <value>DispName</value>
+  </data>
+  <data name="plDispName.Help" xml:space="preserve">
+    <value>Database field: DispName</value>
+  </data>
+  <data name="plLoadStatus.Text" xml:space="preserve">
+    <value>LoadStatus</value>
+  </data>
+  <data name="plLoadStatus.Help" xml:space="preserve">
+    <value>Database field: LoadStatus</value>
+  </data>
+  <data name="plDispOverride.Text" xml:space="preserve">
+    <value>DispOverride</value>
+  </data>
+  <data name="plDispOverride.Help" xml:space="preserve">
+    <value>Database field: DispOverride</value>
+  </data>
+  <data name="plRepNo.Text" xml:space="preserve">
+    <value>Sales Rep</value>
+  </data>
+  <data name="plRepNo.Help" xml:space="preserve">
+    <value>Database field: RepNo</value>
+  </data>
+  <data name="plRepName.Text" xml:space="preserve">
+    <value>RepName</value>
+  </data>
+  <data name="plRepName.Help" xml:space="preserve">
+    <value>Database field: RepName</value>
+  </data>
+  <data name="plLastUpdate.Text" xml:space="preserve">
+    <value>LastUpdate</value>
+  </data>
+  <data name="plLastUpdate.Help" xml:space="preserve">
+    <value>Database field:  LastUpdate</value>
+  </data>
+  <data name="plXmissionSeq.Text" xml:space="preserve">
+    <value>XmissionSeq</value>
+  </data>
+  <data name="plXmissionSeq.Help" xml:space="preserve">
+    <value>Database field:  XmissionSeq</value>
+  </data>
+  <data name="plLoadType.Text" xml:space="preserve">
+    <value>LoadType</value>
+  </data>
+  <data name="plLoadType.Help" xml:space="preserve">
+    <value>Database field: LoadType</value>
+  </data>
+  <data name="plDriverComm.Text" xml:space="preserve">
+    <value>DriverComm</value>
+  </data>
+  <data name="plDriverComm.Help" xml:space="preserve">
+    <value>Database field: DriverComm</value>
+  </data>
+  <data name="plBrokerComm.Text" xml:space="preserve">
+    <value>BrokerComm</value>
+  </data>
+  <data name="plBrokerComm.Help" xml:space="preserve">
+    <value>Database field: BrokerComm</value>
+  </data>
+  <data name="plLoadWeight.Text" xml:space="preserve">
+    <value>LoadWeight</value>
+  </data>
+  <data name="plLoadWeight.Help" xml:space="preserve">
+    <value>Database field: LoadWeight</value>
+  </data>
+  <data name="plLoadPieces.Text" xml:space="preserve">
+    <value>LoadPieces</value>
+  </data>
+  <data name="plLoadPieces.Help" xml:space="preserve">
+    <value>Database field: LoadPieces</value>
+  </data>
+  <data name="plLoadMileage.Text" xml:space="preserve">
+    <value>LoadMileage</value>
+  </data>
+  <data name="plLoadMileage.Help" xml:space="preserve">
+    <value>Database field: LoadMileage</value>
+  </data>
+  <data name="plAdminExempt.Text" xml:space="preserve">
+    <value>AdminExempt</value>
+  </data>
+  <data name="plAdminExempt.Help" xml:space="preserve">
+    <value>Database field: AdminExempt</value>
+  </data>
+  <data name="plTarpLoad.Text" xml:space="preserve">
+    <value>Tarp Required?</value>
+  </data>
+  <data name="plTarpLoad.Help" xml:space="preserve">
+    <value>Database field: TarpLoad</value>
+  </data>
+  <data name="plProNox.Text" xml:space="preserve">
+    <value>ProNox</value>
+  </data>
+  <data name="plProNox.Help" xml:space="preserve">
+    <value>Database field: ProNox</value>
+  </data>
+  <data name="plXMissionFile.Text" xml:space="preserve">
+    <value>XMissionFile</value>
+  </data>
+  <data name="plXMissionFile.Help" xml:space="preserve">
+    <value>Database field:  XMissionFile</value>
+  </data>
+  <data name="plXMissionDate.Text" xml:space="preserve">
+    <value>XMissionDate</value>
+  </data>
+  <data name="plXMissionDate.Help" xml:space="preserve">
+    <value>Database field: XMissionDate</value>
+  </data>
+  <data name="plEntryDate.Text" xml:space="preserve">
+    <value>EntryDate</value>
+  </data>
+  <data name="plEntryDate.Help" xml:space="preserve">
+    <value>Database field: EntryDate</value>
+  </data>
+  <data name="plRepDlrM.Text" xml:space="preserve">
+    <value>Current Rep $</value>
+  </data>
+  <data name="plRepDlrM.Help" xml:space="preserve">
+    <value>Database field: RepDlrM</value>
+  </data>
+  <data name="plRepPctM.Text" xml:space="preserve">
+    <value>Current Rep %</value>
+  </data>
+  <data name="plRepPctM.Help" xml:space="preserve">
+    <value>Database field: RepPctM</value>
+  </data>
+  <data name="plRepOverride.Text" xml:space="preserve">
+    <value>RepOverride</value>
+  </data>
+  <data name="plRepOverride.Help" xml:space="preserve">
+    <value>Database field: RepOverride</value>
+  </data>
+  <data name="plRepDlrStd.Text" xml:space="preserve">
+    <value>Default Rep$</value>
+  </data>
+  <data name="plRepDlrStd.Help" xml:space="preserve">
+    <value>Database field: RepDlrStd</value>
+  </data>
+  <data name="plRepPctStd.Text" xml:space="preserve">
+    <value>Default Rep%</value>
+  </data>
+  <data name="plRepPctStd.Help" xml:space="preserve">
+    <value>Database field:  RepPctStd</value>
+  </data>
+  <data name="plCorpTo.Text" xml:space="preserve">
+    <value>CorpTo</value>
+  </data>
+  <data name="plCorpTo.Help" xml:space="preserve">
+    <value>Database field: CorpTo</value>
+  </data>
+  <data name="plTrailerType.Text" xml:space="preserve">
+    <value>TrailerType</value>
+  </data>
+  <data name="plTrailerType.Help" xml:space="preserve">
+    <value>Database field: TrailerType</value>
+  </data>
+  <data name="plBrokerType.Text" xml:space="preserve">
+    <value>BrokerType</value>
+  </data>
+  <data name="plBrokerType.Help" xml:space="preserve">
+    <value>Database field: BrokerType</value>
+  </data>
+  <data name="plOfficePaid.Text" xml:space="preserve">
+    <value>OfficePaid</value>
+  </data>
+  <data name="plOfficePaid.Help" xml:space="preserve">
+    <value>Database field: OfficePaid</value>
+  </data>
+  <data name="plPDCkNo.Text" xml:space="preserve">
+    <value>PDCkNo</value>
+  </data>
+  <data name="plPDCkNo.Help" xml:space="preserve">
+    <value>Database field: PDCkNo</value>
+  </data>
+  <data name="plPDDate.Text" xml:space="preserve">
+    <value>PDDate</value>
+  </data>
+  <data name="plPDDate.Help" xml:space="preserve">
+    <value>Database field: PDDate</value>
+  </data>
+  <data name="plPDAmt.Text" xml:space="preserve">
+    <value>PDAmt</value>
+  </data>
+  <data name="plPDAmt.Help" xml:space="preserve">
+    <value>Database field: PDAmt</value>
+  </data>
+  <data name="plProJob.Text" xml:space="preserve">
+    <value>ProJob</value>
+  </data>
+  <data name="plProJob.Help" xml:space="preserve">
+    <value>Database field: ProJob</value>
+  </data>
+  <data name="plInvCommentA.Text" xml:space="preserve">
+    <value>Invoice Comment Field A</value>
+  </data>
+  <data name="plInvCommentA.Help" xml:space="preserve">
+    <value>Database field: InvCommentA</value>
+  </data>
+  <data name="plInvCommentB.Text" xml:space="preserve">
+    <value>Invoice Comment Field B</value>
+  </data>
+  <data name="plInvCommentB.Help" xml:space="preserve">
+    <value>Database field: InvCommentB</value>
+  </data>
+  <data name="plInvCommentC.Text" xml:space="preserve">
+    <value>Invoice Comment Field C</value>
+  </data>
+  <data name="plInvCommentC.Help" xml:space="preserve">
+    <value>Database field: InvCommentC</value>
+  </data>
+  <data name="plInvCommentD.Text" xml:space="preserve">
+    <value>Invoice Comment Field D</value>
+  </data>
+  <data name="plInvCommentD.Help" xml:space="preserve">
+    <value>Database field: InvCommentD</value>
+  </data>
+  <data name="plBkrInvNo.Text" xml:space="preserve">
+    <value>BkrInvNo</value>
+  </data>
+  <data name="plBkrInvNo.Help" xml:space="preserve">
+    <value>Database field: BkrInvNo</value>
+  </data>
+  <data name="plReasonFor.Text" xml:space="preserve">
+    <value>ReasonFor</value>
+  </data>
+  <data name="plReasonFor.Help" xml:space="preserve">
+    <value>Database field:  ReasonFor</value>
+  </data>
+  <data name="plBkrInvDate.Text" xml:space="preserve">
+    <value>BkrInvDate</value>
+  </data>
+  <data name="plBkrInvDate.Help" xml:space="preserve">
+    <value>Database field: BkrInvDate</value>
+  </data>
+  <data name="plIOAvail.Text" xml:space="preserve">
+    <value>IOAvail</value>
+  </data>
+  <data name="plIOAvail.Help" xml:space="preserve">
+    <value>Database field: IOAvail</value>
+  </data>
+  <data name="plIsPrinted.Text" xml:space="preserve">
+    <value>Was Printed?</value>
+  </data>
+  <data name="plIsPrinted.Help" xml:space="preserve">
+    <value>Database field: IsPrinted</value>
+  </data>
+  <data name="plAcctNull.Text" xml:space="preserve">
+    <value>AcctNull</value>
+  </data>
+  <data name="plAcctNull.Help" xml:space="preserve">
+    <value>Database field: AcctNull</value>
+  </data>
+  <data name="plBkrFunds.Text" xml:space="preserve">
+    <value>BkrFunds</value>
+  </data>
+  <data name="plBkrFunds.Help" xml:space="preserve">
+    <value>Database field: BkrFunds</value>
+  </data>
+  <data name="plOffFunds.Text" xml:space="preserve">
+    <value>OffFunds</value>
+  </data>
+  <data name="plOffFunds.Help" xml:space="preserve">
+    <value>Database field: OffFunds</value>
+  </data>
+  <data name="plOffOrgin.Text" xml:space="preserve">
+    <value>OffOrgin</value>
+  </data>
+  <data name="plOffOrgin.Help" xml:space="preserve">
+    <value>Database field: OffOrgin</value>
+  </data>
+  <data name="plCNOfficeVendorNO.Text" xml:space="preserve">
+    <value>CNOfficeVendorNO</value>
+  </data>
+  <data name="plCNOfficeVendorNO.Help" xml:space="preserve">
+    <value>Database field: CNOfficeVendorNO</value>
+  </data>
+  <data name="plPUSEQ.Text" xml:space="preserve">
+    <value>Sequence #</value>
+  </data>
+  <data name="plPUSEQ.Help" xml:space="preserve">
+    <value>Database field:  PUSEQ</value>
+  </data>
+  <data name="plPUCityST.Text" xml:space="preserve">
+    <value>PUCityST</value>
+  </data>
+  <data name="plPUCityST.Help" xml:space="preserve">
+    <value>Database field: PUCityST</value>
+  </data>
+  <data name="plDPCityST.Text" xml:space="preserve">
+    <value>DPCityST</value>
+  </data>
+  <data name="plDPCityST.Help" xml:space="preserve">
+    <value>Database field: DPCityST</value>
+  </data>
+  <data name="plDPSEQ.Text" xml:space="preserve">
+    <value>DPSEQ</value>
+  </data>
+  <data name="plDPSEQ.Help" xml:space="preserve">
+    <value>Database field: DPSEQ</value>
+  </data>
+  <data name="plIsIODiv.Text" xml:space="preserve">
+    <value>IsIODiv</value>
+  </data>
+  <data name="plIsIODiv.Help" xml:space="preserve">
+    <value>Database field: IsIODiv</value>
+  </data>
+  <data name="plOLPUDate.Text" xml:space="preserve">
+    <value>OLPUDate</value>
+  </data>
+  <data name="plOLPUDate.Help" xml:space="preserve">
+    <value>Database field: OLPUDate</value>
+  </data>
+  <data name="plOLNoStops.Text" xml:space="preserve">
+    <value>OLNoStops</value>
+  </data>
+  <data name="plOLNoStops.Help" xml:space="preserve">
+    <value>Database field: OLNoStops</value>
+  </data>
+  <data name="plCarrierName.Text" xml:space="preserve">
+    <value>CarrierName</value>
+  </data>
+  <data name="plCarrierName.Help" xml:space="preserve">
+    <value>Database field: CarrierName</value>
+  </data>
+  <data name="plBkrIOName.Text" xml:space="preserve">
+    <value>BkrIOName</value>
+  </data>
+  <data name="plBkrIOName.Help" xml:space="preserve">
+    <value>Database field: BkrIOName</value>
+  </data>
+  <data name="plBkrDriverNo.Text" xml:space="preserve">
+    <value>BkrDriverNo</value>
+  </data>
+  <data name="plBkrDriverNo.Help" xml:space="preserve">
+    <value>Database field: BkrDriverNo</value>
+  </data>
+  <data name="plBKDriver.Text" xml:space="preserve">
+    <value>BKDriver</value>
+  </data>
+  <data name="plBKDriver.Help" xml:space="preserve">
+    <value>Database field: BKDriver</value>
+  </data>
+  <data name="plCommPaid.Text" xml:space="preserve">
+    <value>CommPaid</value>
+  </data>
+  <data name="plCommPaid.Help" xml:space="preserve">
+    <value>Database field: CommPaid</value>
+  </data>
+  <data name="plLDNotesA.Text" xml:space="preserve">
+    <value>Load Notes field A</value>
+  </data>
+  <data name="plLDNotesA.Help" xml:space="preserve">
+    <value>Database field: LDNotesA</value>
+  </data>
+  <data name="plLDNotesB.Text" xml:space="preserve">
+    <value>Load Notes field B</value>
+  </data>
+  <data name="plLDNotesB.Help" xml:space="preserve">
+    <value>Database field: LDNotesB</value>
+  </data>
+  <data name="plLDNotesC.Text" xml:space="preserve">
+    <value>Load Notes field C</value>
+  </data>
+  <data name="plLDNotesC.Help" xml:space="preserve">
+    <value>Database field: LDNotesC</value>
+  </data>
+  <data name="plLDNotesD.Text" xml:space="preserve">
+    <value>Load Notes field D</value>
+  </data>
+  <data name="plLDNotesD.Help" xml:space="preserve">
+    <value>Database field:  LDNotesD</value>
+  </data>
+  <data name="plLoadMo.Text" xml:space="preserve">
+    <value>LoadMo</value>
+  </data>
+  <data name="plLoadMo.Help" xml:space="preserve">
+    <value>Database field: LoadMo</value>
+  </data>
+  <data name="plLoadYR.Text" xml:space="preserve">
+    <value>LoadYR</value>
+  </data>
+  <data name="plLoadYR.Help" xml:space="preserve">
+    <value>Database field: LoadYR</value>
+  </data>
+  <data name="plCalc85.Text" xml:space="preserve">
+    <value>Calc85</value>
+  </data>
+  <data name="plCalc85.Help" xml:space="preserve">
+    <value>Database field: Calc85</value>
+  </data>
+  <data name="plDvrDedPct.Text" xml:space="preserve">
+    <value>DvrDedPct</value>
+  </data>
+  <data name="plDvrDedPct.Help" xml:space="preserve">
+    <value>Database field: DvrDedPct</value>
+  </data>
+  <data name="plDvrDedResn.Text" xml:space="preserve">
+    <value>DvrDedResn</value>
+  </data>
+  <data name="plDvrDedResn.Help" xml:space="preserve">
+    <value>Database field: DvrDedResn</value>
+  </data>
+  <data name="plSeqLoadDrop.Text" xml:space="preserve">
+    <value>Seq</value>
+  </data>
+  <data name="plSeqLoadDrop.Help" xml:space="preserve">
+    <value>Database field: Seq</value>
+  </data>
+  <data name="plDPName.Text" xml:space="preserve">
+    <value>DPName</value>
+  </data>
+  <data name="plDPName.Help" xml:space="preserve">
+    <value>Database field: DPName</value>
+  </data>
+  <data name="plDPAddr.Text" xml:space="preserve">
+    <value>DPAddr</value>
+  </data>
+  <data name="plDPAddr.Help" xml:space="preserve">
+    <value>Database field: DPAddr</value>
+  </data>
+  <data name="plDPCity.Text" xml:space="preserve">
+    <value>DPCity</value>
+  </data>
+  <data name="plDPCity.Help" xml:space="preserve">
+    <value>Database field: DPCity</value>
+  </data>
+  <data name="plDPState.Text" xml:space="preserve">
+    <value>DPState</value>
+  </data>
+  <data name="plDPState.Help" xml:space="preserve">
+    <value>Database field: DPState</value>
+  </data>
+  <data name="plDPPhone.Text" xml:space="preserve">
+    <value>DPPhone</value>
+  </data>
+  <data name="plDPPhone.Help" xml:space="preserve">
+    <value>Database field: DPPhone</value>
+  </data>
+  <data name="plDPDate.Text" xml:space="preserve">
+    <value>DPDate</value>
+  </data>
+  <data name="plDPDate.Help" xml:space="preserve">
+    <value>Database field: DPDate</value>
+  </data>
+  <data name="plDPContact.Text" xml:space="preserve">
+    <value>DPContact</value>
+  </data>
+  <data name="plDPContact.Help" xml:space="preserve">
+    <value>Database field: DPContact</value>
+  </data>
+  <data name="plJobno.Text" xml:space="preserve">
+    <value>Jobno</value>
+  </data>
+  <data name="plJobno.Help" xml:space="preserve">
+    <value>Database field: Jobno</value>
+  </data>
+  <data name="plBillOLay.Text" xml:space="preserve">
+    <value>BillOLay</value>
+  </data>
+  <data name="plBillOLay.Help" xml:space="preserve">
+    <value>Database field: BillOLay</value>
+  </data>
+  <data name="plBOLSeq.Text" xml:space="preserve">
+    <value>BOLSeq</value>
+  </data>
+  <data name="plBOLSeq.Help" xml:space="preserve">
+    <value>Database field: BOLSeq</value>
+  </data>
+  <data name="plStime.Text" xml:space="preserve">
+    <value>Stime</value>
+  </data>
+  <data name="plStime.Help" xml:space="preserve">
+    <value>Database field: Stime</value>
+  </data>
+  <data name="plEtime.Text" xml:space="preserve">
+    <value>Etime</value>
+  </data>
+  <data name="plEtime.Help" xml:space="preserve">
+    <value>Database field: Etime</value>
+  </data>
+  <data name="plSeq.Text" xml:space="preserve">
+    <value>Sequence #</value>
+  </data>
+  <data name="plSeq.Help" xml:space="preserve">
+    <value>Database field: Seq</value>
+  </data>
+  <data name="plPUName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="plPUName.Help" xml:space="preserve">
+    <value>Database field:  PUName</value>
+  </data>
+  <data name="plPUAdd1.Text" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="plPUAdd1.Help" xml:space="preserve">
+    <value>Database field: PUAdd1</value>
+  </data>
+  <data name="plPRONo.Text" xml:space="preserve">
+    <value>PRONo</value>
+  </data>
+  <data name="plPRONo.Help" xml:space="preserve">
+    <value>Database field: PRONo</value>
+  </data>
+  <data name="plPUCity.Text" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="plPUCity.Help" xml:space="preserve">
+    <value>Database field: PUCity</value>
+  </data>
+  <data name="plPUState.Text" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="plPUState.Help" xml:space="preserve">
+    <value>Database field: PUState</value>
+  </data>
+  <data name="plPUTel.Text" xml:space="preserve">
+    <value>Telephone</value>
+  </data>
+  <data name="plPUTel.Help" xml:space="preserve">
+    <value>Database field: PUTel</value>
+  </data>
+  <data name="plPUContact.Text" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="plPUContact.Help" xml:space="preserve">
+    <value>Database field: PUContact</value>
+  </data>
+  <data name="plPUDate.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="plPUDate.Help" xml:space="preserve">
+    <value>Database field:  PUDate</value>
+  </data>
+  <data name="plPUTime.Text" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="plPUTime.Help" xml:space="preserve">
+    <value>Database field: PUTime</value>
+  </data>
+  <data name="plPieces.Text" xml:space="preserve">
+    <value>Pieces</value>
+  </data>
+  <data name="plPieces.Help" xml:space="preserve">
+    <value>Database field: Piece</value>
+  </data>
+  <data name="plWeight.Text" xml:space="preserve">
+    <value>Weight</value>
+  </data>
+  <data name="plWeight.Help" xml:space="preserve">
+    <value>Database field: Weight</value>
+  </data>
+  <data name="plMiles.Text" xml:space="preserve">
+    <value>Miles</value>
+  </data>
+  <data name="plMiles.Help" xml:space="preserve">
+    <value>Database field: Miles</value>
+  </data>
+  <data name="RepeatAdd.Text" xml:space="preserve">
+    <value>Repeat Add Item ?</value>
+  </data>
+  <data name="plViewOrder.Text" xml:space="preserve">
+    <value>ViewOrder</value>
+  </data>
+  <data name="plViewOrder.Help" xml:space="preserve">
+    <value>Database field: ViewOrder</value>
+  </data>
+  <data name="copy_load.Text" xml:space="preserve">
+    <value>Copy load</value>
+  </data>
+  <data name="plTrailerDue.Help" xml:space="preserve">
+    <value>Database field: TrailerDue</value>
+  </data>
+  <data name="plTrailerDue.Text" xml:space="preserve">
+    <value>TrailerDue</value>
+  </data>
+  <data name="print_Confirm.Text" xml:space="preserve">
+    <value>Print Preview Confirm</value>
+  </data>
+  <data name="print_this.Text" xml:space="preserve">
+    <value>Preview Load Sheet</value>
+  </data>
+  <data name="update_and_edit.Text" xml:space="preserve">
+    <value>Save &amp; Contnue</value>
+  </data>
+</root>

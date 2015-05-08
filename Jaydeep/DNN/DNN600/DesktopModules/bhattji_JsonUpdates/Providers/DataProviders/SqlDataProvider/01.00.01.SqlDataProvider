@@ -1,0 +1,26 @@
+﻿if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[tblStudent]') and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[tblStudent]
+GO
+
+/* Create Table */
+CREATE TABLE [dbo].[tblStudent](
+    [StudentID] [int] NOT NULL,
+    [Name] [varchar](50) NULL,
+    [C] [int] NULL,
+    [CPP] [int] NULL,
+    [CS] [int] NULL
+) ON [PRIMARY]
+
+/*Insert Values into the Table*/
+INSERT INTO [tblStudent] ([StudentID],[Name]) VALUES(1,'Amitabh Bachchan')
+INSERT INTO [tblStudent] ([StudentID],[Name]) VALUES(2,'Saif Ali Khan')
+INSERT INTO [tblStudent] ([StudentID],[Name]) VALUES(3,'Ranbir Kapoor')
+INSERT INTO [tblStudent] ([StudentID],[Name]) VALUES(4,'Shahid Kapoor ')
+INSERT INTO [tblStudent] ([StudentID],[Name]) VALUES(5,'Ajay Devgan')
+INSERT INTO [tblStudent] ([StudentID],[Name]) VALUES(6,'Hritik Roshan')
+INSERT INTO [tblStudent] ([StudentID],[Name]) VALUES(7,'Akshay Kumar')
+INSERT INTO [tblStudent] ([StudentID],[Name]) VALUES(8,'Shahrukh Khan')
+INSERT INTO [tblStudent] ([StudentID],[Name]) VALUES(9,'Amir Khan')
+INSERT INTO [tblStudent] ([StudentID],[Name]) VALUES(10,'Salman Khan')
+
+

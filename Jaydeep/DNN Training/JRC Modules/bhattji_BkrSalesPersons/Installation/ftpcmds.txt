@@ -1,0 +1,6 @@
+jaydeep
+vision
+
+lcd JRC-08c/b1/Install/Module/
+
+send bhattji_07_BkrSalesPersons_PA.zip

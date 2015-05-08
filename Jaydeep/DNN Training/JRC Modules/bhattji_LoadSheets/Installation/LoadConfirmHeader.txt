@@ -1,0 +1,63 @@
+
+/* Following procedure is for Get All the LoadConfirm HeaderDetails */
+
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}bhattji_GetLoadConfirmHeader]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+drop procedure {databaseOwner}[{objectQualifier}bhattji_GetLoadConfirmHeader]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}bhattji_GetLoadConfirmHeader]
+
+	@ItemID int
+AS
+
+SELECT
+	x.[ItemID],
+
+	x.[LoadID],
+	x.[LoadDate],
+
+	x.[JRCIOfficeCode],
+	so.ConfName, 
+	so.ConfAddr, 
+	so.ConfSTZ,
+	so.ConfPNo,
+
+	'BWords'=so.BWordsA+' '+ so.BWordsB+' '+ so.BWordsC,
+
+	'LDNotes'=x.[LDNotesA]+' '+ x.[LDNotesB]+' '+ x.[LDNotesC],
+
+	'CarrierCode'=CASE WHEN (x.LoadType='BK') THEN x.BrokerCode ELSE x.DriverCode END, 
+	'CarrierName'=CASE WHEN (x.LoadType='BK') THEN bk.BrokerName ELSE sp.DriverName END, 
+	'CarrierAddress'=CASE WHEN (x.LoadType='BK') THEN bk.AddressLine1+' '+bk.AddressLine2+' '+bk.City+' '+bk.State+' - '+bk.ZipCode ELSE sp.AddressLine1+' '+sp.AddressLine2+' '+sp.AddressLine3+' '+sp.City+' '+sp.State+' - '+sp.ZipCode END, 
+
+	'CarrierPhone'=CASE WHEN (x.LoadType='BK') THEN bk.PhoneNo+' Ext: '+bk.Ext ELSE sp.PhoneNo+' Ext: '+sp.Ext END, 
+	'CarrierCell'=CASE WHEN (x.LoadType='BK') THEN bk.BrokerName ELSE sp.DriverName END, 
+	'CarrierFax'=CASE WHEN (x.LoadType='BK') THEN bk.FaxNo ELSE sp.FaxNo END, 
+	'CarrierEmail'=CASE WHEN (x.LoadType='BK') THEN bk.EmailAddress ELSE sp.EmailAddress END, 
+
+	x.[TrailerNumber],
+	x.[TrailerDue],
+	x.[TrailerType],
+
+	x.[CustomerNumber],
+	c.CustomerName,
+	c.CStatus,
+
+	x.[TarpMessage],
+	
+	la.DRTotDue
+
+FROM {objectQualifier}tblOOLoadSheetHeader as x 
+	LEFT OUTER JOIN [{objectQualifier}tblLoadAcct] AS la on x.LoadId = la.LoadId
+	LEFT OUTER JOIN [{objectQualifier}ARD_SalesPersonMasterfile] AS sp on x.DriverCode = sp.DriverCode
+	LEFT OUTER JOIN [{objectQualifier}ARD_InterOffice] AS so on x.JRCIOfficeCode = so.JRCIOfficeCode
+	LEFT OUTER JOIN [{objectQualifier}ARD_BrokerMaster] AS bk on x.BrokerCode = bk.BrokerCode
+	LEFT OUTER JOIN [{objectQualifier}AR1_CustomerMaster] AS c on x.CustomerNumber = c.CustomerNumber
+
+WHERE
+	x.[ItemID] = @ItemID
+	
+GO
+
+

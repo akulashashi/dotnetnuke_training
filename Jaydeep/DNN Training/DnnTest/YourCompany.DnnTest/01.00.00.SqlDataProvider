@@ -1,0 +1,161 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/** Create Table **/
+
+if not exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}YourCompany_DnnTest]') and OBJECTPROPERTY(id, N'IsTable') = 1)
+	BEGIN
+		CREATE TABLE {databaseOwner}[{objectQualifier}YourCompany_DnnTest]
+		(
+			[ModuleID] [int] NOT NULL,
+			[ItemID] [int] NOT NULL IDENTITY(1, 1),
+			
+			[Title] nvarchar(30) NOT NULL,
+
+			[Content] [ntext] NOT NULL,
+			[CreatedByUser] [int] NOT NULL,
+			[CreatedDate] [datetime] NOT NULL
+		)
+
+		ALTER TABLE {databaseOwner}[{objectQualifier}YourCompany_DnnTest] ADD CONSTRAINT [PK_{objectQualifier}YourCompany_DnnTest] PRIMARY KEY CLUSTERED  ([ItemID])
+		CREATE NONCLUSTERED INDEX [IX_{objectQualifier}YourCompany_DnnTest] ON {databaseOwner}[{objectQualifier}YourCompany_DnnTest] ([ModuleID])
+
+		ALTER TABLE {databaseOwner}[{objectQualifier}YourCompany_DnnTest] WITH NOCHECK ADD CONSTRAINT [FK_{objectQualifier}YourCompany_DnnTest_{objectQualifier}Modules] FOREIGN KEY ([ModuleID]) REFERENCES {databaseOwner}[{objectQualifier}Modules] ([ModuleID]) ON DELETE CASCADE NOT FOR REPLICATION
+	END
+GO
+
+
+/** Drop Existing Stored Procedures **/
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}YourCompany_GetDnnTests]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}YourCompany_GetDnnTests
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}YourCompany_GetDnnTest]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}YourCompany_GetDnnTest
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}YourCompany_AddDnnTest]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}YourCompany_AddDnnTest
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}YourCompany_UpdateDnnTest]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}YourCompany_UpdateDnnTest
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}YourCompany_DeleteDnnTest]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}YourCompany_DeleteDnnTest
+GO
+
+/** Create Stored Procedures **/
+
+
+create procedure {databaseOwner}{objectQualifier}YourCompany_GetDnnTests
+
+	@ModuleId int
+
+as
+
+select ModuleId,
+       ItemId,
+	   Title,
+       Content,
+       CreatedByUser,
+       {objectQualifier}YourCompany_DnnTest.CreatedDate,
+       'CreatedByUserName' = {objectQualifier}Users.FirstName + ' ' + {objectQualifier}Users.LastName
+from {objectQualifier}YourCompany_DnnTest
+inner join {objectQualifier}Users on {objectQualifier}YourCompany_DnnTest.CreatedByUser = {objectQualifier}Users.UserId
+where  ModuleId = @ModuleId
+GO
+
+create procedure {databaseOwner}{objectQualifier}YourCompany_GetDnnTest
+
+	@ModuleId int,
+        @ItemId int
+
+as
+
+select ModuleId,
+       ItemId,
+	   Title,
+       Content,
+       CreatedByUser,
+       {objectQualifier}YourCompany_DnnTest.CreatedDate,
+       'CreatedByUserName' = {objectQualifier}Users.FirstName + ' ' + {objectQualifier}Users.LastName
+from {objectQualifier}YourCompany_DnnTest
+inner join {objectQualifier}Users on {objectQualifier}YourCompany_DnnTest.CreatedByUser = {objectQualifier}Users.UserId
+where  ModuleId = @ModuleId
+and ItemId = @ItemId
+GO
+
+
+create procedure {databaseOwner}{objectQualifier}YourCompany_AddDnnTest
+
+	@ModuleId       int,
+	@Title			nvarchar(30),
+	@Content        ntext,
+	@UserID         int
+
+as
+
+insert into {objectQualifier}YourCompany_DnnTest (
+	ModuleId,
+	Title,
+	Content,
+	CreatedByUser,
+	CreatedDate
+) 
+values (
+	@ModuleId,
+	@Title,
+	@Content,
+	@UserID,
+	getdate()
+)
+
+GO
+
+create procedure {databaseOwner}{objectQualifier}YourCompany_UpdateDnnTest
+
+	@ModuleId       int,
+    @ItemId         int,
+	@Title			nvarchar(30),
+	@Content        ntext,
+	@UserID         int
+
+as
+
+update {objectQualifier}YourCompany_DnnTest
+set    Title		 = @Title,
+	   Content       = @Content,
+       CreatedByUser = @UserID,
+       CreatedDate   = getdate()
+where  ModuleId = @ModuleId
+and    ItemId = @ItemId
+
+GO
+
+create procedure {databaseOwner}{objectQualifier}YourCompany_DeleteDnnTest
+
+	@ModuleId       int,
+        @ItemId         int
+
+as
+
+delete
+from   {objectQualifier}YourCompany_DnnTest
+where  ModuleId = @ModuleId
+and    ItemId = @ItemId
+
+GO
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/

@@ -1,0 +1,5 @@
+E:\DNN\DNN705\bin\ChristocDal.dll
+E:\DNN\DNN705\bin\ChristocDal.pdb
+E:\DNN\DNN705\DesktopModules\ChristocDal\obj\Debug\ChristocDal.csprojResolveAssemblyReference.cache
+E:\DNN\DNN705\DesktopModules\ChristocDal\obj\Debug\ChristocDal.dll
+E:\DNN\DNN705\DesktopModules\ChristocDal\obj\Debug\ChristocDal.pdb

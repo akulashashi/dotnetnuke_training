@@ -1,0 +1,15 @@
+C:\DNN\JRC45\bin\bhattji.Modules.Brokers.dll
+C:\DNN\JRC45\bin\bhattji.Modules.Brokers.pdb
+C:\DNN\JRC45\bin\bhattji.Brokers.xml
+C:\DNN\JRC45\DesktopModules\bhattji_Brokers\obj\Debug\ResolveAssemblyReference.cache
+C:\DNN\JRC45\DesktopModules\bhattji_Brokers\obj\Debug\bhattji.Modules.Brokers.Details.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Brokers\obj\Debug\bhattji.Modules.Brokers.EditItem.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Brokers\obj\Debug\bhattji.Modules.Brokers.Edits.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Brokers\obj\Debug\bhattji.Modules.Brokers.Thumb.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Brokers\obj\Debug\bhattji.Modules.Brokers.Settings.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Brokers\obj\Debug\bhattji.Modules.Brokers.ViewList.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Brokers\obj\Debug\bhattji.Modules.Brokers.Views.resources
+C:\DNN\JRC45\DesktopModules\bhattji_Brokers\obj\Debug\bhattji.Brokers.vbproj.GenerateResource.Cache
+C:\DNN\JRC45\DesktopModules\bhattji_Brokers\obj\Debug\bhattji.Modules.Brokers.dll
+C:\DNN\JRC45\DesktopModules\bhattji_Brokers\obj\Debug\bhattji.Brokers.xml
+C:\DNN\JRC45\DesktopModules\bhattji_Brokers\obj\Debug\bhattji.Modules.Brokers.pdb

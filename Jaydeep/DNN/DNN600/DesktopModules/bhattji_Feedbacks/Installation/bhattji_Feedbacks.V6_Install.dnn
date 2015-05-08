@@ -1,0 +1,75 @@
+﻿<dotnetnuke type="Package" version="5.0">
+	<packages>
+		<package name="bhattji.Feedbacks" type="Module" version="01.00.00">
+			<friendlyName>bhattji.Feedbacks</friendlyName>
+			<description>A short Description about bhattji's Feedbacks Module</description>
+			<owner>
+				<name>Jaydeep Bhatt</name>
+				<organization>Vision Consultants</organization>
+				<url>http://www.bhattji.com</url>
+				<email>support@bhattji.com</email>
+			</owner>
+			<license src="license.txt" />
+			<releaseNotes src="releasenotes.txt" />
+            <iconFile>DesktopModules/bhattji.Feedbacks/vision.ico</iconFile>
+            <dependencies>
+                <dependency type="CoreVersion">06.00.00</dependency>
+            </dependencies>
+			<components>
+				<component type="Module">
+					<desktopModule>
+						<moduleName>bhattji.Feedbacks</moduleName>
+						<foldername>bhattji.Feedbacks</foldername>
+						<businessControllerClass>bhattji.Modules.Feedbacks.FeedbacksController, bhattji.Modules.Feedbacks</businessControllerClass>
+						<supportedFeatures />
+						<moduleDefinitions>
+							<moduleDefinition>
+								<friendlyName>bhattji.Feedbacks</friendlyName>
+								<defaultCacheTime>0</defaultCacheTime>
+								<moduleControls>
+									<moduleControl>
+										<controlKey />
+										<controlSrc>DesktopModules/bhattji.Feedbacks/Views.ascx</controlSrc>
+										<supportsPartialRendering>False</supportsPartialRendering>
+										<controlTitle>Feedbacks</controlTitle>
+										<controlType>View</controlType>
+										<iconFile />
+										<helpUrl>http://www.bhattji.com/modulehelp/?ctl=Views</helpUrl>
+										<viewOrder>0</viewOrder>
+									</moduleControl>
+									<moduleControl>
+										<controlKey>Settings</controlKey>
+										<controlSrc>DesktopModules/bhattji.Feedbacks/Settings.ascx</controlSrc>
+										<supportsPartialRendering>False</supportsPartialRendering>
+										<controlTitle>Feedbacks Settings</controlTitle>
+										<controlType>Edit</controlType>
+										<iconFile />
+										<helpUrl>http://www.bhattji.com/modulehelp/?ctl=Settings</helpUrl>
+										<viewOrder>0</viewOrder>
+                                        <supportsPopUps>True</supportsPopUps>
+									</moduleControl>
+								</moduleControls>
+							</moduleDefinition>
+						</moduleDefinitions>
+					</desktopModule>
+				</component>
+				<component type="Assembly">
+					<assemblies>
+						<assembly>
+							<path>bin</path>
+							<name>bhattji.Modules.Feedbacks.dll</name>
+						</assembly>
+					</assemblies>
+				</component>
+				<component type="ResourceFile">
+					<resourceFiles>
+						<basePath>DesktopModules\bhattji.Feedbacks</basePath>
+						<resourceFile>
+							<name>install.bhattji.zip</name>
+						</resourceFile>
+					</resourceFiles>
+				</component>
+			</components>
+		</package>
+	</packages>
+</dotnetnuke>

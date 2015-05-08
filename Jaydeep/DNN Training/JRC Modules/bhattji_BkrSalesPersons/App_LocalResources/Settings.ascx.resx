@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plGetItems.Text" xml:space="preserve">
+    <value>Item Selection</value>
+  </data>
+  <data name="plGetItems.Help" xml:space="preserve">
+    <value>Please select the item display option.&lt;br&gt;Module = This module only&lt;br&gt;Portal = All items from this portal&lt;br&gt;All = All items form all portals in this installation</value>
+  </data>
+  <data name="Module.Text" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="Portal.Text" xml:space="preserve">
+    <value>Portal</value>
+  </data>
+  <data name="All.Text" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="plOnlyHostCanEdit.Text" xml:space="preserve">
+    <value>Only Host-Edit</value>
+  </data>
+  <data name="plOnlyHostCanEdit.Help" xml:space="preserve">
+    <value>Select this to limit the edit access of this Module to Host only</value>
+  </data>
+  <data name="OnlyHostCanEdit.Text" xml:space="preserve">
+    <value>Limit the edit access of this Module to Host only ?</value>
+  </data>
+  <data name="plControl.Text" xml:space="preserve">
+    <value>Display Method</value>
+  </data>
+  <data name="plControl.Help" xml:space="preserve">
+    <value>Please select the desired Product display method</value>
+  </data>
+  <data name="Catalog.Text" xml:space="preserve">
+    <value>Catalog</value>
+  </data>
+  <data name="Grid.Text" xml:space="preserve">
+    <value>Grid</value>
+  </data>
+  <data name="List.Text" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="Thumbs.Text" xml:space="preserve">
+    <value>Thumbs</value>
+  </data>
+  <data name="plAddDescription.Text" xml:space="preserve">
+    <value>Add Description</value>
+  </data>
+  <data name="plAddDescription.Help" xml:space="preserve">
+    <value>Please Enter AddDescription</value>
+  </data>
+  <data name="AddDescription.Text" xml:space="preserve">
+    <value>Add Description ?</value>
+  </data>
+  <data name="plTabCss.Text" xml:space="preserve">
+    <value>TabCss</value>
+  </data>
+  <data name="plTabCss.Help" xml:space="preserve">
+    <value>Please Enter TabCss</value>
+  </data>
+  <data name="plPayPalBusinessID.Text" xml:space="preserve">
+    <value>PayPal Business ID</value>
+  </data>
+  <data name="plPayPalBusinessID.Help" xml:space="preserve">
+    <value>Please Enter PayPalBusinessID</value>
+  </data>
+  <data name="PayPalVerified.Text" xml:space="preserve">
+    <value>PayPal Verified ?</value>
+  </data>
+  <data name="valPayPalBusinessID.ErrorMessage" xml:space="preserve">
+    <value>&lt;br&gt;You Must Enter a Valid PayPal eMail ID</value>
+  </data>
+  <data name="plLogoURL.Text" xml:space="preserve">
+    <value>Logo Link</value>
+  </data>
+  <data name="plMerchantSignup.Text" xml:space="preserve">
+    <value>Pay Pal Merchant Signup</value>
+  </data>
+  <data name="plMerchantSignup.Help" xml:space="preserve">
+    <value>Select to show/hide the PayPal Merchant Signup</value>
+  </data>
+  <data name="MerchantSignup.Text" xml:space="preserve">
+    <value>Show new PayPal Merchant Signup Banner ?</value>
+  </data>
+  <data name="plLogoURL.Help" xml:space="preserve">
+    <value>&lt;p&gt;Allows you to upload or specify the &lt;em&gt;location&lt;/em&gt; of company logo file. &lt;br&gt;
+  &lt;br&gt;
+This can be set to &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt; None&lt;/li&gt;
+  &lt;li&gt;URL of an external site page&lt;/li&gt;
+  &lt;li&gt;File within your DNN portal.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Optionally, you may also upload a new file by: &lt;br&gt;
+&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Selecting the desired upload folder location&lt;/li&gt;
+  &lt;li&gt;Click on the &lt;strong&gt;Upload New File &lt;/strong&gt; link.      &lt;/li&gt;
+  &lt;li&gt;Click on the &lt;strong&gt;Browse&lt;/strong&gt; button and select the desired file        &lt;/li&gt;
+  &lt;li&gt;Click on the &lt;strong&gt;Upload Selected File&lt;/strong&gt; link&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</value>
+  </data>
+  <data name="plSubscribeBtn.Text" xml:space="preserve">
+    <value>Subscribe Btn</value>
+  </data>
+  <data name="plSubscribeBtn.Help" xml:space="preserve">
+    <value>Allows you to specify an alternative Subscribe Button</value>
+  </data>
+  <data name="plBuyNowBtn.Text" xml:space="preserve">
+    <value>Buy Now Btn</value>
+  </data>
+  <data name="plBuyNowBtn.Help" xml:space="preserve">
+    <value>Allows you to enter an alternative Buy Now Button</value>
+  </data>
+  <data name="plAddToCartBtn.Text" xml:space="preserve">
+    <value>Add To Cart Btn</value>
+  </data>
+  <data name="plAddToCartBtn.Help" xml:space="preserve">
+    <value>Allows you to enter an alternative  Add To Cart Button</value>
+  </data>
+  <data name="plViewCartBtn.Text" xml:space="preserve">
+    <value>View Cart Btn</value>
+  </data>
+  <data name="plViewCartBtn.Help" xml:space="preserve">
+    <value>Allows you to specify an alternativer View Cart Button</value>
+  </data>
+  <data name="plReturnURL.Text" xml:space="preserve">
+    <value>Success Return URL</value>
+  </data>
+  <data name="plReturnURL.Help" xml:space="preserve">
+    <value>Allows you to specify a link for return from a Successful PayPal transaction.  you can use this to display a simple Thank-You page or to guide the customer in some ther fashion.&lt;br&gt;&lt;br&gt;This can be set to None, the URL of an external site page, or to a page within your DNN portal.</value>
+  </data>
+  <data name="plCancelReturnURL.Text" xml:space="preserve">
+    <value>Cancel Return Link</value>
+  </data>
+  <data name="plCancelReturnURL.Help" xml:space="preserve">
+    <value>Allows you to specify a link for returned from PayPal Canceled transaction.&lt;br&gt; &lt;br&gt; For example, you might wnt to direct the customer to a specific page on your site with instructions on how to deal with canceled transactions.</value>
+  </data>
+  <data name="plNotifyURL.Text" xml:space="preserve">
+    <value>Notification Link</value>
+  </data>
+  <data name="plNotifyURL.Help" xml:space="preserve">
+    <value>Allows you to specify a link for an alternative PayPal instant notification form on your site.   Leave set to None if you are not sure of this feature and by default this will go to the DNN PayPal IPN</value>
+  </data>
+  <data name="plAddDate.Text" xml:space="preserve">
+    <value>AddDate</value>
+  </data>
+  <data name="plAddDate.Help" xml:space="preserve">
+    <value>Please Enter Add Date</value>
+  </data>
+  <data name="None.Text" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="After.Text" xml:space="preserve">
+    <value>After</value>
+  </data>
+  <data name="Before.Text" xml:space="preserve">
+    <value>Before</value>
+  </data>
+  <data name="Above.Text" xml:space="preserve">
+    <value>Above</value>
+  </data>
+  <data name="Below.Text" xml:space="preserve">
+    <value>Below</value>
+  </data>
+  <data name="plImagePosition.Text" xml:space="preserve">
+    <value>Image Position</value>
+  </data>
+  <data name="plImagePosition.Help" xml:space="preserve">
+    <value>Allows for selection of several Product display options. See documentation  for detailed examples</value>
+  </data>
+  <data name="ZigZagRight.Text" xml:space="preserve">
+    <value>ZigZagRight</value>
+  </data>
+  <data name="ZigZagLeft.Text" xml:space="preserve">
+    <value>ZigZagLeft</value>
+  </data>
+  <data name="AllRight.Text" xml:space="preserve">
+    <value>AllRight</value>
+  </data>
+  <data name="AllLeft.Text" xml:space="preserve">
+    <value>AllLeft</value>
+  </data>
+  <data name="plDynamicThumb.Text" xml:space="preserve">
+    <value>Dynamic Thumbs</value>
+  </data>
+  <data name="plDynamicThumb.Help" xml:space="preserve">
+    <value>Select this option to automatically create dynamic thumbnails from the Product images</value>
+  </data>
+  <data name="DynamicThumb.Text" xml:space="preserve">
+    <value>Use Dynamic Thumbnails ?</value>
+  </data>
+  <data name="plThumbWidth.Text" xml:space="preserve">
+    <value>Thumb Width</value>
+  </data>
+  <data name="plThumbWidth.Help" xml:space="preserve">
+    <value>Allows you to specifiy the width of the thumbnails</value>
+  </data>
+  <data name="plThumbHeight.Text" xml:space="preserve">
+    <value>Thumb Height</value>
+  </data>
+  <data name="plThumbHeight.Help" xml:space="preserve">
+    <value>Allows you to specifiy the height of the thumbnails</value>
+  </data>
+  <data name="plBackColor.Text" xml:space="preserve">
+    <value>Background Color</value>
+  </data>
+  <data name="plBackColor.Help" xml:space="preserve">
+    <value>If desired, please enter a Background color code for the text link (ex. FFFFFF)</value>
+  </data>
+  <data name="plAltColor.Text" xml:space="preserve">
+    <value>Alt Item</value>
+  </data>
+  <data name="plAltColor.Help" xml:space="preserve">
+    <value>If desired, please enter an alternate color code for the text link (ex. FFCCFF)</value>
+  </data>
+  <data name="plAltSelector.Text" xml:space="preserve">
+    <value>Alternative Selector</value>
+  </data>
+  <data name="plAltSelector.Help" xml:space="preserve">
+    <value>Please select the Alternative Selector</value>
+  </data>
+  <data name="RadioButtonList.Text" xml:space="preserve">
+    <value>Radio Button List</value>
+  </data>
+  <data name="DropDownList.Text" xml:space="preserve">
+    <value>Drop Down List</value>
+  </data>
+  <data name="plPagerSize.Text" xml:space="preserve">
+    <value>Items per page</value>
+  </data>
+  <data name="plPagerSize.Help" xml:space="preserve">
+    <value>Allows you to control how many items are displayed per page</value>
+  </data>
+  <data name="plNoOfPages.Text" xml:space="preserve">
+    <value>No Of Pages</value>
+  </data>
+  <data name="plNoOfPages.Help" xml:space="preserve">
+    <value>Allows you to control how many Pages are displayed</value>
+  </data>
+  <data name="plUpdateRedirection.Text" xml:space="preserve">
+    <value>Update Redirection</value>
+  </data>
+  <data name="plUpdateRedirection.Help" xml:space="preserve">
+    <value>UpdateRedirection desides the page to go after the Add/Update</value>
+  </data>
+  <data name="Listing.Text" xml:space="preserve">
+    <value>Listing Page</value>
+  </data>
+  <data name="NewItem.Text" xml:space="preserve">
+    <value>Add New Item</value>
+  </data>
+  <data name="EditItem.Text" xml:space="preserve">
+    <value>Update and Continue</value>
+  </data>
+  <data name="ItemDetails.Text" xml:space="preserve">
+    <value>Details of the Item</value>
+  </data>
+  <data name="plThumbColumns.Text" xml:space="preserve">
+    <value>Thumb Columns</value>
+  </data>
+  <data name="plThumbColumns.Help" xml:space="preserve">
+    <value>Please Enter desired number of Thumbnail Columns to display</value>
+  </data>
+  <data name="plShowRatings.Text" xml:space="preserve">
+    <value>Show Ratings</value>
+  </data>
+  <data name="plShowRatings.Help" xml:space="preserve">
+    <value>Choose to show/hide the Ratings</value>
+  </data>
+  <data name="ShowRatings.Text" xml:space="preserve">
+    <value>Show Ratings ?</value>
+  </data>
+  <data name="plHideTextLink.Text" xml:space="preserve">
+    <value>Hide Text Link</value>
+  </data>
+  <data name="plHideTextLink.Help" xml:space="preserve">
+    <value>Choose to show/hide the Text Link</value>
+  </data>
+  <data name="HideTextLink.Text" xml:space="preserve">
+    <value>Hide Text Link ?</value>
+  </data>
+  <data name="plPayPalInNewWindow.Text" xml:space="preserve">
+    <value>Open PayPal in New Window ?</value>
+  </data>
+  <data name="plPayPalInNewWindow.Help" xml:space="preserve">
+    <value>Open PayPal in New Window ?</value>
+  </data>
+  <data name="PayPalInNewWindow.Text" xml:space="preserve">
+    <value>Open PayPal in New Window ?</value>
+  </data>
+  <data name="plLinkPriceToDetails.Text" xml:space="preserve">
+    <value>Link Price To Details</value>
+  </data>
+  <data name="plLinkPriceToDetails.Help" xml:space="preserve">
+    <value>Choose to Link Price To BuyNow or Details</value>
+  </data>
+  <data name="LinkPriceToDetails.Text" xml:space="preserve">
+    <value>Link Price To Details ?</value>
+  </data>
+  <data name="plHideListPrice.Text" xml:space="preserve">
+    <value>Hide List Price</value>
+  </data>
+  <data name="plHideListPrice.Help" xml:space="preserve">
+    <value>Choose to show/hide the List Price</value>
+  </data>
+  <data name="HideListPrice.Text" xml:space="preserve">
+    <value>Hide List Price ?</value>
+  </data>
+  <data name="plTransition.Text" xml:space="preserve">
+    <value>Transition</value>
+  </data>
+  <data name="plTransition.Help" xml:space="preserve">
+    <value>Please select the desired Transition</value>
+  </data>
+  <data name="Barn.Text" xml:space="preserve">
+    <value>Barn</value>
+  </data>
+  <data name="Blinds.Text" xml:space="preserve">
+    <value>Blinds</value>
+  </data>
+  <data name="CheckerBoard.Text" xml:space="preserve">
+    <value>CheckerBoard</value>
+  </data>
+  <data name="Fade.Text" xml:space="preserve">
+    <value>Fade</value>
+  </data>
+  <data name="GradientWipe.Text" xml:space="preserve">
+    <value>Gradient Wipe</value>
+  </data>
+  <data name="Inset.Text" xml:space="preserve">
+    <value>Inset</value>
+  </data>
+  <data name="Iris.Text" xml:space="preserve">
+    <value>Iris</value>
+  </data>
+  <data name="Pixelate.Text" xml:space="preserve">
+    <value>Pixelate</value>
+  </data>
+  <data name="RadialWipe.Text" xml:space="preserve">
+    <value>Radial Wipe</value>
+  </data>
+  <data name="RandomBars.Text" xml:space="preserve">
+    <value>Random Bars</value>
+  </data>
+  <data name="RandomDissolve.Text" xml:space="preserve">
+    <value>Random Dissolve</value>
+  </data>
+  <data name="Spiral.Text" xml:space="preserve">
+    <value>Spiral</value>
+  </data>
+  <data name="Stretch.Text" xml:space="preserve">
+    <value>Stretch</value>
+  </data>
+  <data name="Strips.Text" xml:space="preserve">
+    <value>Strips</value>
+  </data>
+  <data name="Wheel.Text" xml:space="preserve">
+    <value>Wheel</value>
+  </data>
+  <data name="Zigzag.Text" xml:space="preserve">
+    <value>Zigzag</value>
+  </data>
+  <data name="plRattleImage.Text" xml:space="preserve">
+    <value>RattleImage</value>
+  </data>
+  <data name="plRattleImage.Help" xml:space="preserve">
+    <value>Choose to Rattle Image</value>
+  </data>
+  <data name="RattleImage.Text" xml:space="preserve">
+    <value>Rattle Image ?</value>
+  </data>
+  <data name="plScrollBehavior.Text" xml:space="preserve">
+    <value>Scroll Behavior</value>
+  </data>
+  <data name="plScrollBehavior.Help" xml:space="preserve">
+    <value>Please select the desired Scroll Behavior</value>
+  </data>
+  <data name="Off.Text" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="Scroll.Text" xml:space="preserve">
+    <value>Scroll</value>
+  </data>
+  <data name="Slide.Text" xml:space="preserve">
+    <value>Slide</value>
+  </data>
+  <data name="Alternate.Text" xml:space="preserve">
+    <value>Alternate</value>
+  </data>
+  <data name="plScrollDirection.Text" xml:space="preserve">
+    <value>Scroll Direction</value>
+  </data>
+  <data name="plScrollDirection.Help" xml:space="preserve">
+    <value>Please select the desired Scroll Direction</value>
+  </data>
+  <data name="Up.Text" xml:space="preserve">
+    <value>Up</value>
+  </data>
+  <data name="Down.Text" xml:space="preserve">
+    <value>Down</value>
+  </data>
+  <data name="Left.Text" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="Right.Text" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="plScrollAmount.Text" xml:space="preserve">
+    <value>ScrollAmount</value>
+  </data>
+  <data name="plScrollAmount.Help" xml:space="preserve">
+    <value>Please Enter the Scroll Amount</value>
+  </data>
+  <data name="plScrollDelay.Text" xml:space="preserve">
+    <value>Scroll Delay</value>
+  </data>
+  <data name="plScrollDelay.Help" xml:space="preserve">
+    <value>Allows you to control the time between scrolling display restarts</value>
+  </data>
+  <data name="plScrollWidth.Text" xml:space="preserve">
+    <value>Scroll Width</value>
+  </data>
+  <data name="plScrollWidth.Help" xml:space="preserve">
+    <value>Please Enter the Scroll display width</value>
+  </data>
+  <data name="plScrollHeight.Text" xml:space="preserve">
+    <value>Scroll Height</value>
+  </data>
+  <data name="plScrollHeight.Help" xml:space="preserve">
+    <value>Please Enter the desired Scroll display height</value>
+  </data>
+  <data name="plShowDetails.Text" xml:space="preserve">
+    <value>Show Details</value>
+  </data>
+  <data name="plShowDetails.Help" xml:space="preserve">
+    <value>Please Enter Show Details</value>
+  </data>
+  <data name="plDeleteFromGrid.Help" xml:space="preserve">
+    <value>(Check/Uncheck) Delete From Grid</value>
+  </data>
+  <data name="plDeleteFromGrid.Text" xml:space="preserve">
+    <value>Delete From Grid</value>
+  </data>
+  <data name="plViewControl.Help" xml:space="preserve">
+    <value>Enter View Control</value>
+  </data>
+  <data name="plViewControl.Text" xml:space="preserve">
+    <value>View Control</value>
+  </data>
+  <data name="DeleteFromGrid.Text" xml:space="preserve">
+    <value>Let the User Delete the Item directly from Grid ?</value>
+  </data>
+  <data name="plHeaderBackColor.Help" xml:space="preserve">
+    <value>If desired, please enter a Background color for the Header</value>
+  </data>
+  <data name="plHeaderBackColor.Text" xml:space="preserve">
+    <value>Header</value>
+  </data>
+  <data name="plPagerBackColor.Help" xml:space="preserve">
+    <value>If desired, please enter a Background color for the Pager</value>
+  </data>
+  <data name="plPagerBackColor.Text" xml:space="preserve">
+    <value>Pager</value>
+  </data>
+  <data name="secScrollerSettings.Text" xml:space="preserve">
+    <value>Scroller Settings</value>
+  </data>
+  <data name="secPayPalSettings.Text" xml:space="preserve">
+    <value>PayPal Settings</value>
+  </data>
+  <data name="cmdSort.Text" xml:space="preserve">
+    <value>ViewOrders</value>
+  </data>
+  <data name="plItemBackColor.Help" xml:space="preserve">
+    <value>If desired, please enter a Background color code for the text link (ex. FFFFFF)</value>
+  </data>
+  <data name="plItemBackColor.Text" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="plNoOfItems.Help" xml:space="preserve">
+    <value>Please define the no of Items to be fetched from the Database</value>
+  </data>
+  <data name="plNoOfItems.Text" xml:space="preserve">
+    <value>No Of Items</value>
+  </data>
+  <data name="secGridSettings.Text" xml:space="preserve">
+    <value>Grid Settings</value>
+  </data>
+  <data name="secThumbSettings.Text" xml:space="preserve">
+    <value>Thumbnail Settings</value>
+  </data>
+  <data name="cmdFix.Text" xml:space="preserve">
+    <value>Fix</value>
+  </data>
+  <data name="Broker.Text" xml:space="preserve">
+    <value>Broker</value>
+  </data>
+  <data name="Driver.Text" xml:space="preserve">
+    <value>Driver</value>
+  </data>
+  <data name="plCombined.Text" xml:space="preserve">
+    <value>Combined</value>
+  </data>
+  <data name="CodeOnly.Text" xml:space="preserve">
+    <value>CodeOnly</value>
+  </data>
+  <data name="Combined.Text" xml:space="preserve">
+    <value>Combined</value>
+  </data>
+  <data name="plCombined.Help" xml:space="preserve">
+    <value>Select CompleteUnique for Complete Unique Codes for Drivers as well as for Broker Drivers,Select CodeOnly for Complete Unique Driver Code and Select Combined for Different BrokerCodeD</value>
+  </data>
+  <data name="CompleteUnique.Text" xml:space="preserve">
+    <value>CompleteUnique</value>
+  </data>
+</root>
